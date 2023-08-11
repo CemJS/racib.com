@@ -1,0 +1,22 @@
+{
+  "ver": "1.0.0",
+  "port": 3000,
+  "pages": [
+    {
+      "all": true,
+      "front": "header"
+    },
+    {
+      "url": "/",
+      "front": [
+        "empty"
+      ]
+    },
+    {
+      "all": true,
+      "front": "footer"
+    }
+  ],
+  "microFrontends": {},
+  "services": {}
+}
