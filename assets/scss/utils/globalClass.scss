@@ -2,3 +2,143 @@
   max-width: 1230px;
   margin: 0 auto;
 }
+
+.back {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  margin-bottom: 20px;
+  color: #4E5155;
+
+  &_title {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 32px;
+  }
+}
+
+.general_title {
+  color: var(--title);
+  font-size: 22px;
+  line-height: 32;
+  font-weight: 500;
+}
+
+.block_default {
+  background-color: var(--back_block);
+  padding: 25px;
+  height: fit-content;
+}
+
+.link_block {
+  background: var(--back_link);
+  padding: 20px 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.input-box {
+  width: 340px;
+  height: 50px;
+  border-bottom: 1px solid #7e919f;
+  // padding: 30px 0;
+  position: relative;
+  margin-bottom: 30px;
+
+  input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+  }
+}
+
+
+.arrow {
+  border: 1px solid var(--white);
+  outline: none;
+  background: transparent;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  img {
+    height: 20px;
+  }
+
+  &:hover {
+    transition: all .5s ease;
+    background: var(--white);
+  }
+}
+
+.btn_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  border: 2px solid var(--white);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+
+  &:hover {
+    transition: all .5s ease;
+    background: var(--white);
+    color: var(--text);
+  }
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+  transition: all .4s linear;
+
+  &_item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    &_img {
+      height: 150px;
+
+      img {
+        height: 100%;
+        border-radius: 15px;
+        object-fit: cover;
+      }
+    }
+
+    &_desc {
+      font-weight: 500;
+      line-height: 24px;
+      -webkit-line-clamp: 3;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      align-self: flex-end;
+    }
+
+    &_details {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}

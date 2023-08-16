@@ -68,49 +68,62 @@ const socials = [
 ]
 
 export const display = function () {
-	console.log('=93c483=', this.Static.openSidebar)
 	return (
-		<footer class="footer" ref="footer">
-			<div class="wrapper">
-				<div class="footer_inner">
-					<div class="footer_info">
-						<img src={footerLogo} alt="РАКИБ" />
-						<p>Ассоциация разработчиков и пользователей технологии блокчейн и систем искусственного интеллекта и продуктов, созданных на их основе, в интересах развития цифровой экономики.</p>
-					</div>
-					<div class="footer_links">
-						<h6 class="footer_title">Полезные ссылки</h6>
-						<ul class="footer_useful_links">
-							{
-								links.map(item => {
-									return (
-										<li class="footer_useful_links_item">
-											<a href={item.link}>{item.name}</a>
-										</li>
-									)
-								})
-							}
-						</ul>
-					</div>
-					<div class="footer_socials">
-						<h6 class="footer_title">Социальные сети</h6>
-						<ul class="footer_socials_wrap">
-							{
-								socials.map(item => {
-									return (
-										<li>
-											<a href={item.link}>
-												<img src={item.icon} alt={item.name} />
-											</a>
-										</li>
-									)
-								})
-							}
-						</ul>
-						<h6 class="footer_title">По вопросам рекламы</h6>
-						<a href="mailto:info@muvis.media" class="link">info@muvis.media</a>
+
+		<div class="footer_wrap">
+			<footer class={["footer",
+				this.Variable.openSidebar ? null : "footer_close"]}>
+
+				<div class="wrapper">
+					<div class="footer_inner">
+						<div class="footer_info">
+							<img src={footerLogo} alt="РАКИБ" />
+							<p>Ассоциация разработчиков и пользователей технологии блокчейн и систем искусственного интеллекта и продуктов, созданных на их основе, в интересах развития цифровой экономики.</p>
+							<div class="footer_mailing">
+								<div class="input-box">
+									<div class="input_icon"></div>
+									<input type="email" />
+									<label for="">Номер телефона</label>
+								</div>
+							</div>
+							<p>Подписываясь на рассылку новостей вы соглашаетесь с политикой обработки персональных данных</p>
+						</div>
+						<div class="footer_links">
+							<h6 class="footer_title">Полезные ссылки</h6>
+							<ul class="footer_useful_links">
+								{
+									links.map(item => {
+										return (
+											<li class="footer_useful_links_item">
+												<a href={item.link}>{item.name}</a>
+											</li>
+										)
+									})
+								}
+							</ul>
+						</div>
+						<div class="footer_socials">
+							<h6 class="footer_title">Социальные сети</h6>
+							<ul class="footer_socials_wrap">
+								{
+									socials.map(item => {
+										return (
+											<li class="footer_socials_item">
+												<a href={item.link} class="footer_socials_link">
+													<img src={item.icon} alt={item.name} />
+												</a>
+											</li>
+										)
+									})
+								}
+							</ul>
+							<h6 class="footer_title">По вопросам рекламы</h6>
+							<a href="mailto:info@muvis.media" class="link">info@muvis.media</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</footer>
+			</footer>
+		</div>
+
 	)
 }

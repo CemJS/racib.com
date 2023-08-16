@@ -15,7 +15,7 @@ const sidebarList = [
 	{
 		img: info,
 		name: 'О РАКИБ',
-		link: '/',
+		link: '/about',
 	},
 	{
 		img: community,
@@ -35,7 +35,7 @@ const sidebarList = [
 	{
 		img: news,
 		name: 'Новости',
-		link: '/',
+		link: '/news',
 	},
 	{
 		img: lenta,
@@ -52,22 +52,23 @@ const sidebarList = [
 export const display = function () {
 	return (
 		<header class="header">
-			<div class="header_inner" ref="header">
+			<div
+				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
 				<div
-					class="header_burger"
-					ref="burger"
+					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
 					onclick={() => {
-						this.Ref.burger.classList.toggle('header_burger_active');
-						this.Ref.sidebar.classList.toggle('sidebar_close');
-						this.Ref.header.classList.toggle('header_close');
-						this.Static.openSidebar = !this.Static.openSidebar;
-						console.log('=e06f61=', this.Static.openSidebar)
-						// this.Ref.footer.classList.toggle('footer_close');
+						this.Variable.openSidebar = !this.Variable.openSidebar;
+						this.Fn.initAll();
 					}}
 				>
 					<span></span>
 				</div>
-				<div class="header_acc">
+				<div
+					class="header_acc"
+					onclick={() => {
+						this.Ref.reg.classList.toggle('reg_window_active');
+					}}
+				>
 					<div>
 						<img class="icon" src={chat} alt="Вход или регистрация" />
 					</div>
@@ -77,19 +78,21 @@ export const display = function () {
 					</div>
 				</div>
 			</div>
-			{/* sidebar */}
-			<div class="sidebar" ref="sidebar">
-				<div class="logo_details">
+			{/* sidebar start */}
+			<div
+				class={["sidebar", this.Variable.openSidebar ? null : "sidebar_close"]}
+			>
+				<a href="/" onclick={this.Fn.link} class="logo_details">
 					<img src={logo} alt="РАКИБ" />
 					<span class="logo_details_name">РАКИБ</span>
-				</div>
+				</a>
 				<nav class="sidebar_nav">
 					<ul class="sidebar_list">
 						{
 							sidebarList.map((item, index) => {
 								return (
 									<li class="sidebar_list_item">
-										<a href={item.link}>
+										<a href={item.link} onclick={this.Fn.link}>
 											<div class="sidebar_list_icon">
 												<img src={item.img} alt={item.name} />
 											</div>
@@ -109,7 +112,50 @@ export const display = function () {
 					</ul>
 				</nav>
 			</div>
-			{/* sidebar */}
+			{/* sidebar end */}
+
+			{/* registration start */}
+			<div class="reg">
+				<div class="reg_window" ref="reg">
+					<div class="reg_content">
+						<header class="reg_header">
+							<div class="reg_tabs">
+								<div class="reg_tabs_item reg_tabs_item_active">
+									Вход
+								</div>
+								<div class="reg_tabs_item">
+									Регистрация
+								</div>
+							</div>
+						</header>
+						<main class="reg_main">
+							<div class="reg_main_content">
+								<h2>Введите Ваш телефон для входа</h2>
+
+								<div class="reg_main_fields">
+									<div class="input-box">
+										<div class="input_icon"></div>
+										<input type="tel" />
+										<label for="">Номер телефона</label>
+									</div>
+									<div class="input-box">
+										<div class="input_icon"></div>
+										<input type="password" />
+										<label for="">Пароль</label>
+									</div>
+								</div>
+
+								<p>Если во время регистрации вы не указали пароль, Выберите вариант  Вы можете задать его позднее в своей учетной записи</p>
+							</div>
+
+						</main>
+						<footer class="reg_footer">
+							<a href="" class="reg_footer_link">Обратиться в службу поддержки</a>
+						</footer>
+					</div>
+				</div>
+			</div>
+			{/* registration end */}
 		</header>
 	)
 

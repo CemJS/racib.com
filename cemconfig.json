@@ -9,7 +9,20 @@
     {
       "url": "/",
       "front": [
-        "empty"
+        "particles",
+        "home"
+      ]
+    },
+    {
+      "url": "/about",
+      "front": [
+        "about"
+      ]
+    },
+    {
+      "url": "/news",
+      "front": [
+        "news"
       ]
     },
     {

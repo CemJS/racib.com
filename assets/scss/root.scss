@@ -1,5 +1,6 @@
 @import 'utils/variables.scss';
 @import 'utils/fonts.scss';
+@import 'utils/globalClass.scss';
 
 *,
 ::after,
@@ -25,36 +26,6 @@ html {
     scrollbar-width: thin;
 }
 
-body {
-    height: 100%;
-    margin: 0px;
-    padding: 0 !important;
-    overflow: overlay;
-    color: var(--white);
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-
-    // &::-webkit-scrollbar {
-    //     width: 6px;
-    // }
-
-    // &::-webkit-scrollbar-button {
-    //     background-repeat: no-repeat;
-    //     width: 6px;
-    //     height: 0px;
-    // }
-
-    // &::-webkit-scrollbar-thumb {
-    //     border-radius: 5px;
-    //     background: linear-gradient(45deg, var(--summer_sky) 0, var(--blue_oyster_cult) 45%, var(--akebi_purple) 57%, var(--lilac_lotion) 70%);
-    // }
-
-    // &::-webkit-scrollbar-track {
-    //     background-color: transparent;
-    // }
-}
-
 p {
     margin: 0;
 }
@@ -62,6 +33,7 @@ p {
 a {
     text-decoration: none;
     color: var(--white);
+
 }
 
 h1,
@@ -90,4 +62,65 @@ button {
 
 input {
     font-family: 'Montserrat';
+}
+
+#app {
+    min-height: var(--app-height);
+    display: flex !important;
+    flex-direction: column;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0 !important;
+    overflow: overlay;
+    color: var(--white);
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-button {
+        background-repeat: no-repeat;
+        width: 6px;
+        height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--back_dark);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--back_block);
+    }
+}
+
+
+
+.main_wrap {
+    flex-grow: 1;
+    order: 1;
+}
+
+.main {
+    position: relative;
+    width: calc(100% - 260px);
+    left: 260px;
+    padding-top: 80px;
+    transition: all 0.5s ease;
+
+    &_close {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
+}
+
+
+
+.footer_wrap {
+    order: 1;
 }
