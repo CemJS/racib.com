@@ -1,6 +1,96 @@
+$indents: (
+  0: 0px,
+  4: 4px,
+  5: 5px,
+  6: 6px,
+  8: 8px,
+  10: 10px,
+  12: 12px,
+  14: 14px,
+  15: 15px,
+  16: 16px,
+  18: 18px,
+  20: 20px,
+  22: 22px,
+  24: 24px,
+  25: 25px,
+  26: 26px,
+  28: 28px,
+  30: 30px,
+  32: 32px,
+  34: 34px,
+  35: 35px,
+  36: 36px,
+  40: 40px,
+  50: 50px,
+  60: 60px,
+  70: 70px,
+  80: 80px,
+  90: 90px,
+  100: 100px
+);
+
+// padding, margin
+@each $index,
+$indent in $indents {
+  .pt_#{$index} {
+    padding-top: $indent !important;
+  }
+
+  .pb_#{$index} {
+    padding-bottom: $indent !important;
+  }
+
+  .pl_#{$index} {
+    padding-left: $indent !important;
+  }
+
+  .pr_#{$index} {
+    padding-right: $indent !important;
+  }
+
+  .pX_#{$index} {
+    padding: 0 $indent !important;
+  }
+
+  .pY_#{$index} {
+    padding: $indent 0 !important;
+  }
+
+  .mt_#{$index} {
+    margin-top: $indent !important;
+  }
+
+  .mb_#{$index} {
+    margin-bottom: $indent !important;
+  }
+
+  .ml_#{$index} {
+    margin-left: $indent !important;
+  }
+
+  .mr_#{$index} {
+    margin-right: $indent !important;
+  }
+
+  .mX_#{$index} {
+    margin: 0 $indent !important;
+  }
+
+  .mY_#{$index} {
+    margin: $indent 0 !important;
+  }
+}
+
+// padding, margin
+
 .wrapper {
   max-width: 1230px;
   margin: 0 auto;
+}
+
+section {
+  margin-bottom: 25px;
 }
 
 .back {
@@ -20,26 +110,75 @@
   }
 }
 
+.runLine {
+  color: var(--title);
+  padding-top: 80px;
+}
+
 .general_title {
   color: var(--title);
   font-size: 22px;
-  line-height: 32;
+  line-height: 32px;
   font-weight: 500;
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+}
+
+.link {
+  color: #595bff;
+
+  &:hover {
+    opacity: .7;
+  }
 }
 
 .block_default {
   background-color: var(--back_block);
   padding: 25px;
   height: fit-content;
+  color: var(--title);
+
+  &_title {
+    font-size: 22px;
+    line-height: 34px;
+    font-weight: 500;
+    margin-bottom: 15px;
+  }
+
+  &_desc {
+    line-height: 24px;
+    font-weight: 400;
+  }
 }
 
 .link_block {
-  background: var(--back_link);
-  padding: 20px 30px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  padding: 20px 0;
+  border-top: 1px solid #dbdbe9;
+  border-bottom: 1px solid #dbdbe9;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: var(--back_linkBlue);
+    padding: 20px 30px;
+    width: 100%;
+    gap: 20px;
+  }
+
+  &_icon {
+    width: 35px;
+  }
+
+  span {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+
 }
 
 .input-box {
@@ -72,14 +211,15 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: all .3s ease;
+  transition-delay: .1s;
 
   img {
     height: 20px;
   }
 
   &:hover {
-    transition: all .5s ease;
-    background: var(--white);
+    transform: scale(1.1);
   }
 }
 
@@ -92,11 +232,25 @@
   font-size: 18px;
   font-weight: 500;
   padding: 10px 15px;
+  width: fit-content;
+  cursor: pointer;
+  transition: all .5s ease;
+  transition-delay: 0.1s;
 
   &:hover {
-    transition: all .5s ease;
     background: var(--white);
     color: var(--text);
+  }
+}
+
+.slider {
+  color: var(--title);
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
   }
 }
 
@@ -114,6 +268,7 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
+    padding: 10px 10px 40px 10px;
     gap: 15px;
 
     &_img {
@@ -124,21 +279,68 @@
         border-radius: 15px;
         object-fit: cover;
       }
+
+    }
+
+    &_title {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 500;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     &_desc {
       font-weight: 500;
+      font-size: 16px;
       line-height: 24px;
       -webkit-line-clamp: 3;
       display: -webkit-box;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      align-self: flex-end;
     }
 
     &_details {
       display: flex;
       justify-content: space-between;
+      justify-self: flex-end;
+
+      span {
+        position: absolute;
+        bottom: 10px;
+      }
+
+      &_date {
+        left: 10px;
+      }
+
+      &_views {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        right: 10px;
+
+        img {
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  &_card {
+    position: relative;
+    height: 450px;
+    width: 300px;
+
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
+
+    &_img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
   }
 }

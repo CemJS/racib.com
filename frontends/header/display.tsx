@@ -1,5 +1,5 @@
 import { Cemjsx } from "cemjs-all"
-import logo from '@images/logo.png'
+import logo from '@svg/racib.svg'
 import user from '@svg/icons/user.svg'
 import chat from '@svg/icons/chat.svg'
 import search from '@svg/sidebar/search.svg'

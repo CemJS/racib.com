@@ -5,11 +5,16 @@
   position: relative;
   padding: 35px;
   left: 260px;
+  color: var(--white);
 
   &_title {
     font-size: 22px;
     line-height: 32px;
     color: var(--white);
+  }
+
+  &_icon {
+    width: 25px;
   }
 
   &_inner {
@@ -88,8 +93,22 @@
       border: 1px solid var(--border);
     }
 
-    .link {
+    &_email {
       color: var(--border);
+    }
+  }
+
+  &_powered {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+
+    .cem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
   }
 }

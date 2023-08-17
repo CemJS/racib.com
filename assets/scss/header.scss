@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    // position: relative;
+    z-index: 100;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,6 +14,7 @@
     width: calc(100% - 260px);
     transition: all 0.5s ease;
     background: var(--back_dark);
+    color: var(--white);
   }
 
   &_close {

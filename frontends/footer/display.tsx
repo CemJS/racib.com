@@ -4,6 +4,7 @@ import telegram from '@svg/socials/telegram.svg'
 import vk from '@svg/socials/vk.svg'
 import youtube from '@svg/socials/youtube.svg'
 import twitter from '@svg/socials/twitter.svg'
+import logoCem from '@svg/logoCem.svg'
 
 const links = [
 	{
@@ -118,8 +119,15 @@ export const display = function () {
 								}
 							</ul>
 							<h6 class="footer_title">По вопросам рекламы</h6>
-							<a href="mailto:info@muvis.media" class="link">info@muvis.media</a>
+							<a href="mailto:info@muvis.media" class="footer_socials_email">info@muvis.media</a>
 						</div>
+					</div>
+					<div class="footer_powered">
+						<span>РАКИБ © 2021 - 2023, Все права защищены.</span>
+						<span class="cem">
+							<img class="footer_icon" src={logoCem} alt="Powered by Crypto Emergency" />
+							Powered by Crypto Emergency
+						</span>
 					</div>
 				</div>
 			</footer>
