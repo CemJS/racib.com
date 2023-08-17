@@ -220,13 +220,13 @@ export const display = function () {
               </div>
 
               <div class="carousel_wrap">
-                <div class="carousel">
+                <div class="carousel p_15">
                   {
                     events.map(item => {
                       return (
                         <div class="carousel_card">
-                          <div class="carousel_card_img">
-                            <img src={item.cover} />
+                          <div class="carousel_card_img" style={`background-image: ${item.cover}`}>
+                            {/* <img src={item.cover} /> */}
                           </div>
                           <h5>{item.title}</h5>
                           <span>{item.date}</span>
