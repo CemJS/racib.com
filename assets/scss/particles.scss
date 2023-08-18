@@ -2,22 +2,27 @@
   &_wrap {
     background-image: url('images/backImg.jpg');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+
     height: 600px;
     width: 100%;
+    position: relative;
   }
 
-  #canvas {
-    // background-image: url('images/backImg.jpg');
-    // background-repeat: no-repeat;
-    // background-size: 100% 100%;
-    // height: 600px;
-    // width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: radial-gradient((#2c27a1, #43425d));
-  }
+
+}
+
+#canvas {
+  // background-image: url('images/backImg.jpg');
+  // background-repeat: no-repeat;
+  // background-size: 100% 100%;
+  // height: 600px;
+  // width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  // background: radial-gradient((#2c27a1, #43425d));
+  // border: 1px solid red;
 }
