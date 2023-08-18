@@ -166,10 +166,9 @@ export const display = function () {
                 {
                   news.map((item, index) => {
                     return (
-                      <a class="carousel_item" ref="newsSlide" href="/">
+                      <div class="carousel_item" ref="newsSlide" href="/">
                         <span>{item.category}</span>
-                        <div class="carousel_item_img">
-                          <img src={item.img} />
+                        <div class="carousel_item_img" style={`background-image: url(${item.img})`}>
                         </div>
                         <h5 class="carousel_item_title">{item.title}</h5>
                         <p class="carousel_item_desc">{item.desc}</p>
@@ -180,7 +179,7 @@ export const display = function () {
                             <img src={views} />
                           </span>
                         </div>
-                      </a>
+                      </div>
                     )
                   })
                 }
@@ -225,7 +224,7 @@ export const display = function () {
                     events.map(item => {
                       return (
                         <div class="carousel_card">
-                          <div class="carousel_card_img" style={`background-image: ${item.cover}`}>
+                          <div class="carousel_card_img" style={`background-image: url(${item.cover})`}>
                             {/* <img src={item.cover} /> */}
                           </div>
                           <h5>{item.title}</h5>
