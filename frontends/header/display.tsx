@@ -1,8 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import logo from '@svg/racib.svg'
-import user from '@svg/icons/user.svg'
 import chat from '@svg/icons/chat.svg'
-import search from '@svg/sidebar/search.svg'
 import info from '@svg/sidebar/info.svg'
 import community from '@svg/sidebar/community.svg'
 import catalog from '@svg/sidebar/catalog.svg'
@@ -54,28 +52,27 @@ export const display = function () {
 		<header class="header">
 			<div
 				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
-				<div
-					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
-					onclick={() => {
-						this.Variable.openSidebar = !this.Variable.openSidebar;
-						this.Fn.initAll();
-					}}
-				>
-					<span></span>
+
+				<div class="header_burger_wrap">
+					<div
+						class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
+						onclick={() => {
+							this.Variable.openSidebar = !this.Variable.openSidebar;
+							this.Fn.initAll();
+						}}
+					>
+						<span></span>
+					</div>
 				</div>
+
 				<div
 					class="header_acc"
 					onclick={() => {
 						this.Ref.reg.classList.toggle('reg_window_active');
 					}}
 				>
-					<div>
-						<img class="icon" src={chat} alt="Вход или регистрация" />
-					</div>
-					<div class="header_input">
-						<span>Вход</span>
-						<img class="icon" src={user} alt="Вход или регистрация" />
-					</div>
+					<span>Чат помощник</span>
+					<img class="icon" src={chat} alt="Вход или регистрация" />
 				</div>
 			</div>
 			{/* sidebar start */}

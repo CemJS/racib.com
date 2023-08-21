@@ -3,26 +3,29 @@
     background-image: url('images/backImg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-
+    margin-top: 70px;
     height: 600px;
     width: 100%;
     position: relative;
+
+
+    // width: calc(100% - 260px);
+    // left: 260px;
+    // transition: all 0.5s ease;
+
+    // &_close {
+    //   left: 78px;
+    //   width: calc(100% - 78px);
+    // }
   }
 
 
 }
 
 #canvas {
-  // background-image: url('images/backImg.jpg');
-  // background-repeat: no-repeat;
-  // background-size: 100% 100%;
-  // height: 600px;
-  // width: 100%;
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  // background: radial-gradient((#2c27a1, #43425d));
-  // border: 1px solid red;
 }

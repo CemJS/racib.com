@@ -1,6 +1,6 @@
 .header {
   &_inner {
-    padding: 0 35px;
+    padding: 0 15px;
     height: 70px;
     display: flex;
     align-items: center;
@@ -9,7 +9,6 @@
     z-index: 100;
     position: fixed;
     top: 0;
-    left: 0;
     left: 260px;
     width: calc(100% - 260px);
     transition: all 0.5s ease;
@@ -29,19 +28,22 @@
     cursor: pointer;
   }
 
-  &_input {
+  &_burger_wrap {
+    height: 45px;
+    width: 45px;
+    background: var(--white);
+    border-radius: 50%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 25px;
-    border-left: 1px solid var(--white);
-    padding-left: 10px;
   }
 
   &_burger {
     cursor: pointer;
-    height: 18px;
-    width: 30px;
+    height: 16px;
+    width: 25px;
     position: relative;
+    z-index: 5;
 
     span,
     &::after,
@@ -51,7 +53,7 @@
       height: 10%;
       width: 100%;
       transition: all 0.3s ease 0s;
-      background-color: var(--white);
+      background-color: var(--title);
     }
 
     &::after,

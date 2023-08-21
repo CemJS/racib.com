@@ -1,17 +1,12 @@
 import { Cemjsx } from "cemjs-all"
-import arrNext from '@svg/icons/nextWhite.svg'
-import arrPrev from '@svg/icons/prevWhite.svg'
-import views from '@svg/icons/views.svg'
-import new1 from '@images/news/coverRacib.png'
-import new2 from '@images/news/coverBlockchainLife.png'
-import new3 from '@images/news/new3.jpg'
-import new4 from '@images/news/summit.jpg'
-import new5 from '@images/news/rus.jpg'
-import new6 from '@images/news/sber.jpg'
-import new7 from '@images/news/friends.png'
-import new8 from '@images/news/winner.jpg'
+import arrNextDark from '@svg/icons/dark/next.svg'
+import arrPrevDark from '@svg/icons/dark/prev.svg'
+
 import arrowR from '@svg/icons/arrowR.svg'
 import calendar from '@svg/icons/date.svg'
+import date from '@svg/icons/dark/date.svg'
+import map from '@svg/icons/dark/mapPin.svg'
+import viewsDark from '@svg/icons/dark/views.svg'
 
 import cover1 from '@images/events/cover/1.png'
 import cover2 from '@images/events/cover/2.jpg'
@@ -19,72 +14,15 @@ import cover3 from '@images/events/cover/3.jpg'
 import logo1 from '@images/events/logo/1.png'
 import logo2 from '@svg/racib.svg'
 
-const news = [
-  {
-    category: 'Блокчейн',
-    img: new1,
-    title: 'Вместе внедрять новое',
-    desc: 'Белорусская Ассоциация «Технологии Распределенных Реестров» (АТРР) и Российская Ассоциация криптоиндустрии, искусственного интеллекта и блокчейна (РАКИБ) подписали 31 мая меморандум о сотрудничестве и взаимопонимании.',
-    date: '04 августа 2023г.',
-    views: 14,
-  },
-  {
-    category: 'Крипто',
-    img: new2,
-    title: 'Официальный трейлер Blockchain Life 2023 в Дубае',
-    desc: 'Мы рады представить официальный трейлер Blockchain Life 2023 в Дубае, который состоится 24-25 октября. Этот трейлер представляет собой совершенно новую концепцию промо-видео мировых событий, и мы гордимся тем, что стали первыми среди всех международных событий криптоиндустрии. ',
-    date: '28 июля 2023г.',
-    views: 9,
-  },
-  {
-    category: 'Майнинг',
-    img: new3,
-    title: 'Рабочая встреча майнеров в РАКИБ',
-    desc: 'Сегодня в РАКИБ состоялась рабочая встреча майнеров по вопросу развития майнинга в России. На встрече обсуждались вопросы:1) Текущее состояние и результаты по предложенной РАКИБ инициативе о создании единой сети дистрибуции майнингового оборудования.  ',
-    date: '16 июня 2023г.',
-    views: 50,
-  },
-  {
-    category: 'Крипто',
-    img: new4,
-    title: 'III Crypto Summit 2023',
-    desc: 'Сегодня в РАКИБ состоялась рабочая встреча майнеров по вопросу развития майнинга в России. На встрече обсуждались вопросы:1) Текущее состояние и результаты по предложенной РАКИБ инициативе о создании единой сети дистрибуции майнингового оборудования.  ',
-    date: ' 14 июня 2023г.',
-    views: 16,
-  },
-  {
-    category: 'Общество',
-    img: new5,
-    title: 'С праздником Дня России',
-    desc: 'Дорогие друзья, РАКИБ поздравляет вас с праздником Дня России! Пусть в это непростое для нашего Отечества время мы крепче сплотились бы, делая нашу Державу еще мощнее и красивее!',
-    date: ' 10 июня 2023г.',
-    views: 100,
-  },
-  {
-    category: 'Блокчейн',
-    img: new6,
-    title: 'РАКИБ на Первом международном форуме Сбера для участников блокчейн-отрасли',
-    desc: 'Александр Бражников, исполнительный директор Российской ассоциации криптовалют и блокчейна (РАКИБ), приглашен спикером  Панельной дискуссии WEB 3.0 VS BigTech на Блокчейн-конференция «Финансы будущего: вызовы и возможности».',
-    date: '25 мая 2023г.',
-    views: 120,
-  },
-  {
-    category: 'Общество',
-    img: new7,
-    title: 'РАКИБ в составе российской правительственной делегации в Республике Куба',
-    desc: 'РАКИБ в лице исполнительного директора Бражникова А.Е. участвовал в бизнес-форуме «БИЗНЕС ДИАЛОГ РОССИЯ-КУБА» в рамках Межправительственной Российско-Кубинской комиссии по торгово-экономическому и научно-техническому сотрудничеству.С 17 по 20 мая более 200 представителей российской делегации общались с кубинскими государственными деятелями, предпринимателями, общественными деятелями.',
-    date: '22 мая 2023г.',
-    views: 118,
-  },
-  {
-    category: 'Общество',
-    img: new8,
-    title: 'С Днём Победы 9 мая!',
-    desc: 'Примите самые искренние, самые тёплые поздравления в преддверии великого праздника, близкого сердцу каждого – Дня Великой Победы!',
-    date: '07 мая 2023г.',
-    views: 118,
-  }
-]
+import brazhnikov from '@images/users/brazhnikov.jpg'
+import chulkov from '@images/users/chulkov.jpg'
+import gorcharuk from '@images/users/gorcharuk.jpg'
+import pripachkin from '@images/users/pripachkin.jpg'
+import zelenevsky from '@images/users/zelenevsky.jpg'
+import romanyuk from '@images/users/romanyuk.jpg'
+import kvasnikov from '@images/users/kvasnikov.jpg'
+import yan from '@images/users/yan.jpg'
+
 
 const events = [
   {
@@ -125,17 +63,99 @@ const events = [
   },
 ]
 
+const player = [
+  {
+    img: brazhnikov,
+    name: 'Бражников Александр Евгеньевич',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 1159,
+    status: 'Персона',
+    lastTime: '14:55',
+  },
+  {
+    img: pripachkin,
+    name: 'Припачкин Юрий Игоревич',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 1054,
+    status: 'Персона',
+    lastTime: '15:04',
+  },
+  {
+    img: yan,
+    name: 'Кривоносов Ян Анатольевич',
+    city: 'Новороссийск',
+    country: 'Россия',
+    like: 0,
+    views: 330,
+    status: 'Персона',
+    lastTime: '01.07.2023',
+  },
+  {
+    img: zelenevsky,
+    name: 'Зеленевский Максим Юрьевич',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 697,
+    status: 'Персона',
+    lastTime: '01.07.2023',
+  },
+  {
+    img: gorcharuk,
+    name: 'Гончарук Виктор Александрович',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 330,
+    status: 'Персона',
+    lastTime: '01.07.2023',
+  },
+  {
+    img: chulkov,
+    name: 'Чулков Игорь Владимирович',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 277,
+    status: 'Персона',
+    lastTime: '01.07.2023',
+  },
+  {
+    img: romanyuk,
+    name: 'Романюк Валерий Иванович',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 245,
+    status: 'Персона',
+    lastTime: '15:04',
+  },
+  {
+    img: kvasnikov,
+    name: 'Квасников Михаил Юрьевич',
+    city: 'Москва',
+    country: 'Россия',
+    like: 0,
+    views: 244,
+    status: 'Персона',
+    lastTime: '15:04',
+  },
+]
 
 export const display = function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", "pt_15", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", "pt_15", "home", this.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
           <div class="home">
 
-            <section class="home_news slider">
+            {/* <section class="home_news slider">
               <div class="slider_header">
                 <div>
                   <h2>Новости</h2>
@@ -184,7 +204,7 @@ export const display = function () {
                   })
                 }
               </div>
-            </section>
+            </section> */}
 
             <section class="home_link link_block">
               <a href="/goal">
@@ -224,23 +244,99 @@ export const display = function () {
                     events.map(item => {
                       return (
                         <div class="carousel_card">
+                          <span class="carousel_card_category">{item.category}</span>
                           <div class="carousel_card_img" style={`background-image: url(${item.cover})`}>
-                            {/* <img src={item.cover} /> */}
+                            <div class="carousel_card_logo">
+                              <img src={item.logo} alt="" />
+                            </div>
                           </div>
-                          <h5>{item.title}</h5>
-                          <span>{item.date}</span>
-                          <span>{item.location}</span>
-                          <span>{item.views}</span>
+                          <div class="carousel_card_info">
+                            <h5 class="carousel_card_info_title">{item.title}</h5>
+                            <span class="carousel_card_info_date">
+                              <img src={date} alt="Дата проведения мероприятия" />
+                              {item.date}
+                            </span>
+                            <span class="carousel_card_info_location">
+                              <img src={map} alt="Место проведения мероприятия" />
+                              {item.location}
+                            </span>
+                            <span class="carousel_card_info_views">
+                              <img src={viewsDark} alt="Просмотры записи" />
+                              {item.views}
+                            </span>
+                          </div>
                         </div>
                       )
                     })
                   }
                 </div>
               </div>
-
             </section>
             {/* slider without arrors */}
 
+            {/* <section class="home_membership">
+              <div class="home_membership_item">
+                <span>О РАКИБ</span>
+              </div>
+              <div class="home_membership_item">
+                <span>Как вступить?</span>
+              </div>
+              <div class="home_membership_item">
+                <span>Как продлить?</span>
+              </div>
+              <div class="home_membership_item">
+                <span>Как проверить ?</span>
+              </div>
+            </section> */}
+
+            {/* slider with arrow start */}
+            <section class="home_users slider">
+              <div class="slider_header">
+                <div>
+                  <h2>Участники</h2>
+                  <p>Деловое сообщество</p>
+                </div>
+                <div class="home_news_nav">
+                  <button
+                    class="arrow arrow_dark"
+                    onclick={() => {
+                      this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 20;
+                    }}
+                  >
+                    <img src={arrPrevDark} />
+                  </button>
+                  <button
+                    class="arrow arrow_dark"
+                    onclick={() => {
+                      this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 20;
+                    }}
+                  >
+                    <img src={arrNextDark} />
+                  </button>
+                  <a href="/news" class="btn_link home_events_link">Все участники</a>
+                </div>
+              </div>
+
+              <div class="carousel" ref="playerCarousel">
+                {
+                  player.map(item => {
+                    return (
+                      <div class="carousel_person" ref="playerSlide">
+                        <a href="/" class="carousel_person_circle">
+                          <div
+                            class="carousel_person_img"
+                            style={`background-image: url(${item.img})`}
+                          ></div>
+                        </a>
+                        <span class="carousel_person_status">{item.status}</span>
+                        <h5 class="carousel_person_name">{item.name}</h5>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            </section>
+            {/* slider with arrow end */}
           </div>
         </div>
       </main >

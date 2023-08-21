@@ -1,5 +1,20 @@
 .home {
   &_news {
+    &_wrap {
+      position: relative;
+      z-index: 10;
+      width: calc(100% - 260px);
+      left: 260px;
+      transition: all .5s ease;
+
+      &_close {
+        left: 78px;
+        width: calc(100% - 78px);
+      }
+    }
+  }
+
+  &_news {
     background: rgba(16, 22, 34, .74);
     padding: 20px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
@@ -15,6 +30,12 @@
   &_link {
     a {
       background: var(--back_linkFiolet);
+    }
+
+    &:hover {
+      a {
+        background: rgb(45 39 71);
+      }
     }
   }
 

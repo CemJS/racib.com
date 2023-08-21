@@ -1,5 +1,5 @@
 const fn = {
-    "resize": function () {
+    "canvas": function () {
         let canvas = this.Ref.canvas;
         let ctx = canvas.getContext('2d');
 
@@ -82,7 +82,6 @@ const fn = {
             }
         }
 
-
         // push частицы в массив
         function initParticle() {
             particlesArray = [];
@@ -93,11 +92,33 @@ const fn = {
                 let y = (Math.random() * ((innerHeight - size * 2) - (size * 2)) + size * 2);
                 let directionX = (Math.random() * 5) - 2.5;
                 let directionY = (Math.random() * 5) - 2.5;
-                let color = '#8dfcf6ad'
+                let color = '#8DFCF6'
 
                 particlesArray.push(new Particle(x, y, directionX, directionY, size, color))
             }
         }
+
+        // соединение частиц
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particlesArray.length; a++) {
+                for (let b = a; b < particlesArray.length; b++) {
+                    let distance =
+                        ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x))
+                        + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
+                        opacityValue = 1 - (distance / 20000);
+                        ctx.strokeStyle = `rgba(141,252,246, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
         // анимация всего этого дела
         function animate() {
             requestAnimationFrame(animate);
@@ -109,27 +130,23 @@ const fn = {
             connect();
         }
 
-        // соединение частиц
-        function connect() {
-            for (let a = 0; a < particlesArray.length; a++) {
-                for (let b = a; b < particlesArray.length; b++) {
-                    let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) + ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                    if (distance < (canvas.width / 7) * (canvas.height / 7)) {
-                        ctx.strokeStyle = '#8dfcf6ad';
-                        ctx.lineWidth = 1;
-                        ctx.beginPath();
-                        ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                        ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
+        // изменение размера окна, обновление размеров окна и радиуса мыши 
+        // доработать!
+        window.addEventListener("resize", function () {
+            canvas.width = innerWidth;
+            canvas.height = innerHeight;
+            mouse.radius = ((canvas.height / 80) * (canvas.height / 80));
+            initParticle();
+        });
 
+        // если мышь убрали с экрана, убираем его последнюю позицию
+        window.addEventListener("mouseout", function () {
+            mouse.x = undefined;
+            mouse.y = undefined;
+        });
 
         initParticle();
         animate();
-
 
         this.init();
     }
