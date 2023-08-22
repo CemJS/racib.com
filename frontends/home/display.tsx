@@ -243,24 +243,24 @@ export const display = function () {
                   {
                     events.map(item => {
                       return (
-                        <div class="carousel_card">
-                          <span class="carousel_card_category">{item.category}</span>
-                          <div class="carousel_card_img" style={`background-image: url(${item.cover})`}>
-                            <div class="carousel_card_logo">
+                        <div class="card">
+                          <span class="card_category">{item.category}</span>
+                          <div class="card_img" style={`background-image: url(${item.cover})`}>
+                            <div class="card_logo">
                               <img src={item.logo} alt="" />
                             </div>
                           </div>
-                          <div class="carousel_card_info">
-                            <h5 class="carousel_card_info_title">{item.title}</h5>
-                            <span class="carousel_card_info_date">
+                          <div class="card_info">
+                            <h5 class="card_info_title">{item.title}</h5>
+                            <span class="card_info_date">
                               <img src={date} alt="Дата проведения мероприятия" />
                               {item.date}
                             </span>
-                            <span class="carousel_card_info_location">
+                            <span class="card_info_location">
                               <img src={map} alt="Место проведения мероприятия" />
                               {item.location}
                             </span>
-                            <span class="carousel_card_info_views">
+                            <span class="card_info_views">
                               <img src={viewsDark} alt="Просмотры записи" />
                               {item.views}
                             </span>

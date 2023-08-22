@@ -1,18 +1,5 @@
 .about {
-  &_fact {
-    &_list {
-      padding-left: 25px;
 
-      &_item {
-        list-style-type: square;
-        line-height: 24px;
-      }
-
-      &_item:not(:last-child) {
-        padding-bottom: 20px;
-      }
-    }
-  }
 
   &_public {
     &_img {

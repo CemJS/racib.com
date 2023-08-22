@@ -214,11 +214,11 @@ export const display = function () {
 
             <section class="about_fact">
               <h2 class="block_default_title">Факты о РАКИБ</h2>
-              <ul class="about_fact_list">
+              <ul class="list">
                 {
                   facts.map(item => {
                     return (
-                      <li class="about_fact_list_item">{item.text}</li>
+                      <li class="list_item">{item.text}</li>
                     )
                   })
                 }

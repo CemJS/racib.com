@@ -3,8 +3,8 @@
     &_wrap {
       position: relative;
       z-index: 10;
-      width: calc(100% - 260px);
-      left: 260px;
+      width: calc(100% - 295px);
+      left: 295px;
       transition: all .5s ease;
 
       &_close {
@@ -43,8 +43,9 @@
     overflow: hidden;
     background-image: url('images/banners/rosfin.png');
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    height: 300px;
+    background-size: cover;
+    background-position: center center;
+    height: 280px;
     width: 100%;
     position: relative;
     color: var(--white);

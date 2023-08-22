@@ -26,6 +26,18 @@
       ]
     },
     {
+      "url": "/events",
+      "front": [
+        "events"
+      ]
+    },
+    {
+      "url": "/join",
+      "front": [
+        "join"
+      ]
+    },
+    {
       "all": true,
       "front": "footer"
     }
