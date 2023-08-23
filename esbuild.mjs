@@ -14,8 +14,15 @@ const runServe = process.argv.includes("--runServe")
 const runFront = process.argv.includes("--runFront")
 const dirFrontends = path.resolve("frontends")
 const dirServices = path.resolve("services")
+const dirImages = path.resolve("assets", "images")
+const diSvg = path.resolve("assets", "svg")
 let cemconfig = JSON.parse(fs.readFileSync("cemconfig.json"))
-
+if (!fs.existsSync("./public/assets/img")) {
+    fs.mkdirSync("./public/assets/img");
+}
+if (!fs.existsSync("./temp")) {
+    fs.mkdirSync("./temp");
+}
 const options = {
     publicPath: "/assets",
     outdir: "public/assets/",
@@ -54,6 +61,41 @@ const options = {
                 build.onResolve({ filter: /.(jpg|jpeg|png|svg|gif)$/ }, (args) => {
                     args.path = args.path.replace("@", "")
                     return { path: path.resolve("assets", args.path) }
+                })
+            }
+        },
+        {
+            name: "assets-json",
+            setup(build) {
+                build.onResolve({ filter: /^@json/ }, (args) => {
+
+                    let file = path.resolve(args.path.replace("@", "") + ".json")
+                    let json = JSON.parse(fs.readFileSync(file))
+                    if (Array.isArray(json)) {
+                        for (let item of json) {
+                            for (let key in item) {
+
+                                if (typeof item[key] == "string" && item[key].startsWith("@svg")) {
+
+                                }
+
+                                if (typeof item[key] == "string" && item[key].startsWith("@images")) {
+                                    let fileDir = path.resolve("public/assets/img/")
+                                    let fileName = item[key].replace("@images/", "")
+                                    let fileDirSource = path.resolve(dirImages, fileName)
+                                    fileName = fileName.replace(/\//g, '-');
+                                    item[key] = "/assets/img/" + fileName
+                                    fs.copyFile(fileDirSource, path.resolve(fileDir, fileName), (err) => {
+                                    });
+                                }
+                            }
+                        }
+                    } else {
+
+                    }
+                    // args.path = args.path.replace("@", "")
+                    fs.writeFileSync(file.replace("json", "temp"), JSON.stringify(json));
+                    return { path: file.replace("json", "temp") }
                 })
             }
         }
