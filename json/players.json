@@ -1,0 +1,82 @@
+[
+  {
+    "img": "/assets/brazhnikov-TQ3QWM2R.jpg",
+    "name": "Бражников Александр Евгеньевич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 1159,
+    "status": "Персона",
+    "lastTime": "14:55"
+  },
+  {
+    "img": "/assets/pripachkin-W7JVVNW7.jpg",
+    "name": "Припачкин Юрий Игоревич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 1054,
+    "status": "Персона",
+    "lastTime": "15:04"
+  },
+  {
+    "img": "/assets/yan-TYGOZK4J.jpg",
+    "name": "Кривоносов Ян Анатольевич",
+    "city": "Новороссийск",
+    "country": "Россия",
+    "like": 0,
+    "views": 330,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "/assets/zelenevsky-6MR6DAIE.jpg",
+    "name": "Зеленевский Максим Юрьевич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 697,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "/assets/gorcharuk-HWFCXZA4.jpg",
+    "name": "Гончарук Виктор Александрович",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 330,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "/assets/chulkov-JBUBAEIV.jpg",
+    "name": "Чулков Игорь Владимирович",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 277,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "/assets/romanyuk-Q3CC7MUZ.jpg",
+    "name": "Романюк Валерий Иванович",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 245,
+    "status": "Персона",
+    "lastTime": "15:04"
+  },
+  {
+    "img": "/assets/kvasnikov-B7E4KK6K.jpg",
+    "name": "Квасников Михаил Юрьевич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 244,
+    "status": "Персона",
+    "lastTime": "15:04"
+  }
+]

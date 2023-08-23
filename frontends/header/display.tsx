@@ -22,8 +22,8 @@ const sidebarList = [
 	},
 	{
 		img: community,
-		name: 'Сообщества',
-		link: '/',
+		name: 'Участники',
+		link: '/players',
 	},
 	{
 		img: events,

@@ -16,7 +16,7 @@
 
   &_news {
     background: rgba(16, 22, 34, .74);
-    padding: 20px;
+    // padding: 20px;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
     color: var(--white);
 
@@ -161,6 +161,40 @@
 
     &_banner {
       height: 250px;
+
+      &_info {
+        transform: translateY(75px);
+
+        &_date {
+          font-size: 18px;
+
+          img {
+            width: 25px;
+          }
+        }
+
+        &_title,
+        &_desc {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
     }
   }
+}
+
+@media(max-width: 1100px) {
+
+  .home {
+    &_banner {
+      height: 220px;
+
+      &_info {
+        transform: translateY(55px);
+        gap: 13px;
+      }
+    }
+  }
+
+
 }

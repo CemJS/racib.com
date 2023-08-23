@@ -1,6 +1,6 @@
 import { Cemjsx } from "cemjs-all"
-import arrNext from '@svg/icons/nextWhite.svg'
-import arrPrev from '@svg/icons/prevWhite.svg'
+import arrNext from '@svg/icons/light/nextWhite.svg'
+import arrPrev from '@svg/icons/light/prevWhite.svg'
 
 import new1 from '@images/news/coverRacib.png'
 import new2 from '@images/news/coverBlockchainLife.png'
