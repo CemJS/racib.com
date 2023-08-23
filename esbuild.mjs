@@ -15,7 +15,7 @@ const runFront = process.argv.includes("--runFront")
 const dirFrontends = path.resolve("frontends")
 const dirServices = path.resolve("services")
 const dirImages = path.resolve("assets", "images")
-const diSvg = path.resolve("assets", "svg")
+const dirSvg = path.resolve("assets", "svg")
 let cemconfig = JSON.parse(fs.readFileSync("cemconfig.json"))
 if (!fs.existsSync("./public/assets/img")) {
     fs.mkdirSync("./public/assets/img");
@@ -76,7 +76,13 @@ const options = {
                             for (let key in item) {
 
                                 if (typeof item[key] == "string" && item[key].startsWith("@svg")) {
-
+                                    let fileDir = path.resolve("public/assets/img/")
+                                    let fileName = item[key].replace("@svg/", "")
+                                    let fileDirSource = path.resolve(dirSvg, fileName)
+                                    fileName = fileName.replace(/\//g, '-');
+                                    item[key] = "/assets/img/" + fileName
+                                    fs.copyFile(fileDirSource, path.resolve(fileDir, fileName), (err) => {
+                                    });
                                 }
 
                                 if (typeof item[key] == "string" && item[key].startsWith("@images")) {
