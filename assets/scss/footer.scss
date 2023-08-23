@@ -184,6 +184,13 @@
   }
 }
 
+@media(max-width: 1200px) {
+  .footer {
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+}
+
 @media(max-width: 775px) {
   .footer {
     &_inner {

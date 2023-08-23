@@ -234,6 +234,20 @@ section {
     }
   }
 
+  @media(max-width: 1250px) {
+    a {
+      padding: 20px 25px;
+    }
+
+    &_icon {
+      width: 25px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+  }
+
 }
 
 .input {
@@ -512,6 +526,7 @@ section {
   box-shadow: 0 4px 24px rgba(0, 0, 0, .12);
   transition: box-shadow .3s ease-out, transform .3s ease-out;
   border-radius: var(--borderR);
+  box-sizing: border-box;
 
   &_category {
     border-radius: 30px;
@@ -569,6 +584,7 @@ section {
     flex-direction: column;
     align-content: space-between;
     gap: 15px;
+    width: 285px;
 
     &_title {
       font-size: 16px;

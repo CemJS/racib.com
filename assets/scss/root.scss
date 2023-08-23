@@ -120,6 +120,11 @@ body {
         left: 78px;
         width: calc(100% - 78px);
     }
+
+    @media(max-width: 1200px) {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
 }
 
 

@@ -2,7 +2,7 @@
   &_news {
     &_wrap {
       position: relative;
-      z-index: 10;
+      // z-index: 10;
       width: calc(100% - 295px);
       left: 295px;
       transition: all .5s ease;
@@ -146,6 +146,21 @@
         color: var(--white);
         background: var(--title);
       }
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .home {
+    &_news {
+      &_wrap {
+        width: calc(100% - 78px);
+        left: 78px;
+      }
+    }
+
+    &_banner {
+      height: 250px;
     }
   }
 }

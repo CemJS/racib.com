@@ -146,6 +146,8 @@ const player = [
   },
 ]
 
+
+
 export const display = function () {
   return (
     <div class="main_wrap">
