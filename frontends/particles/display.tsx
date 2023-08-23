@@ -10,7 +10,7 @@ import new5 from '@images/news/rus.jpg'
 import new6 from '@images/news/sber.jpg'
 import new7 from '@images/news/friends.png'
 import new8 from '@images/news/winner.jpg'
-import news from 'json/news.json'
+import news from '@json/news'
 import views from '@svg/icons/views.svg'
 
 // const news = [
