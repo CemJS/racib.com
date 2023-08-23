@@ -11,20 +11,6 @@ import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 import viewsDark from '@svg/icons/dark/views.svg'
 
-import cover1 from '@images/events/cover/1.png'
-import cover2 from '@images/events/cover/2.jpg'
-import cover3 from '@images/events/cover/3.jpg'
-import logo1 from '@images/events/logo/1.png'
-import logo2 from '@svg/racib.svg'
-
-import brazhnikov from '@images/users/brazhnikov.jpg'
-import chulkov from '@images/users/chulkov.jpg'
-import gorcharuk from '@images/users/gorcharuk.jpg'
-import pripachkin from '@images/users/pripachkin.jpg'
-import zelenevsky from '@images/users/zelenevsky.jpg'
-import romanyuk from '@images/users/romanyuk.jpg'
-import kvasnikov from '@images/users/kvasnikov.jpg'
-import yan from '@images/users/yan.jpg'
 import players from '@json/players'
 import events from '@json/events'
 
@@ -49,7 +35,7 @@ export const display = function () {
                 {/* <p>CryptoSummit 2023</p> */}
               </a>
             </section>
-            {/* slider with arrors, with background */}
+
 
             <section class="home_banner">
               <div class="home_banner_info">
@@ -62,11 +48,6 @@ export const display = function () {
                 <p class="home_banner_info_desc">На базе МГИМО состоится  международный семинар Организации Объединенных Наций по противодействию использованию виртуальных активов в совершении преступлений, в том числе для финансировании терроризма.</p>
               </div>
             </section>
-
-
-            {/* slider without arrors */}
-
-
 
             <section class="home_events slider">
               <div class="slider_header">
@@ -116,7 +97,6 @@ export const display = function () {
                   }}
 
                   ontouchstart={(e) => {
-                    console.log('=d004e1=', e)
                     const firstTouch = e.touches[0];
                     x1 = firstTouch.clientX;
                     y1 = firstTouch.clientY;
@@ -192,8 +172,6 @@ export const display = function () {
                 </div>
               </div>
             </section>
-
-
 
             {/* slider without arrors */}
 

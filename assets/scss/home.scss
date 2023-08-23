@@ -195,6 +195,42 @@
       }
     }
   }
+}
 
 
+@media(max-width: 600px) {
+  .home {
+    &_news {
+      &_wrap {
+        width: calc(100% - 60px);
+        left: 60px;
+      }
+    }
+
+    &_banner {
+      height: 150px;
+      background-position: left center;
+    }
+  }
+}
+
+@media(max-width: 464px) {
+  .home {
+    &_banner {
+      &_info {
+        padding: 15px;
+        gap: 10px;
+
+        &_date {
+          font-size: 16px;
+        }
+
+        &_title,
+        &_desc {
+          font-size: 16px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
 }
