@@ -44,6 +44,18 @@
       ]
     },
     {
+      "url": "/userAgreement",
+      "front": [
+        "userAgreement"
+      ]
+    },
+    {
+      "url": "/privacy",
+      "front": [
+        "privacy"
+      ]
+    },
+    {
       "all": true,
       "front": "footer"
     }

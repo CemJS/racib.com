@@ -20,8 +20,16 @@
   // number variables
   --borderR: 15px;
 
-  --count: 10;
-  --time: 2;
+  // for calendar
+  --light_body: #f3f8fe;
+  --light_many: #fdfdfd;
+  --light_second: #c3c2c8;
+  --light_hover: #edf0f5;
+  --light_text: #151426;
+  --blue: #0000ff;
+  --shadow: rgba(100, 100, 111, 0.2);
+  --ff: cursive;
+
 }
 
 :root[theme='test'] {

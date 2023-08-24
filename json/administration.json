@@ -1,0 +1,82 @@
+[
+  {
+    "img": "@images/administration/pripachkin.jpg",
+    "name": "Припачкин Юрий Игоревич",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Президент РАКИБ"
+  },
+  {
+    "img": "@images/administration/brazhnikov.jpg",
+    "name": "Бражников Александр Евгеньевич",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Исполнительный директор"
+  },
+  {
+    "img": "@images/administration/gorcharuk.jpg",
+    "name": "Гончарук Виктор Александрович",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент по акселерации"
+  },
+  {
+    "img": "@images/administration/kamnev.jpg",
+    "name": "Камнев Вячеслав Евгеньевич",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент по развитию медиаактивов и систем их управления"
+  },
+  {
+    "img": "@images/administration/stupin.jpg",
+    "name": "Ступин Дмитрий Алексеевич",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент по развитию электроэнергии для вычислительных мощностей"
+  },
+  {
+    "img": "@images/administration/runets.jpg",
+    "name": "Рунец Игорь Александрович",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент по вопросам майнинга"
+  },
+  {
+    "img": "@images/administration/zelenevsky.jpg",
+    "name": "Зеленевский Максим Юрьевич",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент РАКИБ по коммерческим проектам"
+  },
+  {
+    "img": "@images/administration/kazovsky.jpg",
+    "name": "Казовский Наум Иосифович",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент РАКИБ программы искусственного интеллекта"
+  },
+  {
+    "img": "@images/administration/bogoyavlensky.jpg",
+    "name": "Богоявленский Дмитрий Борисович",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент РАКИБ по инвестиционным проектам"
+  },
+  {
+    "img": "@images/administration/zaripov.jpg",
+    "name": "Зарипов Артур Рафаилович",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Вице-президент по развитию цифровых технологий"
+  }
+]

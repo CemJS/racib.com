@@ -1,5 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
+import next from '@svg/icons/light/nextWhite.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
 import goal from '@svg/icons/book.svg'
@@ -7,97 +8,11 @@ import pencil from '@svg/icons/pencil.svg'
 import smi from '@images/banners/public.jpg'
 import education from '@images/banners/education.png'
 
-import brazhnikov from '@images/users/brazhnikov.jpg'
-import chulkov from '@images/users/chulkov.jpg'
-import gorcharuk from '@images/users/gorcharuk.jpg'
-import pripachkin from '@images/users/pripachkin.jpg'
-import zelenevsky from '@images/users/zelenevsky.jpg'
-import romanyuk from '@images/users/romanyuk.jpg'
-import kvasnikov from '@images/users/kvasnikov.jpg'
-import yan from '@images/users/yan.jpg'
 
-const players = [
-  {
-    img: brazhnikov,
-    name: 'Бражников Александр Евгеньевич',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 1159,
-    status: 'Персона',
-    lastTime: '14:55',
-  },
-  {
-    img: pripachkin,
-    name: 'Припачкин Юрий Игоревич',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 1054,
-    status: 'Персона',
-    lastTime: '15:04',
-  },
-  {
-    img: yan,
-    name: 'Кривоносов Ян Анатольевич',
-    city: 'Новороссийск',
-    country: 'Россия',
-    like: 0,
-    views: 330,
-    status: 'Персона',
-    lastTime: '01.07.2023',
-  },
-  {
-    img: zelenevsky,
-    name: 'Зеленевский Максим Юрьевич',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 697,
-    status: 'Персона',
-    lastTime: '01.07.2023',
-  },
-  {
-    img: gorcharuk,
-    name: 'Гончарук Виктор Александрович',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 330,
-    status: 'Персона',
-    lastTime: '01.07.2023',
-  },
-  {
-    img: chulkov,
-    name: 'Чулков Игорь Владимирович',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 277,
-    status: 'Персона',
-    lastTime: '01.07.2023',
-  },
-  {
-    img: romanyuk,
-    name: 'Романюк Валерий Иванович',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 245,
-    status: 'Персона',
-    lastTime: '15:04',
-  },
-  {
-    img: kvasnikov,
-    name: 'Квасников Михаил Юрьевич',
-    city: 'Москва',
-    country: 'Россия',
-    like: 0,
-    views: 244,
-    status: 'Персона',
-    lastTime: '15:04',
-  },
-]
+import admins from '@json/administration'
+import directorate from '@json/directorate'
+import observers from '@json/observers'
+import experts from '@json/experts'
 
 
 const facts = [
@@ -172,8 +87,8 @@ export const display = function () {
               <p class="block_default_desc">Исполнительными органами управления РАКИБ являются: президент (единоличный исполнительный орган), исполнительный директор и правление. Правление Ассоциации является совещательным органом при президенте Ассоциации и состоит из вице-президентов, а также иных лиц, назначенных президентом.</p>
             </section>
 
-            <section class="about_rule ">
-              <h3>Руководство РАКИБ</h3>
+            <section class="about_rule">
+              <h3 class="pY_25 block_default_title">Руководство РАКИБ</h3>
               <div class="carousel_wrap">
                 <button
                   class="arrow arrow_dark arrow_left"
@@ -193,7 +108,7 @@ export const display = function () {
                 </button>
                 <div class="carousel" ref="ruleCarousel">
                   {
-                    players.map(item => {
+                    admins.map(item => {
                       return (
                         <div class="carousel_person" ref="ruleSlide">
                           <a href="/" class="carousel_person_circle">
@@ -211,6 +126,154 @@ export const display = function () {
                 </div>
               </div>
             </section>
+
+            <div class="link_block">
+              <a href="/">
+                <img src={next} />
+                <span>Перейти на страницу</span>
+              </a>
+            </div>
+
+            <section class="about_directore">
+              <h3 class="pY_25 block_default_title">Дирекция РАКИБ</h3>
+              <div class="carousel_wrap">
+                <button
+                  class="arrow arrow_dark arrow_left"
+                  onclick={() => {
+                    this.Ref.directoreCarousel.scrollLeft -= this.Ref.directoreSlide.offsetWidth + 20;
+                  }}
+                >
+                  <img src={arrPrevDark} />
+                </button>
+                <button
+                  class="arrow arrow_dark arrow_right"
+                  onclick={() => {
+                    this.Ref.directoreCarousel.scrollLeft += this.Ref.directoreSlide.offsetWidth + 20;
+                  }}
+                >
+                  <img src={arrNextDark} />
+                </button>
+                <div class="carousel" ref="directoreCarousel">
+                  {
+                    directorate.map(item => {
+                      return (
+                        <div class="carousel_person" ref="directoreSlide">
+                          <a href="/" class="carousel_person_circle">
+                            <div
+                              class="carousel_person_img"
+                              style={`background-image: url(${item.img})`}
+                            ></div>
+                          </a>
+                          <span class="carousel_person_status">{item.status}</span>
+                          <h5 class="carousel_person_name">{item.name}</h5>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+            </section>
+
+            <div class="link_block">
+              <a href="/">
+                <img src={next} />
+                <span>Перейти на страницу</span>
+              </a>
+            </div>
+
+            <section class="about_observers">
+              <h3 class="pY_25 block_default_title">Наблюдательный совет РАКИБ</h3>
+              <div class="carousel_wrap">
+                <button
+                  class="arrow arrow_dark arrow_left"
+                  onclick={() => {
+                    this.Ref.observersCarousel.scrollLeft -= this.Ref.observersSlide.offsetWidth + 20;
+                  }}
+                >
+                  <img src={arrPrevDark} />
+                </button>
+                <button
+                  class="arrow arrow_dark arrow_right"
+                  onclick={() => {
+                    this.Ref.observersCarousel.scrollLeft += this.Ref.observersSlide.offsetWidth + 20;
+                  }}
+                >
+                  <img src={arrNextDark} />
+                </button>
+                <div class="carousel" ref="observersCarousel">
+                  {
+                    observers.map(item => {
+                      return (
+                        <div class="carousel_person" ref="observersSlide">
+                          <a href="/" class="carousel_person_circle">
+                            <div
+                              class="carousel_person_img"
+                              style={`background-image: url(${item.img})`}
+                            ></div>
+                          </a>
+                          <span class="carousel_person_status">{item.status}</span>
+                          <h5 class="carousel_person_name">{item.name}</h5>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+            </section>
+
+            <div class="link_block">
+              <a href="/">
+                <img src={next} />
+                <span>Перейти на страницу</span>
+              </a>
+            </div>
+
+            <section class="about_experts">
+              <h3 class="pY_25 block_default_title">Экспертный совет РАКИБ</h3>
+              <div class="carousel_wrap">
+                <button
+                  class="arrow arrow_dark arrow_left"
+                  onclick={() => {
+                    this.Ref.expertsCarousel.scrollLeft -= this.Ref.expertsSlide.offsetWidth + 20;
+                  }}
+                >
+                  <img src={arrPrevDark} />
+                </button>
+                <button
+                  class="arrow arrow_dark arrow_right"
+                  onclick={() => {
+                    this.Ref.expertsCarousel.scrollLeft += this.Ref.expertsSlide.offsetWidth + 20;
+                  }}
+                >
+                  <img src={arrNextDark} />
+                </button>
+                <div class="carousel" ref="expertsCarousel">
+                  {
+                    experts.map(item => {
+                      return (
+                        <div class="carousel_person" ref="expertsSlide">
+                          <a href="/" class="carousel_person_circle">
+                            <div
+                              class="carousel_person_img"
+                              style={`background-image: url(${item.img})`}
+                            ></div>
+                          </a>
+                          <span class="carousel_person_status">{item.status}</span>
+                          <h5 class="carousel_person_name">{item.name}</h5>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+              </div>
+            </section>
+
+            <div class="link_block">
+              <a href="/">
+                <img src={next} />
+                <span>Перейти на страницу</span>
+              </a>
+            </div>
 
             <section class="about_fact">
               <h2 class="block_default_title">Факты о РАКИБ</h2>

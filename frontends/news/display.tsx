@@ -18,6 +18,10 @@ export const display = function () {
             </a>
             <span class="back_title">Новости</span>
           </div>
+
+          <section class="news">
+
+          </section>
         </div>
       </main>
     </div>

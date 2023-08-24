@@ -30,15 +30,15 @@ const links = [
 	},
 	{
 		name: "Как вступить?",
-		link: '/'
+		link: '/join'
 	},
 	{
 		name: "Пользовательское соглашение",
-		link: '/'
+		link: '/userAgreement'
 	},
 	{
 		name: "Политика обработки персональных данных",
-		link: '/'
+		link: '/privacy'
 	},
 	{
 		name: "Реклама на сайте",
@@ -149,16 +149,6 @@ export const display = function () {
 							Powered by Crypto Emergency
 						</span>
 					</div>
-
-
-
-					{/* <div class="footer_powered">
-						<span>РАКИБ © 2021 - 2023, Все права защищены.</span>
-						<span class="cem">
-							<img class="footer_icon" src={logoCem} alt="Powered by Crypto Emergency" />
-							Powered by Crypto Emergency
-						</span>
-					</div> */}
 				</div>
 			</footer>
 		</div>

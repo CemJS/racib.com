@@ -1,52 +1,49 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
-import cover1 from '@images/events/cover/1.png'
-import cover2 from '@images/events/cover/2.jpg'
-import cover3 from '@images/events/cover/3.jpg'
-import logo1 from '@images/events/logo/1.png'
-import logo2 from '@svg/racib.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 import viewsDark from '@svg/icons/dark/views.svg'
 
-const events = [
+import arrNextDark from '@svg/icons/dark/next.svg'
+import arrPrevDark from '@svg/icons/dark/prev.svg'
+
+import events from '@json/events'
+
+const category = [
   {
-    category: 'Семинар',
-    cover: cover1,
-    logo: logo1,
-    title: 'Противодействие использованию виртуальных активов в совершении преступлений и финансировании терроризма',
-    date: '24 августа 2023, 10:00',
-    location: 'Москва',
-    views: 11,
+    name: 'Вечеринка',
   },
   {
-    category: 'Саммит',
-    cover: cover2,
-    logo: logo2,
-    title: 'III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ',
-    date: '13-14 сентября 2023',
-    location: 'Москва',
-    views: 153,
+    name: 'Встреча',
   },
   {
-    category: 'Конференция',
-    cover: cover3,
-    logo: logo1,
-    title: 'CRYPTO FUTURE TURKEY',
-    date: '13-14 сентября 2023',
-    location: 'Турция, Аланья',
-    views: 18,
+    name: 'Конференция',
   },
   {
-    category: 'Форум',
-    cover: cover2,
-    logo: logo2,
-    title: 'Blockchain Life 2023',
-    date: '24-25 октября 2023',
-    location: 'Дубай, ОАЭ',
-    views: 18,
+    name: 'Круглый стол',
   },
+  {
+    name: 'Премия',
+  },
+  {
+    name: 'Саммит',
+  },
+  {
+    name: 'Семинар',
+  },
+  {
+    name: 'Форум',
+  },
+  {
+    name: 'Zoom',
+  }
 ]
+
+const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
+const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+
+const monthList = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июль', 'Июнь', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
 
 export const display = function () {
   return (
@@ -67,22 +64,108 @@ export const display = function () {
           </div>
 
           <section class="events">
-            <div class="events_filter">
-              <div class="events_filter_item">
-                <span class="events_filter_item_title">Событие</span>
-                <span>Искать в описании</span>
+            <div class="filter">
+              <div class="filter_item filter_item_event">
+                <span class="filter_item_title">Событие</span>
+                <input
+                  type="text"
+                  class="filter_input"
+                  placeholder="Искать в описании"
+                />
               </div>
-              <div class="events_filter_item">
-                <span class="events_filter_item_title">Раздел</span>
-                <span>Выбрать раздел</span>
+
+              <div
+                ref="filterCategory"
+                class="filter_item"
+                onclick={() => {
+                  this.Ref.filterCategory.classList.toggle('filter_item_active');
+                }}
+              >
+                <span class="filter_item_title">Раздел</span>
+                <input
+                  type="text"
+                  class="filter_input"
+                  placeholder="Выбрать раздел"
+                />
+                <div class="filter_category">
+                  <ul class="filter_category_list">
+                    {
+                      category.map(item => {
+                        return (
+                          <li class="filter_category_list_item">{item.name}</li>
+                        )
+                      })
+                    }
+                  </ul>
+                </div>
               </div>
-              <div class="events_filter_item">
-                <span class="events_filter_item_title">Местоположение</span>
-                <span>Где искать?</span>
+
+              <div class="filter_item filter_item_location">
+                <span class="filter_item_title">Местоположение</span>
+                <input
+                  type="text"
+                  class="filter_input"
+                  placeholder="Где искать?"
+                />
               </div>
-              <div class="events_filter_item">
-                <span class="events_filter_item_title">Дата</span>
-                <span>Когда искать?</span>
+              <div class="filter_item filter_item_date">
+                <span class="filter_item_title">Дата</span>
+                <input
+                  type="date"
+                  class="filter_input"
+                  placeholder="Когда искать?"
+                />
+
+                <div class="filter_date">
+                  <div class="calendar">
+                    <div class="calendar_header">
+                      <span class="calendar_monthPicker">Август</span>
+                      <div class="calendar_yearPicker">
+                        <span>
+                          <img src={arrPrevDark} alt="Previous year" />
+                        </span>
+                        <span class="calendar_currentYear">2023</span>
+                        <span>
+                          <img src={arrNextDark} alt="Next year" />
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="calendar_body">
+                      <div class="calendar_weekDay">
+                        {
+                          weekDays.map(item => {
+                            return (
+                              <div>{item}</div>
+                            )
+                          })
+                        }
+                      </div>
+                      <div class="calendar_days">
+                        {
+                          days.map((item => {
+                            return (
+                              <div>{item}</div>
+                            )
+                          }))
+                        }
+                      </div>
+                    </div>
+
+                    <div class="calendar_monthLst">
+                      {
+                        monthList.map(item => {
+                          return (
+                            <div>{item}</div>
+                          )
+                        })
+                      }
+                    </div>
+
+                  </div>
+                </div>
+
+
               </div>
             </div>
             <div class="events_list">

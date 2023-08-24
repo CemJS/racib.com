@@ -1,7 +1,7 @@
 const app = document.getElementById('app');
 const preloader = document.getElementById('preloader');
 const percent = document.querySelector('.preloader_percent');
-const prog = document.getElementById('progress');
+// const prog = document.getElementById('progress');
 
 export const loader = async function (Variable) {
     if (app) {
@@ -11,10 +11,10 @@ export const loader = async function (Variable) {
 
 export const progress = async function ({ load, total }) {
     let count = Math.round((load / total) * 100)
-    if (percent && prog) {
+    if (percent) {
         if (count == 100) {
             percent.classList.add("text_blink");
-            percent.textContent = 'Connected!';
+            percent.textContent = '100%';
             setTimeout(() => {
                 if (app && preloader) {
                     app.style.display = "block"
@@ -22,7 +22,7 @@ export const progress = async function ({ load, total }) {
                 }
             }, 777);
         } else {
-            prog.style.width = 200 / 100 * count + 'px';
+            // prog.style.width = 200 / 100 * count + 'px';
             percent.textContent = count + '%';
         }
     }
