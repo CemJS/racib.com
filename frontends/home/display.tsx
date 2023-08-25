@@ -141,10 +141,10 @@ export const display = function () {
                               <img src={map} alt="Место проведения мероприятия" />
                               {item.location}
                             </span>
-                            <span class="card_info_views">
+                            {/* <span class="card_info_views">
                               <img src={viewsDark} alt="Просмотры записи" />
                               {item.views}
-                            </span>
+                            </span> */}
                           </div>
                         </div>
                       )

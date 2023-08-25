@@ -39,13 +39,8 @@ const category = [
   }
 ]
 
-const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
-
-const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-
-const monthList = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июль', 'Июнь', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
-
 export const display = function () {
+
   return (
     <div class="main_wrap">
       <main
@@ -114,18 +109,49 @@ export const display = function () {
                   type="date"
                   class="filter_input"
                   placeholder="Когда искать?"
+                  onclick={() => {
+                    this.Ref.calendar.classList.toggle('filter_date_active');
+                    this.Static.currentMonth = this.Static.monthList[this.Static.current.getMonth()];
+                    // this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
+                    this.init();
+                  }}
                 />
 
-                <div class="filter_date">
+                <div class="filter_date" ref="calendar">
                   <div class="calendar">
+
                     <div class="calendar_header">
-                      <span class="calendar_monthPicker">Август</span>
+                      <span
+                        class="calendar_monthPicker"
+                        onclick={() => {
+                          this.Ref.monthList.classList.add('calendar_monthList_show');
+                          this.init();
+                        }}
+                      >
+                        {this.Static.currentMonth}
+                      </span>
                       <div class="calendar_yearPicker">
-                        <span>
+                        <span
+                          class="calendar_arrow"
+                          onclick={() => {
+                            this.Static.currentYear--;
+                            this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
+                            this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex--);
+                            this.init();
+                          }}
+                        >
                           <img src={arrPrevDark} alt="Previous year" />
                         </span>
-                        <span class="calendar_currentYear">2023</span>
-                        <span>
+                        <span class="calendar_currentYear">{this.Static.currentYear}</span>
+                        <span
+                          class="calendar_arrow"
+                          onclick={() => {
+                            this.Static.currentYear++;
+                            this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
+                            this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex);
+                            this.init();
+                          }}
+                        >
                           <img src={arrNextDark} alt="Next year" />
                         </span>
                       </div>
@@ -134,29 +160,53 @@ export const display = function () {
                     <div class="calendar_body">
                       <div class="calendar_weekDay">
                         {
-                          weekDays.map(item => {
+                          this.Static.resultWeekDays.map((item, index) => {
                             return (
-                              <div>{item}</div>
+                              <div
+                                class={["calendar_weekDay_item", index + 1 == this.Static.currentDay ? "calendar_weekDay_item_active" : null]}
+                              >
+                                {item}
+                              </div>
                             )
                           })
                         }
                       </div>
                       <div class="calendar_days">
                         {
-                          days.map((item => {
+                          this.Static.days.map(((item, index) => {
                             return (
-                              <div>{item}</div>
+                              <div
+                                class={["calendar_days_item", index + 1 == this.Static.current.getDate() ? "calendar_days_item_active" : null]}
+                              >
+                                {item}
+                                <span class="calendar_days_item_effect"></span>
+                                <span class="calendar_days_item_effect"></span>
+                                <span class="calendar_days_item_effect"></span>
+                                <span class="calendar_days_item_effect"></span>
+                              </div>
                             )
                           }))
                         }
                       </div>
                     </div>
 
-                    <div class="calendar_monthLst">
+                    <div class="calendar_monthList" ref="monthList">
                       {
-                        monthList.map(item => {
+                        this.Static.monthList.map((item, index) => {
                           return (
-                            <div>{item}</div>
+                            <div
+                              class="calendar_monthList_item"
+                              onclick={() => {
+                                this.Static.currentMonth = item;
+                                this.Static.currentMonthIndex = index + 1;
+                                this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
+                                this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex--);
+                                this.Ref.monthList.classList.remove('calendar_monthList_show');
+                                this.init();
+                              }}
+                            >
+                              {item}
+                            </div>
                           )
                         })
                       }
@@ -189,10 +239,10 @@ export const display = function () {
                           <img src={map} alt="Место проведения мероприятия" />
                           {item.location}
                         </span>
-                        <span class="card_info_views">
+                        {/* <span class="card_info_views">
                           <img src={viewsDark} alt="Просмотры записи" />
                           {item.views}
-                        </span>
+                        </span> */}
                       </div>
                     </div>
                   )

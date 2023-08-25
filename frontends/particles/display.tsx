@@ -56,15 +56,15 @@ export const display = function () {
               {
                 news.map((item, index) => {
                   return (
-                    <div class="carousel_item" ref="newsSlide" href="/">
+                    <div class="newCard" ref="newsSlide" href="/">
                       <span>{item.category}</span>
-                      <div class="carousel_item_img" style={`background-image: url(${item.img})`}>
+                      <div class="newCard_img" style={`background-image: url(${item.img})`}>
                       </div>
-                      <h5 class="carousel_item_title">{item.title}</h5>
-                      <p class="carousel_item_desc">{item.desc}</p>
-                      <div class="carousel_item_details">
-                        <span class="carousel_item_details_date">{item.date}</span>
-                        <span class="carousel_item_details_views">
+                      <h5 class="newCard_title">{item.title}</h5>
+                      <p class="newCard_desc">{item.desc}</p>
+                      <div class="newCard_details">
+                        <span class="newCard_details_date">{item.date}</span>
+                        <span class="newCard_details_views">
                           {item.views}
                           <img src={views} />
                         </span>

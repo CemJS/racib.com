@@ -20,8 +20,14 @@ export const display = function () {
             <span class="back_title">Пользовательское соглашение</span>
           </div>
 
-          <section class="userAgreement">
-
+          <section class="userAgreement block_default">
+            <h1 class="block_default_title">Пользовательское соглашение</h1>
+            <ul>
+              <li>Общие положения</li>
+              <li>Учётная запись пользователя</li>
+              <li>Согласие на получение сообщений</li>
+              <li>Правила получения товаров/услуг</li>
+            </ul>
           </section>
         </div>
       </main>
