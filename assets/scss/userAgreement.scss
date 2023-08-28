@@ -1,49 +1,57 @@
-.join {
-  &_title {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 18px;
-    line-height: 26px;
-    padding-bottom: 10px;
-  }
+.userAgreement {
+  font-size: 16px;
+  line-height: 22px;
 
-  .list {
+  &_subtitle {
     padding-bottom: 15px;
-
-    &_item:not(:last-child) {
-      padding-bottom: 10px;
-    }
   }
 
-  &_text {
-    padding-bottom: 25px;
+  &_mainList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 
   }
 
-  &_footer {
-    margin-top: 15px;
+  &_secondaryList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-left: 20px;
+  }
+
+  &_innerList {
     padding-top: 15px;
-    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 
-    li:not(:last-child) {
-      padding-bottom: 10px;
+    &_item {
+      list-style-type: square;
     }
   }
 }
 
-@media(max-width: 767px) {
-  .join {
-    &_text {
-      padding-bottom: 10px;
-    }
-  }
-}
 
-@media(max-width: 600px) {
-  .join {
-    &_title {
+@media(max-width: 550px) {
+  .userAgreement {
+    font-size: 14px;
+    line-height: 20px;
+
+    &_subtitle {
       font-size: 16px;
-      line-height: 24px;
+      line-height: 22px;
+      padding-bottom: 7px;
+    }
+
+    &_secondaryList {
+      gap: 10px;
+      padding-left: 10px;
+    }
+
+    &_innerList {
+      padding-top: 10px;
+      padding-left: 18px;
     }
   }
 }

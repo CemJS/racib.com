@@ -114,6 +114,10 @@ section {
     font-weight: 700;
   }
 
+  &_italics {
+    font-style: italic;
+  }
+
   @media(max-width: 600px) {
     font-size: 14px;
     line-height: 22px;
@@ -136,8 +140,8 @@ section {
     line-height: 32px;
   }
 
-  @media(max-width: 600px) {
-    padding: 10px 0;
+  @media(max-width: 675px) {
+    padding: 10px 0 10px 10px;
 
     &-icon {
       width: 10px;
@@ -149,8 +153,30 @@ section {
 
     &_title {
       font-size: 18px;
-      line-height: 26px;
     }
+  }
+
+  @media(max-width: 550px) {
+    gap: 15px;
+
+    &_title {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  @media(max-width: 464px) {
+    margin-bottom: 10px;
+
+    &-icon {
+      width: 7px;
+    }
+
+    &_title {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
   }
 }
 
@@ -213,6 +239,23 @@ section {
   &_desc {
     line-height: 24px;
     font-weight: 400;
+  }
+
+  @media(max-width: 550px) {
+    padding: 15px;
+
+    &_title {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 10px;
+    }
+  }
+
+  @media(max-width: 464px) {
+    &_title {
+      font-size: 14px;
+      line-height: 18px;
+    }
   }
 }
 

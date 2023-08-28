@@ -8,6 +8,7 @@ import events from '@svg/sidebar/calendarDark.svg'
 import news from '@svg/sidebar/newsDark.svg'
 import letter from '@svg/sidebar/letterDark.svg'
 import phone from '@svg/sidebar/phoneDark.svg'
+import sidebarArrow from '@svg/sidebar/sidebarArrow.svg'
 
 import telegram from '@svg/socials/telegram.svg'
 import vk from '@svg/socials/vk.svg'
@@ -71,17 +72,19 @@ export const display = function () {
 			<div
 				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
 
-				<div class="header_burger_wrap">
-					<div
-						class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
-						onclick={() => {
-							this.Variable.openSidebar = !this.Variable.openSidebar;
-							this.Fn.initAll();
-						}}
-					>
-						<span></span>
-					</div>
+
+				<div
+					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
+					onclick={() => {
+						this.Variable.openSidebar = !this.Variable.openSidebar;
+						this.Fn.initAll();
+					}}
+				>
+
+					<img src={sidebarArrow} alt="Toggle sidebar" />
+
 				</div>
+
 
 				<div
 					class="header_acc"

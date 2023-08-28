@@ -125,6 +125,7 @@ body {
     }
 
     @media(max-width: 600px) {
+        padding: 80px 10px 0 10px;
         left: 60px;
         width: calc(100% - 60px);
     }
