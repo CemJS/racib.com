@@ -17,6 +17,9 @@ const dirServices = path.resolve("services")
 const dirImages = path.resolve("assets", "images")
 const dirSvg = path.resolve("assets", "svg")
 let cemconfig = JSON.parse(fs.readFileSync("cemconfig.json"))
+if (!fs.existsSync("./public/assets")) {
+    fs.mkdirSync("./public/assets");
+}
 if (!fs.existsSync("./public/assets/img")) {
     fs.mkdirSync("./public/assets/img");
 }
