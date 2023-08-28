@@ -1,5 +1,6 @@
 @import 'utils/variables.scss';
 @import 'utils/fonts.scss';
+@import 'utils/globalClass.scss';
 
 *,
 ::after,
@@ -25,37 +26,6 @@ html {
     scrollbar-width: thin;
 }
 
-body {
-    height: 100%;
-    margin: 0px;
-    padding: 0 !important;
-    overflow: overlay;
-    color: var(--white);
-    background-color: var(--noble_black);
-    width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-
-    &::-webkit-scrollbar {
-        width: 6px;
-    }
-
-    &::-webkit-scrollbar-button {
-        background-repeat: no-repeat;
-        width: 6px;
-        height: 0px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        border-radius: 5px;
-        background: linear-gradient(45deg, var(--summer_sky) 0, var(--blue_oyster_cult) 45%, var(--akebi_purple) 57%, var(--lilac_lotion) 70%);
-    }
-
-    &::-webkit-scrollbar-track {
-        background-color: transparent;
-    }
-}
-
 p {
     margin: 0;
 }
@@ -63,6 +33,7 @@ p {
 a {
     text-decoration: none;
     color: var(--white);
+
 }
 
 h1,
@@ -73,10 +44,6 @@ h5,
 h6 {
     padding: 0;
     margin: 0;
-}
-
-h1 {
-    font-size: calc(1.375rem + 1.5vw);
 }
 
 ul {
@@ -95,4 +62,76 @@ button {
 
 input {
     font-family: 'Montserrat';
+}
+
+
+
+#app {
+    min-height: var(--app-height);
+    display: flex !important;
+    flex-direction: column;
+}
+
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0 !important;
+    overflow: overlay;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--title);
+
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-button {
+        background-repeat: no-repeat;
+        width: 6px;
+        height: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--back_dark);
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(--back_block);
+    }
+}
+
+.main_wrap {
+    flex-grow: 1;
+    order: 1;
+}
+
+.main {
+    position: relative;
+    width: calc(100% - 295px);
+    left: 295px;
+    padding: 80px 15px 0 15px;
+    // padding: 15px;
+    transition: all 0.5s ease;
+
+    &_close {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
+
+    @media(max-width: 1200px) {
+        left: 78px;
+        width: calc(100% - 78px);
+    }
+
+    @media(max-width: 600px) {
+        left: 60px;
+        width: calc(100% - 60px);
+    }
+}
+
+
+
+.footer_wrap {
+    order: 1;
 }

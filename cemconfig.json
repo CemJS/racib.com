@@ -9,7 +9,50 @@
     {
       "url": "/",
       "front": [
-        "empty"
+        "particles",
+        "home"
+      ]
+    },
+    {
+      "url": "/about",
+      "front": [
+        "about"
+      ]
+    },
+    {
+      "url": "/news",
+      "front": [
+        "news"
+      ]
+    },
+    {
+      "url": "/events",
+      "front": [
+        "events"
+      ]
+    },
+    {
+      "url": "/players",
+      "front": [
+        "players"
+      ]
+    },
+    {
+      "url": "/join",
+      "front": [
+        "join"
+      ]
+    },
+    {
+      "url": "/userAgreement",
+      "front": [
+        "userAgreement"
+      ]
+    },
+    {
+      "url": "/privacy",
+      "front": [
+        "privacy"
       ]
     },
     {

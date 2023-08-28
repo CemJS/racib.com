@@ -1,0 +1,66 @@
+[
+  {
+    "img": "@images/experts/sokolov.jpg",
+    "name": "ИГОРЬ АНАТОЛЬЕВИЧ СОКОЛОВ",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Председатель Экспертного совета РАКИБ"
+  },
+  {
+    "img": "@images/experts/valuk.jpg",
+    "name": "АЛЕКСАНДР НИКОЛАЕВИЧ ВАЛЮК",
+    "city": "Новороссийск",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/gultyaeva.jpg",
+    "name": "ЕЛЕНА ВИКТОРОВНА ГУЛЬТЯЕВА",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/petrov.jpg",
+    "name": "ВАЛЕРИЙ СТАНИСЛАВОВИЧ ПЕТРОВ",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/richka.jpg",
+    "name": "ДЕНИС АНАТОЛЬЕВИЧ РЫЧКА",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/romanyuk.jpg",
+    "name": "ВАЛЕРИЙ ИВАНОВИЧ РОМАНЮК",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/selionov.jpg",
+    "name": "ИГОРЬ АНАТОЛЬЕВИЧ СЕЛИОНОВ",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/chulkov.jpg",
+    "name": "ИГОРЬ ВЛАДИМИРОВИЧ ЧУЛКОВ",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  },
+  {
+    "img": "@images/experts/edemsky.jpg",
+    "name": "АЛЕКСАНДР ВЛАДИМИРОВИЧ ЕДЕМСКИЙ",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Персона"
+  }
+]

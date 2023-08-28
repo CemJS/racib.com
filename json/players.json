@@ -1,0 +1,82 @@
+[
+  {
+    "img": "@images/users/brazhnikov.jpg",
+    "name": "Бражников Александр Евгеньевич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 1159,
+    "status": "Персона",
+    "lastTime": "14:55"
+  },
+  {
+    "img": "@images/users/pripachkin.jpg",
+    "name": "Припачкин Юрий Игоревич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 1054,
+    "status": "Персона",
+    "lastTime": "15:04"
+  },
+  {
+    "img": "@images/users/yan.jpg",
+    "name": "Кривоносов Ян Анатольевич",
+    "city": "Новороссийск",
+    "country": "Россия",
+    "like": 0,
+    "views": 330,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "@images/users/zelenevsky.jpg",
+    "name": "Зеленевский Максим Юрьевич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 697,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "@images/users/gorcharuk.jpg",
+    "name": "Гончарук Виктор Александрович",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 330,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "@images/users/chulkov.jpg",
+    "name": "Чулков Игорь Владимирович",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 277,
+    "status": "Персона",
+    "lastTime": "01.07.2023"
+  },
+  {
+    "img": "@images/users/romanyuk.jpg",
+    "name": "Романюк Валерий Иванович",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 245,
+    "status": "Персона",
+    "lastTime": "15:04"
+  },
+  {
+    "img": "@images/users/kvasnikov.jpg",
+    "name": "Квасников Михаил Юрьевич",
+    "city": "Москва",
+    "country": "Россия",
+    "like": 0,
+    "views": 244,
+    "status": "Персона",
+    "lastTime": "15:04"
+  }
+]

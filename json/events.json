@@ -1,0 +1,56 @@
+[
+  {
+    "category": "Семинар",
+    "cover": "@images/events/cover/1.png",
+    "logo": "@images/events/logo/1.png",
+    "title": "Противодействие использованию виртуальных активов в совершении преступлений и финансировании терроризма",
+    "date": "24 августа 2023, 10:00",
+    "location": "Москва",
+    "views": 11
+  },
+  {
+    "category": "Саммит",
+    "cover": "@images/events/cover/2.jpg",
+    "logo": "@svg/racib.svg",
+    "title": "III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ",
+    "date": "13-14 сентября 2023",
+    "location": "Москва",
+    "views": 153
+  },
+  {
+    "category": "Конференция",
+    "cover": "@images/events/cover/3.jpg",
+    "logo": "@images/events/logo/1.png",
+    "title": "CRYPTO FUTURE TURKEY",
+    "date": "13-14 сентября 2023",
+    "location": "Турция, Аланья",
+    "views": 18
+  },
+  {
+    "category": "Форум",
+    "cover": "@images/events/cover/2.jpg",
+    "logo": "@svg/racib.svg",
+    "title": "Blockchain Life 2023",
+    "date": "24-25 октября 2023",
+    "location": "Дубай, ОАЭ",
+    "views": 18
+  },
+  {
+    "category": "Конференция",
+    "cover": "@images/events/cover/3.jpg",
+    "logo": "@images/events/logo/1.png",
+    "title": "CRYPTO FUTURE TURKEY",
+    "date": "13-14 сентября 2023",
+    "location": "Турция, Аланья",
+    "views": 18
+  },
+  {
+    "category": "Семинар",
+    "cover": "@images/events/cover/1.png",
+    "logo": "@images/events/logo/1.png",
+    "title": "Противодействие использованию виртуальных активов в совершении преступлений и финансировании терроризма",
+    "date": "24 августа 2023, 10:00",
+    "location": "Москва",
+    "views": 11
+  }
+]
