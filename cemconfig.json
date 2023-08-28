@@ -56,6 +56,12 @@
       ]
     },
     {
+      "url": "/error",
+      "front": [
+        "error"
+      ]
+    },
+    {
       "all": true,
       "front": "footer"
     }
