@@ -1,16 +1,12 @@
 import { Cemjsx } from "cemjs-all"
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
-
 import arrNextLight from '@svg/icons/light/nextWhite.svg'
 import arrPrevLight from '@svg/icons/light/prevWhite.svg'
-
-import arrowR from '@svg/icons/arrowR.svg'
-import calendar from '@svg/icons/date.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
-import viewsDark from '@svg/icons/dark/views.svg'
-
+import arrowR from '@svg/icons/arrowR.svg'
+import calendar from '@svg/icons/date.svg'
 import players from '@json/players'
 import events from '@json/events'
 
@@ -32,11 +28,8 @@ export const display = function () {
               <a href="/goal">
                 <img src={arrowR} class="link_block_icon" />
                 <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
-                {/* <p>CryptoSummit 2023</p> */}
               </a>
             </section>
-
-
             <section class="home_banner">
               <div class="home_banner_info">
                 <span class="home_banner_info_date">
@@ -218,7 +211,22 @@ export const display = function () {
                 </div>
               </div>
 
-              <div class="carousel" ref="playerCarousel">
+              <div
+                class="carousel"
+                ref="playerCarousel"
+
+              // onmousedown={(e) => {
+              //   this.Statis.isDragUsers = true;
+              //   this.Static.xStartUsers = e.pageX;
+              //   this.Static.startScrollLeftUsers = this.Ref.playerCarousel.scrollLeft;
+              // }}
+
+              // onmousemove={(e) => {
+              //   if (!this.Statis.isDragUsers) return;
+              //   e.preventDefault();
+              //   this.Ref.playerCarousel.scrollLeft = this.Static.startScrollLeftUsers - (e.pageX - this.Static.xStartUsers);
+              // }}
+              >
                 {
                   players.map(item => {
                     return (

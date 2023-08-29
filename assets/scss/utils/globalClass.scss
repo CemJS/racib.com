@@ -201,6 +201,39 @@ section {
       font-size: 22px;
     }
   }
+
+  @media(max-width: 400px) {
+
+    padding: 8px 0;
+
+    h1 {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+  }
+}
+
+.banner_wrap {
+  position: relative;
+  width: calc(100% - 295px);
+  left: 295px;
+  transition: all 0.5s ease;
+
+  &_close {
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+
+  @media(max-width: 1200px) {
+    left: 78px;
+    width: calc(100% - 78px);
+  }
+
+  @media(max-width: 600px) {
+    left: 60px;
+    width: calc(100% - 60px);
+  }
 }
 
 .general_title {
@@ -327,6 +360,14 @@ section {
     }
   }
 
+  @media(max-width: 400px) {
+    padding: 15px 0;
+
+    a {
+      padding: 10px;
+    }
+  }
+
 }
 
 .input {
@@ -427,6 +468,12 @@ section {
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @media(max-width: 980px) {
+    &:hover {
+      transform: scale(1);
+    }
   }
 
   @media(max-width: 600px) {
@@ -654,6 +701,10 @@ section {
       }
     }
   }
+
+  @media(max-width: 400px) {
+    gap: 10px;
+  }
 }
 
 .newCard {
@@ -685,6 +736,8 @@ section {
     -webkit-box-orient: vertical;
     overflow: hidden;
     height: 45px;
+    display: flex;
+    align-items: center;
   }
 
   &_desc {
@@ -754,6 +807,30 @@ section {
 
   @media(max-width: 600px) {
     gap: 10px;
+  }
+
+  @media(max-width: 400px) {
+    gap: 8px;
+    padding: 0 5px 25px 5px;
+
+    &_img {
+      width: 260px;
+      height: 130px;
+    }
+
+    &_details {
+      span {
+        bottom: 5px;
+      }
+
+      &_date {
+        left: 5px;
+      }
+
+      &_views {
+        right: 5px;
+      }
+    }
   }
 
 }

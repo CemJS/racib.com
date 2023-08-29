@@ -71,8 +71,6 @@ export const display = function () {
 		<header class="header">
 			<div
 				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
-
-
 				<div
 					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
 					onclick={() => {
@@ -80,11 +78,8 @@ export const display = function () {
 						this.Fn.initAll();
 					}}
 				>
-
 					<img src={sidebarArrow} alt="Toggle sidebar" />
-
 				</div>
-
 
 				<div
 					class="header_acc"
@@ -101,6 +96,20 @@ export const display = function () {
 			{/* sidebar start */}
 			<div
 				class={["sidebar", this.Variable.openSidebar ? null : "sidebar_close"]}
+				ontouchstart={(e) => {
+					this.Static.startTouch = e.targetTouches[0].clientX;
+				}}
+
+				ontouchmove={(e) => {
+					this.Static.endTouch = e.targetTouches[0].clientX;
+				}}
+
+				ontouchend={(e) => {
+					if (this.Static.startTouch - this.Static.endTouch > 45) {
+						this.Variable.openSidebar = false;
+					}
+					this.init();
+				}}
 			>
 				<a href="/" onclick={this.Fn.link} class="logo_details">
 					<img src={logo} alt="РАКИБ" />

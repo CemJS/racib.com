@@ -149,6 +149,9 @@ const fn = {
         animate();
 
         this.init();
+    },
+    "swipe": function () {
+
     }
 }
 

@@ -258,3 +258,11 @@
     width: calc(100% - 60px);
   }
 }
+
+@media(max-width: 400px) {
+  .footer {
+    &_logo {
+      height: 50px;
+    }
+  }
+}

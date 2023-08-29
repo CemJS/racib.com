@@ -3,6 +3,7 @@
     background-image: url('images/backImg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 50% 0;
     margin-top: 70px;
     height: 600px;
     width: 100%;
@@ -19,6 +20,12 @@
     @media(max-width: 464px) {
       margin-top: 65px;
       height: 535px;
+    }
+
+    @media(max-width: 400px) {
+      background-position: 25% 0;
+      margin-top: 55px;
+      height: 500px;
     }
   }
 
