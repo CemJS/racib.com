@@ -9,8 +9,14 @@
     width: 100%;
     position: relative;
 
+
+    @media(max-width: 1200px) {
+      height: 565px;
+    }
+
     @media(max-width: 992px) {
-      height: 550px;
+      height: 525px;
+      // background-position: -25% 0;
     }
 
     @media(max-width: 600px) {

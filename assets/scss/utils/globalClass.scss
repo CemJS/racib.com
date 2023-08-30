@@ -543,6 +543,7 @@ section {
 
   @media(max-width: 600px) {
     &_header {
+
       h2 {
         font-size: 16px;
         line-height: 22px;
@@ -555,7 +556,7 @@ section {
     }
   }
 
-  @media(max-width: 464px) {
+  @media(max-width: 490px) {
     &_header {
       flex-direction: column;
       align-items: flex-start;
@@ -737,7 +738,7 @@ section {
     overflow: hidden;
     height: 45px;
     display: flex;
-    align-items: center;
+    // align-items: center;
   }
 
   &_desc {
@@ -1311,4 +1312,22 @@ section {
     }
   }
 
+}
+
+.chooseCategory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: var(--primary_blue);
+  color: var(--white);
+  border-radius: var(--borderR);
+  padding: 8px 12px;
+  transition: all .3s ease;
+  width: fit-content;
+
+  &_close {
+    cursor: pointer;
+    font-weight: 500;
+  }
 }

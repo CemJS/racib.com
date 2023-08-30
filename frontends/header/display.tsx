@@ -73,7 +73,8 @@ export const display = function () {
 				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
 				<div
 					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
-					onclick={() => {
+					ref="burger"
+					onclick={(e) => {
 						this.Variable.openSidebar = !this.Variable.openSidebar;
 						this.Fn.initAll();
 					}}
@@ -96,6 +97,7 @@ export const display = function () {
 			{/* sidebar start */}
 			<div
 				class={["sidebar", this.Variable.openSidebar ? null : "sidebar_close"]}
+				ref="sidebar"
 				ontouchstart={(e) => {
 					this.Static.startTouch = e.targetTouches[0].clientX;
 				}}

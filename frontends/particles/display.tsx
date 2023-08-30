@@ -17,8 +17,6 @@ export const display = function () {
       onclick={() => {
         this.fn("canvas")
       }}
-      ontouchstart={() => { }}
-      ontouchmove={() => { }}
     >
       <div class="runLine">
         <marquee behavior="scroll" direction="left">
@@ -34,8 +32,8 @@ export const display = function () {
           <section class="home_news slider">
             <div class="slider_header">
               <div>
-                <h2>Новости</h2>
-                <p>Самые свежие факты</p>
+                <h2 class="home_news_title">Самые свежие факты</h2>
+                {/* <p>Самые свежие факты</p> */}
               </div>
               <div class="home_news_nav">
                 <button
@@ -54,7 +52,7 @@ export const display = function () {
                 >
                   <img src={arrNext} />
                 </button>
-                <a href="/news" class="btn_link">Новости</a>
+                <a href="/news" class="btn_link">Все новости</a>
               </div>
             </div>
             <div

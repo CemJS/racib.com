@@ -10,10 +10,10 @@ import calendar from '@svg/icons/date.svg'
 import players from '@json/players'
 import events from '@json/events'
 
-let isDragging = false;
-let startX, startScrollLeft;
-let x1 = null;
-let y1 = null;
+let isDragging, isDragUsers = false;
+let startX, xStartUsers, startScrollLeft, startScrollLeftUsers;
+let x1, xUsers1 = null;
+let y1, yUsers1 = null;
 
 export const display = function () {
   return (
@@ -25,7 +25,7 @@ export const display = function () {
           <div class="home">
 
             <section class="home_link link_block">
-              <a href="/goal">
+              <a href="/">
                 <img src={arrowR} class="link_block_icon" />
                 <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
               </a>
@@ -215,17 +215,44 @@ export const display = function () {
                 class="carousel"
                 ref="playerCarousel"
 
-              // onmousedown={(e) => {
-              //   this.Statis.isDragUsers = true;
-              //   this.Static.xStartUsers = e.pageX;
-              //   this.Static.startScrollLeftUsers = this.Ref.playerCarousel.scrollLeft;
-              // }}
+                onmousedown={(e) => {
+                  isDragUsers = true;
+                  xStartUsers = e.pageX;
+                  startScrollLeftUsers = this.Ref.playerCarousel.scrollLeft;
+                }}
 
-              // onmousemove={(e) => {
-              //   if (!this.Statis.isDragUsers) return;
-              //   e.preventDefault();
-              //   this.Ref.playerCarousel.scrollLeft = this.Static.startScrollLeftUsers - (e.pageX - this.Static.xStartUsers);
-              // }}
+                onmousemove={(e) => {
+                  if (!isDragUsers) return;
+                  e.preventDefault();
+                  this.Ref.playerCarousel.scrollLeft = startScrollLeftUsers - (e.pageX - xStartUsers);
+                }}
+
+                onmouseup={() => {
+                  isDragUsers = false;
+                }}
+
+                ontouchstart={(e) => {
+                  const firstTouch = e.touches[0];
+                  xUsers1 = firstTouch.clientX;
+                  yUsers1 = firstTouch.clientY;
+                }}
+
+                ontouchmove={(e) => {
+                  if (!xUsers1 || !yUsers1) return false;
+                  let xUsers2 = e.touches[0].clientX;
+                  let yUsers2 = e.touches[0].clientY;
+                  let xDiff = xUsers2 - xUsers1;
+                  let yDiff = yUsers2 - yUsers1;
+                  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    if (xDiff > 0) {
+                      this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 15;
+                    } else {
+                      this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 15;
+                    }
+                  }
+                  xUsers1 = null;
+                  yUsers1 = null;
+                }}
               >
                 {
                   players.map(item => {

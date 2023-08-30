@@ -1,35 +1,17 @@
-.events {
-  &_filter {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-    margin-bottom: 25px;
-    border-radius: var(--borderR);
+.players {
+  position: relative;
+  height: 50vh;
 
-    &_item {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      width: calc(100% / 4);
-      padding: 10px;
-
-      &_title {
-        font-weight: 700;
-      }
-    }
-
-    &_item:not(:last-child) {
-      border-right: 1px solid var(--border);
-    }
-
+  span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 36px;
+    line-height: 42px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
   }
 
-  &_list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    // display: flex;
-    // flex-wrap: wrap;
-    gap: 15px;
-  }
 }
