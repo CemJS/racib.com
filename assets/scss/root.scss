@@ -19,6 +19,7 @@
 html,
 body {
     height: var(--app-height);
+    scroll-behavior: smooth;
 }
 
 html {
@@ -70,6 +71,8 @@ input {
     min-height: var(--app-height);
     display: flex !important;
     flex-direction: column;
+    position: relative;
+    scroll-behavior: smooth;
 }
 
 body {

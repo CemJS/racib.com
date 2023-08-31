@@ -837,7 +837,6 @@ section {
 }
 
 .card {
-  scroll-snap-align: center;
   position: relative;
   // height: 440px;
   height: 405px;
@@ -960,6 +959,10 @@ section {
         line-height: 22px;
       }
     }
+  }
+
+  @media(max-width: 600px) {
+    scroll-snap-align: center;
   }
 }
 
@@ -1329,5 +1332,32 @@ section {
   &_close {
     cursor: pointer;
     font-weight: 500;
+  }
+}
+
+.scrollTop {
+  position: fixed;
+  bottom: 50px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background: rgba(239, 239, 243, .7);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.603);
+  border-radius: 50%;
+  background-image: url('svg/icons/dark/prev.svg');
+  transform: rotate(90deg);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease-in-out;
+  pointer-events: none;
+
+  &_show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
   }
 }

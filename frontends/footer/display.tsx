@@ -8,26 +8,26 @@ import logoCem from '@svg/logoCem.svg'
 import phone from '@svg/icons/light/phoneLight.svg'
 
 const links = [
-	{
-		name: "Дирекция РАКИБ",
-		link: '/'
-	},
-	{
-		name: "Как продлить?",
-		link: '/'
-	},
-	{
-		name: "Экспертный совет",
-		link: '/'
-	},
-	{
-		name: "Правление РАКИБ",
-		link: '/'
-	},
-	{
-		name: "О нас пишут",
-		link: '/'
-	},
+	// {
+	// 	name: "Дирекция РАКИБ",
+	// 	link: '/'
+	// },
+	// {
+	// 	name: "Как продлить?",
+	// 	link: '/'
+	// },
+	// {
+	// 	name: "Экспертный совет",
+	// 	link: '/'
+	// },
+	// {
+	// 	name: "Правление РАКИБ",
+	// 	link: '/'
+	// },
+	// {
+	// 	name: "О нас пишут",
+	// 	link: '/'
+	// },
 	{
 		name: "Как вступить?",
 		link: '/join'
@@ -40,10 +40,10 @@ const links = [
 		name: "Политика обработки персональных данных",
 		link: '/privacy'
 	},
-	{
-		name: "Реклама на сайте",
-		link: '/'
-	},
+	// {
+	// 	name: "Реклама на сайте",
+	// 	link: '/'
+	// },
 ]
 
 const socials = [
@@ -138,10 +138,10 @@ export const display = function () {
 									}
 								</ul>
 							</div>
-							<div>
+							{/* <div>
 								<h6 class="footer_title">По вопросам рекламы</h6>
 								<a href="mailto:info@muvis.media" class="footer_socials_email">info@muvis.media</a>
-							</div>
+							</div> */}
 						</div>
 						<span class="footer_racib">РАКИБ © 2021 - 2023, Все права защищены.</span>
 						<span class="footer_powered">

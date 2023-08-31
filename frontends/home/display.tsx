@@ -22,6 +22,8 @@ export const display = function () {
         class={["main", "pt_15", "home", this.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
+
+
           <div class="home">
 
             <section class="home_link link_block">
@@ -48,7 +50,7 @@ export const display = function () {
                   <h2>События</h2>
                   <p>Анонсы мероприятий</p>
                 </div>
-                <a href="/news" class="btn_link home_events_link">Все мероприятия</a>
+                <a href="/events" class="btn_link home_events_link">Все мероприятия</a>
               </div>
 
               <div class="carousel_wrap">
@@ -207,7 +209,7 @@ export const display = function () {
                   >
                     <img src={arrNextDark} />
                   </button>
-                  <a href="/news" class="btn_link home_events_link">Все участники</a>
+                  <a href="/players" class="btn_link home_events_link">Все участники</a>
                 </div>
               </div>
 
@@ -241,10 +243,10 @@ export const display = function () {
                   if (!xUsers1 || !yUsers1) return false;
                   let xUsers2 = e.touches[0].clientX;
                   let yUsers2 = e.touches[0].clientY;
-                  let xDiff = xUsers2 - xUsers1;
-                  let yDiff = yUsers2 - yUsers1;
-                  if (Math.abs(xDiff) > Math.abs(yDiff)) {
-                    if (xDiff > 0) {
+                  let xDiffUsers = xUsers2 - xUsers1;
+                  let yDiffUsers = yUsers2 - yUsers1;
+                  if (Math.abs(xDiffUsers) > Math.abs(yDiffUsers)) {
+                    if (xDiffUsers > 0) {
                       this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 15;
                     } else {
                       this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 15;

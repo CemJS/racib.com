@@ -9,16 +9,12 @@ export const display = function () {
         class={["main", this.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
-          <div class="back">
-            <a
-              class="back-icon"
-              href="/"
-              onclick={this.Fn.link}
-            >
+          <a class="back" href="/" onclick={this.Fn.link}>
+            <span class="back-icon">
               <img src={back} />
-            </a>
-            <span class="back_title">Как вступить в РАКИБ?</span>
-          </div>
+            </span>
+            <span class="back_title">Главная</span>
+          </a>
           <section class="join block_default">
             <p class="text join_text">Этапность действий, чтобы зарегистрироваться в Ассоциации:</p>
             <h3 class="join_title">1. Регистрация</h3>
@@ -31,9 +27,9 @@ export const display = function () {
             <ul class="list">
               <li class="list_item text">Заявление о вступлении в РАКИБ (скачать шаблон в формате
                 <a
-                  href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/zayavlenie_fl.pdf"
+                  href="/assets/docs/zayavlenieFL.pdf"
                   class="link"
-                  onclick={this.Fn.link}
+                  target="_blank"
                 >
                   .pdf
                 </a> )
@@ -41,18 +37,18 @@ export const display = function () {
               <li class="list_item text">Копия паспорта (страница с именем, страница с пропиской)</li>
               <li class="list_item text">Согласие на обработку персональных данных (скачать шаблон в формате
                 <a
-                  href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/racib_soglasie.pdf"
+                  href="/assets/docs/racibSoglasie.pdf"
                   class="link"
-                  onclick={this.Fn.link}
+                  target="_blank"
                 >
                   .pdf
                 </a>)
               </li>
               <li class="list_item text">Ваша фотография с паспортом в руках (в хорошо освещенном помещении)</li>
               <li class="list_item text">Документ об уплате членского взноса — платежное поручение с отметкой банка об исполнении платежа ( скачать пример в формате
+                {/* не найден документ, запросить */}
                 <a
-                  href="https://cdn2.muvis.media/racib/platform/production/publications/contentBlocks/BT7xAa4yB1/applications/1626773913364_RAKIB-Informatsionnoe-pismo.pdf"
-                  onclick={this.Fn.link}
+                  href=""
                   class="link"
                 >
                   .pdf
@@ -65,9 +61,9 @@ export const display = function () {
             <ul class="list">
               <li class="list_item text">Заявление о вступлении в РАКИБ (скачать в формате
                 <a
-                  href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/zayavlenie_ul.pdf"
+                  href="/assets/docs/zayavlenieUL.pdf"
                   class="link"
-                  onclick={this.Fn.link}
+                  target="_blank"
                 >
                   .pdf
                 </a>)
@@ -102,19 +98,19 @@ export const display = function () {
               <p class="join_title">Шаблоны и образцы документов:</p>
               <ul>
                 <li class="text">
-                  <a href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/zayavlenie_fl.pdf" class="link" onclick={this.Fn.link}>
+                  <a href="/assets/docs/zayavlenieFL.pdf" class="link" target="_blank">
                     Заявление на вступлление.pdf
                   </a>
                 </li>
                 <li class="text">
-                  <a href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/racib_soglasie.pdf" class="link" onclick={this.Fn.link}>Согласие на обработку персональных данных.pdf</a>
+                  <a href="/assets/docs/racibSoglasie.pdf" class="link" target="_blank">Согласие на обработку персональных данных.pdf</a>
                 </li>
                 <li class="text">
-                  <a href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/informatsionnoe-pismo.pdf" class="link" onclick={this.Fn.link}>
+                  <a href="/assets/docs/informatsionnoePismo.pdf" class="link" target="_blank">
                     Документ об уплате членского взноса.pdf</a>
                 </li>
                 <li class="text">
-                  <a href="https://cdn2.muvis.media/racib/platform/production/publications/contentblocks/bt7xaa4yb1/applications/zayavlenie_ul.pdf" class="link" onclick={this.Fn.link}>Заявление о вступлении в РАКИБ (для юридических лиц).pdf</a>
+                  <a href="/assets/docs/zayavlenieUL.pdf" class="link" target="_blank">Заявление о вступлении в РАКИБ (для юридических лиц).pdf</a>
                 </li>
               </ul>
 

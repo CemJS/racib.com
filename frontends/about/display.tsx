@@ -58,16 +58,12 @@ export const display = function () {
         class={["main", this.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
-          <div class="back">
-            <a
-              class="back-icon"
-              href="/"
-              onclick={this.Fn.link}
-            >
+          <a class="back" href="/" onclick={this.Fn.link}>
+            <span class="back-icon">
               <img src={back} />
-            </a>
-            <span class="back_title">О РАКИБ</span>
-          </div>
+            </span>
+            <span class="back_title">Главная</span>
+          </a>
           <div class="about">
             <section class="block_default">
               <h2 class="general_title">

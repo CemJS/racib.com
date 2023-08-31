@@ -1,17 +1,161 @@
 .players {
-  position: relative;
-  height: 50vh;
 
-  span {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    line-height: 42px;
-    font-weight: 600;
-    width: 100%;
-    text-align: center;
+  &_tabs {
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    margin: 0 auto;
+    margin-bottom: 25px;
+    width: fit-content;
+    border-radius: var(--borderR);
+    display: flex;
+
+    &_item {
+      opacity: .6;
+      padding: 15px;
+      display: inline-block;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s ease;
+      color: var(--title);
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &_active {
+        opacity: 1;
+      }
+
+      &_person {
+        color: var(--primary_blue);
+      }
+
+      &_community {
+        color: red;
+      }
+    }
+
+    &_item:not(:last-child) {
+      border-right: 1px solid var(--light);
+    }
   }
 
+  &_list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    &_item {
+      padding: 15px;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 15px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+      border-radius: var(--borderR);
+      position: relative;
+      transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+      cursor: pointer;
+      color: var(--title);
+
+      &:hover {
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+        transform: translateY(-4px);
+      }
+
+      &_circle {
+        width: 150px;
+        height: 150px;
+        background: var(--white);
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: inset 0 0 0 3px #dbdbe9, inset 0 0 0 4px #fff;
+      }
+
+      &_image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-size: cover;
+        box-shadow: inset 0 0 0 3px #dbdbe9, inset 0 0 0 4px #fff;
+        background-repeat: no-repeat;
+        background-position: top;
+      }
+
+      &_info {
+        position: relative;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &_status {
+          position: absolute;
+          right: 0px;
+          top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+          font-weight: 500;
+          // border-radius: 30px;
+          border-top-right-radius: var(--borderR);
+          border-bottom-left-radius: var(--borderR);
+          color: var(--white);
+          padding: 5px 8px;
+          background: var(--primary_blue);
+
+          &_company {
+            background: red;
+          }
+        }
+
+      }
+
+      &_post {
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 15px;
+      }
+
+      &_location {
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        gap: 15px;
+        align-items: center;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+
+
+  }
+}
+
+@media(max-width: 1200px) {
+  .players {
+    .filter {
+      display: none;
+    }
+
+    &_tabs {
+      margin-bottom: 20px;
+    }
+
+    &_list {
+      gap: 15px;
+
+      &_item {
+        &_location {
+          position: relative;
+          bottom: auto;
+        }
+      }
+    }
+  }
 }

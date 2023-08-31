@@ -11,13 +11,13 @@ export const display = function () {
         <div class="wrapper">
           <a
             class="back"
-            href="/"
+            href="/players"
             onclick={this.Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
             </span>
-            <span class="back_title">Главная</span>
+            <span class="back_title">Все участники</span>
           </a>
 
           <section class="profile">
