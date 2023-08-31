@@ -2,6 +2,7 @@ import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
+import filter from '@svg/icons/dark/filter.svg'
 import views from '@svg/icons/dark/views.svg'
 import news from '@json/news'
 
@@ -35,6 +36,10 @@ const category = [
   }
 ]
 
+let newsData, categoryData = [];
+newsData = news;
+categoryData = category;
+
 export const display = function () {
   return (
     <div class="main_wrap">
@@ -61,30 +66,93 @@ export const display = function () {
                   type="text"
                   class="filter_input"
                   placeholder="Искать в описании"
+                  oninput={(e) => {
+                    let value = e.target.value.toLocaleLowerCase();
+                    newsData = news.filter((item) => {
+                      if (item.desc.toLocaleLowerCase().includes(value)) {
+                        return true;
+                      }
+                    })
+                    this.init()
+                  }}
                 />
               </div>
 
-              <div
-                ref="filterCategory"
-                class="filter_item"
-                onclick={() => {
-                  this.Ref.filterCategory.classList.toggle('filter_item_active');
-                }}
-              >
-                <span class="filter_item_title">Раздел</span>
-                <input
-                  type="text"
-                  class="filter_input"
-                  placeholder="Выбрать раздел"
-                />
+              <div class="filter_item" ref="filterCategory">
+
+                <span
+                  class="filter_item_title"
+                  onclick={(e) => {
+                    if (this.Static.categoryStatus == 'close') {
+                      this.Static.categoryStatus = 'open';
+                      this.Ref.filterCategory.classList.add('filter_item_active');
+                    } else if (this.Static.categoryStatus == 'open') {
+                      this.Static.categoryStatus = 'close';
+                      this.Ref.filterCategory.classList.remove('filter_item_active');
+                    }
+                  }}
+                >
+                  Раздел
+                </span>
+
+                {
+                  this.Static.chooseCategory ?
+                    <div class="chooseCategory">
+                      <span >{this.Static.chooseCategory}</span>
+                      <span
+                        class="chooseCategory_close"
+                        onclick={() => {
+                          this.Static.chooseCategory = ''
+                          this.init();
+                        }}
+                      >
+                        x
+                      </span>
+                    </div> :
+                    <input
+                      type="text"
+                      class="filter_input"
+                      placeholder="Выбрать раздел"
+
+                      oninput={(e) => {
+                        let value = e.target.value.toLocaleLowerCase();
+                        categoryData = category.filter((item) => {
+                          if (item.name.toLocaleLowerCase().includes(value)) {
+                            return true;
+                          }
+                        })
+                        this.init()
+                      }}
+                    />
+                }
+
                 <div class="filter_category">
                   <ul class="filter_category_list">
                     {
-                      category.map(item => {
-                        return (
-                          <li class="filter_category_list_item">{item.name}</li>
-                        )
-                      })
+
+                      categoryData.length ?
+
+                        categoryData.map(item => {
+                          return (
+                            <li
+                              ref="categoryItem"
+                              class="filter_category_list_item"
+                              onclick={() => {
+                                this.Static.chooseCategory = item.name;
+                                if (this.Static.categoryStatus == 'close') {
+                                  this.Static.categoryStatus = 'open';
+                                  this.Ref.filterCategory.classList.add('filter_item_active');
+                                } else if (this.Static.categoryStatus == 'open') {
+                                  this.Static.categoryStatus = 'close';
+                                  this.Ref.filterCategory.classList.remove('filter_item_active');
+                                }
+                                this.init();
+                              }}
+                            >
+                              {item.name}
+                            </li>
+                          )
+                        }) : <span>записей не найдено</span>
                     }
                   </ul>
                 </div>
@@ -98,15 +166,27 @@ export const display = function () {
                   placeholder="Где искать?"
                 />
               </div>
-              <div class="filter_item filter_item_date">
+              <div
+                ref="filterCalendar"
+                class="filter_item filter_item_date"
+                onclick={(e) => {
+                  if (this.Static.calendarStatus == 'close') {
+                    this.Static.calendarStatus = 'open';
+                    this.Ref.calendarNews.classList.add('filter_date_active');
+                  } else if (this.Static.calendarStatus == 'open') {
+                    this.Static.calendarStatus = 'close';
+                    this.Ref.calendarNews.classList.remove('filter_date_active');
+                  }
+                }}
+              >
                 <span class="filter_item_title">Дата</span>
                 <input
-                  type="date"
+                  type="text"
                   class="filter_input"
                   placeholder="Когда искать?"
                 />
 
-                <div class="filter_date">
+                <div class="filter_date" ref="calendarNews">
                   <div class="calendar">
 
                     <div class="calendar_header">
@@ -202,26 +282,51 @@ export const display = function () {
               </div>
             </div>
 
+            {/* <div class="filter_mobile_wrap">
+
+              <span
+                onclick={() => {
+                  this.Ref.filterMobile.classList.toggle('filter_mobile_active');
+                }}
+              >
+                <p>Фильтр поиска</p>
+                <img src={filter} alt="Фильтр поиска" />
+              </span>
+
+              <div class="filter_mobile" ref="filterMobile">
+                <span class="filter_mobile_header">
+                  <h3>Фильтр поиска</h3>
+                  <button>x</button>
+                </span>
+              </div>
+
+            </div> */}
+
             <div class="news_list">
               {
-                news.map((item, index) => {
-                  return (
-                    <div class="newCard" ref="newsSlide" href="/">
-                      <span>{item.category}</span>
-                      <div class="newCard_img" style={`background-image: url(${item.img})`}>
+                newsData.length ?
+
+                  newsData.map((item, index) => {
+                    return (
+                      <div class="newCard" ref="newsSlide" href="/">
+                        <span>{item.category}</span>
+                        <div class="newCard_img" style={`background-image: url(${item.img})`}>
+                        </div>
+                        <h5 class="newCard_title">{item.title}</h5>
+                        <p class="newCard_desc">{item.desc}</p>
+                        <div class="newCard_details">
+                          <span class="newCard_details_date">{item.date}</span>
+                          <span class="newCard_details_views">
+                            {item.views}
+                            <img src={views} />
+                          </span>
+                        </div>
                       </div>
-                      <h5 class="newCard_title">{item.title}</h5>
-                      <p class="newCard_desc">{item.desc}</p>
-                      <div class="newCard_details">
-                        <span class="newCard_details_date">{item.date}</span>
-                        <span class="newCard_details_views">
-                          {item.views}
-                          <img src={views} />
-                        </span>
-                      </div>
-                    </div>
-                  )
-                })
+                    )
+                  }) : <span>записей не найдено</span>
+
+
+
               }
             </div>
           </section>

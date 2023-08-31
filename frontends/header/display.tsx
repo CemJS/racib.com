@@ -8,6 +8,7 @@ import events from '@svg/sidebar/calendarDark.svg'
 import news from '@svg/sidebar/newsDark.svg'
 import letter from '@svg/sidebar/letterDark.svg'
 import phone from '@svg/sidebar/phoneDark.svg'
+import sidebarArrow from '@svg/sidebar/sidebarArrow.svg'
 
 import telegram from '@svg/socials/telegram.svg'
 import vk from '@svg/socials/vk.svg'
@@ -70,17 +71,15 @@ export const display = function () {
 		<header class="header">
 			<div
 				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
-
-				<div class="header_burger_wrap">
-					<div
-						class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
-						onclick={() => {
-							this.Variable.openSidebar = !this.Variable.openSidebar;
-							this.Fn.initAll();
-						}}
-					>
-						<span></span>
-					</div>
+				<div
+					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
+					ref="burger"
+					onclick={(e) => {
+						this.Variable.openSidebar = !this.Variable.openSidebar;
+						this.Fn.initAll();
+					}}
+				>
+					<img src={sidebarArrow} alt="Toggle sidebar" />
 				</div>
 
 				<div
@@ -98,6 +97,21 @@ export const display = function () {
 			{/* sidebar start */}
 			<div
 				class={["sidebar", this.Variable.openSidebar ? null : "sidebar_close"]}
+				ref="sidebar"
+				ontouchstart={(e) => {
+					this.Static.startTouch = e.targetTouches[0].clientX;
+				}}
+
+				ontouchmove={(e) => {
+					this.Static.endTouch = e.targetTouches[0].clientX;
+				}}
+
+				ontouchend={(e) => {
+					if (this.Static.startTouch - this.Static.endTouch > 45) {
+						this.Variable.openSidebar = false;
+					}
+					this.init();
+				}}
 			>
 				<a href="/" onclick={this.Fn.link} class="logo_details">
 					<img src={logo} alt="РАКИБ" />

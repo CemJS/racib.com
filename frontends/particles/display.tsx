@@ -5,6 +5,10 @@ import arrPrev from '@svg/icons/light/prevWhite.svg'
 import news from '@json/news'
 import views from '@svg/icons/views.svg'
 
+let isDragging = false;
+let startX, startScrollLeft;
+let x1 = null;
+let y1 = null;
 
 export const display = function () {
   return (
@@ -28,8 +32,8 @@ export const display = function () {
           <section class="home_news slider">
             <div class="slider_header">
               <div>
-                <h2>Новости</h2>
-                <p>Самые свежие факты</p>
+                <h2 class="home_news_title">Самые свежие факты</h2>
+                {/* <p>Самые свежие факты</p> */}
               </div>
               <div class="home_news_nav">
                 <button
@@ -48,10 +52,52 @@ export const display = function () {
                 >
                   <img src={arrNext} />
                 </button>
-                <a href="/news" class="btn_link">Новости</a>
+                <a href="/news" class="btn_link">Все новости</a>
               </div>
             </div>
-            <div class="carousel" ref="newsCarousel"
+            <div
+              class="carousel"
+              ref="newsCarousel"
+
+              onmousedown={(e) => {
+                isDragging = true;
+                startX = e.pageX;
+                startScrollLeft = this.Ref.newsCarousel.scrollLeft;
+              }}
+
+              onmousemove={(e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                this.Ref.newsCarousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+              }}
+
+              onmouseup={() => {
+                isDragging = false;
+              }}
+
+              ontouchstart={(e) => {
+                const firstTouch = e.touches[0];
+                x1 = firstTouch.clientX;
+                y1 = firstTouch.clientY;
+              }}
+
+              ontouchmove={(e) => {
+                if (!x1 || !y1) return false;
+                let x2 = e.touches[0].clientX;
+                let y2 = e.touches[0].clientY;
+                let xDiff = x2 - x1;
+                let yDiff = y2 - y1;
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                  if (xDiff > 0) {
+                    this.Ref.newsCarousel.scrollLeft -= this.Ref.newsSlide.offsetWidth + 15;
+                  } else {
+                    this.Ref.newsCarousel.scrollLeft += this.Ref.newsSlide.offsetWidth + 15;
+                  }
+                }
+                x1 = null;
+                y1 = null;
+              }}
+
             >
               {
                 news.map((item, index) => {

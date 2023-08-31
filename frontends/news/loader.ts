@@ -1,4 +1,12 @@
 export const loader = function () {
+
+  // status for dropdown
+  this.Static.categoryStatus = 'close';
+  this.Static.calendarStatus = 'close';
+
+  // choose category
+  this.Static.chooseCategory = '';
+
   this.Static.current = new Date();
   this.Static.currentMonth;
   this.Static.currentDate;

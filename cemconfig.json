@@ -56,6 +56,18 @@
       ]
     },
     {
+      "url": "/profile",
+      "front": [
+        "profile"
+      ]
+    },
+    {
+      "url": "/error",
+      "front": [
+        "error"
+      ]
+    },
+    {
       "all": true,
       "front": "footer"
     }
