@@ -176,7 +176,7 @@ export const display = function () {
                         ></div>
                       </div>
                       <div class="players_list_item_info">
-                        <h3>{item.name}</h3>
+                        <h3 class="players_list_item_title">{item.name}</h3>
                         <p class="players_list_item_post">{item.post}</p>
                         <div class="players_list_item_location">
                           <span>

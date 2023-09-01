@@ -17,6 +17,10 @@
     {
       "url": "/about",
       "front": [
+        "aboutHeader",
+        "directorateSlider",
+        "observerSlider",
+        "expertSlider",
         "about"
       ]
     },

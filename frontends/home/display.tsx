@@ -216,29 +216,24 @@ export const display = function () {
               <div
                 class="carousel"
                 ref="playerCarousel"
-
                 onmousedown={(e) => {
                   isDragUsers = true;
                   xStartUsers = e.pageX;
                   startScrollLeftUsers = this.Ref.playerCarousel.scrollLeft;
                 }}
-
                 onmousemove={(e) => {
                   if (!isDragUsers) return;
                   e.preventDefault();
                   this.Ref.playerCarousel.scrollLeft = startScrollLeftUsers - (e.pageX - xStartUsers);
                 }}
-
                 onmouseup={() => {
                   isDragUsers = false;
                 }}
-
                 ontouchstart={(e) => {
                   const firstTouch = e.touches[0];
                   xUsers1 = firstTouch.clientX;
                   yUsers1 = firstTouch.clientY;
                 }}
-
                 ontouchmove={(e) => {
                   if (!xUsers1 || !yUsers1) return false;
                   let xUsers2 = e.touches[0].clientX;
@@ -274,7 +269,6 @@ export const display = function () {
                 }
               </div>
             </section>
-            {/* slider with arrow end */}
           </div>
         </div>
       </main >
