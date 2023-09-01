@@ -1,0 +1,23 @@
+[
+  {
+    "img": "@images/community/bitriver.jpg",
+    "name": "BitRiver",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Компания"
+  },
+  {
+    "img": "@images/community/mining.jpg",
+    "name": "Mining house",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Компания"
+  },
+  {
+    "img": "@images/community/rightGroup.jpg",
+    "name": "Right Group",
+    "city": "Москва",
+    "country": "Россия",
+    "status": "Компания"
+  }
+]

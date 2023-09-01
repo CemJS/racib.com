@@ -99,6 +99,10 @@ $indent in $indents {
 
 section {
   margin-bottom: 25px;
+
+  @media(max-width: 464px) {
+    margin-bottom: 20px;
+  }
 }
 
 .text {
@@ -138,6 +142,27 @@ section {
     font-weight: 600;
     font-size: 22px;
     line-height: 32px;
+  }
+
+  @media(max-width: 1100px) {
+    padding: 15px 0;
+  }
+
+  @media(max-width: 710px) {
+    padding: 10px 0;
+
+    &-icon {
+      width: 12px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &_title {
+      font-size: 20px;
+      line-height: 26px;
+    }
   }
 
   @media(max-width: 675px) {
@@ -274,6 +299,10 @@ section {
     font-weight: 400;
   }
 
+  @media(max-width: 1100px) {
+    padding: 20px;
+  }
+
   @media(max-width: 550px) {
     padding: 15px;
 
@@ -285,7 +314,9 @@ section {
   }
 
   @media(max-width: 464px) {
-    &_title {
+
+    &_title,
+    &_desc {
       font-size: 14px;
       line-height: 18px;
     }
@@ -299,7 +330,7 @@ section {
 
   a {
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: flex-end;
     background: var(--back_linkBlue);
     padding: 20px 30px;
@@ -358,13 +389,24 @@ section {
       font-size: 14px;
       line-height: 22px;
     }
+
   }
 
   @media(max-width: 400px) {
-    padding: 15px 0;
+    padding: 10px 0;
 
     a {
-      padding: 10px;
+      padding: 0;
+      background: transparent;
+      color: var(--primary_blue);
+
+      img {
+        filter: brightness(0) saturate(100%) invert(14%) sepia(46%) saturate(6896%) hue-rotate(244deg) brightness(78%) contrast(96%);
+      }
+
+      span {
+        font-weight: 500;
+      }
     }
   }
 
@@ -590,7 +632,6 @@ section {
   gap: 15px;
   padding: 0 15px;
   scroll-snap-type: x mandatory;
-  // x proximity
   scroll-behavior: smooth;
   scrollbar-width: 0;
   transition: all .4s linear;
@@ -627,8 +668,6 @@ section {
       }
     }
   }
-
-
 
   &_person {
     scroll-snap-align: center;
@@ -688,6 +727,7 @@ section {
 
     &_person {
       margin: 0 20px;
+      scroll-snap-align: center;
     }
   }
 
@@ -837,7 +877,6 @@ section {
 }
 
 .card {
-  scroll-snap-align: center;
   position: relative;
   // height: 440px;
   height: 405px;
@@ -961,6 +1000,10 @@ section {
       }
     }
   }
+
+  @media(max-width: 600px) {
+    scroll-snap-align: center;
+  }
 }
 
 .list {
@@ -974,6 +1017,19 @@ section {
   &_item:not(:last-child) {
     padding-bottom: 20px;
   }
+
+  @media(max-width: 464px) {
+    &_item {
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+
+    &_item:not(:last-child) {
+      padding-bottom: 10px;
+    }
+  }
+
+
 }
 
 .filter {
@@ -1329,5 +1385,32 @@ section {
   &_close {
     cursor: pointer;
     font-weight: 500;
+  }
+}
+
+.scrollTop {
+  position: fixed;
+  bottom: 50px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background: rgba(239, 239, 243, .7);
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.603);
+  border-radius: 50%;
+  background-image: url('svg/icons/dark/prev.svg');
+  transform: rotate(90deg);
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease-in-out;
+  pointer-events: none;
+
+  &_show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
   }
 }

@@ -10,12 +10,17 @@
       "url": "/",
       "front": [
         "particles",
+        "scrollTop",
         "home"
       ]
     },
     {
       "url": "/about",
       "front": [
+        "aboutHeader",
+        "directorateSlider",
+        "observerSlider",
+        "expertSlider",
         "about"
       ]
     },
