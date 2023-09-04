@@ -61,12 +61,6 @@
       ]
     },
     {
-      "url": "/profile",
-      "front": [
-        "profile"
-      ]
-    },
-    {
       "url": "/error",
       "front": [
         "error"
