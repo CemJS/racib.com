@@ -4,8 +4,11 @@
   gap: 30px;
 
   &_user {
+    display: grid;
+    gap: 20px;
+    position: relative;
 
-    div {
+    >div {
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
       padding: 25px;
     }

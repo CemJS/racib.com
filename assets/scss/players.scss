@@ -96,7 +96,6 @@
           font-size: 16px;
           line-height: 20px;
           font-weight: 500;
-          // border-radius: 30px;
           border-top-right-radius: var(--borderR);
           border-bottom-left-radius: var(--borderR);
           color: var(--white);
@@ -107,7 +106,6 @@
             background: red;
           }
         }
-
       }
 
       &_title {
@@ -140,8 +138,6 @@
         }
       }
     }
-
-
   }
 }
 

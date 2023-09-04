@@ -6,7 +6,8 @@
     "country": "Россия",
     "status": "Персона",
     "flag": "@svg/ru.svg",
-    "post": "Президент РАКИБ"
+    "post": "Президент РАКИБ",
+    "birthday": "12 октября"
   },
   {
     "img": "@images/administration/brazhnikov.jpg",
@@ -15,7 +16,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Исполнительный директор"
+    "post": "Исполнительный директор",
+    "birthday": "15 февраля"
   },
   {
     "img": "@images/administration/gorcharuk.jpg",
@@ -24,7 +26,8 @@
     "country": "Россия",
     "flag": "@svg/ru.svg",
     "status": "Персона",
-    "post": "Вице-президент по акселерации"
+    "post": "Вице-президент по акселерации",
+    "birthday": "1 января"
   },
   {
     "img": "@images/community/mining.jpg",
@@ -41,7 +44,8 @@
     "country": "Россия",
     "status": "Персона",
     "flag": "@svg/ru.svg",
-    "post": "Вице-президент по развитию медиаактивов и систем их управления"
+    "post": "Вице-президент по развитию медиаактивов и систем их управления",
+    "birthday": "1 января"
   },
   {
     "img": "@images/administration/stupin.jpg",
@@ -50,7 +54,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Вице-президент по развитию электроэнергии для вычислительных мощностей"
+    "post": "Вице-президент по развитию электроэнергии для вычислительных мощностей",
+    "birthday": "1 января"
   },
   {
     "img": "@images/administration/runets.jpg",
@@ -59,7 +64,8 @@
     "country": "Россия",
     "flag": "@svg/ru.svg",
     "status": "Персона",
-    "post": "Вице-президент по вопросам майнинга"
+    "post": "Вице-президент по вопросам майнинга",
+    "birthday": "1 января"
   },
   {
     "img": "@images/community/rightGroup.jpg",
@@ -76,7 +82,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Вице-президент РАКИБ по коммерческим проектам"
+    "post": "Вице-президент РАКИБ по коммерческим проектам",
+    "birthday": "1 января"
   },
   {
     "img": "@images/administration/kazovsky.jpg",
@@ -85,7 +92,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Вице-президент РАКИБ программы искусственного интеллекта"
+    "post": "Вице-президент РАКИБ программы искусственного интеллекта",
+    "birthday": "1 января"
   },
   {
     "img": "@images/administration/bogoyavlensky.jpg",
@@ -94,7 +102,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Вице-президент РАКИБ по инвестиционным проектам"
+    "post": "Вице-президент РАКИБ по инвестиционным проектам",
+    "birthday": "2 мая"
   },
   {
     "img": "@images/community/bitriver.jpg",
@@ -111,7 +120,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Вице-президент по развитию цифровых технологий"
+    "post": "Вице-президент по развитию цифровых технологий",
+    "birthday": "18 октября"
   },
   {
     "img": "@images/directorate/philemon.jpg",
@@ -120,7 +130,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Глава департамента по развитию цифровых финансовых институтов РАКИБ"
+    "post": "Глава департамента по развитию цифровых финансовых институтов РАКИБ",
+    "birthday": "1 января"
   },
   {
     "img": "@images/directorate/pivovar.jpg",
@@ -129,7 +140,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Директор по работе с экспертами РАКИБ"
+    "post": "Директор по работе с экспертами РАКИБ",
+    "birthday": "1 января"
   },
   {
     "img": "@images/directorate/kharlamov.jpg",
@@ -138,7 +150,8 @@
     "city": "Новороссийск",
     "country": "Россия",
     "status": "Персона",
-    "post": "Директор по развитию РАКИБ"
+    "post": "Директор по развитию РАКИБ",
+    "birthday": "15 августа"
   },
   {
     "img": "@images/community/joys.jpg",
@@ -155,7 +168,8 @@
     "city": "Новороссийск",
     "country": "Россия",
     "status": "Персона",
-    "post": "Руководитель департамента развития WEB3 и NFT"
+    "post": "Руководитель департамента развития WEB3 и NFT",
+    "birthday": "16 ноября"
   },
   {
     "img": "@images/directorate/serebrovsky.jpg",
@@ -164,7 +178,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Руководитель департамента образовательных программ"
+    "post": "Руководитель департамента образовательных программ",
+    "birthday": "15 июля"
   },
   {
     "img": "@images/directorate/gorokhov.jpg",
@@ -173,7 +188,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Руководитель Центра научной дипломатии"
+    "post": "Руководитель Центра научной дипломатии",
+    "birthday": "11 марта"
   },
   {
     "img": "@images/directorate/gudimov.jpg",
@@ -182,7 +198,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Директор по развитию РАКИБ"
+    "post": "Директор по развитию РАКИБ",
+    "birthday": "9 декабря"
   },
   {
     "img": "@images/experts/sokolov.jpg",
@@ -191,7 +208,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Председатель Экспертного совета РАКИБ"
+    "post": "Председатель Экспертного совета РАКИБ",
+    "birthday": "13 декабря"
   },
   {
     "img": "@images/experts/valuk.jpg",
@@ -199,7 +217,8 @@
     "city": "Новороссийск",
     "flag": "@svg/ru.svg",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "15 апреля"
   },
   {
     "img": "@images/community/bitCluster.jpg",
@@ -207,7 +226,8 @@
     "flag": "@svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
-    "status": "Компания"
+    "status": "Компания",
+    "birthday": "17 января"
   },
   {
     "img": "@images/experts/gultyaeva.jpg",
@@ -215,7 +235,8 @@
     "flag": "@svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "8 января"
   },
   {
     "img": "@images/experts/petrov.jpg",
@@ -223,7 +244,8 @@
     "flag": "@svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "6 сентября"
   },
   {
     "img": "@images/experts/richka.jpg",
@@ -231,7 +253,8 @@
     "flag": "@svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "5 августа"
   },
   {
     "img": "@images/experts/romanyuk.jpg",
@@ -239,7 +262,8 @@
     "flag": "@svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "15 октября"
   },
   {
     "img": "@images/community/cryptoUniverse.jpg",
@@ -247,7 +271,8 @@
     "flag": "@svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
-    "status": "Компания"
+    "status": "Компания",
+    "birthday": "10 ноября"
   },
   {
     "img": "@images/experts/selionov.jpg",
@@ -255,7 +280,8 @@
     "city": "Москва",
     "flag": "@svg/ru.svg",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "30 декабря"
   },
   {
     "img": "@images/experts/chulkov.jpg",
@@ -263,7 +289,8 @@
     "city": "Москва",
     "flag": "@svg/ru.svg",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "10 сентября"
   },
   {
     "img": "@images/experts/edemsky.jpg",
@@ -271,7 +298,8 @@
     "city": "Москва",
     "flag": "@svg/ru.svg",
     "country": "Россия",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "24 февраля"
   },
   {
     "img": "@images/observers/barinsky.jpg",
@@ -280,7 +308,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Директор по инвестициям Группы QIWI"
+    "post": "Директор по инвестициям Группы QIWI",
+    "birthday": "29 июня"
   },
   {
     "img": "@images/community/walletRu.jpg",
@@ -297,7 +326,8 @@
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "post": "Вице-президент и CTO Mail.ru Group"
+    "post": "Вице-президент и CTO Mail.ru Group",
+    "birthday": "21 апреля"
   },
   {
     "img": "@images/observers/galician.jpg",
@@ -306,7 +336,8 @@
     "country": "Россия",
     "flag": "@svg/ru.svg",
     "status": "Персона",
-    "post": "Управляющий партнер Almaz Capital Partners"
+    "post": "Управляющий партнер Almaz Capital Partners",
+    "birthday": "16 мая"
   },
   {
     "img": "@images/observers/demin.jpg",
@@ -315,7 +346,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Председатель правления «ВЭБ-Инновации»"
+    "post": "Председатель правления «ВЭБ-Инновации»",
+    "birthday": "11 ноября"
   },
   {
     "img": "@images/observers/emelin.jpg",
@@ -324,7 +356,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Генеральный директор АО «Энергетические системы и коммуникации»"
+    "post": "Генеральный директор АО «Энергетические системы и коммуникации»",
+    "birthday": "15 августа"
   },
   {
     "img": "@images/observers/ivlev.jpg",
@@ -333,7 +366,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Управляющий партнер компании EY по странам СНГ"
+    "post": "Управляющий партнер компании EY по странам СНГ",
+    "birthday": "18 октября"
   },
   {
     "img": "@images/community/intelionMining.jpg",
@@ -350,7 +384,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Президент-председатель правления ФИНАМ"
+    "post": "Президент-председатель правления ФИНАМ",
+    "birthday": "14 октября"
   },
   {
     "img": "@images/observers/martynov.jpg",
@@ -359,7 +394,8 @@
     "country": "Россия",
     "flag": "@svg/ru.svg",
     "status": "Персона",
-    "post": "Советник Etherium Foundation"
+    "post": "Советник Etherium Foundation",
+    "birthday": "19 сентября"
   },
   {
     "img": "@images/observers/nemkin.jpg",
@@ -368,7 +404,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Член совета директоров «AT Consulting», председатель комитета по ИТ Ассоциации менеджеров России, руководитель ИТ-компании Brain Factory"
+    "post": "Член совета директоров «AT Consulting», председатель комитета по ИТ Ассоциации менеджеров России, руководитель ИТ-компании Brain Factory",
+    "birthday": "10 декабря"
   },
   {
     "img": "@images/observers/osochenko.jpg",
@@ -377,7 +414,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Руководитель проектного офиса «Цифровая трансформация отрасли» госкорпорации «Росатом»"
+    "post": "Руководитель проектного офиса «Цифровая трансформация отрасли» госкорпорации «Росатом»",
+    "birthday": "26 июля"
   },
   {
     "img": "@images/observers/protasov.jpg",
@@ -386,7 +424,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Сооснователь и старший вице-президент по проектированию и разработке ПО Acronis"
+    "post": "Сооснователь и старший вице-президент по проектированию и разработке ПО Acronis",
+    "birthday": "6 июня"
   },
   {
     "img": "@images/observers/pushkov.jpg",
@@ -395,7 +434,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Управляющий партнер Центра интеллектуальной собственности Фонда «Сколково»"
+    "post": "Управляющий партнер Центра интеллектуальной собственности Фонда «Сколково»",
+    "birthday": "25 августа"
   },
   {
     "img": "@images/observers/treshchev.jpg",
@@ -404,7 +444,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Учредитель РАКИБ"
+    "post": "Учредитель РАКИБ",
+    "birthday": "27 января"
   },
   {
     "img": "@images/observers/filatov.jpg",
@@ -413,7 +454,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Генеральный директор SAP в России и СНГ"
+    "post": "Генеральный директор SAP в России и СНГ",
+    "birthday": "12 сентября"
   },
   {
     "img": "@images/observers/chubar.jpg",
@@ -422,7 +464,8 @@
     "flag": "@svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
-    "post": "Начальник управления цифровой трансформации банка ВТБ"
+    "post": "Начальник управления цифровой трансформации банка ВТБ",
+    "birthday": "28 февраля"
   },
   {
     "img": "@images/users/chulkov.jpg",
@@ -430,7 +473,8 @@
     "city": "Москва",
     "country": "Россия",
     "flag": "@svg/ru.svg",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "22 октября"
   },
   {
     "img": "@images/users/romanyuk.jpg",
@@ -438,7 +482,8 @@
     "city": "Москва",
     "country": "Россия",
     "flag": "@svg/ru.svg",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "15 декабря"
   },
   {
     "img": "@images/users/kvasnikov.jpg",
@@ -446,6 +491,7 @@
     "city": "Москва",
     "country": "Россия",
     "flag": "@svg/ru.svg",
-    "status": "Персона"
+    "status": "Персона",
+    "birthday": "15 мая"
   }
 ]
