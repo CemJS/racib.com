@@ -109,8 +109,8 @@ export const display = function () {
 				ontouchend={(e) => {
 					if (this.Static.startTouch - this.Static.endTouch > 45) {
 						this.Variable.openSidebar = false;
+						this.Fn.initAll();
 					}
-					this.init();
 				}}
 			>
 				<a href="/" onclick={this.Fn.link} class="logo_details">

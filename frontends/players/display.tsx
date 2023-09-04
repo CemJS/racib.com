@@ -1,12 +1,16 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import mapPin from '@svg/icons/dark/mapPin.svg'
+import One from './display/one'
 import users from '@json/allUsers'
 
 let allUsers = users;
 const posts: string[] = ['Финансы', 'Телевидение', 'Маркетинг', 'Телекоммуникации', 'Полиграфия', 'Издательство', 'Фото, видео', 'IT, интернет-технологии', 'Сетевое оборудование', 'Юридическое право', 'IT компания', 'Бизнес']
 
 export const display = function () {
+  if (this.Static.record) {
+    return One.bind(this)()
+  }
   return (
     <div class="main_wrap">
       <main
@@ -160,7 +164,13 @@ export const display = function () {
               {
                 allUsers.map(item => {
                   return (
-                    <a class="players_list_item" href="/profile" onclick={this.Fn.link}>
+                    <div
+                      class="players_list_item"
+                      onclick={() => {
+                        this.Static.record = item;
+                        this.init();
+                      }}
+                    >
                       <span
                         class={[
                           "players_list_item_info_status",
@@ -189,7 +199,7 @@ export const display = function () {
                           </span>
                         </div>
                       </div>
-                    </a>
+                    </div>
                   )
                 })
               }

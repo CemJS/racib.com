@@ -27,7 +27,7 @@ export const display = function () {
             <ul class="list">
               <li class="list_item text">Заявление о вступлении в РАКИБ (скачать шаблон в формате
                 <a
-                  href="/assets/docs/zayavlenieFL.pdf"
+                  href="/docs/zayavlenieFL.pdf"
                   class="link"
                   target="_blank"
                 >
@@ -37,7 +37,7 @@ export const display = function () {
               <li class="list_item text">Копия паспорта (страница с именем, страница с пропиской)</li>
               <li class="list_item text">Согласие на обработку персональных данных (скачать шаблон в формате
                 <a
-                  href="/assets/docs/racibSoglasie.pdf"
+                  href="/docs/racibSoglasie.pdf"
                   class="link"
                   target="_blank"
                 >
@@ -61,7 +61,7 @@ export const display = function () {
             <ul class="list">
               <li class="list_item text">Заявление о вступлении в РАКИБ (скачать в формате
                 <a
-                  href="/assets/docs/zayavlenieUL.pdf"
+                  href="/docs/zayavlenieUL.pdf"
                   class="link"
                   target="_blank"
                 >
@@ -98,19 +98,19 @@ export const display = function () {
               <p class="join_title">Шаблоны и образцы документов:</p>
               <ul>
                 <li class="text">
-                  <a href="/assets/docs/zayavlenieFL.pdf" class="link" target="_blank">
+                  <a href="/docs/zayavlenieFL.pdf" class="link" target="_blank">
                     Заявление на вступлление.pdf
                   </a>
                 </li>
                 <li class="text">
-                  <a href="/assets/docs/racibSoglasie.pdf" class="link" target="_blank">Согласие на обработку персональных данных.pdf</a>
+                  <a href="/docs/racibSoglasie.pdf" class="link" target="_blank">Согласие на обработку персональных данных.pdf</a>
                 </li>
                 <li class="text">
-                  <a href="/assets/docs/informatsionnoePismo.pdf" class="link" target="_blank">
+                  <a href="/docs/informatsionnoePismo.pdf" class="link" target="_blank">
                     Документ об уплате членского взноса.pdf</a>
                 </li>
                 <li class="text">
-                  <a href="/assets/docs/zayavlenieUL.pdf" class="link" target="_blank">Заявление о вступлении в РАКИБ (для юридических лиц).pdf</a>
+                  <a href="/docs/zayavlenieUL.pdf" class="link" target="_blank">Заявление о вступлении в РАКИБ (для юридических лиц).pdf</a>
                 </li>
               </ul>
 
