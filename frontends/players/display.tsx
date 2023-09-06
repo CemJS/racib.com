@@ -113,9 +113,7 @@ export const display = function () {
                   this.Static.activeTab == '' ? 'players_tabs_item_active' : null]}
                 onclick={() => {
                   this.Static.activeTab = '';
-
                   allUsers = users;
-
                   this.init();
                 }}
               >
@@ -128,13 +126,11 @@ export const display = function () {
                   this.Static.activeTab == 'Персоны' ? 'players_tabs_item_active' : null]}
                 onclick={() => {
                   this.Static.activeTab = 'Персоны';
-
                   allUsers = users.filter((item) => {
                     if (item.status == 'Персона') {
-                      return true
+                      return true;
                     }
                   })
-
                   this.init();
                 }}
               >
@@ -144,7 +140,7 @@ export const display = function () {
                 class={[
                   "players_tabs_item",
                   "players_tabs_item_community",
-                  this.Static.activeTab == 'Сообщества' ? 'players_tabs_item_active' : null]}
+                  this.Static.activeTab == 'Компания' ? 'players_tabs_item_active' : null]}
                 onclick={() => {
                   this.Static.activeTab = 'Компания';
                   allUsers = users.filter((item) => {
@@ -187,7 +183,23 @@ export const display = function () {
                       </div>
                       <div class="players_list_item_info">
                         <h3 class="players_list_item_title">{item.name}</h3>
-                        <p class="players_list_item_post">{item.post}</p>
+                        {
+                          item?.post ? <p class="players_list_item_post">{item.post}</p> : null
+                        }
+
+                        {
+                          item?.keyWords ?
+                            <p class="players_list_item_post">
+                              {
+                                item?.keyWords.map(item => {
+                                  return (
+                                    `${item}, `
+                                  )
+                                })
+                              }
+                            </p> : null
+                        }
+
                         <div class="players_list_item_location">
                           <span>
                             <img src={mapPin} />
