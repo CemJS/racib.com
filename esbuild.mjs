@@ -218,7 +218,7 @@ const start = async function () {
                 }
             })
 
-            if (!haveChange && req.url !== "/esbuild" && !req.url.startsWith("/assets") && !req.url.startsWith("/docs")) {
+            if (!haveChange && req.url !== "/esbuild" && !req.url.startsWith("/assets") && !req.url.startsWith("/docs") && !req.url.startsWith("/contents")) {
                 req.url = "/"
             }
             proxy.web(req, res, { target: `http://${options.hostname}:${options.port}`, changeOrigin: true });
