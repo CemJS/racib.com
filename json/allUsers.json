@@ -1,11 +1,11 @@
 [
   {
-    "img": "@images/administration/pripachkin.jpg",
+    "img": "/contents/img/administration/pripachkin.jpg",
     "name": "Припачкин Юрий Игоревич",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "post": "Президент РАКИБ",
     "birthday": "12 октября",
     "info": [
@@ -29,8 +29,8 @@
     ]
   },
   {
-    "img": "@images/administration/brazhnikov.jpg",
-    "flag": "@svg/ru.svg",
+    "img": "/contents/img/administration/brazhnikov.jpg",
+    "flag": "/contents/svg/ru.svg",
     "name": "Бражников Александр Евгеньевич",
     "city": "Москва",
     "country": "Россия",
@@ -48,20 +48,20 @@
     "placeWork": "РАКИБ"
   },
   {
-    "img": "@images/administration/gorcharuk.jpg",
+    "img": "/contents/img/administration/gorcharuk.jpg",
     "name": "Гончарук Виктор Александрович",
     "city": "Москва",
     "country": "Россия",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "status": "Персона",
     "post": "Вице-президент по акселерации",
     "birthday": "1 января",
     "placeWork": "РАКИБ"
   },
   {
-    "img": "@images/community/mining.jpg",
+    "img": "/contents/img/community/mining.jpg",
     "name": "Mining house",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Уфа",
     "country": "Россия",
     "status": "Компания",
@@ -77,12 +77,12 @@
     ]
   },
   {
-    "img": "@images/administration/kamnev.jpg",
+    "img": "/contents/img/administration/kamnev.jpg",
     "name": "Камнев Вячеслав Евгеньевич",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "post": "Вице-президент по развитию медиаактивов и систем их управления",
     "birthday": "1 января",
     "info": [
@@ -95,10 +95,10 @@
     "placeWork": "РАКИБ"
   },
   {
-    "img": "@images/administration/stupin.jpg",
+    "img": "/contents/img/administration/stupin.jpg",
     "name": "Ступин Дмитрий Алексеевич",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Вице-президент по развитию электроэнергии для вычислительных мощностей",
@@ -106,9 +106,9 @@
     "placeWork": "РАКИБ"
   },
   {
-    "img": "@images/community/racibSecurity.jpg",
+    "img": "/contents/img/community/racibSecurity.jpg",
     "name": "Центр Безопасности и цифровой экономики РАКИБ",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
@@ -137,11 +137,11 @@
     ]
   },
   {
-    "img": "@images/administration/runets.jpg",
+    "img": "/contents/img/administration/runets.jpg",
     "name": "Рунец Игорь Александрович",
     "city": "Москва",
     "country": "Россия",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "status": "Персона",
     "post": "Вице-президент по вопросам майнинга",
     "birthday": "1 января",
@@ -185,12 +185,12 @@
     ]
   },
   {
-    "img": "@images/community/rightGroup.jpg",
+    "img": "/contents/img/community/rightGroup.jpg",
     "name": "Right Group",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "info": [
       "Специализируемся на поставке майнингового оборудования с 2017г.",
       "42 ключевых клиента",
@@ -218,11 +218,11 @@
         }
       }
     ],
-    "cover": "@images/community/cover/rightGroupCover.png"
+    "cover": "/contents/img/community/cover/rightGroupCover.png"
   },
   {
-    "img": "@images/administration/zelenevsky.jpg",
-    "flag": "@svg/ru.svg",
+    "img": "/contents/img/administration/zelenevsky.jpg",
+    "flag": "/contents/svg/ru.svg",
     "name": "Зеленевский Максим Юрьевич",
     "city": "Москва",
     "country": "Россия",
@@ -235,8 +235,8 @@
     "placeWork": "РАКИБ"
   },
   {
-    "img": "@images/administration/kazovsky.jpg",
-    "flag": "@svg/ru.svg",
+    "img": "/contents/img/administration/kazovsky.jpg",
+    "flag": "/contents/svg/ru.svg",
     "name": "Казовский Наум Иосифович",
     "city": "Москва",
     "country": "Россия",
@@ -246,9 +246,9 @@
     "placeWork": "РАКИБ"
   },
   {
-    "img": "@images/community/mirraTechnology.jpg",
+    "img": "/contents/img/community/mirraTechnology.jpg",
     "name": "Mirra Technology",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Уфа",
     "country": "Россия",
     "status": "Компания",
@@ -288,9 +288,9 @@
     ]
   },
   {
-    "img": "@images/administration/bogoyavlensky.jpg",
+    "img": "/contents/img/administration/bogoyavlensky.jpg",
     "name": "Богоявленский Дмитрий Борисович",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Омск",
     "country": "Россия",
     "status": "Персона",
@@ -315,9 +315,9 @@
     ]
   },
   {
-    "img": "@images/community/bitriver.jpg",
+    "img": "/contents/img/community/bitriver.jpg",
     "name": "BitRiver",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
@@ -385,8 +385,8 @@
     ]
   },
   {
-    "img": "@images/administration/zaripov.jpg",
-    "flag": "@svg/ru.svg",
+    "img": "/contents/img/administration/zaripov.jpg",
+    "flag": "/contents/svg/ru.svg",
     "name": "Зарипов Артур Рафаилович",
     "city": "Москва",
     "country": "Россия",
@@ -406,9 +406,9 @@
     ]
   },
   {
-    "img": "@images/directorate/philemon.jpg",
+    "img": "/contents/img/directorate/philemon.jpg",
     "name": "Филимон Антон Евгеньевич",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
@@ -420,8 +420,8 @@
     ]
   },
   {
-    "img": "@images/directorate/pivovar.jpg",
-    "flag": "@svg/ru.svg",
+    "img": "/contents/img/directorate/pivovar.jpg",
+    "flag": "/contents/svg/ru.svg",
     "name": "Пивовар Вячеслав Борисович",
     "city": "Москва",
     "country": "Россия",
@@ -436,9 +436,9 @@
     ]
   },
   {
-    "img": "@images/directorate/kharlamov.jpg",
+    "img": "/contents/img/directorate/kharlamov.jpg",
     "name": "Харламов Валерий Николаевич",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Новороссийск",
     "country": "Россия",
     "status": "Персона",
@@ -458,9 +458,9 @@
     ]
   },
   {
-    "img": "@images/community/joys.jpg",
+    "img": "/contents/img/community/joys.jpg",
     "name": "JoysDigital",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
@@ -474,7 +474,7 @@
       "цифровые_активы",
       "токены"
     ],
-    "cover": "@images/community/cover/joysCover.jpg",
+    "cover": "/contents/img/community/cover/joysCover.jpg",
     "desc": [
       {
         "title": "Цель сервиса",
@@ -501,9 +501,9 @@
     ]
   },
   {
-    "img": "@images/directorate/yan.jpg",
+    "img": "/contents/img/directorate/yan.jpg",
     "name": "Кривоносов Ян Анатольевич",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Новороссийск",
     "country": "Россия",
     "status": "Персона",
@@ -511,9 +511,9 @@
     "birthday": "16 ноября"
   },
   {
-    "img": "@images/directorate/serebrovsky.jpg",
+    "img": "/contents/img/directorate/serebrovsky.jpg",
     "name": "Серебровский Вадим Владимирович",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
@@ -521,9 +521,9 @@
     "birthday": "15 июля"
   },
   {
-    "img": "@images/directorate/gorokhov.jpg",
+    "img": "/contents/img/directorate/gorokhov.jpg",
     "name": "Горохов Андрей",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
@@ -531,9 +531,9 @@
     "birthday": "11 марта"
   },
   {
-    "img": "@images/directorate/gudimov.jpg",
+    "img": "/contents/img/directorate/gudimov.jpg",
     "name": "Гудимов Павел",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
@@ -541,28 +541,28 @@
     "birthday": "9 декабря"
   },
   {
-    "img": "@images/experts/sokolov.jpg",
+    "img": "/contents/img/experts/sokolov.jpg",
     "name": "Игорь Анатольевич Соколов",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Председатель Экспертного совета РАКИБ",
     "birthday": "13 декабря"
   },
   {
-    "img": "@images/experts/valuk.jpg",
+    "img": "/contents/img/experts/valuk.jpg",
     "name": "АЛЕКСАНДР НИКОЛАЕВИЧ ВАЛЮК",
     "city": "Новороссийск",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "birthday": "15 апреля"
   },
   {
-    "img": "@images/community/bitCluster.jpg",
+    "img": "/contents/img/community/bitCluster.jpg",
     "name": "BitCluster",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
@@ -592,45 +592,45 @@
     ]
   },
   {
-    "img": "@images/experts/gultyaeva.jpg",
+    "img": "/contents/img/experts/gultyaeva.jpg",
     "name": "ЕЛЕНА ВИКТОРОВНА ГУЛЬТЯЕВА",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
     "birthday": "8 января"
   },
   {
-    "img": "@images/experts/petrov.jpg",
+    "img": "/contents/img/experts/petrov.jpg",
     "name": "ВАЛЕРИЙ СТАНИСЛАВОВИЧ ПЕТРОВ",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
     "birthday": "6 сентября"
   },
   {
-    "img": "@images/experts/richka.jpg",
+    "img": "/contents/img/experts/richka.jpg",
     "name": "ДЕНИС АНАТОЛЬЕВИЧ РЫЧКА",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
     "birthday": "5 августа"
   },
   {
-    "img": "@images/experts/romanyuk.jpg",
+    "img": "/contents/img/experts/romanyuk.jpg",
     "name": "ВАЛЕРИЙ ИВАНОВИЧ РОМАНЮК",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
     "birthday": "15 октября"
   },
   {
-    "img": "@images/community/cryptoUniverse.jpg",
+    "img": "/contents/img/community/cryptoUniverse.jpg",
     "name": "CRYPTOUNIVERSE",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
@@ -654,46 +654,46 @@
     ]
   },
   {
-    "img": "@images/experts/selionov.jpg",
+    "img": "/contents/img/experts/selionov.jpg",
     "name": "ИГОРЬ АНАТОЛЬЕВИЧ СЕЛИОНОВ",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "birthday": "30 декабря"
   },
   {
-    "img": "@images/experts/chulkov.jpg",
+    "img": "/contents/img/experts/chulkov.jpg",
     "name": "ИГОРЬ ВЛАДИМИРОВИЧ ЧУЛКОВ",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "birthday": "10 сентября"
   },
   {
-    "img": "@images/experts/edemsky.jpg",
+    "img": "/contents/img/experts/edemsky.jpg",
     "name": "АЛЕКСАНДР ВЛАДИМИРОВИЧ ЕДЕМСКИЙ",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "birthday": "24 февраля"
   },
   {
-    "img": "@images/observers/barinsky.jpg",
+    "img": "/contents/img/observers/barinsky.jpg",
     "name": "Баринский Яков Андреевич",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Директор по инвестициям Группы QIWI",
     "birthday": "29 июня"
   },
   {
-    "img": "@images/community/walletRu.jpg",
+    "img": "/contents/img/community/walletRu.jpg",
     "name": "Кошелёк.ру",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Санкт-Петербург",
     "country": "Россия",
     "status": "Компания",
@@ -733,9 +733,9 @@
     ]
   },
   {
-    "img": "@images/observers/gabrielyan.jpg",
+    "img": "/contents/img/observers/gabrielyan.jpg",
     "name": "Габриелян Владимир",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона",
@@ -743,49 +743,49 @@
     "birthday": "21 апреля"
   },
   {
-    "img": "@images/observers/galician.jpg",
+    "img": "/contents/img/observers/galician.jpg",
     "name": "Галицкий Александр Владимирович",
     "city": "Новороссийск",
     "country": "Россия",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "status": "Персона",
     "post": "Управляющий партнер Almaz Capital Partners",
     "birthday": "16 мая"
   },
   {
-    "img": "@images/observers/demin.jpg",
+    "img": "/contents/img/observers/demin.jpg",
     "name": "Дёмин Владимир Игоревич",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Председатель правления «ВЭБ-Инновации»",
     "birthday": "11 ноября"
   },
   {
-    "img": "@images/observers/emelin.jpg",
+    "img": "/contents/img/observers/emelin.jpg",
     "name": "Емелин Александр Сергеевич",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Генеральный директор АО «Энергетические системы и коммуникации»",
     "birthday": "15 августа"
   },
   {
-    "img": "@images/observers/ivlev.jpg",
+    "img": "/contents/img/observers/ivlev.jpg",
     "name": "Ивлев Александр Владимирович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Управляющий партнер компании EY по странам СНГ",
     "birthday": "18 октября"
   },
   {
-    "img": "@images/community/intelionMining.jpg",
+    "img": "/contents/img/community/intelionMining.jpg",
     "name": "ITELION MINING",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Санкт-Петербург",
     "country": "Россия",
     "status": "Компания",
@@ -801,29 +801,29 @@
     ]
   },
   {
-    "img": "@images/observers/kochetkov.jpg",
+    "img": "/contents/img/observers/kochetkov.jpg",
     "name": "Кочетков Владислав Вячеславович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Президент-председатель правления ФИНАМ",
     "birthday": "14 октября"
   },
   {
-    "img": "@images/observers/martynov.jpg",
+    "img": "/contents/img/observers/martynov.jpg",
     "name": "Мартынов Владислав Владиславович",
     "city": "Москва",
     "country": "Россия",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "status": "Персона",
     "post": "Советник Etherium Foundation",
     "birthday": "19 сентября"
   },
   {
-    "img": "@svg/racib.svg",
+    "img": "/contents/svg/racib.svg",
     "name": "РАКИБ",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "city": "Москва",
     "country": "Россия",
     "status": "Компания",
@@ -848,7 +848,7 @@
         }
       }
     ],
-    "cover": "@images/community/cover/racibCover.jpg",
+    "cover": "/contents/img/community/cover/racibCover.jpg",
     "contacts": [
       "Напишите нам или позвоните в рабочее время, мы постараемся ответить на все ваши вопросы.",
       "По вопросам членства в Ассоциации: members@racib.com",
@@ -856,96 +856,96 @@
       "По вопросам партнерства, проблемам безопасности и прочим вопросам: security@racib.com"
     ],
     "media": [
-      "@images/community/cover/racibCover.jpg",
-      "@images/community/mediaRacib/newYearRacib.jpg",
-      "@images/community/mediaRacib/rifRacib.jpg"
+      "/contents/img/community/cover/racibCover.jpg",
+      "/contents/img/community/mediaRacib/newYearRacib.jpg",
+      "/contents/img/community/mediaRacib/rifRacib.jpg"
     ]
   },
   {
-    "img": "@images/observers/nemkin.jpg",
+    "img": "/contents/img/observers/nemkin.jpg",
     "name": "Немкин Антон Игоревич",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Член совета директоров «AT Consulting», председатель комитета по ИТ Ассоциации менеджеров России, руководитель ИТ-компании Brain Factory",
     "birthday": "10 декабря"
   },
   {
-    "img": "@images/observers/osochenko.jpg",
+    "img": "/contents/img/observers/osochenko.jpg",
     "name": "Осоченко Евгений Алексеевич",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Руководитель проектного офиса «Цифровая трансформация отрасли» госкорпорации «Росатом»",
     "birthday": "26 июля"
   },
   {
-    "img": "@images/observers/protasov.jpg",
+    "img": "/contents/img/observers/protasov.jpg",
     "name": "Протасов Станислав Станиславович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Сооснователь и старший вице-президент по проектированию и разработке ПО Acronis",
     "birthday": "6 июня"
   },
   {
-    "img": "@images/observers/pushkov.jpg",
+    "img": "/contents/img/observers/pushkov.jpg",
     "name": "Пушков Антон Михайлович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Управляющий партнер Центра интеллектуальной собственности Фонда «Сколково»",
     "birthday": "25 августа"
   },
   {
-    "img": "@images/observers/treshchev.jpg",
+    "img": "/contents/img/observers/treshchev.jpg",
     "name": "Трещев Александр Станиславович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Учредитель РАКИБ",
     "birthday": "27 января"
   },
   {
-    "img": "@images/observers/filatov.jpg",
+    "img": "/contents/img/observers/filatov.jpg",
     "name": "Филатов Андрей Викторович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Генеральный директор SAP в России и СНГ",
     "birthday": "12 сентября"
   },
   {
-    "img": "@images/observers/chubar.jpg",
+    "img": "/contents/img/observers/chubar.jpg",
     "name": "Чубарь Алексей Владимирович",
     "city": "Москва",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Начальник управления цифровой трансформации банка ВТБ",
     "birthday": "28 февраля"
   },
   {
-    "img": "@images/users/chulkov.jpg",
+    "img": "/contents/img/users/chulkov.jpg",
     "name": "Чулков Игорь Владимирович",
     "city": "Москва",
     "country": "Россия",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "status": "Персона",
     "birthday": "22 октября"
   },
   {
-    "img": "@images/users/kvasnikov.jpg",
+    "img": "/contents/img/users/kvasnikov.jpg",
     "name": "Квасников Михаил Юрьевич",
     "city": "Москва",
     "country": "Россия",
-    "flag": "@svg/ru.svg",
+    "flag": "/contents/svg/ru.svg",
     "status": "Персона",
     "birthday": "15 мая"
   }

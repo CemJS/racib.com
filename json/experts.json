@@ -1,6 +1,6 @@
 [
   {
-    "img": "@images/experts/sokolov.jpg",
+    "img": "/contents/img/experts/sokolov.jpg",
     "name": "ИГОРЬ АНАТОЛЬЕВИЧ СОКОЛОВ",
     "city": "Москва",
     "country": "Россия",
@@ -8,56 +8,56 @@
     "post": "Председатель Экспертного совета РАКИБ"
   },
   {
-    "img": "@images/experts/valuk.jpg",
+    "img": "/contents/img/experts/valuk.jpg",
     "name": "АЛЕКСАНДР НИКОЛАЕВИЧ ВАЛЮК",
     "city": "Новороссийск",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/gultyaeva.jpg",
+    "img": "/contents/img/experts/gultyaeva.jpg",
     "name": "ЕЛЕНА ВИКТОРОВНА ГУЛЬТЯЕВА",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/petrov.jpg",
+    "img": "/contents/img/experts/petrov.jpg",
     "name": "ВАЛЕРИЙ СТАНИСЛАВОВИЧ ПЕТРОВ",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/richka.jpg",
+    "img": "/contents/img/experts/richka.jpg",
     "name": "ДЕНИС АНАТОЛЬЕВИЧ РЫЧКА",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/romanyuk.jpg",
+    "img": "/contents/img/experts/romanyuk.jpg",
     "name": "ВАЛЕРИЙ ИВАНОВИЧ РОМАНЮК",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/selionov.jpg",
+    "img": "/contents/img/experts/selionov.jpg",
     "name": "ИГОРЬ АНАТОЛЬЕВИЧ СЕЛИОНОВ",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/chulkov.jpg",
+    "img": "/contents/img/experts/chulkov.jpg",
     "name": "ИГОРЬ ВЛАДИМИРОВИЧ ЧУЛКОВ",
     "city": "Москва",
     "country": "Россия",
     "status": "Персона"
   },
   {
-    "img": "@images/experts/edemsky.jpg",
+    "img": "/contents/img/experts/edemsky.jpg",
     "name": "АЛЕКСАНДР ВЛАДИМИРОВИЧ ЕДЕМСКИЙ",
     "city": "Москва",
     "country": "Россия",
