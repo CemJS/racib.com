@@ -1,0 +1,27 @@
+[
+    {
+        "img": "/contents/svg/sidebar/infoDark.svg",
+        "name": "О РАКИБ",
+        "link": "/about"
+    },
+    {
+        "img": "/contents/svg/sidebar/communityDark.svg",
+        "name": "Участники",
+        "link": "/players"
+    },
+    {
+        "img": "/contents/svg/sidebar/calendarDark.svg",
+        "name": "Мероприятия",
+        "link": "/events"
+    },
+    {
+        "img": "/contents/svg/sidebar/newsDark.svg",
+        "name": "Новости",
+        "link": "/news"
+    },
+    {
+        "img": "/contents/svg/sidebar/userAddDark.svg",
+        "name": "Как вступить ?",
+        "link": "/join"
+    }
+]

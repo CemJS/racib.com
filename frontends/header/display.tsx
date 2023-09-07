@@ -1,70 +1,12 @@
 import { Cemjsx } from "cemjs-all"
 import logo from '@svg/racib.svg'
 import chat from '@svg/icons/chatHelper.svg'
-import info from '@svg/sidebar/infoDark.svg'
-import community from '@svg/sidebar/communityDark.svg'
-import userAdd from '@svg/sidebar/userAddDark.svg'
-import events from '@svg/sidebar/calendarDark.svg'
-import news from '@svg/sidebar/newsDark.svg'
 import letter from '@svg/sidebar/letterDark.svg'
 import phone from '@svg/sidebar/phoneDark.svg'
 import sidebarArrow from '@svg/sidebar/sidebarArrow.svg'
 
-import telegram from '@svg/socials/telegram.svg'
-import vk from '@svg/socials/vk.svg'
-import youtube from '@svg/socials/youtube.svg'
-import twitter from '@svg/socials/twitter.svg'
-
-const sidebarList = [
-	{
-		img: info,
-		name: 'О РАКИБ',
-		link: '/about',
-	},
-	{
-		img: community,
-		name: 'Участники',
-		link: '/players',
-	},
-	{
-		img: events,
-		name: 'Мероприятия',
-		link: '/events',
-	},
-	{
-		img: news,
-		name: 'Новости',
-		link: '/news',
-	},
-	{
-		img: userAdd,
-		name: 'Как вступить ?',
-		link: '/join',
-	},
-]
-
-const socials = [
-	{
-		name: 'Vkontakte',
-		icon: vk,
-		link: 'https://vk.com/racib2021',
-	},
-	{
-		name: 'Telegram',
-		icon: telegram,
-		link: 'https://t.me/racibpro',
-	},
-	{
-		name: 'Youtube',
-		icon: youtube,
-		link: 'https://www.youtube.com/channel/UCWIPNURlkElInBjiqIpRWYg',
-	},
-	{
-		name: 'Twitter',
-		icon: twitter,
-		link: 'https://twitter.com/RACIBcom',
-	},
-]
+import sidebarList from '@json/sidebar'
+import socials from '@json/socials'
 
 export const display = function () {
 	return (
