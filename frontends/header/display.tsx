@@ -27,8 +27,13 @@ export const display = function () {
 				<div
 					class="header_acc"
 					onclick={() => {
-						// клик на чата помощника
-						console.log('=987683=', 'буду всем помогать ^_^')
+						this.Fn.initOne({
+							name: "modalSoon", ifOpen: (front) => {
+								setTimeout(() => {
+									front.clearData()
+								}, 500);
+							}
+						})
 					}}
 				>
 					<span>Чат помощник</span>

@@ -12,7 +12,7 @@ export const display = function () {
 					this.Variable.openSidebar ? null : "banner_wrap_close"]}
 			>
 				<section class="home_link link_block">
-					<a href="/goal">
+					<a href="/" onclick={this.Fn.link}>
 						<img src={arrowR} class="link_block_icon" />
 						<span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
 					</a>

@@ -105,6 +105,34 @@ section {
   }
 }
 
+.dev {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45vh;
+  background-color: var(--back_block);
+  color: var(--title);
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &_text {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 42px;
+  }
+
+  &_img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 .text {
   font-size: 16px;
   font-weight: 400;

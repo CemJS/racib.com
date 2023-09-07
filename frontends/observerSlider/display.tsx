@@ -106,7 +106,7 @@ export const display = function () {
             </section>
 
             <div class="link_block">
-              <a href="/players">
+              <a href="/players" onclick={this.Fn.link}>
                 <img src={next} />
                 <span>Перейти на страницу</span>
               </a>
