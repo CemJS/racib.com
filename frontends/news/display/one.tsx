@@ -1,7 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
-
-import news from '@json/allUsers'
+import map from '@svg/icons/dark/mapPin.svg'
 
 export default function () {
   return (
@@ -30,6 +29,21 @@ export default function () {
             <div class="new_profile">
               <div class="new_profile_image">
                 <img src={this.Static.record.img} alt="Иибражение новости" />
+              </div>
+              <div class="new_profile_info">
+                {
+                  this.Static.record?.category ?
+                    <span class="new_profile_info_category">{this.Static.record.category}</span> : null
+                }
+
+                {
+                  this.Static.record?.city ?
+                    <span class="new_profile_info_location">
+                      <img src={map} alt="Локация" />
+                      {this.Static.record.city}
+                    </span> : null
+                }
+
               </div>
             </div>
             <div class="new_content">
