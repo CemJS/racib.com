@@ -299,7 +299,7 @@ export default function () {
                           class="carousel_person"
                           ref="playerSlide"
                           onclick={() => {
-                            this.Static.record = item;
+                            // this.Static.record = item;
                             this.Fn.linkChange(`/players/show/${index}`)
                           }}
                         >
