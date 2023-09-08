@@ -2,6 +2,7 @@ import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
+import notFound from '@svg/list.svg'
 
 import events from '@json/events'
 
@@ -142,7 +143,11 @@ export default function () {
                               {item.name}
                             </li>
                           )
-                        }) : <span>Записи не найдены</span>
+                        }) :
+                        <div class="notFound">
+                          <span class="notFound_titleMini">Записи не найдены</span>
+                          <img src={notFound} alt="Записи не найдены" class="notFound_imgMini" />
+                        </div>
                     }
                   </ul>
                 </div>
@@ -318,7 +323,11 @@ export default function () {
                         </div>
                       </div>
                     )
-                  }) : <span>Записи не найдены</span>
+                  }) :
+                  <div class="notFound">
+                    <span class="notFound_title">Записи не найдены</span>
+                    <img src={notFound} alt="Записи не найдены" class="notFound_img" />
+                  </div>
               }
             </div>
           </section>
