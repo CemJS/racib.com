@@ -103,6 +103,11 @@ export default function () {
                             return true;
                           }
                         })
+                        newsData = news.filter((item) => {
+                          if (item.category.toLocaleLowerCase().includes(value)) {
+                            return true;
+                          }
+                        })
                         this.init()
                       }}
                     />

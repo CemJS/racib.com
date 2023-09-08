@@ -7,7 +7,7 @@ import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 import arrowR from '@svg/icons/arrowR.svg'
 import calendar from '@svg/icons/date.svg'
-import players from '@json/players'
+import players from '@json/allUsers'
 import events from '@json/events'
 
 let isDragging, isDragUsers = false;
