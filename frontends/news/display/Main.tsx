@@ -8,31 +8,16 @@ import news from '@json/news'
 
 const category = [
   {
-    name: 'Вечеринка',
+    name: 'Блокчейн',
   },
   {
-    name: 'Встреча',
+    name: 'Крипто',
   },
   {
-    name: 'Конференция',
+    name: 'Майнинг',
   },
   {
-    name: 'Круглый стол',
-  },
-  {
-    name: 'Премия',
-  },
-  {
-    name: 'Саммит',
-  },
-  {
-    name: 'Семинар',
-  },
-  {
-    name: 'Форум',
-  },
-  {
-    name: 'Zoom',
+    name: 'Общество',
   }
 ]
 
@@ -98,7 +83,8 @@ export default function () {
                       <span
                         class="chooseCategory_close"
                         onclick={() => {
-                          this.Static.chooseCategory = ''
+                          this.Static.chooseCategory = '';
+                          newsData = news;
                           this.init();
                         }}
                       >
@@ -142,6 +128,11 @@ export default function () {
                                   this.Static.categoryStatus = 'close';
                                   this.Ref.filterCategory.classList.remove('filter_item_active');
                                 }
+                                newsData = news.filter((item) => {
+                                  if (item.category.includes(this.Static.chooseCategory)) {
+                                    return true
+                                  }
+                                })
                                 this.init();
                               }}
                             >
@@ -160,6 +151,16 @@ export default function () {
                   type="text"
                   class="filter_input"
                   placeholder="Где искать?"
+                  oninput={(e) => {
+                    let value = e.target.value.toLocaleLowerCase();
+                    newsData = news.filter((item) => {
+                      console.log('=9a2e9c=', item)
+                      if (item.city.toLocaleLowerCase().includes(value)) {
+                        return true;
+                      }
+                    })
+                    this.init();
+                  }}
                 />
               </div>
 
