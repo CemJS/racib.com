@@ -29,7 +29,7 @@ export const display = function () {
               <span>ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И БЛОКЧЕЙНА</span>
             </h2>
             <div class="link_block">
-              <a href="/goal">
+              <a href="/mission" onclick={this.Fn.link}>
                 <img src={goal} class="link_block_icon" />
                 <span>Миссия РАКИБ. Главные цели деятельности РАКИБ.</span>
               </a>
@@ -120,7 +120,7 @@ export const display = function () {
             </div>
           </section>
           <div class="link_block">
-            <a href="/players">
+            <a href="/players" onclick={this.Fn.link}>
               <img src={next} />
               <span>Перейти на страницу</span>
             </a>

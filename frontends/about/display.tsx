@@ -1,18 +1,10 @@
 import { Cemjsx } from "cemjs-all"
 
-import next from '@svg/icons/light/nextWhite.svg'
-import arrNextDark from '@svg/icons/dark/next.svg'
-import arrPrevDark from '@svg/icons/dark/prev.svg'
-import goal from '@svg/icons/book.svg'
 import pencil from '@svg/icons/pencil.svg'
 import smi from '@images/banners/public.jpg'
 import education from '@images/banners/education.png'
 
 
-// import admins from '@json/administration'
-// import directorate from '@json/directorate'
-import observers from '@json/observers'
-import experts from '@json/experts'
 
 
 const facts = [

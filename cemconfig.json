@@ -60,6 +60,12 @@
       ]
     },
     {
+      "url": "/mission",
+      "front": [
+        "mission"
+      ]
+    },
+    {
       "url": "/error",
       "front": [
         "error"

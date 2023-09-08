@@ -50,7 +50,7 @@ export const display = function () {
                   <h2>События</h2>
                   <p>Анонсы мероприятий</p>
                 </div>
-                <a href="/events" class="btn_link home_events_link">Все мероприятия</a>
+                <a href="/events" onclick={this.Fn.link} class="btn_link home_events_link">Все мероприятия</a>
               </div>
 
               <div class="carousel_wrap">
@@ -209,7 +209,7 @@ export const display = function () {
                   >
                     <img src={arrNextDark} />
                   </button>
-                  <a href="/players" class="btn_link home_events_link">Все участники</a>
+                  <a href="/players" onclick={this.Fn.link} class="btn_link home_events_link">Все участники</a>
                 </div>
               </div>
 
