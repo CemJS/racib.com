@@ -109,7 +109,7 @@ export const display = function () {
                   admins.map((item, index) => {
                     return (
                       <div class="carousel_person" ref="ruleSlide">
-                        <a href={`/players/administration/${index}`} class="carousel_person_circle">
+                        <a href={`/players/administration/${index}`} onclick={this.Fn.link} class="carousel_person_circle">
                           <div
                             class="carousel_person_img"
                             style={`background-image: url(${item.img})`}

@@ -81,7 +81,7 @@ export const display = function () {
                     directorate.map((item, index) => {
                       return (
                         <div class="carousel_person" ref="directoreSlide">
-                          <a href={`/players/directorate/${index}`} class="carousel_person_circle">
+                          <a href={`/players/directorate/${index}`} onclick={this.Fn.link} class="carousel_person_circle">
                             <div
                               class="carousel_person_img"
                               style={`background-image: url(${item.img})`}

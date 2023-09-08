@@ -80,7 +80,7 @@ export const display = function () {
                   experts.map((item, index) => {
                     return (
                       <div class="carousel_person" ref="expertsSlide">
-                        <a href={`/players/experts/${index}`} class="carousel_person_circle">
+                        <a href={`/players/experts/${index}`} onclick={this.Fn.link} class="carousel_person_circle">
                           <div
                             class="carousel_person_img"
                             style={`background-image: url(${item.img})`}
