@@ -32,6 +32,10 @@ export default function () {
               </div>
               <div class="new_profile_info">
                 {
+                  this.Static.record?.date ?
+                    <span>{this.Static.record.date}</span> : null
+                }
+                {
                   this.Static.record?.category ?
                     <span class="new_profile_info_category">{this.Static.record.category}</span> : null
                 }
