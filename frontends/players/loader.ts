@@ -17,7 +17,7 @@ export const loader = function () {
     } else if (this.Variable.DataUrl[1] == "experts") {
       tmp = experts[this.Variable.DataUrl[2]]
     } else {
-      this.Static.record = allUsers[this.Variable.DataUrl[2]]
+      tmp = { name: decodeURI(this.Variable.DataUrl[2]) }
     }
 
     if (tmp != null) {

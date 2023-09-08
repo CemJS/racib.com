@@ -299,8 +299,8 @@ export default function () {
                           class="carousel_person"
                           ref="playerSlide"
                           onclick={() => {
-                            // this.Static.record = item;
-                            this.Fn.linkChange(`/players/show/${index}`)
+                            this.Static.record = item;
+                            this.Fn.linkChange(`/players/show/${item.name}`)
                           }}
                         >
                           <div class="carousel_person_circle">

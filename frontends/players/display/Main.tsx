@@ -228,7 +228,7 @@ export default function () {
                       class="players_list_item"
                       onclick={() => {
                         this.Static.record = item;
-                        this.Fn.linkChange(`/players/show/${index}`)
+                        this.Fn.linkChange(`/players/show/${item.name}`)
                       }}
                     >
                       <span
