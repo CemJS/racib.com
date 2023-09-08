@@ -36,11 +36,11 @@ export const display = function () {
               <div class="home_banner_info">
                 <span class="home_banner_info_date">
                   <img src={calendar} alt="Дата мероприятия" />
-                  24 августа 2023, 10:00
+                  26 сентября 2023
                 </span>
-                <h5 class="home_banner_info_title">Противодействие использованию виртуальных активов в совершении преступлений и финансировании терроризма</h5>
-                <span class="btn_link">Семинар</span>
-                <p class="home_banner_info_desc">На базе МГИМО состоится  международный семинар Организации Объединенных Наций по противодействию использованию виртуальных активов в совершении преступлений, в том числе для финансировании терроризма.</p>
+                <h5 class="home_banner_info_title">Развитие и регулирование экосистем в России: на пути к цифровому равенству</h5>
+                <span class="btn_link">Форум</span>
+                <p class="home_banner_info_desc">Национальный форум</p>
               </div>
             </section>
 

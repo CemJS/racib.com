@@ -6,6 +6,9 @@ import youtube from '@svg/socials/youtube.svg'
 import twitter from '@svg/socials/twitter.svg'
 import logoCem from '@svg/logoCem.svg'
 import phone from '@svg/icons/light/phoneLight.svg'
+import phoneGrey from '@svg/icons/light/phoneGrey.svg'
+import letterGrey from '@svg/icons/light/letterGrey.svg'
+
 
 const links = [
 	// {
@@ -144,7 +147,20 @@ export const display = function () {
 							</div> */}
 
 
-
+							<div>
+								<h6 class="footer_title">Контактный телефон</h6>
+								<a href="tel:+74992724888" onclick={this.Fn.link} class="footer_phone">
+									<img src={phoneGrey} alt="Контактный телефон" />
+									<span>8 (499) 272-48-88</span>
+								</a>
+							</div>
+							<div>
+								<h6 class="footer_title">Электронная почта</h6>
+								<a href="mailto:info@racib.com" onclick={this.Fn.link} class="footer_phone">
+									<img src={letterGrey} alt="Электронная почта" />
+									<span>info@racib.com</span>
+								</a>
+							</div>
 
 
 						</div>
