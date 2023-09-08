@@ -30,7 +30,7 @@ export const display = function () {
           </a>
 
           <section class="players">
-            {/* <div class="filter">
+            <div class="filter">
               <div class="filter_item filter_item_event">
                 <span class="filter_item_title">Имя</span>
                 <input
@@ -154,9 +154,9 @@ export const display = function () {
               >
                 Сообщества
               </span>
-            </div> */}
+            </div>
 
-            <div class="filterNew">
+            {/* <div class="filterNew">
               <span
                 class="filterNew_icon"
                 onclick={() => {
@@ -221,7 +221,7 @@ export const display = function () {
 
                 </div>
               </div>
-            </div>
+            </div> */}
 
 
             <div class="players_list">

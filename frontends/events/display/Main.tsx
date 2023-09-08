@@ -223,7 +223,7 @@ export default function () {
                       class="card"
                       onclick={() => {
                         this.Static.record = item;
-                        this.Fn.linkChange(`/news/show/${index}`)
+                        this.Fn.linkChange(`/events/show/${index}`)
                       }}
                     >
                       <span class="card_category">{item.category}</span>
