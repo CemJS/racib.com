@@ -129,7 +129,7 @@ export const display = function () {
                           <span class="card_category">{item.category}</span>
                           <div class="card_img" style={`background-image: url(${item.cover})`}>
                             <div class="card_logo">
-                              <img src={item.logo} alt="" />
+                              <img src={item.logo} alt="Логотип" />
                             </div>
                           </div>
                           <div class="card_info">
@@ -153,7 +153,7 @@ export const display = function () {
                   }
 
                 </div>
-                <div
+                {/* <div
                   class="carousel_hover carousel_hover_r"
                   onmouseenter={() => {
                     this.Ref.eventsSlider.scrollLeft += 20;
@@ -170,7 +170,7 @@ export const display = function () {
                   >
                     <img src={arrNextLight} alt="Next Slide" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </section>
 
@@ -258,15 +258,21 @@ export const display = function () {
                 }}
               >
                 {
-                  players.map(item => {
+                  players.map((item, index) => {
                     return (
-                      <div class="carousel_person" ref="playerSlide">
-                        <a href="/" class="carousel_person_circle">
+                      <div
+                        class="carousel_person"
+                        ref="playerSlide"
+                        onclick={() => {
+                          this.Fn.linkChange(`/players/show/${index}`);
+                        }}
+                      >
+                        <div class="carousel_person_circle">
                           <div
                             class="carousel_person_img"
                             style={`background-image: url(${item.img})`}
                           ></div>
-                        </a>
+                        </div>
                         <span class="carousel_person_status">{item.status}</span>
                         <h5 class="carousel_person_name">{item.name}</h5>
                       </div>
