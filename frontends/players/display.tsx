@@ -1,6 +1,7 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import mapPin from '@svg/icons/dark/mapPin.svg'
+import filter from '@svg/icons/dark/filter.svg'
 import One from './display/one'
 import users from '@json/allUsers'
 
@@ -154,6 +155,35 @@ export const display = function () {
                 Сообщества
               </span>
             </div>
+
+            {/* <div class="filterNew">
+              <span
+                class="filterNew_icon"
+                onclick={() => {
+                  this.Ref.filterContent.classList.toggle('filterNew_content_active')
+                }}
+              >
+                <img src={filter} alt="Фильтр поиска" />
+              </span>
+
+              <div class="filterNew_content" ref="filterContent">
+                <div class="filterNew_container">
+                  <h3 class="filterNew_title">Фильтр поиска</h3>
+
+                  <div class="filterNew_field">
+                    <span>Имя</span>
+                    <input
+                      type="text"
+                      class="filterNew_input"
+                      placeholder="Кого ищете?"
+                      oninput={() => {
+
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div> */}
 
 
             <div class="players_list">
