@@ -2,9 +2,10 @@ import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
-import filter from '@svg/icons/dark/filter.svg'
 import views from '@svg/icons/dark/views.svg'
+import One from './display/one'
 import news from '@json/news'
+// import filter from '@svg/icons/dark/filter.svg'
 
 const category = [
   {
@@ -41,6 +42,9 @@ newsData = news;
 categoryData = category;
 
 export const display = function () {
+  if (this.Static.record) {
+    return One.bind(this)()
+  }
   return (
     <div class="main_wrap">
       <main
@@ -65,7 +69,7 @@ export const display = function () {
                   oninput={(e) => {
                     let value = e.target.value.toLocaleLowerCase();
                     newsData = news.filter((item) => {
-                      if (item.desc.toLocaleLowerCase().includes(value)) {
+                      if (item.descShort.toLocaleLowerCase().includes(value)) {
                         return true;
                       }
                     })
@@ -278,38 +282,25 @@ export const display = function () {
               </div>
             </div>
 
-            {/* <div class="filter_mobile_wrap">
-
-              <span
-                onclick={() => {
-                  this.Ref.filterMobile.classList.toggle('filter_mobile_active');
-                }}
-              >
-                <p>Фильтр поиска</p>
-                <img src={filter} alt="Фильтр поиска" />
-              </span>
-
-              <div class="filter_mobile" ref="filterMobile">
-                <span class="filter_mobile_header">
-                  <h3>Фильтр поиска</h3>
-                  <button>x</button>
-                </span>
-              </div>
-
-            </div> */}
-
             <div class="news_list">
               {
                 newsData.length ?
 
                   newsData.map((item, index) => {
                     return (
-                      <div class="newCard" ref="newsSlide" href="/">
+                      <div
+                        class="newCard"
+                        ref="newsSlide"
+                        onclick={() => {
+                          this.Static.record = item;
+                          this.init();
+                        }}
+                      >
                         <span>{item.category}</span>
                         <div class="newCard_img" style={`background-image: url(${item.img})`}>
                         </div>
                         <h5 class="newCard_title">{item.title}</h5>
-                        <p class="newCard_desc">{item.desc}</p>
+                        <p class="newCard_desc">{item.descShort}</p>
                         <div class="newCard_details">
                           <span class="newCard_details_date">{item.date}</span>
                           <span class="newCard_details_views">

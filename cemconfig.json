@@ -10,7 +10,6 @@
       "url": "/",
       "front": [
         "particles",
-        "scrollTop",
         "home"
       ]
     },
@@ -58,6 +57,12 @@
       "url": "/privacy",
       "front": [
         "privacy"
+      ]
+    },
+    {
+      "url": "/mission",
+      "front": [
+        "mission"
       ]
     },
     {

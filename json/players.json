@@ -1,6 +1,6 @@
 [
   {
-    "img": "@images/users/brazhnikov.jpg",
+    "img": "/contents/img/users/brazhnikov.jpg",
     "name": "Бражников Александр Евгеньевич",
     "city": "Москва",
     "country": "Россия",
@@ -10,7 +10,7 @@
     "lastTime": "14:55"
   },
   {
-    "img": "@images/users/pripachkin.jpg",
+    "img": "/contents/img/users/pripachkin.jpg",
     "name": "Припачкин Юрий Игоревич",
     "city": "Москва",
     "country": "Россия",
@@ -20,7 +20,7 @@
     "lastTime": "15:04"
   },
   {
-    "img": "@images/users/yan.jpg",
+    "img": "/contents/img/users/yan.jpg",
     "name": "Кривоносов Ян Анатольевич",
     "city": "Новороссийск",
     "country": "Россия",
@@ -30,7 +30,7 @@
     "lastTime": "01.07.2023"
   },
   {
-    "img": "@images/users/zelenevsky.jpg",
+    "img": "/contents/img/users/zelenevsky.jpg",
     "name": "Зеленевский Максим Юрьевич",
     "city": "Москва",
     "country": "Россия",
@@ -40,7 +40,7 @@
     "lastTime": "01.07.2023"
   },
   {
-    "img": "@images/users/gorcharuk.jpg",
+    "img": "/contents/img/users/gorcharuk.jpg",
     "name": "Гончарук Виктор Александрович",
     "city": "Москва",
     "country": "Россия",
@@ -50,7 +50,7 @@
     "lastTime": "01.07.2023"
   },
   {
-    "img": "@images/users/chulkov.jpg",
+    "img": "/contents/img/users/chulkov.jpg",
     "name": "Чулков Игорь Владимирович",
     "city": "Москва",
     "country": "Россия",
@@ -60,7 +60,7 @@
     "lastTime": "01.07.2023"
   },
   {
-    "img": "@images/users/romanyuk.jpg",
+    "img": "/contents/img/users/romanyuk.jpg",
     "name": "Романюк Валерий Иванович",
     "city": "Москва",
     "country": "Россия",
@@ -70,7 +70,7 @@
     "lastTime": "15:04"
   },
   {
-    "img": "@images/users/kvasnikov.jpg",
+    "img": "/contents/img/users/kvasnikov.jpg",
     "name": "Квасников Михаил Юрьевич",
     "city": "Москва",
     "country": "Россия",

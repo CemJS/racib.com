@@ -2,6 +2,7 @@ import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
+import One from './display/one'
 import viewsDark from '@svg/icons/dark/views.svg'
 
 import arrNextDark from '@svg/icons/dark/next.svg'
@@ -40,7 +41,9 @@ const category = [
 ]
 
 export const display = function () {
-
+  if (this.Static.record) {
+    return One.bind(this)()
+  }
   return (
     <div class="main_wrap">
       <main
@@ -218,7 +221,13 @@ export const display = function () {
               {
                 events.map(item => {
                   return (
-                    <div class="card">
+                    <div
+                      class="card"
+                      onclick={() => {
+                        this.Static.record = item;
+                        this.init();
+                      }}
+                    >
                       <span class="card_category">{item.category}</span>
                       <div class="card_img" style={`background-image: url(${item.cover})`}>
                         <div class="card_logo">

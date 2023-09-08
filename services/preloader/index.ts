@@ -1,12 +1,10 @@
 const app = document.getElementById('app');
 const preloader = document.getElementById('preloader');
 const percent = document.querySelector('.preloader_percent');
-// const prog = document.getElementById('progress');
 
 export const loader = async function (Variable) {
-    if (app) {
-        app.style.display = "none"
-    }
+    if (app && preloader) { app.style.display = "none" }
+    return
 }
 
 export const progress = async function ({ load, total }) {
@@ -22,9 +20,8 @@ export const progress = async function ({ load, total }) {
                 }
             }, 777);
         } else {
-            // prog.style.width = 200 / 100 * count + 'px';
             percent.textContent = count + '%';
         }
     }
-
+    return
 }

@@ -1,6 +1,6 @@
 [
   {
-    "img": "@images/observers/barinsky.jpg",
+    "img": "/contents/img/observers/barinsky.jpg",
     "name": "Баринский Яков Андреевич",
     "city": "Москва",
     "country": "Россия",
@@ -8,7 +8,7 @@
     "post": "Директор по инвестициям Группы QIWI"
   },
   {
-    "img": "@images/observers/gabrielyan.jpg",
+    "img": "/contents/img/observers/gabrielyan.jpg",
     "name": "Габриелян Владимир",
     "city": "Москва",
     "country": "Россия",
@@ -16,7 +16,7 @@
     "post": "Вице-президент и CTO Mail.ru Group"
   },
   {
-    "img": "@images/observers/galician.jpg",
+    "img": "/contents/img/observers/galician.jpg",
     "name": "Галицкий Александр Владимирович",
     "city": "Новороссийск",
     "country": "Россия",
@@ -24,7 +24,7 @@
     "post": "Управляющий партнер Almaz Capital Partners"
   },
   {
-    "img": "@images/observers/demin.jpg",
+    "img": "/contents/img/observers/demin.jpg",
     "name": "Дёмин Владимир Игоревич",
     "city": "Москва",
     "country": "Россия",
@@ -32,7 +32,7 @@
     "post": "Председатель правления «ВЭБ-Инновации»"
   },
   {
-    "img": "@images/observers/emelin.jpg",
+    "img": "/contents/img/observers/emelin.jpg",
     "name": "Емелин Александр Сергеевич",
     "city": "Москва",
     "country": "Россия",
@@ -40,7 +40,7 @@
     "post": "Генеральный директор АО «Энергетические системы и коммуникации»"
   },
   {
-    "img": "@images/observers/ivlev.jpg",
+    "img": "/contents/img/observers/ivlev.jpg",
     "name": "Ивлев Александр Владимирович",
     "city": "Москва",
     "country": "Россия",
@@ -48,7 +48,7 @@
     "post": "Управляющий партнер компании EY по странам СНГ"
   },
   {
-    "img": "@images/observers/kochetkov.jpg",
+    "img": "/contents/img/observers/kochetkov.jpg",
     "name": "Кочетков Владислав Вячеславович",
     "city": "Москва",
     "country": "Россия",
@@ -56,7 +56,7 @@
     "post": "Президент-председатель правления ФИНАМ"
   },
   {
-    "img": "@images/observers/martynov.jpg",
+    "img": "/contents/img/observers/martynov.jpg",
     "name": "Мартынов Владислав Владиславович",
     "city": "Москва",
     "country": "Россия",
@@ -66,7 +66,7 @@
     "post": "Советник Etherium Foundation"
   },
   {
-    "img": "@images/observers/nemkin.jpg",
+    "img": "/contents/img/observers/nemkin.jpg",
     "name": "Немкин Антон Игоревич",
     "city": "Москва",
     "country": "Россия",
@@ -74,7 +74,7 @@
     "post": "Член совета директоров «AT Consulting», председатель комитета по ИТ Ассоциации менеджеров России, руководитель ИТ-компании Brain Factory"
   },
   {
-    "img": "@images/observers/osochenko.jpg",
+    "img": "/contents/img/observers/osochenko.jpg",
     "name": "Осоченко Евгений Алексеевич",
     "city": "Москва",
     "country": "Россия",
@@ -82,7 +82,7 @@
     "post": "Руководитель проектного офиса «Цифровая трансформация отрасли» госкорпорации «Росатом»"
   },
   {
-    "img": "@images/observers/pripachkin.jpg",
+    "img": "/contents/img/observers/pripachkin.jpg",
     "name": "Припачкин Юрий Игоревич",
     "city": "Москва",
     "country": "Россия",
@@ -90,7 +90,7 @@
     "post": "Учредитель и президент РАКИБ"
   },
   {
-    "img": "@images/observers/protasov.jpg",
+    "img": "/contents/img/observers/protasov.jpg",
     "name": "Протасов Станислав Станиславович",
     "city": "Москва",
     "country": "Россия",
@@ -98,7 +98,7 @@
     "post": "Сооснователь и старший вице-президент по проектированию и разработке ПО Acronis"
   },
   {
-    "img": "@images/observers/pushkov.jpg",
+    "img": "/contents/img/observers/pushkov.jpg",
     "name": "Пушков Антон Михайлович",
     "city": "Москва",
     "country": "Россия",
@@ -106,7 +106,7 @@
     "post": "Управляющий партнер Центра интеллектуальной собственности Фонда «Сколково»"
   },
   {
-    "img": "@images/observers/treshchev.jpg",
+    "img": "/contents/img/observers/treshchev.jpg",
     "name": "Трещев Александр Станиславович",
     "city": "Москва",
     "country": "Россия",
@@ -114,7 +114,7 @@
     "post": "Учредитель РАКИБ"
   },
   {
-    "img": "@images/observers/filatov.jpg",
+    "img": "/contents/img/observers/filatov.jpg",
     "name": "Филатов Андрей Викторович",
     "city": "Москва",
     "country": "Россия",
@@ -122,7 +122,7 @@
     "post": "Генеральный директор SAP в России и СНГ"
   },
   {
-    "img": "@images/observers/chubar.jpg",
+    "img": "/contents/img/observers/chubar.jpg",
     "name": "Чубарь Алексей Владимирович",
     "city": "Москва",
     "country": "Россия",

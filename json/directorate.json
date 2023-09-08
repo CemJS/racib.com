@@ -1,6 +1,6 @@
 [
   {
-    "img": "@images/directorate/philemon.jpg",
+    "img": "/contents/img/directorate/philemon.jpg",
     "name": "Филимон Антон Евгеньевич",
     "city": "Москва",
     "country": "Россия",
@@ -8,7 +8,7 @@
     "post": "Глава департамента по развитию цифровых финансовых институтов РАКИБ"
   },
   {
-    "img": "@images/directorate/pivovar.jpg",
+    "img": "/contents/img/directorate/pivovar.jpg",
     "name": "Пивовар Вячеслав Борисович",
     "city": "Москва",
     "country": "Россия",
@@ -16,7 +16,7 @@
     "post": "Директор по работе с экспертами РАКИБ"
   },
   {
-    "img": "@images/directorate/kharlamov.jpg",
+    "img": "/contents/img/directorate/kharlamov.jpg",
     "name": "Харламов Валерий Николаевич",
     "city": "Новороссийск",
     "country": "Россия",
@@ -24,7 +24,7 @@
     "post": "Директор по развитию РАКИБ"
   },
   {
-    "img": "@images/directorate/yan.jpg",
+    "img": "/contents/img/directorate/yan.jpg",
     "name": "Кривоносов Ян Анатольевич",
     "city": "Москва",
     "country": "Россия",
@@ -32,7 +32,7 @@
     "post": "Руководитель департамента развития WEB3 и NFT"
   },
   {
-    "img": "@images/directorate/serebrovsky.jpg",
+    "img": "/contents/img/directorate/serebrovsky.jpg",
     "name": "Серебровский Вадим Владимирович",
     "city": "Москва",
     "country": "Россия",
@@ -40,7 +40,7 @@
     "post": "Руководитель департамента образовательных программ"
   },
   {
-    "img": "@images/directorate/gorokhov.jpg",
+    "img": "/contents/img/directorate/gorokhov.jpg",
     "name": "Горохов Андрей",
     "city": "Москва",
     "country": "Россия",
@@ -48,7 +48,7 @@
     "post": "Руководитель Центра научной дипломатии"
   },
   {
-    "img": "@images/directorate/gudimov.jpg",
+    "img": "/contents/img/directorate/gudimov.jpg",
     "name": "Гудимов Павел",
     "city": "Москва",
     "country": "Россия",

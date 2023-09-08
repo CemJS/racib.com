@@ -2,6 +2,7 @@ import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
+import placeWork from '@svg/icons/color/placeWork.svg'
 
 import allUsers from '@json/allUsers'
 
@@ -65,7 +66,10 @@ export default function () {
                 this.Static.record?.placeWork ?
                   <div class="profile_user_placeWork">
                     <span>Место работы</span>
-                    <span>{this.Static.record.placeWork}</span>
+                    <span class="profile_user_placeWork_place">
+                      <img class="mr_5" src={placeWork} alt="Место работы" />
+                      {this.Static.record.placeWork}
+                    </span>
                   </div> : null
               }
 
@@ -97,7 +101,7 @@ export default function () {
 
               {
                 this.Static.record?.activity ?
-                  <div>
+                  <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Сфера деятельности</h3>
                     <div class="profile_content_activity">
                       {
@@ -112,19 +116,62 @@ export default function () {
               }
 
               {
+                this.Static.record?.keyWords ?
+                  <div class="mb_10">
+                    <h3 class="profile_content_title mt_10">Ключевые слова</h3>
+                    <div class="profile_content_activity">
+                      {
+                        this.Static.record.keyWords.map(item => {
+                          return (
+                            <span class="profile_content_activity_item">{item}</span>
+                          )
+                        })
+                      }
+                    </div>
+                  </div> : null
+              }
+
+              {
+                this.Static.record?.cover ?
+                  <div class="profile_content_cover">
+                    <img src={this.Static.record.cover} alt="Обложка компании" />
+                  </div> : null
+              }
+
+              {
                 this.Static.record?.desc ?
-                  <div>
+                  <div class="mt_15">
                     {
                       this.Static.record.desc.map(item => {
                         return (
                           <div>
-                            <h3 class="profile_content_title mt_10">{item.title}</h3>
                             {
-                              item.text.map(el => {
-                                return (
-                                  <p class="profile_content_text">{el}</p>
-                                )
-                              })
+                              item?.title ? <h3 class="profile_content_title mt_10">{item.title}</h3> : null
+                            }
+
+                            {
+                              item?.text ?
+                                item.text.map(el => {
+                                  return (
+                                    <p class="profile_content_text">{el}</p>
+                                  )
+                                }) : null
+                            }
+
+                            {
+                              item?.list ?
+                                <div>
+                                  <span class="profile_content_list_title">{item.list.title}</span>
+                                  <ul class="profile_content_list">
+                                    {
+                                      item.list.listItems.map(item => {
+                                        return (
+                                          <li class="profile_content_list_item">{item}</li>
+                                        )
+                                      })
+                                    }
+                                  </ul>
+                                </div> : null
                             }
                           </div>
                         )
@@ -137,15 +184,50 @@ export default function () {
 
               {
                 this.Static.record?.video ?
-                  <div
-                    ref="videoWrap"
-                    class="profile_content_videoWrap"
-                    onclick={() => {
-                      if (this.Ref.videoWrap.classList.contains('videoReady')) return;
-                      this.Ref.videoWrap.classList.add('videoReady');
-                      this.Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${this.Static.record.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
-                    }}
-                  ></div> : null
+                  <div>
+                    {
+                      this.Static.record?.video.map((item, index) => {
+                        return (
+                          <div class="mt_15">
+                            {
+                              item?.title ?
+                                <h3 class="profile_content_title mt_10">{item.title}</h3> : null
+                            }
+                            {
+                              item?.src ?
+                                <div
+                                  ref="videoWrap"
+                                  class="profile_content_videoWrap"
+                                  onclick={() => {
+                                    if (this.Ref.videoWrap.classList.contains('videoReady')) return;
+                                    this.Ref.videoWrap.classList.add('videoReady');
+                                    this.Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+                                  }}
+                                ></div> : null
+                            }
+                          </div>
+                        )
+                      })
+                    }
+                  </div> : null
+              }
+
+              {
+                this.Static.record?.media ?
+                  <div>
+                    <h3 class="profile_content_title mt_10">Медиараздел</h3>
+                    <div class="profile_content_media">
+                      {
+                        this.Static.record?.media.map(item => {
+                          return (
+                            <div class="profile_content_media_item">
+                              <img src={item} alt="Медиа" />
+                            </div>
+                          )
+                        })
+                      }
+                    </div>
+                  </div> : null
               }
 
 
