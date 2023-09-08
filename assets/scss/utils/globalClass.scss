@@ -1443,3 +1443,60 @@ section {
     pointer-events: none;
   }
 }
+
+.filterNew {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+
+  &_icon {
+    cursor: pointer;
+  }
+
+  &_content {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    z-index: 100;
+    width: 490px;
+    height: 100%;
+    margin: 0;
+    color: var(--title);
+    transform: translateX(0px);
+    transition: transform .4s ease 0s;
+    background-color: var(--white);
+    box-shadow: var(--shadowMain);
+
+    &_active {
+      transform: translateX(-100%);
+      width: 500px;
+    }
+  }
+
+  &_title {
+    text-align: center;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  &_container {
+    padding: 80px 15px 15px 15px;
+  }
+
+  &_field {
+    box-shadow: var(--shadowMain);
+    border-radius: var(--borderR);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+  }
+
+  &_input {
+    border: none;
+    outline: none;
+  }
+}

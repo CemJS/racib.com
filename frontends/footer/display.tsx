@@ -149,9 +149,9 @@ export const display = function () {
 
 							<div>
 								<h6 class="footer_title">Контактный телефон</h6>
-								<a href="tel:+74992724888" onclick={this.Fn.link} class="footer_phone">
+								<a href="tel:+74993902009" onclick={this.Fn.link} class="footer_phone">
 									<img src={phoneGrey} alt="Контактный телефон" />
-									<span>8 (499) 272-48-88</span>
+									<span>8 (499) 390-20-09</span>
 								</a>
 							</div>
 							<div>
