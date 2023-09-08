@@ -141,12 +141,6 @@ export const display = function () {
 									}
 								</ul>
 							</div>
-							{/* <div>
-								<h6 class="footer_title">По вопросам рекламы</h6>
-								<a href="mailto:info@muvis.media" class="footer_socials_email">info@muvis.media</a>
-							</div> */}
-
-
 							<div>
 								<h6 class="footer_title">Контактный телефон</h6>
 								<a href="tel:+74993902009" onclick={this.Fn.link} class="footer_phone">

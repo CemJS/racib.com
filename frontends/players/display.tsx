@@ -30,7 +30,7 @@ export const display = function () {
           </a>
 
           <section class="players">
-            <div class="filter">
+            {/* <div class="filter">
               <div class="filter_item filter_item_event">
                 <span class="filter_item_title">Имя</span>
                 <input
@@ -154,9 +154,9 @@ export const display = function () {
               >
                 Сообщества
               </span>
-            </div>
+            </div> */}
 
-            {/* <div class="filterNew">
+            <div class="filterNew">
               <span
                 class="filterNew_icon"
                 onclick={() => {
@@ -170,20 +170,58 @@ export const display = function () {
                 <div class="filterNew_container">
                   <h3 class="filterNew_title">Фильтр поиска</h3>
 
-                  <div class="filterNew_field">
-                    <span>Имя</span>
-                    <input
-                      type="text"
-                      class="filterNew_input"
-                      placeholder="Кого ищете?"
-                      oninput={() => {
+                  <div class="filterNew_fields">
 
-                      }}
-                    />
+                    <div class="filterNew_field">
+                      <span class="filterNew_field_title">Имя</span>
+                      <input
+                        type="text"
+                        class="filterNew_input"
+                        placeholder="Кого ищете?"
+                        oninput={() => {
+
+                        }}
+                      />
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span class="filterNew_field_title">Страна</span>
+                      <input
+                        type="text"
+                        class="filterNew_input"
+                        placeholder="В какой стране?"
+                        oninput={() => {
+
+                        }}
+                      />
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span>Город</span>
+                      <input
+                        type="text"
+                        class="filterNew_input"
+                        placeholder="В каком городе?"
+                        oninput={() => {
+
+                        }}
+                      />
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span>Ключевые слова</span>
+                    </div>
+
                   </div>
+
+                  <div class="filter_btns">
+                    <button>Сбросить</button>
+                    <button>Применить</button>
+                  </div>
+
                 </div>
               </div>
-            </div> */}
+            </div>
 
 
             <div class="players_list">

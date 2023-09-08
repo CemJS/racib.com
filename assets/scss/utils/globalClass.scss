@@ -1478,10 +1478,17 @@ section {
     text-align: center;
     font-size: 22px;
     line-height: 28px;
+    margin-bottom: 25px;
   }
 
   &_container {
-    padding: 80px 15px 15px 15px;
+    padding: 90px 15px 15px 15px;
+  }
+
+  &_fields {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
 
   &_field {
@@ -1493,6 +1500,12 @@ section {
     gap: 10px;
     width: 100%;
     padding: 15px;
+
+    &_title {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+    }
   }
 
   &_input {

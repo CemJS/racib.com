@@ -30,7 +30,7 @@
       ]
     },
     {
-      "url": "/events",
+      "regex": "/events",
       "front": [
         "events"
       ]
