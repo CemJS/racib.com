@@ -3,6 +3,7 @@ import back from '@svg/icons/back.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
 import placeWork from '@svg/icons/color/placeWork.svg'
+import notFound from '@svg/list.svg'
 
 import allUsers from '@json/allUsers'
 
@@ -226,15 +227,25 @@ export default function () {
                   </div> : null
               }
 
-              <div>
-                {
-                  this.Static.record?.info && this.Static.record?.biography && this.Static.record?.activity && this.Static.record?.keyWords && this.Static.record?.cover && this.Static.record?.desc && this.Static.record?.video && this.Static.record?.media ? null :
-                    <div class="notFound">
-                      <span>Информация не указана</span>
-                    </div>
-                }
-              </div>
 
+              {
+                this.Static.record.status == 'Персона' ?
+                  <div>
+                    {
+                      this.Static.record.info || this.Static.record.biography || this.Static.record.desc ? null :
+                        <div class="notFound_wrap">
+                          <div class="notFound">
+                            <span class="notFound_title">Информация не указана</span>
+                            <img src={notFound} alt="Информация не указана" class="notFound_img" />
+                          </div>
+                        </div>
+
+                    }
+                  </div> :
+                  this.Static.record.status == 'Компания' ?
+                    <div></div> : null
+
+              }
 
               <section class="profile_slider slider">
                 <div class="slider_header">
