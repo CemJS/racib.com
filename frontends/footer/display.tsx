@@ -24,10 +24,10 @@ const links = [
 	// 	name: "Правление РАКИБ",
 	// 	link: '/'
 	// },
-	// {
-	// 	name: "О нас пишут",
-	// 	link: '/'
-	// },
+	{
+		name: "О РАКИБ",
+		link: '/about'
+	},
 	{
 		name: "Как вступить?",
 		link: '/join'
@@ -129,7 +129,7 @@ export const display = function () {
 										socials.map(item => {
 											return (
 												<li class="footer_socials_item">
-													<a href={item.link} class="footer_socials_link">
+													<a href={item.link} class="footer_socials_link" onclick={this.Fn.link}>
 														<img src={item.icon} alt={item.name} />
 													</a>
 												</li>
@@ -142,6 +142,11 @@ export const display = function () {
 								<h6 class="footer_title">По вопросам рекламы</h6>
 								<a href="mailto:info@muvis.media" class="footer_socials_email">info@muvis.media</a>
 							</div> */}
+
+
+
+
+
 						</div>
 						<span class="footer_racib">РАКИБ © 2021 - 2023, Все права защищены.</span>
 						<span class="footer_powered">
