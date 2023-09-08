@@ -36,7 +36,7 @@
       ]
     },
     {
-      "url": "/players",
+      "regex": "/players",
       "front": [
         "players"
       ]

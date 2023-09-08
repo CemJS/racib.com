@@ -1,38 +1,22 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
-import arrNextDark from '@svg/icons/dark/next.svg'
-import arrPrevDark from '@svg/icons/dark/prev.svg'
+import notFound from '@svg/list.svg'
 import views from '@svg/icons/dark/views.svg'
 import news from '@json/news'
 // import filter from '@svg/icons/dark/filter.svg'
 
 const category = [
   {
-    name: 'Вечеринка',
+    name: 'Блокчейн',
   },
   {
-    name: 'Встреча',
+    name: 'Крипто',
   },
   {
-    name: 'Конференция',
+    name: 'Майнинг',
   },
   {
-    name: 'Круглый стол',
-  },
-  {
-    name: 'Премия',
-  },
-  {
-    name: 'Саммит',
-  },
-  {
-    name: 'Семинар',
-  },
-  {
-    name: 'Форум',
-  },
-  {
-    name: 'Zoom',
+    name: 'Общество',
   }
 ]
 
@@ -41,9 +25,6 @@ newsData = news;
 categoryData = category;
 
 export default function () {
-  // if (this.Static.record) {
-  //   return One.bind(this)()
-  // }
   return (
     <div class="main_wrap">
       <main
@@ -101,7 +82,8 @@ export default function () {
                       <span
                         class="chooseCategory_close"
                         onclick={() => {
-                          this.Static.chooseCategory = ''
+                          this.Static.chooseCategory = '';
+                          newsData = news;
                           this.init();
                         }}
                       >
@@ -117,6 +99,11 @@ export default function () {
                         let value = e.target.value.toLocaleLowerCase();
                         categoryData = category.filter((item) => {
                           if (item.name.toLocaleLowerCase().includes(value)) {
+                            return true;
+                          }
+                        })
+                        newsData = news.filter((item) => {
+                          if (item.category.toLocaleLowerCase().includes(value)) {
                             return true;
                           }
                         })
@@ -145,13 +132,22 @@ export default function () {
                                   this.Static.categoryStatus = 'close';
                                   this.Ref.filterCategory.classList.remove('filter_item_active');
                                 }
+                                newsData = news.filter((item) => {
+                                  if (item.category.includes(this.Static.chooseCategory)) {
+                                    return true
+                                  }
+                                })
                                 this.init();
                               }}
                             >
                               {item.name}
                             </li>
                           )
-                        }) : <span>записей не найдено</span>
+                        }) :
+                        <div class="notFound">
+                          <span class="notFound_titleMini">Записи не найдены</span>
+                          <img src={notFound} alt="Записи не найдены" class="notFound_imgMini" />
+                        </div>
                     }
                   </ul>
                 </div>
@@ -163,9 +159,20 @@ export default function () {
                   type="text"
                   class="filter_input"
                   placeholder="Где искать?"
+                  oninput={(e) => {
+                    let value = e.target.value.toLocaleLowerCase();
+                    newsData = news.filter((item) => {
+                      console.log('=9a2e9c=', item)
+                      if (item.city.toLocaleLowerCase().includes(value)) {
+                        return true;
+                      }
+                    })
+                    this.init();
+                  }}
                 />
               </div>
-              <div
+
+              {/* <div
                 ref="filterCalendar"
                 class="filter_item filter_item_date"
                 onclick={(e) => {
@@ -278,7 +285,8 @@ export default function () {
                 </div>
 
 
-              </div>
+              </div> */}
+
             </div>
 
             <div class="news_list">
@@ -312,10 +320,11 @@ export default function () {
                         </div>
                       </div>
                     )
-                  }) : <span>записей не найдено</span>
-
-
-
+                  }) :
+                  <div class="notFound">
+                    <span class="notFound_title">Записи не найдены</span>
+                    <img src={notFound} alt="Записи не найдены" class="notFound_img" />
+                  </div>
               }
             </div>
           </section>

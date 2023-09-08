@@ -1,4 +1,1 @@
-export const loader = function () {
-
-
-}
+export const loader = function () { }

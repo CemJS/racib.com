@@ -117,7 +117,7 @@ export const display = function () {
 									links.map(item => {
 										return (
 											<li class="footer_useful_links_item">
-												<a href={item.link}>{item.name}</a>
+												<a href={item.link} onclick={this.Fn.link}>{item.name}</a>
 											</li>
 										)
 									})

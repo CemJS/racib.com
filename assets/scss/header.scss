@@ -85,6 +85,7 @@
   &_inner {
     height: calc(100% - 70px);
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 
     &::-webkit-scrollbar {
       width: 0px;

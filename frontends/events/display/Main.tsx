@@ -2,30 +2,11 @@ import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
-
-import viewsDark from '@svg/icons/dark/views.svg'
-
-import arrNextDark from '@svg/icons/dark/next.svg'
-import arrPrevDark from '@svg/icons/dark/prev.svg'
+import notFound from '@svg/list.svg'
 
 import events from '@json/events'
 
 const category = [
-  {
-    name: 'Вечеринка',
-  },
-  {
-    name: 'Встреча',
-  },
-  {
-    name: 'Конференция',
-  },
-  {
-    name: 'Круглый стол',
-  },
-  {
-    name: 'Премия',
-  },
   {
     name: 'Саммит',
   },
@@ -36,9 +17,13 @@ const category = [
     name: 'Форум',
   },
   {
-    name: 'Zoom',
+    name: 'Конференция',
   }
 ]
+
+let eventsData, categoryData = [];
+eventsData = events;
+categoryData = category;
 
 export default function () {
 
@@ -62,31 +47,107 @@ export default function () {
                 <input
                   type="text"
                   class="filter_input"
-                  placeholder="Искать в описании"
+                  placeholder="Искать в заголовке"
+                  oninput={(e) => {
+                    let value = e.target.value.toLocaleLowerCase();
+                    eventsData = events.filter((item) => {
+                      if (item.title.toLocaleLowerCase().includes(value)) {
+                        return true;
+                      }
+                    })
+                    this.init();
+                  }}
                 />
               </div>
 
-              <div
-                ref="filterCategory"
-                class="filter_item"
-                onclick={() => {
-                  this.Ref.filterCategory.classList.toggle('filter_item_active');
-                }}
-              >
-                <span class="filter_item_title">Раздел</span>
-                <input
-                  type="text"
-                  class="filter_input"
-                  placeholder="Выбрать раздел"
-                />
+              <div ref="filterCategory" class="filter_item">
+                <span
+                  class="filter_item_title"
+                  onclick={(e) => {
+                    if (this.Static.categoryStatus == 'close') {
+                      this.Static.categoryStatus = 'open';
+                      this.Ref.filterCategory.classList.add('filter_item_active');
+                    } else if (this.Static.categoryStatus == 'open') {
+                      this.Static.categoryStatus = 'close';
+                      this.Ref.filterCategory.classList.remove('filter_item_active');
+                    }
+                  }}
+                >
+                  Раздел
+                </span>
+                {
+                  this.Static.chooseCategory ?
+                    <div class="chooseCategory">
+                      <span >{this.Static.chooseCategory}</span>
+                      <span
+                        class="chooseCategory_close"
+                        onclick={() => {
+                          this.Static.chooseCategory = '';
+                          eventsData = events;
+                          this.init();
+                        }}
+                      >
+                        x
+                      </span>
+                    </div> :
+                    <input
+                      type="text"
+                      class="filter_input"
+                      placeholder="Выбрать раздел"
+
+                      oninput={(e) => {
+                        let value = e.target.value.toLocaleLowerCase();
+                        categoryData = category.filter((item) => {
+                          if (item.name.toLocaleLowerCase().includes(value)) {
+                            return true;
+                          }
+                        })
+                        eventsData = events.filter((item) => {
+                          if (item.category.toLocaleLowerCase().includes(value)) {
+                            return true;
+                          }
+                        })
+                        this.init()
+                      }}
+                    />
+                }
+
+
                 <div class="filter_category">
                   <ul class="filter_category_list">
                     {
-                      category.map(item => {
-                        return (
-                          <li class="filter_category_list_item">{item.name}</li>
-                        )
-                      })
+                      categoryData.length ?
+                        categoryData.map(item => {
+                          return (
+                            <li
+                              class="filter_category_list_item"
+                              ref='filterCategoryItem'
+                              onclick={() => {
+                                this.Static.chooseCategory = item.name;
+
+                                if (this.Static.categoryStatus == 'close') {
+                                  this.Static.categoryStatus = 'open';
+                                  this.Ref.filterCategory.classList.add('filter_item_active');
+                                } else if (this.Static.categoryStatus == 'open') {
+                                  this.Static.categoryStatus = 'close';
+                                  this.Ref.filterCategory.classList.remove('filter_item_active');
+                                }
+                                eventsData = events.filter((item) => {
+                                  if (item.category.includes(this.Static.chooseCategory)) {
+                                    return true
+                                  }
+                                })
+                                this.init();
+                              }}
+                            >
+                              {item.name}
+                            </li>
+                          )
+                        }) :
+                        <div class="notFound">
+                          <span class="notFound_titleMini">Записи не найдены</span>
+                          <img src={notFound} alt="Записи не найдены" class="notFound_imgMini" />
+                        </div>
                     }
                   </ul>
                 </div>
@@ -98,9 +159,19 @@ export default function () {
                   type="text"
                   class="filter_input"
                   placeholder="Где искать?"
+                  oninput={(e) => {
+                    let value = e.target.value.toLocaleLowerCase();
+                    eventsData = events.filter((item) => {
+                      if (item.location.toLocaleLowerCase().includes(value)) {
+                        return true;
+                      }
+                    })
+                    this.init();
+                  }}
                 />
               </div>
-              <div class="filter_item filter_item_date">
+
+              {/* <div class="filter_item filter_item_date">
                 <span class="filter_item_title">Дата</span>
                 <input
                   type="date"
@@ -213,43 +284,50 @@ export default function () {
                 </div>
 
 
-              </div>
+              </div> */}
+
             </div>
             <div class="events_list">
               {
-                events.map((item, index) => {
-                  return (
-                    <div
-                      class="card"
-                      onclick={() => {
-                        this.Static.record = item;
-                        this.Fn.linkChange(`/events/show/${index}`)
-                      }}
-                    >
-                      <span class="card_category">{item.category}</span>
-                      <div class="card_img" style={`background-image: url(${item.cover})`}>
-                        <div class="card_logo">
-                          <img src={item.logo} alt="" />
+                eventsData.length ?
+
+                  eventsData.map((item, index) => {
+                    return (
+                      <div
+                        class="card"
+                        onclick={() => {
+                          this.Static.record = item;
+                          this.Fn.linkChange(`/events/show/${index}`)
+                        }}
+                      >
+                        <span class="card_category">{item.category}</span>
+                        <div class="card_img" style={`background-image: url(${item.cover})`}>
+                          <div class="card_logo">
+                            <img src={item.logo} alt="" />
+                          </div>
                         </div>
-                      </div>
-                      <div class="card_info">
-                        <h5 class="card_info_title">{item.title}</h5>
-                        <span class="card_info_date">
-                          <img src={date} alt="Дата проведения мероприятия" />
-                          {item.date}
-                        </span>
-                        <span class="card_info_location">
-                          <img src={map} alt="Место проведения мероприятия" />
-                          {item.location}
-                        </span>
-                        {/* <span class="card_info_views">
+                        <div class="card_info">
+                          <h5 class="card_info_title">{item.title}</h5>
+                          <span class="card_info_date">
+                            <img src={date} alt="Дата проведения мероприятия" />
+                            {item.date}
+                          </span>
+                          <span class="card_info_location">
+                            <img src={map} alt="Место проведения мероприятия" />
+                            {item.location}
+                          </span>
+                          {/* <span class="card_info_views">
                           <img src={viewsDark} alt="Просмотры записи" />
                           {item.views}
                         </span> */}
+                        </div>
                       </div>
-                    </div>
-                  )
-                })
+                    )
+                  }) :
+                  <div class="notFound">
+                    <span class="notFound_title">Записи не найдены</span>
+                    <img src={notFound} alt="Записи не найдены" class="notFound_img" />
+                  </div>
               }
             </div>
           </section>

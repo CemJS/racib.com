@@ -226,6 +226,15 @@ export default function () {
                   </div> : null
               }
 
+              <div>
+                {
+                  this.Static.record?.info && this.Static.record?.biography && this.Static.record?.activity && this.Static.record?.keyWords && this.Static.record?.cover && this.Static.record?.desc && this.Static.record?.video && this.Static.record?.media ? null :
+                    <div class="notFound">
+                      <span>Информация не указана</span>
+                    </div>
+                }
+              </div>
+
 
               <section class="profile_slider slider">
                 <div class="slider_header">
@@ -299,8 +308,8 @@ export default function () {
                           class="carousel_person"
                           ref="playerSlide"
                           onclick={() => {
-                            // this.Static.record = item;
-                            this.Fn.linkChange(`/players/show/${index}`)
+                            this.Static.record = item;
+                            this.Fn.linkChange(`/players/show/${item.name}`)
                           }}
                         >
                           <div class="carousel_person_circle">

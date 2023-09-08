@@ -86,10 +86,10 @@ export const display = function () {
 
                 >
                   {
-                    observers.map(item => {
+                    observers.map((item, index) => {
                       return (
                         <div class="carousel_person" ref="observersSlide">
-                          <a href="/" class="carousel_person_circle">
+                          <a href={`/players/observers/${index}`} onclick={this.Fn.link} class="carousel_person_circle">
                             <div
                               class="carousel_person_img"
                               style={`background-image: url(${item.img})`}
