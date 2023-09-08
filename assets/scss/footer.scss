@@ -127,6 +127,13 @@
     text-align: right;
   }
 
+  &_phone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+  }
+
   &_powered {
     grid-area: footerPowered;
     display: block;

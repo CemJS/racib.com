@@ -28,11 +28,7 @@ export const display = function () {
 					class="header_acc"
 					onclick={() => {
 						this.Fn.initOne({
-							name: "modalSoon", ifOpen: (front) => {
-								setTimeout(() => {
-									front.clearData()
-								}, 500);
-							}
+							name: "modalSoon"
 						})
 					}}
 				>
@@ -121,7 +117,7 @@ export const display = function () {
 								</a>
 								<ul class="sidebar_sublist">
 									<li class="sidebar_sublist_item">
-										<a href="tel:8(499)272-48-88">
+										<a href="tel:+74992724888" onclick={this.Fn.link}>
 											<span class="sidebar_sublist_name">8 (499) 272-48-88</span>
 										</a>
 									</li>
