@@ -1,4 +1,11 @@
+import news from '@json/news'
+
+
 export const loader = function () {
+
+  if (this.Variable.DataUrl[2]) {
+    this.Static.record = news[this.Variable.DataUrl[2]]
+  }
 
   // status for dropdown
   this.Static.categoryStatus = 'close';

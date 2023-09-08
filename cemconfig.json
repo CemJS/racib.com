@@ -24,7 +24,7 @@
       ]
     },
     {
-      "url": "/news",
+      "regex": "/news",
       "front": [
         "news"
       ]

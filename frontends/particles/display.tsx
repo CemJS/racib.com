@@ -107,11 +107,12 @@ export const display = function () {
                     <div
                       class="newCard"
                       ref="newsSlide"
-                      onclick={() => {
-                        console.log('=893eeb=', 123)
-                        this.Fn.initOne({
-                          name: "news"
-                        })
+                      onclick={(e) => {
+                        // this.Fn.linkChange(`/news`)
+                        this.Fn.linkChange(`/news/show/${index}`)
+                        // this.Fn.initOne({
+                        //   name: "news"
+                        // })
                         // this.Static.record = item;
                         // this.init();
                       }}
