@@ -4,7 +4,6 @@ import map from '@svg/icons/dark/mapPin.svg'
 
 
 export default function () {
-  console.log('=993794=', this.Static.record.desc ? true : false)
   return (
     <div class="main_wrap">
       <main
@@ -14,11 +13,7 @@ export default function () {
           <a
             class="back"
             href="/events"
-            onclick={() => {
-              setTimeout(() => {
-                Object.keys(this.Static.record).forEach(key => delete this.Static.record[key]);
-              }, 500)
-            }}
+            onclick={this.Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
