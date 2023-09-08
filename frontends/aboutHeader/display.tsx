@@ -29,7 +29,12 @@ export const display = function () {
               <span>ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И БЛОКЧЕЙНА</span>
             </h2>
             <div class="link_block">
-              <a href="/mission" onclick={this.Fn.link}>
+              <a href="/mission" onclick={(e) => {
+                this.Fn.initOne({
+                  name: "modalSoon"
+                })
+                e.preventDefault();
+              }}>
                 <img src={goal} class="link_block_icon" />
                 <span>Миссия РАКИБ. Главные цели деятельности РАКИБ.</span>
               </a>
