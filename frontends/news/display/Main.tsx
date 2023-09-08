@@ -41,9 +41,6 @@ newsData = news;
 categoryData = category;
 
 export default function () {
-  // if (this.Static.record) {
-  //   return One.bind(this)()
-  // }
   return (
     <div class="main_wrap">
       <main
@@ -165,7 +162,8 @@ export default function () {
                   placeholder="Где искать?"
                 />
               </div>
-              <div
+
+              {/* <div
                 ref="filterCalendar"
                 class="filter_item filter_item_date"
                 onclick={(e) => {
@@ -278,7 +276,8 @@ export default function () {
                 </div>
 
 
-              </div>
+              </div> */}
+
             </div>
 
             <div class="news_list">
