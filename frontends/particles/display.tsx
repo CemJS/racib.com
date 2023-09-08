@@ -107,10 +107,14 @@ export const display = function () {
                     <div
                       class="newCard"
                       ref="newsSlide"
-                    // onclick={() => {
-                    //   this.Static.record = item;
-                    //   this.init();
-                    // }}
+                      onclick={() => {
+                        console.log('=893eeb=', 123)
+                        this.Fn.initOne({
+                          name: "news"
+                        })
+                        // this.Static.record = item;
+                        // this.init();
+                      }}
                     >
                       <span>{item.category}</span>
                       <div class="newCard_img" style={`background-image: url(${item.img})`}>
