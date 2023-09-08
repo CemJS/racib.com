@@ -117,9 +117,15 @@ export const display = function () {
                   }}
                 >
                   {
-                    events.map(item => {
+                    events.map((item, index) => {
                       return (
-                        <div class="card" ref="eventsSlide">
+                        <div
+                          class="card"
+                          ref="eventsSlide"
+                          onclick={() => {
+                            this.Fn.linkChange(`/events/show/${index}`)
+                          }}
+                        >
                           <span class="card_category">{item.category}</span>
                           <div class="card_img" style={`background-image: url(${item.cover})`}>
                             <div class="card_logo">
