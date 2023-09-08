@@ -108,7 +108,7 @@ export const display = function () {
 								</ul>
 							</li>
 							<li class="sidebar_list_item">
-								<a href="tel:8(499)272-48-88" onclick={this.Fn.link}>
+								<a href="tel:+74992724888" onclick={this.Fn.link}>
 									<div class="sidebar_list_icon">
 										<img src={phone} alt="Отправить сообщение" />
 									</div>
@@ -130,7 +130,7 @@ export const display = function () {
 							socials.map(item => {
 								return (
 									<li class="sidebar_socials_item">
-										<a href={item.link} class="sidebar_socials_link">
+										<a href={item.link} class="sidebar_socials_link" target="_blank">
 											<img src={item.icon} alt={item.name} class="sidebar_socials_icon" />
 										</a>
 									</li>
