@@ -1,7 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
-import One from '../news/display/one'
 
 import news from '@json/news'
 import views from '@svg/icons/views.svg'
@@ -12,9 +11,7 @@ let x1 = null;
 let y1 = null;
 
 export const display = function () {
-  if (this.Static.record) {
-    return One.bind(this)()
-  }
+
   return (
     <div class={["particles_wrap",]}
       ref="wrapCanvas"

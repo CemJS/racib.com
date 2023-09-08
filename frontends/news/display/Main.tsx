@@ -3,7 +3,6 @@ import back from '@svg/icons/back.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
 import views from '@svg/icons/dark/views.svg'
-import One from './one'
 import news from '@json/news'
 // import filter from '@svg/icons/dark/filter.svg'
 
