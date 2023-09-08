@@ -223,9 +223,13 @@
     }
 
     &_banner {
-      height: 150px;
-      background-position: left center;
+      display: none;
     }
+
+    // &_banner {
+    //   height: 150px;
+    //   background-position: left center;
+    // }
   }
 }
 
