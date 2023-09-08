@@ -1,7 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
-import arrNextDark from '@svg/icons/dark/next.svg'
-import arrPrevDark from '@svg/icons/dark/prev.svg'
+import notFound from '@svg/list.svg'
 import views from '@svg/icons/dark/views.svg'
 import news from '@json/news'
 // import filter from '@svg/icons/dark/filter.svg'
@@ -144,7 +143,11 @@ export default function () {
                               {item.name}
                             </li>
                           )
-                        }) : <span>записей не найдено</span>
+                        }) :
+                        <div class="notFound">
+                          <span class="notFound_titleMini">Записи не найдены</span>
+                          <img src={notFound} alt="Записи не найдены" class="notFound_imgMini" />
+                        </div>
                     }
                   </ul>
                 </div>
@@ -317,10 +320,11 @@ export default function () {
                         </div>
                       </div>
                     )
-                  }) : <span>записей не найдено</span>
-
-
-
+                  }) :
+                  <div class="notFound">
+                    <span class="notFound_title">Записи не найдены</span>
+                    <img src={notFound} alt="Записи не найдены" class="notFound_img" />
+                  </div>
               }
             </div>
           </section>
