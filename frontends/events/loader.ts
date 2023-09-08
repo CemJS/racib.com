@@ -6,6 +6,7 @@ export const loader = function () {
     this.Static.record = events[this.Variable.DataUrl[2]]
   }
 
+  this.Static.categoryStatus = 'close';
   this.Static.current = new Date();
   this.Static.currentMonth;
   this.Static.currentMonthIndex = this.Static.current.getMonth();
