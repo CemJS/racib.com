@@ -26,12 +26,12 @@ export const display = function () {
 
           <div class="home">
 
-            <section class="home_link link_block">
+            {/* <section class="home_link link_block">
               <a href="/">
                 <img src={arrowR} class="link_block_icon" />
                 <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
               </a>
-            </section>
+            </section> */}
             <section class="home_banner">
               <div class="home_banner_info">
                 <span class="home_banner_info_date">
