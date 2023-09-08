@@ -26,21 +26,21 @@ export const display = function () {
 
           <div class="home">
 
-            <section class="home_link link_block">
+            {/* <section class="home_link link_block">
               <a href="/">
                 <img src={arrowR} class="link_block_icon" />
                 <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
               </a>
-            </section>
+            </section> */}
             <section class="home_banner">
               <div class="home_banner_info">
                 <span class="home_banner_info_date">
                   <img src={calendar} alt="Дата мероприятия" />
-                  24 августа 2023, 10:00
+                  26 сентября 2023
                 </span>
-                <h5 class="home_banner_info_title">Противодействие использованию виртуальных активов в совершении преступлений и финансировании терроризма</h5>
-                <span class="btn_link">Семинар</span>
-                <p class="home_banner_info_desc">На базе МГИМО состоится  международный семинар Организации Объединенных Наций по противодействию использованию виртуальных активов в совершении преступлений, в том числе для финансировании терроризма.</p>
+                <h5 class="home_banner_info_title">Развитие и регулирование экосистем в России: на пути к цифровому равенству</h5>
+                <span class="btn_link">Форум</span>
+                <p class="home_banner_info_desc">Национальный форум</p>
               </div>
             </section>
 
@@ -117,13 +117,19 @@ export const display = function () {
                   }}
                 >
                   {
-                    events.map(item => {
+                    events.map((item, index) => {
                       return (
-                        <div class="card" ref="eventsSlide">
+                        <div
+                          class="card"
+                          ref="eventsSlide"
+                          onclick={() => {
+                            this.Fn.linkChange(`/events/show/${index}`)
+                          }}
+                        >
                           <span class="card_category">{item.category}</span>
                           <div class="card_img" style={`background-image: url(${item.cover})`}>
                             <div class="card_logo">
-                              <img src={item.logo} alt="" />
+                              <img src={item.logo} alt="Логотип" />
                             </div>
                           </div>
                           <div class="card_info">
@@ -147,7 +153,7 @@ export const display = function () {
                   }
 
                 </div>
-                <div
+                {/* <div
                   class="carousel_hover carousel_hover_r"
                   onmouseenter={() => {
                     this.Ref.eventsSlider.scrollLeft += 20;
@@ -164,7 +170,7 @@ export const display = function () {
                   >
                     <img src={arrNextLight} alt="Next Slide" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </section>
 
@@ -252,15 +258,21 @@ export const display = function () {
                 }}
               >
                 {
-                  players.map(item => {
+                  players.map((item, index) => {
                     return (
-                      <div class="carousel_person" ref="playerSlide">
-                        <a href="/" class="carousel_person_circle">
+                      <div
+                        class="carousel_person"
+                        ref="playerSlide"
+                        onclick={() => {
+                          this.Fn.linkChange(`/players/show/${index}`);
+                        }}
+                      >
+                        <div class="carousel_person_circle">
                           <div
                             class="carousel_person_img"
                             style={`background-image: url(${item.img})`}
                           ></div>
-                        </a>
+                        </div>
                         <span class="carousel_person_status">{item.status}</span>
                         <h5 class="carousel_person_name">{item.name}</h5>
                       </div>

@@ -12,12 +12,7 @@ export default function () {
           <a
             class="back"
             href="/news"
-            onclick={() => {
-              setTimeout(() => {
-                Object.keys(this.Static.record).forEach(key => delete this.Static.record[key]);
-                this.Fn.link;
-              }, 500)
-            }}
+            onclick={this.Fn.link}
           >
             <span class="back-icon">
               <img src={back} />

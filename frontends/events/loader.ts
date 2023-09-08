@@ -1,4 +1,11 @@
+import events from '@json/events'
+
 export const loader = function () {
+
+  if (this.Variable.DataUrl[2]) {
+    this.Static.record = events[this.Variable.DataUrl[2]]
+  }
+
   this.Static.current = new Date();
   this.Static.currentMonth;
   this.Static.currentMonthIndex = this.Static.current.getMonth();

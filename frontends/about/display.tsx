@@ -71,7 +71,16 @@ export const display = function () {
                 <img src={smi} alt="Публикации в СМИ РАКИБ" />
               </div>
               <div class="link_block">
-                <a href="/" onclick={this.Fn.link}>
+                <a href="/"
+                  // onclick={this.Fn.link}
+                  onclick={(e) => {
+                    this.Fn.initOne({
+                      name: "modalSoon"
+                    })
+                    e.preventDefault();
+
+                  }}
+                >
                   <img class="link_block_icon" src={pencil} alt="О нас пишут РАКИБ" />
                   <span>О нас пишут</span>
                 </a>
@@ -88,13 +97,32 @@ export const display = function () {
                 <p class="pb_15">В частности, в настоящий момент РАКИБ предлагает всем заинтересованным аудиториям пройти обучение по следующим программам:</p>
                 <ul class="about_fact_list">
                   <li class="about_fact_list_item">Программа повышения квалификации РЭУ имени Г.В. Плеханова «Цифровая экономика и цифровые технологии для государственных и муниципальных служащих».
-                    <a href="/" onclick={this.Fn.link} class="link pl_5">Ссылка на сайт программы.</a>
+                    <a
+                      href="/"
+                      onclick={(e) => {
+                        this.Fn.initOne({
+                          name: "modalSoon"
+                        })
+                        e.preventDefault();
+                      }}
+                      class="link pl_5
+                     ">Ссылка на сайт программы.</a>
                   </li>
                   <li class="about_fact_list_item">Программа дополнительного образования BCL «Правовые основы и юридические практики работы с криптовалютой и блокчейн-проектами».
-                    <a href="/" onclick={this.Fn.link} class="link pl_5">Ссылка на сайт программы.</a>
+                    <a href="/" onclick={(e) => {
+                      this.Fn.initOne({
+                        name: "modalSoon"
+                      })
+                      e.preventDefault();
+                    }} class="link pl_5">Ссылка на сайт программы.</a>
                   </li>
                   <li class="about_fact_list_item">РАКИБ предоставляет возможность участия в данных образовательных программах с индивидуальной скидкой при условии обращения по адресу: petrov@racib.com либо в личных сообщения на странице в
-                    <a href="/" onclick={this.Fn.link} class="link pl_5">Facebook</a>
+                    <a href="/" onclick={(e) => {
+                      this.Fn.initOne({
+                        name: "modalSoon"
+                      })
+                      e.preventDefault();
+                    }} class="link pl_5">Facebook</a>
                   </li>
                 </ul>
               </div>

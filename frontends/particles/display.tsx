@@ -1,7 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
-import One from '../news/display/one'
 
 import news from '@json/news'
 import views from '@svg/icons/views.svg'
@@ -12,9 +11,7 @@ let x1 = null;
 let y1 = null;
 
 export const display = function () {
-  if (this.Static.record) {
-    return One.bind(this)()
-  }
+
   return (
     <div class={["particles_wrap",]}
       ref="wrapCanvas"
@@ -107,10 +104,15 @@ export const display = function () {
                     <div
                       class="newCard"
                       ref="newsSlide"
-                    // onclick={() => {
-                    //   this.Static.record = item;
-                    //   this.init();
-                    // }}
+                      onclick={(e) => {
+                        // this.Fn.linkChange(`/news`)
+                        this.Fn.linkChange(`/news/show/${index}`)
+                        // this.Fn.initOne({
+                        //   name: "news"
+                        // })
+                        // this.Static.record = item;
+                        // this.init();
+                      }}
                     >
                       <span>{item.category}</span>
                       <div class="newCard_img" style={`background-image: url(${item.img})`}>

@@ -1,9 +1,7 @@
 const listener = {
-    "start": function (data, name) {
-        // this.fn("canvas");
+    "start": function () {
     },
-    "finish": function (data, name, t) {
-        // this.fn("canvas");
+    "finish": function () {
     }
 }
 

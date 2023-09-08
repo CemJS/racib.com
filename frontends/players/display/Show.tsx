@@ -21,11 +21,7 @@ export default function () {
           <a
             class="back"
             href="/players"
-            onclick={() => {
-              setTimeout(() => {
-                Object.keys(this.Static.record).forEach(key => delete this.Static.record[key]);
-              }, 500)
-            }}
+            onclick={this.Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
@@ -297,15 +293,22 @@ export default function () {
                   }}
                 >
                   {
-                    allUsers.map(item => {
+                    allUsers.map((item, index) => {
                       return (
-                        <div class="carousel_person" ref="playerSlide">
-                          <a href="/" class="carousel_person_circle">
+                        <div
+                          class="carousel_person"
+                          ref="playerSlide"
+                          onclick={() => {
+                            // this.Static.record = item;
+                            this.Fn.linkChange(`/players/show/${index}`)
+                          }}
+                        >
+                          <div class="carousel_person_circle">
                             <div
                               class="carousel_person_img"
                               style={`background-image: url(${item.img})`}
                             ></div>
-                          </a>
+                          </div>
                           <span class="carousel_person_status">{item.status}</span>
                           <h5 class="carousel_person_name">{item.name}</h5>
                         </div>

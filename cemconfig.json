@@ -24,13 +24,13 @@
       ]
     },
     {
-      "url": "/news",
+      "regex": "/news",
       "front": [
         "news"
       ]
     },
     {
-      "url": "/events",
+      "regex": "/events",
       "front": [
         "events"
       ]

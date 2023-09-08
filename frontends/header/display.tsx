@@ -28,11 +28,7 @@ export const display = function () {
 					class="header_acc"
 					onclick={() => {
 						this.Fn.initOne({
-							name: "modalSoon", ifOpen: (front) => {
-								setTimeout(() => {
-									front.clearData()
-								}, 500);
-							}
+							name: "modalSoon"
 						})
 					}}
 				>
@@ -113,16 +109,16 @@ export const display = function () {
 								</ul>
 							</li>
 							<li class="sidebar_list_item">
-								<a href="tel:8(499)272-48-88" onclick={this.Fn.link}>
+								<a href="tel:+74993902009" onclick={this.Fn.link}>
 									<div class="sidebar_list_icon">
 										<img src={phone} alt="Отправить сообщение" />
 									</div>
-									<span class="sidebar_list_name">8 (499) 272-48-88</span>
+									<span class="sidebar_list_name">8 (499) 390-20-09</span>
 								</a>
 								<ul class="sidebar_sublist">
 									<li class="sidebar_sublist_item">
-										<a href="tel:8(499)272-48-88">
-											<span class="sidebar_sublist_name">8 (499) 272-48-88</span>
+										<a href="tel:+74993902009" onclick={this.Fn.link}>
+											<span class="sidebar_sublist_name">8 (499) 390-20-09</span>
 										</a>
 									</li>
 								</ul>
@@ -135,7 +131,7 @@ export const display = function () {
 							socials.map(item => {
 								return (
 									<li class="sidebar_socials_item">
-										<a href={item.link} class="sidebar_socials_link">
+										<a href={item.link} class="sidebar_socials_link" target="_blank">
 											<img src={item.icon} alt={item.name} class="sidebar_socials_icon" />
 										</a>
 									</li>

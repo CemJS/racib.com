@@ -6,6 +6,9 @@ import youtube from '@svg/socials/youtube.svg'
 import twitter from '@svg/socials/twitter.svg'
 import logoCem from '@svg/logoCem.svg'
 import phone from '@svg/icons/light/phoneLight.svg'
+import phoneGrey from '@svg/icons/light/phoneGrey.svg'
+import letterGrey from '@svg/icons/light/letterGrey.svg'
+
 
 const links = [
 	// {
@@ -24,10 +27,10 @@ const links = [
 	// 	name: "Правление РАКИБ",
 	// 	link: '/'
 	// },
-	// {
-	// 	name: "О нас пишут",
-	// 	link: '/'
-	// },
+	{
+		name: "О РАКИБ",
+		link: '/about'
+	},
 	{
 		name: "Как вступить?",
 		link: '/join'
@@ -129,7 +132,7 @@ export const display = function () {
 										socials.map(item => {
 											return (
 												<li class="footer_socials_item">
-													<a href={item.link} class="footer_socials_link">
+													<a href={item.link} class="footer_socials_link" onclick={this.Fn.link}>
 														<img src={item.icon} alt={item.name} />
 													</a>
 												</li>
@@ -138,10 +141,22 @@ export const display = function () {
 									}
 								</ul>
 							</div>
-							{/* <div>
-								<h6 class="footer_title">По вопросам рекламы</h6>
-								<a href="mailto:info@muvis.media" class="footer_socials_email">info@muvis.media</a>
-							</div> */}
+							<div>
+								<h6 class="footer_title">Контактный телефон</h6>
+								<a href="tel:+74993902009" onclick={this.Fn.link} class="footer_phone">
+									<img src={phoneGrey} alt="Контактный телефон" />
+									<span>8 (499) 390-20-09</span>
+								</a>
+							</div>
+							<div>
+								<h6 class="footer_title">Электронная почта</h6>
+								<a href="mailto:info@racib.com" onclick={this.Fn.link} class="footer_phone">
+									<img src={letterGrey} alt="Электронная почта" />
+									<span>info@racib.com</span>
+								</a>
+							</div>
+
+
 						</div>
 						<span class="footer_racib">РАКИБ © 2021 - 2023, Все права защищены.</span>
 						<span class="footer_powered">
