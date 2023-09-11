@@ -2,7 +2,6 @@ const listener = {
     "start": function () {
     },
     "finish": function () {
-        
     }
 }
 

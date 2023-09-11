@@ -30,7 +30,6 @@ export const display = function () {
               <button class="sliderTest_controls_previous"
                 onclick={()=>{
                   let slides = document.querySelectorAll('.sliderTest_item');
-                  // this.Static.SliderTestItems.unshift(this.Static.SliderTestItems.pop()) 
                   this.Static.result = Array.from(slides)
                   this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
                   this.init();
@@ -41,7 +40,6 @@ export const display = function () {
                 onclick={()=>{
                   let slides = document.querySelectorAll('.sliderTest_item');
                   this.Static.result = Array.from(slides)
-                  // this.Static.SliderTestItems.push(this.Static.SliderTestItems.shift())
                   this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
                   this.init();
                 }}

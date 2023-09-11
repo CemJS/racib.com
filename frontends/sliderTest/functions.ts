@@ -24,12 +24,11 @@ const fn = {
             }
 
             setCurrentState(controls: string){
-
                 if(controls == 'prev' ){
                     this.items.unshift(this.items.pop())
-                }else{
+                }
+                if(controls == 'next'){
                     this.items.push(this.items.shift())
-                    
                 }
                 this.updateGallery();
             }
