@@ -150,9 +150,6 @@ const fn = {
 
         this.init();
     },
-    "swipe": function () {
-
-    }
 }
 
 export { fn }

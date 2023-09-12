@@ -1,5 +1,11 @@
 .home {
   &_news {
+    .slider_header{
+      padding: 10px;
+    }
+    .carousel{
+      padding: 0 10px;
+    }
     &_wrap {
       position: relative;
       // z-index: 10;

@@ -20,7 +20,7 @@ export const display = function () {
       }}
     >
       <div class="runLine">
-        <marquee behavior="scroll" direction="left">
+        <marquee behavior="scroll" direction="left" scrollamount="3">
           <h1>РОССИЙСКАЯ АССОЦИАЦИЯ КРИПТОЭКОНОМИКИ, ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И БЛОКЧЕЙНА</h1>
         </marquee>
       </div>
