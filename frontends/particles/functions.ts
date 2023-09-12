@@ -1,3 +1,37 @@
+class Slider {
+    container: HTMLElement;
+    items: Array<HTMLElement>;
+    controls: string;
+
+    constructor(container: HTMLElement, items: Array<HTMLElement>, controls: string) {
+        this.container = container;
+        this.controls = controls;
+        this.items = [...items];
+    }
+
+    updateGallery() {
+        this.items.forEach(el => {
+            el.classList.remove('newCard_slider_1');
+            el.classList.remove('newCard_slider_2');
+            el.classList.remove('newCard_slider_3');
+            el.classList.remove('newCard_slider_4');
+            el.classList.remove('newCard_slider_5');
+        })
+        this.items.slice(0, 5).forEach((el, i) => {
+            el.classList.add(`newCard_slider_${i + 1}`);
+        })
+    }
+
+    setCurrentState(controls: string) {
+        if (controls == 'prev') {
+            this.items.unshift(this.items.pop())
+        }
+        if (controls == 'next') {
+            this.items.push(this.items.shift())
+        }
+        this.updateGallery();
+    }
+}
 const fn = {
     "canvas": function () {
         let canvas = this.Ref.canvas;
@@ -150,6 +184,16 @@ const fn = {
 
         this.init();
     },
+    "slider": function (container: HTMLElement, items: Array<HTMLElement>, controls: string) {
+        if (!this.Static.firstGallery) {
+            this.Static.firstGallery = new Slider(container, items, controls);
+        }
+        this.Static.firstGallery.setCurrentState(controls);
+        this.init()
+    },
+    // "touch": function (e) {
+    //     console.log('=touch происходит=', e)
+    // }
 }
 
 export { fn }
