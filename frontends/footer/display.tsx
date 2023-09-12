@@ -103,6 +103,7 @@ export const display = function () {
 										}}
 										type="tel"
 										id="phone"
+										autocomplete="off"
 										ref="footerInput" />
 									<label for="phone" class="input_label" ref="footerLabel">Номер телефона</label>
 								</div>
