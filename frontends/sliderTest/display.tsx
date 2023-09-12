@@ -14,30 +14,30 @@ export const display = function () {
         <div class="wrapper">
           <section class="sliderTest">
             <div class="sliderTest_container" ref="sliderTestContainer">
-              <img src={slide1} class={["sliderTest_item", `sliderTest_item_1`]}  />
-              <img src={slide2} class={["sliderTest_item", `sliderTest_item_2`]}  />
-              <img src={slide3} class={["sliderTest_item", `sliderTest_item_3`]}  />
-              <img src={slide4} class={["sliderTest_item", `sliderTest_item_4`]}  />
-              <img src={slide5} class={["sliderTest_item", `sliderTest_item_5`]}  />
+              <img src={slide1} class={["sliderTest_item", `sliderTest_item_1`]} />
+              <img src={slide2} class={["sliderTest_item", `sliderTest_item_2`]} />
+              <img src={slide3} class={["sliderTest_item", `sliderTest_item_3`]} />
+              <img src={slide4} class={["sliderTest_item", `sliderTest_item_4`]} />
+              <img src={slide5} class={["sliderTest_item", `sliderTest_item_5`]} />
             </div>
-            <div 
-              class="sliderTest_controls" 
+            <div
+              class="sliderTest_controls"
               ref="sliderTextControlsContainer"
-              onclick={()=>{
+              onclick={() => {
                 this.fn("sliderTest")
               }}
             >
               <button class="sliderTest_controls_previous"
-                onclick={()=>{
+                onclick={() => {
                   let slides = document.querySelectorAll('.sliderTest_item');
                   this.Static.result = Array.from(slides)
                   this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
                   this.init();
                 }}
               ></button>
-              <button 
+              <button
                 class="sliderTest_controls_next"
-                onclick={()=>{
+                onclick={() => {
                   let slides = document.querySelectorAll('.sliderTest_item');
                   this.Static.result = Array.from(slides)
                   this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
