@@ -14,12 +14,6 @@
       ]
     },
     {
-      "url": "/sliderTest",
-      "front": [
-        "sliderTest"
-      ]
-    },
-    {
       "url": "/about",
       "front": [
         "aboutHeader",
