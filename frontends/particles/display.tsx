@@ -74,11 +74,33 @@ export const display = function () {
                 class="sliderTest_container"
                 ref="sliderTestContainer"
 
-                ontouchstart={(e) => {
-                  this.fn("touch", e)
-                  this.init();
+                ontouchstart={(e: any) => {
+                  e.preventDefault();
+                  this.Static.startPoint = e.changedTouches[0].pageX;
+                  console.log('=startPoint=', this.Static.startPoint)
                 }}
-
+                ontouchmove={(e: any) => {
+                  if (this.Static.moved) return
+                  e.preventDefault();
+                  if (e.changedTouches[0].pageX > this.Static.startPoint + this.Ref.sliderTestContainer.offsetWidth / 4) {
+                    console.log("направо");
+                    this.Static.moved = true;
+                    let slides = document.querySelectorAll('.newCard_slider');
+                    this.Static.result = Array.from(slides)
+                    this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
+                    this.init();
+                  }
+                  if (e.changedTouches[0].pageX < this.Static.startPoint - this.Ref.sliderTestContainer.offsetWidth / 4) {
+                    console.log("налево");
+                    let slides = document.querySelectorAll('.newCard_slider');
+                    this.Static.result = Array.from(slides)
+                    this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
+                    this.Static.moved = true;
+                  }
+                }}
+                ontouchend={() => {
+                  this.Static.moved = !this.Static.moved;
+                }}
               >
                 {
                   newsSlider.map((item, index) => {

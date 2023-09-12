@@ -191,9 +191,9 @@ const fn = {
         this.Static.firstGallery.setCurrentState(controls);
         this.init()
     },
-    "touch": function (e) {
-        console.log('=touch происходит=', e)
-    }
+    // "touch": function (e) {
+    //     console.log('=touch происходит=', e)
+    // }
 }
 
 export { fn }
