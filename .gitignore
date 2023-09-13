@@ -2,7 +2,7 @@ node_modules
 public/assets
 temp
 .env
-config/frontends.json
-config/services.json
-config/pages.json
+frontends.json
+services.json
+pages.json
 package-lock.json
