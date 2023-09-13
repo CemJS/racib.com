@@ -18,7 +18,7 @@ export const progress = async function ({ load, total }) {
                     app.style.display = "block"
                     preloader.style.display = "none"
                 }
-            }, 777);
+            }, 50);
         } else {
             percent.textContent = count + '%';
         }

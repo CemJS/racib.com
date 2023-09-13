@@ -2,6 +2,5 @@ node_modules
 public/assets
 temp
 .env
-frontends.json
-services.json
+
 package-lock.json

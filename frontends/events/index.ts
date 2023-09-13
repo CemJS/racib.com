@@ -4,7 +4,7 @@ import { display } from "./display"
 import { fn } from "./functions"
 import { listener } from "./listener"
 
-export const micro: Micro = {
+export const frontend: Micro = {
     name: "MicroTest",
     loader,
     display,
