@@ -19,7 +19,7 @@ export const display = function () {
               events.map((item, index) => {
                 return (
                   <div
-                    class={["card", `card_${index + 1}`]}
+                    class={["card", `card_${index}`]}
                     ref="eventsSlide"
                     onclick={() => {
                       this.Fn.linkChange(`/events/show/${index}`)
