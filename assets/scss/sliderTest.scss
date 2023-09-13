@@ -161,10 +161,13 @@
 
 // slider for events
 .gallery {
-  display: flex;
-  align-items: center;
-  height: 500px;
-  gap: 20px;
+  &_line {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    gap: 30px;
+    overflow: hidden;
+  }
 
   .card {
     height: 25rem;

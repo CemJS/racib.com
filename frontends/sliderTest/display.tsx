@@ -11,7 +11,10 @@ export const display = function () {
         <div class="wrapper">
 
 
-          <section class="gallery" ref="gallery">
+          <section ref="gallery">
+
+            {/* <div></div> */}
+
             {
               events.map((item, index) => {
                 return (
@@ -40,16 +43,16 @@ export const display = function () {
                       </span>
                     </div>
                   </div>
+
                 )
               })
             }
+
+
           </section>
 
           <div style="margin: 15px auto">
             <button
-              onclick={() => {
-                this.fn("test", this.Ref.gallery)
-              }}
             >Prev</button>
             <button>Next</button>
           </div>
