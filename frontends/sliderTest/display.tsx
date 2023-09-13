@@ -11,7 +11,7 @@ export const display = function () {
         <div class="wrapper">
 
 
-          <section class="gallery">
+          <section class="gallery" ref="gallery">
             {
               events.map((item, index) => {
                 return (
@@ -44,6 +44,15 @@ export const display = function () {
               })
             }
           </section>
+
+          <div style="margin: 15px auto">
+            <button
+              onclick={() => {
+                this.fn("test", this.Ref.gallery)
+              }}
+            >Prev</button>
+            <button>Next</button>
+          </div>
 
 
         </div>
