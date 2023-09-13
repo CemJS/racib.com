@@ -182,8 +182,6 @@ const fn = {
         initParticle();
         animate();
 
-        this.Static.canvasRun = true;
-
         this.init();
     },
     "slider": function (container: HTMLElement, items: Array<HTMLElement>, controls: string) {
@@ -191,10 +189,11 @@ const fn = {
             this.Static.firstGallery = new Slider(container, items, controls);
         }
         this.Static.firstGallery.setCurrentState(controls);
-        this.Static.infinitySlider = true;
-
         this.init()
     },
+    // "touch": function (e) {
+    //     console.log('=touch происходит=', e)
+    // }
 }
 
 export { fn }

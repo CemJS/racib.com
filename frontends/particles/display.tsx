@@ -2,35 +2,29 @@ import { Cemjsx } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
 // for slider
-import slide1 from '@images/news/rus.jpg'
-import slide2 from '@images/news/coverBlockchainLife.png'
-import slide3 from '@images/news/new3.jpg'
-import slide4 from '@images/news/sber.jpg'
-import slide5 from '@images/news/winner.jpg'
+
 import newsSlider from '@json/newsSliderTest'
 
-import news from '@json/news'
-import views from '@svg/icons/views.svg'
-
-// let isDragging = false;
-// let startX, startScrollLeft;
-let x1 = null;
-let y1 = null;
 
 export const display = function () {
-
   return (
-    <div class={["particles_wrap",]}
-      ref="wrapCanvas"
-      onclick={() => {
-        this.fn("canvas")
-      }}
-    >
-      <div class="runLine">
-        <marquee behavior="scroll" direction="left" scrollamount="3">
-          <h1>РОССИЙСКАЯ АССОЦИАЦИЯ КРИПТОЭКОНОМИКИ, ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И БЛОКЧЕЙНА</h1>
-        </marquee>
+    <div class={["particles_wrap",]} ref="wrapCanvas">
+      <div
+        class="runLine_wrap">
+        <div class="runLine">
+          {
+            ([1, 2, 3, 4]).map(() => {
+              return (
+                <div class="runLine_item">
+                  <h1 ref="runLine" class="runLine_title">РОССИЙСКАЯ АССОЦИАЦИЯ КРИПТОЭКОНОМИКИ, ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И БЛОКЧЕЙНА. </h1>
+                </div>
+
+              )
+            })
+          }
+        </div>
       </div>
+
       <canvas id="canvas" ref="canvas"></canvas>
 
       <div
@@ -47,8 +41,8 @@ export const display = function () {
                   <button
                     class="arrow arrow_L"
                     onclick={() => {
-                      let slides = document.querySelectorAll('.newCard_slider');
-                      this.Static.result = Array.from(slides)
+                      this.Static.slides = document.querySelectorAll('.newCard_slider');
+                      this.Static.result = Array.from(this.Static.slides)
                       this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
                       this.init();
                     }}
@@ -58,8 +52,8 @@ export const display = function () {
                   <button
                     class="arrow arrow_R"
                     onclick={() => {
-                      let slides = document.querySelectorAll('.newCard_slider');
-                      this.Static.result = Array.from(slides)
+                      this.Static.slides = document.querySelectorAll('.newCard_slider');
+                      this.Static.result = Array.from(this.Static.slides)
                       this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
                       this.init();
                     }}
@@ -76,7 +70,6 @@ export const display = function () {
               <div
                 class="sliderTest_container"
                 ref="sliderTestContainer"
-
                 ontouchstart={(e: any) => {
                   this.Static.startPoint = e.changedTouches[0].pageX;
                 }}

@@ -32,6 +32,10 @@
     }
   }
 
+  &_logoLight {
+    display: none;
+  }
+
   &_burger {
     cursor: pointer;
     height: 45px;
@@ -80,6 +84,9 @@
   color: #000;
   background: var(--white);
   transition: width .5s ease;
+  -webkit-box-shadow: 5px 0px 5px -5px rgba(34, 60, 80, 0.6);
+  -moz-box-shadow: 5px 0px 5px -5px rgba(34, 60, 80, 0.6);
+  box-shadow: 5px 0px 5px -5px rgba(34, 60, 80, 0.6);
 
   &_inner {
     height: calc(100% - 70px);
@@ -277,6 +284,24 @@
       left: 0;
       width: 100%;
     }
+
+    &_burger {
+      &_wrap {
+        display: flex;
+        align-items: baseline;
+        gap: 15px;
+        justify-content: start;
+      }
+    }
+
+    &_logoLight {
+      display: block;
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+    }
   }
 
   .sidebar {
@@ -305,6 +330,13 @@
     &_acc {
       span {
         display: none;
+      }
+    }
+
+    &_logoLight {
+      img {
+        width: 40px;
+        height: 40px;
       }
     }
 

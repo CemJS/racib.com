@@ -24,6 +24,12 @@
       ]
     },
     {
+      "url": "/sliderTest",
+      "front": [
+        "sliderTest"
+      ]
+    },
+    {
       "regex": "/news",
       "front": [
         "news"
