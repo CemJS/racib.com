@@ -10,7 +10,7 @@
     "prod": "node esbuild.mjs --runServe --runProd"
   },
   "dependencies": {
-    "cemjs-all": "^1.0.5",
+    "cemjs-all": "^1.0.8",
     "esbuild": "^0.19.1",
     "http-proxy": "^1.18.1"
   },
