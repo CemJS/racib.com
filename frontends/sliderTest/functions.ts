@@ -1,7 +1,7 @@
 const GalleryClassName = 'gallery';
 const GalleryLineClassName = 'gallery_line';
 const GallerySlideClassName = 'gallery_slide'
-// const wrapperNode = document.createElement('div');
+const GalleryGraggableClassName = 'gallery_draggable';
 
 class Gallery {
     element: HTMLElement;
@@ -71,7 +71,9 @@ class Gallery {
         this.maximumX = -(this.size - 1) * (this.widthContainer + this.settings.margin);
         this.x = - this.currentSlide * (this.widthContainer + this.settings.margin);
 
+        this.setStyleTransition();
         this.lineNode.style.width = `${this.size * (this.widthContainer + this.settings.margin)}px`;
+        this.setStylePosition();
         Array.from(this.lineNode.children).forEach((slideNode: any) => {
             slideNode.style.width = `${this.widthContainer}px`;
             slideNode.style.marginRight = `${this.settings.margin}px`
@@ -81,12 +83,14 @@ class Gallery {
     setEvents() {
         this.debouncedResizeGallery = debounce(this.resizeGallery);
         window.addEventListener('resize', debounce(this.resizeGallery));
-        this.lineNode.addEventListener('pointerdown', this.startDrag)
-        window.addEventListener('pointerup', this.stopDrag)
+        this.lineNode.addEventListener('pointerdown', this.startDrag);
+        window.addEventListener('pointerup', this.stopDrag);
     }
 
     destroyEvents() {
         window.removeEventListener('resize', this.debouncedResizeGallery);
+        // this.lineNode.removeEventListener('pointerdown', this.startDrag);
+        // window.removeEventListener('pointerup', this.stopDrag);
     }
 
     resizeGallery() {
@@ -98,10 +102,12 @@ class Gallery {
         this.clickX = e.pageX;
         this.startX = this.x;
         this.resetStyleTransition();
+        this.element.classList.add(GalleryGraggableClassName);
         window.addEventListener('pointermove', this.dragging)
     }
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging)
+        this.element.classList.remove(GalleryGraggableClassName);
         this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
         this.setStylePosition();
         this.setStyleTransition();
@@ -134,7 +140,6 @@ class Gallery {
 
     setStyleTransition() {
         this.lineNode.style.transition = `all 0.25s ease 0s`;
-        console.log('=9a05b1=', '1')
     }
 
     resetStyleTransition() {
