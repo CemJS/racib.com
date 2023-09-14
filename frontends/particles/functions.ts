@@ -5,7 +5,6 @@ class Slider {
     controls: string;
 
     constructor(container: HTMLElement, items: Array<HTMLElement>, controls: string) {
-        console.log('=47dd68= constructor', 123)
 
         this.container = container;
         this.controls = controls;
