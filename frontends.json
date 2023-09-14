@@ -1,0 +1,215 @@
+{
+  "about": {
+    "front": true,
+    "name": "about",
+    "path": {
+      "js": "/assets/js/about.js",
+      "css": "/assets/css/about.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "aboutHeader": {
+    "front": true,
+    "name": "aboutHeader",
+    "path": {
+      "js": "/assets/js/aboutHeader.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "directorateSlider": {
+    "front": true,
+    "name": "directorateSlider",
+    "path": {
+      "js": "/assets/js/directorateSlider.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "error": {
+    "front": true,
+    "name": "error",
+    "path": {
+      "js": "/assets/js/error.js",
+      "css": "/assets/css/error.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "events": {
+    "front": true,
+    "name": "events",
+    "path": {
+      "js": "/assets/js/events.js",
+      "css": "/assets/css/events.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "eventsSlider": {
+    "front": true,
+    "name": "eventsSlider",
+    "path": {
+      "js": "/assets/js/eventsSlider.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "expertSlider": {
+    "front": true,
+    "name": "expertSlider",
+    "path": {
+      "js": "/assets/js/expertSlider.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "footer": {
+    "front": true,
+    "name": "footer",
+    "path": {
+      "js": "/assets/js/footer.js",
+      "css": "/assets/css/footer.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "header": {
+    "front": true,
+    "name": "header",
+    "path": {
+      "js": "/assets/js/header.js",
+      "css": "/assets/css/header.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "home": {
+    "front": true,
+    "name": "home",
+    "path": {
+      "js": "/assets/js/home.js",
+      "css": "/assets/css/home.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "join": {
+    "front": true,
+    "name": "join",
+    "path": {
+      "js": "/assets/js/join.js",
+      "css": "/assets/css/join.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "mission": {
+    "front": true,
+    "name": "mission",
+    "path": {
+      "js": "/assets/js/mission.js",
+      "css": "/assets/css/mission.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "modalSoon": {
+    "front": true,
+    "name": "modalSoon",
+    "path": {
+      "js": "/assets/js/modalSoon.js",
+      "css": "/assets/css/modalSoon.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "news": {
+    "front": true,
+    "name": "news",
+    "path": {
+      "js": "/assets/js/news.js",
+      "css": "/assets/css/news.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "observerSlider": {
+    "front": true,
+    "name": "observerSlider",
+    "path": {
+      "js": "/assets/js/observerSlider.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "particles": {
+    "front": true,
+    "name": "particles",
+    "path": {
+      "js": "/assets/js/particles.js",
+      "css": "/assets/css/particles.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "players": {
+    "front": true,
+    "name": "players",
+    "path": {
+      "js": "/assets/js/players.js",
+      "css": "/assets/css/players.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "privacy": {
+    "front": true,
+    "name": "privacy",
+    "path": {
+      "js": "/assets/js/privacy.js",
+      "css": "/assets/css/privacy.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "runLine": {
+    "front": true,
+    "name": "runLine",
+    "path": {
+      "js": "/assets/js/runLine.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "scrollTop": {
+    "front": true,
+    "name": "scrollTop",
+    "path": {
+      "js": "/assets/js/scrollTop.js"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "sliderTest": {
+    "front": true,
+    "name": "sliderTest",
+    "path": {
+      "js": "/assets/js/sliderTest.js",
+      "css": "/assets/css/sliderTest.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  },
+  "userAgreement": {
+    "front": true,
+    "name": "userAgreement",
+    "path": {
+      "js": "/assets/js/userAgreement.js",
+      "css": "/assets/css/userAgreement.css"
+    },
+    "ver": "1.0.0",
+    "visable": true
+  }
+}

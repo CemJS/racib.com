@@ -173,7 +173,11 @@
   }
 
   &_slide {
+    height: 20rem;
     float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .card {

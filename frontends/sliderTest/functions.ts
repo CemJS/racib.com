@@ -13,6 +13,7 @@ class Gallery {
     widthSlide: any;
     clickX: any;
     dragX: any;
+    x: any;
 
     constructor(element: HTMLElement, options = {}) {
         this.element = element;
@@ -55,6 +56,7 @@ class Gallery {
         const coordsContainer = this.element.getBoundingClientRect();
         this.widthContainer = coordsContainer.width;
         this.lineNode.style.width = `${285 * this.size}px`;
+        this.x = -this.currentSlide * this.widthContainer;
     }
 
     setEvents() {
@@ -78,11 +80,14 @@ class Gallery {
     dragging(e) {
         this.dragX = e.pageX;
         const dragShift = this.dragX - this.clickX;
+        this.x = dragShift;
         this.setStylePosition(dragShift)
+        e.preventDefault();
     }
 
     setStylePosition(shift) {
-        this.lineNode.style.transform = `translate3d(${shift}px, 0, 0)`
+        this.lineNode.style.transform = `translate3d(${this.x}px, 0, 0)`
+
     }
     // resizeGallery() {
     //     console.log('=9982d6=', '1111')

@@ -13,17 +13,21 @@ export const display = function () {
 
           <section ref="gallery">
 
-            {/* <div></div> */}
+            <div class="slide slide_1"></div>
+            <div class="slide slide_2"></div>
+            <div class="slide slide_3"></div>
+            <div class="slide slide_4"></div>
 
-            {
+
+            {/* {
               events.map((item, index) => {
                 return (
                   <div
                     class={["card", `card_${index}`]}
                     ref="eventsSlide"
-                    onclick={() => {
-                      this.Fn.linkChange(`/events/show/${index}`)
-                    }}
+                  // onclick={() => {
+                  //   this.Fn.linkChange(`/events/show/${index}`)
+                  // }}
                   >
                     <span class="card_category">{item.category}</span>
                     <div class="card_img" style={`background-image: url(${item.cover})`}>
@@ -46,7 +50,7 @@ export const display = function () {
 
                 )
               })
-            }
+            } */}
 
 
           </section>
