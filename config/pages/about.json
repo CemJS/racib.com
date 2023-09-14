@@ -2,10 +2,6 @@
     "url": "/about",
     "front": [
         "header",
-        "aboutHeader",
-        "directorateSlider",
-        "observerSlider",
-        "expertSlider",
         "about",
         "footer"
     ]

@@ -1,4 +1,4 @@
 
 export const test = function () {
-    console.log("Hello")
+    return
 }
