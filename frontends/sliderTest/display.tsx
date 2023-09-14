@@ -13,10 +13,10 @@ export const display = function () {
 
           <section ref="gallery">
 
-            <div class="slide slide_0"></div>
-            <div class="slide slide_1"></div>
-            <div class="slide slide_2"></div>
-            <div class="slide slide_3"></div>
+            <div class="slide slide_0">0</div>
+            <div class="slide slide_1">1</div>
+            <div class="slide slide_2">2</div>
+            <div class="slide slide_3">3</div>
 
           </section>
 

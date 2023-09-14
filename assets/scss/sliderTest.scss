@@ -165,21 +165,19 @@
   width: 100%;
 
   &_line {
-    display: flex;
-    align-items: center;
-    height: 500px;
-    gap: 30px;
     overflow: hidden;
+    // transition: all .25s ease 0s;
   }
 
   &_slide {
+    min-height: 1px;
     width: 100%;
+    float: left;
   }
 
   .slide {
     height: 20rem;
     width: 100%;
-    float: left;
     display: flex;
     align-items: center;
     justify-content: center;
