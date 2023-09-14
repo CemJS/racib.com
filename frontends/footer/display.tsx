@@ -33,7 +33,7 @@ const links = [
 	},
 	{
 		name: "Как вступить?",
-		link: '/join'
+		link: '/about/join'
 	},
 	{
 		name: "Пользовательское соглашение",

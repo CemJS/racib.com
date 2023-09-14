@@ -1,5 +1,5 @@
 {
-    "url": "/about",
+    "regex": "/about",
     "front": [
         "header",
         "about",

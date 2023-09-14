@@ -1,8 +1,0 @@
-{
-    "url": "/join",
-    "front": [
-        "header",
-        "join",
-        "footer"
-    ]
-}
