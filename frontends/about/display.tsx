@@ -6,6 +6,5 @@ export const display = function () {
     <div class="main_wrap">
       <Navigation />
     </div>
-
   )
 }
