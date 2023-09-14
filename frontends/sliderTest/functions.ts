@@ -5,8 +5,8 @@ const GallerySlideClassName = 'gallery_slide'
 
 class Gallery {
     element: HTMLElement;
-    size: number;
-    currentSlide: number;
+    size: number; // количество слайдов галереи
+    currentSlide: number; // первый слайд
     lineNode: HTMLElement;
     slideItems: any;
     widthContainer: any;
@@ -17,7 +17,7 @@ class Gallery {
 
     constructor(element: HTMLElement, options = {}) {
         this.element = element;
-        this.size = element.childElementCount;
+        this.size = element.childElementCount; // определяем кол-во слайдов галереи
         this.currentSlide = 0;
 
         // чтобы при вызове методов не слетали контексты вызываем  bind
@@ -46,17 +46,22 @@ class Gallery {
         `;
         this.lineNode = this.element.querySelector(`.${GalleryLineClassName}`)
         this.slideItems = Array.from(this.lineNode.children).map((childNode) => {
-            childNode.classList.add(GallerySlideClassName)
-            const coordsSlide = childNode.getBoundingClientRect();
-            this.widthSlide = coordsSlide.width;
+            wrapElementByDiv({
+                element: childNode,
+                className: GallerySlideClassName
+            })
         })
+
     }
+
 
     setParameters() {
         const coordsContainer = this.element.getBoundingClientRect();
         this.widthContainer = coordsContainer.width;
-        this.lineNode.style.width = `${285 * this.size}px`;
-        this.x = -this.currentSlide * this.widthContainer;
+        this.lineNode.style.width = `${this.size * this.widthContainer}px`;
+        // Array.from(this.slideItems).forEach((slideNode) => {
+        //     console.log('=4b7f66=', slideNode)
+        // })
     }
 
     setEvents() {
@@ -89,17 +94,22 @@ class Gallery {
         this.lineNode.style.transform = `translate3d(${this.x}px, 0, 0)`
 
     }
-    // resizeGallery() {
-    //     console.log('=9982d6=', '1111')
-    //     this.setParameters();
-    // }
 }
+
+function wrapElementByDiv({ element, className }) {
+    const wrapperNode = document.createElement('div');
+    wrapperNode.classList.add(className);
+    element.parentNode.insertBefore(wrapperNode, element);
+    wrapperNode.appendChild(element);
+
+    return wrapperNode;
+}
+
 const fn = {
     "test": function (element: HTMLElement, options = {}) {
         if (!this.Static.galleryRun) {
             this.Static.galleryRun = new Gallery(element, options = {})
         }
-
         this.Static.callGallery = true;
         this.init();
     }
