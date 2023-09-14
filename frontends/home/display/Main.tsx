@@ -263,7 +263,7 @@ export default function () {
                                             class="carousel_person"
                                             ref="playerSlide"
                                             onclick={() => {
-                                                this.Fn.linkChange(`/players/show/${index}`);
+                                                this.Fn.linkChange(`/players/show/${item.name}`);
                                             }}
                                         >
                                             <div class="carousel_person_circle">
