@@ -2,14 +2,15 @@
   "name": "racib",
   "version": "1.0.0",
   "type": "module",
+  "types": "./index.d.ts",
   "private": true,
   "scripts": {
     "build": "node esbuild.mjs",
     "start": "node esbuild.mjs --runServe",
-    "front": "node esbuild.mjs --runServe --runFront"
+    "prod": "node esbuild.mjs --runServe --runProd"
   },
   "dependencies": {
-    "cemjs-all": "^1.0.5",
+    "cemjs-all": "^1.0.8",
     "esbuild": "^0.19.1",
     "http-proxy": "^1.18.1"
   },

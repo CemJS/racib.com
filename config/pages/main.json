@@ -1,0 +1,9 @@
+{
+    "url": "/",
+    "front": [
+        "header",
+        "particles",
+        "home",
+        "footer"
+    ]
+}

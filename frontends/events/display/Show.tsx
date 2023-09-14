@@ -38,7 +38,7 @@ export default function () {
                   <span>{this.Static.record.location}</span>
                 </div>
                 <div class="event_profile_info_owner">
-                  <span>Владелец</span>
+                  <span>Автор</span>
                   <span class="event_profile_info_owner_img">
                     <img src={this.Static.record.logo} />
                     РАКИБ

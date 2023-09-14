@@ -127,11 +127,16 @@ body {
         width: calc(100% - 78px);
     }
 
-    @media(max-width: 600px) {
-        padding: 80px 10px 0 10px;
-        left: 60px;
-        width: calc(100% - 60px);
+    @media(max-width: 768px) {
+        left: 0;
+        width: 100%;
     }
+
+    // @media(max-width: 600px) {
+    //     padding: 80px 10px 0 10px;
+    //     left: 60px;
+    //     width: calc(100% - 60px);
+    // }
 
     @media(max-width: 400px) {
         padding: 60px 10px 0 10px;

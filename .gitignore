@@ -1,7 +1,7 @@
-node_modules
+config/frontends.json
+config/services.json
+config/pages.json
 public/assets
-temp
-.env
-frontends.json
-services.json
+node_modules
 package-lock.json
+.env

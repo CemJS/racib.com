@@ -1,54 +1,70 @@
 import { Cemjsx } from "cemjs-all"
-import slide1 from '@images/news/rus.jpg'
-import slide2 from '@images/news/coverBlockchainLife.png'
-import slide3 from '@images/news/new3.jpg'
-import slide4 from '@images/news/sber.jpg'
-import slide5 from '@images/news/winner.jpg'
+import date from '@svg/icons/dark/date.svg'
+import map from '@svg/icons/dark/mapPin.svg'
+import events from '@json/eventsSlider'
+
 
 export const display = function () {
   return (
     <div class="main_wrap">
-      <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
-      >
+      <main class={["main", this.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
-          <section class="sliderTest">
-            <div class="sliderTest_container" ref="sliderTestContainer">
-              <img src={slide1} class={["sliderTest_item", `sliderTest_item_1`]} />
-              <img src={slide2} class={["sliderTest_item", `sliderTest_item_2`]} />
-              <img src={slide3} class={["sliderTest_item", `sliderTest_item_3`]} />
-              <img src={slide4} class={["sliderTest_item", `sliderTest_item_4`]} />
-              <img src={slide5} class={["sliderTest_item", `sliderTest_item_5`]} />
-            </div>
-            <div
-              class="sliderTest_controls"
-              ref="sliderTextControlsContainer"
-              onclick={() => {
-                this.fn("sliderTest")
-              }}
-            >
-              <button class="sliderTest_controls_previous"
-                onclick={() => {
-                  let slides = document.querySelectorAll('.sliderTest_item');
-                  this.Static.result = Array.from(slides)
-                  this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
-                  this.init();
-                }}
-              ></button>
-              <button
-                class="sliderTest_controls_next"
-                onclick={() => {
-                  let slides = document.querySelectorAll('.sliderTest_item');
-                  this.Static.result = Array.from(slides)
-                  this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
-                  this.init();
-                }}
-              ></button>
-            </div>
+
+
+          <section ref="gallery">
+
+            <div class="slide slide_1"></div>
+            <div class="slide slide_2"></div>
+            <div class="slide slide_3"></div>
+            <div class="slide slide_4"></div>
+
+
+            {/* {
+              events.map((item, index) => {
+                return (
+                  <div
+                    class={["card", `card_${index}`]}
+                    ref="eventsSlide"
+                  // onclick={() => {
+                  //   this.Fn.linkChange(`/events/show/${index}`)
+                  // }}
+                  >
+                    <span class="card_category">{item.category}</span>
+                    <div class="card_img" style={`background-image: url(${item.cover})`}>
+                      <div class="card_logo">
+                        <img src={item.logo} alt="Логотип" />
+                      </div>
+                    </div>
+                    <div class="card_info">
+                      <h5 class="card_info_title">{item.title}</h5>
+                      <span class="card_info_date">
+                        <img src={date} alt="Дата проведения мероприятия" />
+                        {item.date}
+                      </span>
+                      <span class="card_info_location">
+                        <img src={map} alt="Место проведения мероприятия" />
+                        {item.location}
+                      </span>
+                    </div>
+                  </div>
+
+                )
+              })
+            } */}
+
+
           </section>
+
+          <div style="margin: 15px auto">
+            <button
+            >Prev</button>
+            <button>Next</button>
+          </div>
+
 
         </div>
       </main>
     </div>
+
   )
 }

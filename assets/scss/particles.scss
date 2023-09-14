@@ -28,18 +28,20 @@
     }
 
     @media(max-width: 490px) {
-      height: 380px;
+      height: 355px;
+      background-position: 50% 0;
     }
 
     @media(max-width: 465px) {
       margin-top: 65px;
-      // height: 535px;
+    }
+
+    @media(max-width: 415px) {
+      height: 380px;
     }
 
     @media(max-width: 400px) {
-      background-position: 25% 0;
       margin-top: 55px;
-      // height: 500px;
     }
   }
 

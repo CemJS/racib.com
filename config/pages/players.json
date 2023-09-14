@@ -1,0 +1,8 @@
+{
+    "regex": "/players",
+    "front": [
+        "header",
+        "players",
+        "footer"
+    ]
+}

@@ -1,5 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import logo from '@svg/racib.svg'
+import logoLight from '@svg/racibLight.svg'
 import chat from '@svg/icons/chatHelper.svg'
 import letter from '@svg/sidebar/letterDark.svg'
 import phone from '@svg/sidebar/phoneDark.svg'
@@ -13,15 +14,24 @@ export const display = function () {
 		<header class="header">
 			<div
 				class={["header_inner", this.Variable.openSidebar ? null : "header_close"]} >
-				<div
-					class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
-					ref="burger"
-					onclick={(e) => {
-						this.Variable.openSidebar = !this.Variable.openSidebar;
-						this.Fn.initAll();
-					}}
-				>
-					<img src={sidebarArrow} alt="Toggle sidebar" />
+
+				<div class="header_burger_wrap">
+
+					<a class="header_logoLight" href="/" onclick={this.Fn.link}>
+						<img src={logoLight} alt="Ракиб" />
+					</a>
+
+					<div
+						class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
+						ref="burger"
+						onclick={(e) => {
+							this.Variable.openSidebar = !this.Variable.openSidebar;
+							this.Fn.initAll();
+						}}
+					>
+						<img src={sidebarArrow} alt="Toggle sidebar" />
+					</div>
+
 				</div>
 
 				<div

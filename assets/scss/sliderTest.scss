@@ -158,3 +158,29 @@
     }
   }
 }
+
+// slider for events
+.gallery {
+  overflow: hidden;
+  width: 100%;
+
+  &_line {
+    display: flex;
+    align-items: center;
+    height: 500px;
+    gap: 30px;
+    overflow: hidden;
+  }
+
+  &_slide {
+    height: 20rem;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    height: 25rem;
+  }
+}

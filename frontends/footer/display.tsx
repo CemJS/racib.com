@@ -37,11 +37,11 @@ const links = [
 	},
 	{
 		name: "Пользовательское соглашение",
-		link: '/userAgreement'
+		link: '/policy/aggrement'
 	},
 	{
 		name: "Политика обработки персональных данных",
-		link: '/privacy'
+		link: '/policy'
 	},
 	// {
 	// 	name: "Реклама на сайте",
