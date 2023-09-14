@@ -1,7 +1,7 @@
 const GalleryClassName = 'gallery';
 const GalleryLineClassName = 'gallery_line';
 const GallerySlideClassName = 'gallery_slide'
-// const wrapperNode = document.createElement('div');
+const GalleryGraggableClassName = 'gallery_draggable';
 
 class Gallery {
     element: HTMLElement;
@@ -18,12 +18,17 @@ class Gallery {
     debouncedResizeGallery: any;
     currentSlideWasChanged: boolean;
     maximumX: number;
+    settings: any
 
-    constructor(element: HTMLElement, options = {}) {
+    constructor(element: HTMLElement, options = { margin: 10 }) {
         this.element = element;
         this.size = element.childElementCount; // определяем кол-во слайдов галереи
         this.currentSlide = 0;
         this.currentSlideWasChanged = false;
+        this.settings = {
+            margin: options.margin || 0
+        }
+
 
         // чтобы при вызове методов не слетали контексты вызываем  bind
         this.manageHTML = this.manageHTML.bind(this)
@@ -63,22 +68,29 @@ class Gallery {
     setParameters() {
         const coordsContainer = this.element.getBoundingClientRect();
         this.widthContainer = coordsContainer.width;
-        this.x = - this.currentSlide * this.widthContainer;
-        this.lineNode.style.width = `${this.size * this.widthContainer}px`;
+        this.maximumX = -(this.size - 1) * (this.widthContainer + this.settings.margin);
+        this.x = - this.currentSlide * (this.widthContainer + this.settings.margin);
+
+        this.setStyleTransition();
+        this.lineNode.style.width = `${this.size * (this.widthContainer + this.settings.margin)}px`;
+        this.setStylePosition();
         Array.from(this.lineNode.children).forEach((slideNode: any) => {
-            slideNode.style.width = `${this.widthContainer}px`
+            slideNode.style.width = `${this.widthContainer}px`;
+            slideNode.style.marginRight = `${this.settings.margin}px`
         })
     }
 
     setEvents() {
         this.debouncedResizeGallery = debounce(this.resizeGallery);
         window.addEventListener('resize', debounce(this.resizeGallery));
-        this.lineNode.addEventListener('pointerdown', this.startDrag)
-        window.addEventListener('pointerup', this.stopDrag)
+        this.lineNode.addEventListener('pointerdown', this.startDrag);
+        window.addEventListener('pointerup', this.stopDrag);
     }
 
     destroyEvents() {
         window.removeEventListener('resize', this.debouncedResizeGallery);
+        // this.lineNode.removeEventListener('pointerdown', this.startDrag);
+        // window.removeEventListener('pointerup', this.stopDrag);
     }
 
     resizeGallery() {
@@ -90,11 +102,13 @@ class Gallery {
         this.clickX = e.pageX;
         this.startX = this.x;
         this.resetStyleTransition();
+        this.element.classList.add(GalleryGraggableClassName);
         window.addEventListener('pointermove', this.dragging)
     }
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging)
-        this.x = -this.currentSlide * this.widthContainer;
+        this.element.classList.remove(GalleryGraggableClassName);
+        this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
         this.setStylePosition();
         this.setStyleTransition();
     }
@@ -103,7 +117,7 @@ class Gallery {
         this.dragX = e.pageX;
         const dragShift = this.dragX - this.clickX;
         const easing = dragShift / 7;
-        this.x = Math.min(this.startX + dragShift, easing);
+        this.x = Math.max(Math.min(this.startX + dragShift, easing), this.maximumX + easing);
         this.setStylePosition();
 
         //change active slide
@@ -126,7 +140,6 @@ class Gallery {
 
     setStyleTransition() {
         this.lineNode.style.transition = `all 0.25s ease 0s`;
-        console.log('=9a05b1=', '1')
     }
 
     resetStyleTransition() {
@@ -155,7 +168,9 @@ function debounce(func, time = 100) {
 const fn = {
     "test": function (element: HTMLElement, options = {}) {
         if (!this.Static.galleryRun) {
-            this.Static.galleryRun = new Gallery(element, options = {})
+            this.Static.galleryRun = new Gallery(element, options = {
+                margin: 10
+            })
         }
         this.Static.callGallery = true;
         this.init();

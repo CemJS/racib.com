@@ -163,10 +163,14 @@
 .gallery {
   overflow: hidden;
   width: 100%;
+  user-select: none;
 
   &_line {
     overflow: hidden;
-    // transition: all .25s ease 0s;
+  }
+
+  &_draggable {
+    cursor: grabbing;
   }
 
   &_slide {
