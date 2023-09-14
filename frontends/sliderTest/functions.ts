@@ -18,12 +18,17 @@ class Gallery {
     debouncedResizeGallery: any;
     currentSlideWasChanged: boolean;
     maximumX: number;
+    settings: any
 
-    constructor(element: HTMLElement, options = {}) {
+    constructor(element: HTMLElement, options = { margin: 10 }) {
         this.element = element;
         this.size = element.childElementCount; // определяем кол-во слайдов галереи
         this.currentSlide = 0;
         this.currentSlideWasChanged = false;
+        this.settings = {
+            margin: options.margin || 0
+        }
+
 
         // чтобы при вызове методов не слетали контексты вызываем  bind
         this.manageHTML = this.manageHTML.bind(this)
@@ -63,10 +68,13 @@ class Gallery {
     setParameters() {
         const coordsContainer = this.element.getBoundingClientRect();
         this.widthContainer = coordsContainer.width;
-        this.x = - this.currentSlide * this.widthContainer;
-        this.lineNode.style.width = `${this.size * this.widthContainer}px`;
+        this.maximumX = -(this.size - 1) * (this.widthContainer + this.settings.margin);
+        this.x = - this.currentSlide * (this.widthContainer + this.settings.margin);
+
+        this.lineNode.style.width = `${this.size * (this.widthContainer + this.settings.margin)}px`;
         Array.from(this.lineNode.children).forEach((slideNode: any) => {
-            slideNode.style.width = `${this.widthContainer}px`
+            slideNode.style.width = `${this.widthContainer}px`;
+            slideNode.style.marginRight = `${this.settings.margin}px`
         })
     }
 
@@ -94,7 +102,7 @@ class Gallery {
     }
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging)
-        this.x = -this.currentSlide * this.widthContainer;
+        this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
         this.setStylePosition();
         this.setStyleTransition();
     }
@@ -103,7 +111,7 @@ class Gallery {
         this.dragX = e.pageX;
         const dragShift = this.dragX - this.clickX;
         const easing = dragShift / 7;
-        this.x = Math.min(this.startX + dragShift, easing);
+        this.x = Math.max(Math.min(this.startX + dragShift, easing), this.maximumX + easing);
         this.setStylePosition();
 
         //change active slide
@@ -155,7 +163,9 @@ function debounce(func, time = 100) {
 const fn = {
     "test": function (element: HTMLElement, options = {}) {
         if (!this.Static.galleryRun) {
-            this.Static.galleryRun = new Gallery(element, options = {})
+            this.Static.galleryRun = new Gallery(element, options = {
+                margin: 10
+            })
         }
         this.Static.callGallery = true;
         this.init();
