@@ -50,11 +50,67 @@ export default function () {
               <div>
                 {
                   this.Static.record.desc ?
-                    this.Static.record.desc.map(item => {
-                      return (
-                        <p class="new_content_text">{item}</p>
-                      )
-                    }) : <span>Подробной информации нет</span>
+                    <div class="new_content_desc">
+                      {
+                        this.Static.record.desc.map(item => {
+                          return (
+                            <div class="new_content_desc_item">
+                              <div>
+                                {
+                                  item.text ?
+                                    <div>
+                                      {
+                                        item.text.map(el => {
+                                          return (
+                                            <p class="new_content_text">{el}</p>
+                                          )
+                                        })
+                                      }
+                                    </div> : null
+                                }
+                                {
+                                  item.list ?
+                                    <div class="event_content_list_wrap">
+                                      <p class="event_content_list_title">{item.list.title}</p>
+                                      <ul class="event_content_list">
+                                        {
+                                          item.list.items.map((li) => {
+                                            return (
+                                              <li class="event_content_list_item event_content_text">{li}</li>
+                                            )
+                                          })
+                                        }
+                                      </ul>
+                                    </div> : null
+                                }
+                              </div>
+                            </div>
+                          )
+                        })
+                      }
+                    </div> : null
+                }
+                {
+                  this.Static.record.options ?
+                    <div>
+                      {
+                        this.Static.record.options.map(item => {
+                          return (
+                            <p class="event_content_text">{item?.text}
+                              <a href={item?.link} onclick={this.Fn.link} class="link ml_5">{item?.textLink}</a>
+                            </p>
+                          )
+                        })
+                      }
+                    </div> : null
+                }
+
+                {
+                  this.Static.record.image ?
+                    <div class="event_content_cover"
+                      style={`background-image: url(${this.Static.record.image})`}
+                    >
+                    </div> : null
                 }
               </div>
             </div>

@@ -4,14 +4,13 @@ import Show from "./display/Show"
 
 
 export default function () {
-
-  if (this.Variable.DataUrl[2]) {
-    return <Show />
+  let param = this.Variable.DataUrl[1] || ""
+  switch (param) {
+    case 'show':
+      return <Show />
+      break;
+    default:
+      return <Main />
   }
-
-  if (this.Variable.DataUrl.length == 1) {
-    return <Main />
-  }
-
 }
 

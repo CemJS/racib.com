@@ -1,6 +1,7 @@
-const listener = {
-    "start": function (data, name) { },
-    "finish": function (data, name, t) { }
+export const start = function () {
+    return
 }
 
-export { listener }
+export const finish = function () {
+    return
+}
