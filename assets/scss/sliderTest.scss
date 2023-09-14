@@ -181,6 +181,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 
     &_0 {
       background: #3f72ff;
