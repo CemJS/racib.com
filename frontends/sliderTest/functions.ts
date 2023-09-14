@@ -2,12 +2,20 @@ const GalleryClassName = 'gallery';
 const GalleryLineClassName = 'gallery_line';
 const GallerySlideClassName = 'gallery_slide'
 const GalleryGraggableClassName = 'gallery_draggable';
+const GalleryDotsClassName = 'gallery_dots';
+const GalleryDotClassName = 'gallery_dot';
+const GalleryDotActiveClassName = 'gallery_dot_active'
+const GalleryNavClassName = 'gallery_nav'
+const GalleryNavLeftClassName = 'gallery_nav_left'
+const GalleryNavRightClassName = 'gallery_nav_right'
 
 class Gallery {
     element: HTMLElement;
+    dots: HTMLElement;
     size: number; // количество слайдов галереи
     currentSlide: number; // первый слайд
     lineNode: any;
+    dotsNode: any;
     slideItems: any;
     widthContainer: any;
     widthSlide: any;
@@ -18,10 +26,12 @@ class Gallery {
     debouncedResizeGallery: any;
     currentSlideWasChanged: boolean;
     maximumX: number;
-    settings: any
+    settings: any;
+    dotsItem: any;
 
-    constructor(element: HTMLElement, options = { margin: 10 }) {
+    constructor(element: HTMLElement, dots: HTMLElement, options = { margin: 10 }) {
         this.element = element;
+        this.dots = dots;
         this.size = element.childElementCount; // определяем кол-во слайдов галереи
         this.currentSlide = 0;
         this.currentSlideWasChanged = false;
@@ -54,14 +64,21 @@ class Gallery {
             <div class="${GalleryLineClassName}">
                 ${this.element.innerHTML}
             <div>
+            <div class="${GalleryNavClassName}">
+                <button class="${GalleryNavLeftClassName}">Left</button>
+                <button class="${GalleryNavRightClassName}">Right</button>
+            </div>
         `;
-        this.lineNode = this.element.querySelector(`.${GalleryLineClassName}`)
+        this.lineNode = this.element.querySelector(`.${GalleryLineClassName}`);
+        this.dotsNode = this.element.querySelector(`.${GalleryDotsClassName}`)
+
         this.slideItems = Array.from(this.lineNode.children).map((childNode) => {
             wrapElementByDiv({
                 element: childNode,
                 className: GallerySlideClassName
             })
         })
+
 
     }
 
@@ -108,6 +125,7 @@ class Gallery {
         this.element.classList.add(GalleryGraggableClassName);
         window.addEventListener('pointermove', this.dragging)
     }
+
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging)
         this.element.classList.remove(GalleryGraggableClassName);
@@ -160,6 +178,14 @@ function wrapElementByDiv({ element, className }) {
     return wrapperNode;
 }
 
+function wrapElementBtn( className ) {
+    const wrapBtn = document.createElement('button');
+    wrapBtn.classList.add(className);
+
+
+    return wrapBtn;
+}
+
 function debounce(func, time = 100) {
     let timer;
     return function (e) {
@@ -169,9 +195,9 @@ function debounce(func, time = 100) {
 }
 
 const fn = {
-    "test": function (element: HTMLElement, options = {}) {
+    "test": function (element: HTMLElement, dots: HTMLElement, options = {}) {
         if (!this.Static.galleryRun) {
-            this.Static.galleryRun = new Gallery(element, options = {
+            this.Static.galleryRun = new Gallery(element, dots, options = {
                 margin: 10
             })
         }

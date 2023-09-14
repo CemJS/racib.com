@@ -306,17 +306,19 @@ export default function () {
                           // this.init();
                         }}
                       >
-                        <span>{item.category}</span>
                         <div class="newCard_img" style={`background-image: url(${item.img})`}>
+                          <span class="newCard_category">{item.category}</span>
                         </div>
-                        <h5 class="newCard_title">{item.title}</h5>
-                        <p class="newCard_desc">{item.descShort}</p>
-                        <div class="newCard_details">
-                          <span class="newCard_details_date">{item.date}</span>
-                          <span class="newCard_details_views">
-                            {item.views}
-                            <img src={views} />
-                          </span>
+                        <div class="newCard_info">
+                          <h5 class="newCard_title">{item.title}</h5>
+                          <p class="newCard_desc">{item.descShort}</p>
+                          <div class="newCard_details">
+                            <span class="newCard_details_date">{item.date}</span>
+                            <span class="newCard_details_views">
+                              {item.views}
+                              <img src={views} />
+                            </span>
+                          </div>
                         </div>
                       </div>
                     )

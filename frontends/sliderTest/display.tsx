@@ -10,8 +10,6 @@ export const display = function () {
     <div class="main_wrap">
       <main class={["main", this.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
-
-
           <section ref="gallery">
 
             <div class="slide slide_0">0</div>
@@ -20,14 +18,7 @@ export const display = function () {
             <div class="slide slide_3">3</div>
 
           </section>
-
-          <div style="margin: 15px auto">
-            <button
-            >Prev</button>
-            <button>Next</button>
-          </div>
-
-
+          <div ref="galleryDots"></div>
         </div>
       </main>
     </div>
