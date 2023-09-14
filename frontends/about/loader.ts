@@ -69,6 +69,6 @@ class Carousel {
 }
 
 export const loader = function () {
-    this.Static.carousel = { admin: new Carousel(), dir: new Carousel() }
+    this.Static.carousel = { admin: new Carousel(), directorate: new Carousel(), observers: new Carousel(), experts: new Carousel() }
     return
 }

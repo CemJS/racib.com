@@ -9,6 +9,9 @@ import back from '@svg/icons/back.svg'
 import next from '@svg/icons/light/nextWhite.svg'
 
 import admins from '@json/administration'
+import directorate from '@json/directorate'
+import observers from '@json/observers'
+import experts from '@json/experts'
 import facts from "@json/aboutFacts"
 
 
@@ -62,7 +65,7 @@ const RenderPerson = function ({ items, name, title }) {
                         items.map((item, index) => {
                             return (
                                 <div class="carousel_person">
-                                    <a href={`/players/administration/${index}`} onclick={this.Fn.link} class="carousel_person_circle">
+                                    <a href={`/players/show/${item.name}`} onclick={this.Fn.link} class="carousel_person_circle">
                                         <div
                                             class="carousel_person_img"
                                             style={`background-image: url(${item.img})`}
@@ -130,11 +133,37 @@ export default function () {
                         <span>Перейти на страницу</span>
                     </a>
                 </div>
-                <RenderPerson items={admins} name="dir" title="Руководство РАКИБ22222" />
 
-            </div>
+                <div class="about">
+                    <RenderPerson items={directorate} name="directorate" title="Дирекция РАКИБ" />
+                    <div class="link_block">
+                        <a href="/players" onclick={this.Fn.link}>
+                            <img src={next} />
+                            <span>Перейти на страницу</span>
+                        </a>
+                    </div>
+                </div>
 
-            <div class="wrapper">
+                <div class="about">
+                    <RenderPerson items={observers} name="observers" title="Наблюдательный совет РАКИБ" />
+                    <div class="link_block">
+                        <a href="/players" onclick={this.Fn.link}>
+                            <img src={next} />
+                            <span>Перейти на страницу</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="about">
+                    <RenderPerson items={observers} name="observers" title="Экспертный совет РАКИБ" />
+                    <div class="link_block">
+                        <a href="/players" onclick={this.Fn.link}>
+                            <img src={next} />
+                            <span>Перейти на страницу</span>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="about">
                     <section class="about_fact">
                         <h2 class="block_default_title">Факты о РАКИБ</h2>
@@ -179,7 +208,6 @@ export default function () {
                             </ul>
                         </div>
                     </section>
-
                 </div>
             </div>
         </main>
