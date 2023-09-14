@@ -173,19 +173,33 @@
   }
 
   &_slide {
+    width: 100%;
+  }
+
+  .slide {
     height: 20rem;
+    width: 100%;
     float: left;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &_1 {
+    &_0 {
       background: #3f72ff;
     }
 
-    &_2 {
-      background: #3f72ff;
+    &_1 {
+      background: #fc4753;
     }
+
+    &_2 {
+      background: #ff3fdf;
+    }
+
+    &_3 {
+      background: #076e26;
+    }
+
   }
 
   .card {

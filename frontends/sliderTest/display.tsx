@@ -13,45 +13,10 @@ export const display = function () {
 
           <section ref="gallery">
 
-            <div class="gallery_slide gallery_slide_1"></div>
-            <div class="gallery_slide gallery_slide_2"></div>
-            <div class="gallery_slide gallery_slide_3"></div>
-            <div class="gallery_slide gallery_slide_4"></div>
-
-
-            {/* {
-              events.map((item, index) => {
-                return (
-                  <div
-                    class={["card", `card_${index}`]}
-                    ref="eventsSlide"
-                  // onclick={() => {
-                  //   this.Fn.linkChange(`/events/show/${index}`)
-                  // }}
-                  >
-                    <span class="card_category">{item.category}</span>
-                    <div class="card_img" style={`background-image: url(${item.cover})`}>
-                      <div class="card_logo">
-                        <img src={item.logo} alt="Логотип" />
-                      </div>
-                    </div>
-                    <div class="card_info">
-                      <h5 class="card_info_title">{item.title}</h5>
-                      <span class="card_info_date">
-                        <img src={date} alt="Дата проведения мероприятия" />
-                        {item.date}
-                      </span>
-                      <span class="card_info_location">
-                        <img src={map} alt="Место проведения мероприятия" />
-                        {item.location}
-                      </span>
-                    </div>
-                  </div>
-
-                )
-              })
-            } */}
-
+            <div class="slide slide_0"></div>
+            <div class="slide slide_1"></div>
+            <div class="slide slide_2"></div>
+            <div class="slide slide_3"></div>
 
           </section>
 
