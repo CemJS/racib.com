@@ -161,6 +161,7 @@
 
 // slider for events
 .gallery {
+  position: relative;
   overflow: hidden;
   width: 100%;
   user-select: none;
@@ -179,6 +180,40 @@
     width: 100%;
     float: left;
     transform: translateZ(0);
+  }
+
+  &_nav {
+    padding: 1rem 0 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  &_dots {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+    margin: 0.4rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    outline: none;
+    padding: 0;
+
+    &_active {
+      background: red;
+    }
+
+    &:hover {
+      background: red;
+    }
   }
 
   .slide {

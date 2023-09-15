@@ -28,6 +28,7 @@ class Gallery {
     maximumX: number;
     settings: any;
     dotsItem: any;
+    dotNodes: any;
 
     constructor(element: HTMLElement, dots: HTMLElement, options = { margin: 10 }) {
         this.element = element;
@@ -50,6 +51,8 @@ class Gallery {
         this.stopDrag = this.stopDrag.bind(this)
         this.dragging = this.dragging.bind(this)
         this.setStylePosition = this.setStylePosition.bind(this)
+        this.clickDots = this.clickDots.bind(this)
+        this.changeCurrentSlide = this.changeCurrentSlide.bind(this)
         // this.setStyleTransition = this.setStyleTransition.bind(this)
 
         this.manageHTML();
@@ -64,13 +67,11 @@ class Gallery {
             <div class="${GalleryLineClassName}">
                 ${this.element.innerHTML}
             <div>
-            <div class="${GalleryNavClassName}">
-                <button class="${GalleryNavLeftClassName}">Left</button>
-                <button class="${GalleryNavRightClassName}">Right</button>
-            </div>
         `;
+
+
         this.lineNode = this.element.querySelector(`.${GalleryLineClassName}`);
-        this.dotsNode = this.element.querySelector(`.${GalleryDotsClassName}`)
+        // this.dotsNode = this.element.querySelector(`.${GalleryDotsClassName}`)
 
         this.slideItems = Array.from(this.lineNode.children).map((childNode) => {
             wrapElementByDiv({
@@ -78,6 +79,14 @@ class Gallery {
                 className: GallerySlideClassName
             })
         })
+        this.dots.classList.add(GalleryDotsClassName);
+
+
+        this.dotsItem = Array.from(Array(this.size).keys()).map((key) => {
+            wrapElementBtn(this.dots, GalleryDotClassName, key, this.currentSlide)
+        })
+
+        this.dotNodes = this.dots.querySelectorAll(`.${GalleryDotClassName}`);
 
 
     }
@@ -103,6 +112,9 @@ class Gallery {
         this.lineNode.addEventListener('pointerdown', this.startDrag);
         window.addEventListener('pointerup', this.stopDrag);
         window.addEventListener('pointercancel', this.stopDrag)
+
+        this.dots.addEventListener('click', this.clickDots)
+
     }
 
     destroyEvents() {
@@ -117,6 +129,31 @@ class Gallery {
         this.setParameters();
     }
 
+    clickDots(e) {
+        const dotNode = e.target.closest('button');
+        if (!dotNode) return;
+
+        let dotNumber;
+        for (let i = 0; i < this.dotNodes.length; i++) {
+            if (this.dotNodes[i] === dotNode) {
+                dotNumber = i;
+                break;
+            }
+        }
+
+        if (dotNumber === this.currentSlide) return;
+
+        this.currentSlide = dotNumber;
+
+        this.changeCurrentSlide();
+    }
+
+    changeCurrentSlide() {
+        this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
+        this.setStylePosition();
+        this.setStyleTransition();
+    }
+
     startDrag(e) {
         this.currentSlideWasChanged = false;
         this.clickX = e.pageX;
@@ -129,9 +166,10 @@ class Gallery {
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging)
         this.element.classList.remove(GalleryGraggableClassName);
-        this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
-        this.setStylePosition();
-        this.setStyleTransition();
+        this.changeCurrentSlide();
+        // this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
+        // this.setStylePosition();
+        // this.setStyleTransition();
     }
 
     dragging(e) {
@@ -178,10 +216,15 @@ function wrapElementByDiv({ element, className }) {
     return wrapperNode;
 }
 
-function wrapElementBtn( className ) {
+function wrapElementBtn(element, className, key, currentSlide) {
     const wrapBtn = document.createElement('button');
     wrapBtn.classList.add(className);
 
+    if (key === currentSlide) {
+        wrapBtn.classList.add(GalleryDotActiveClassName)
+    }
+
+    element.appendChild(wrapBtn)
 
     return wrapBtn;
 }
