@@ -2,12 +2,20 @@ const GalleryClassName = 'gallery';
 const GalleryLineClassName = 'gallery_line';
 const GallerySlideClassName = 'gallery_slide'
 const GalleryGraggableClassName = 'gallery_draggable';
+const GalleryDotsClassName = 'gallery_dots';
+const GalleryDotClassName = 'gallery_dot';
+const GalleryDotActiveClassName = 'gallery_dot_active'
+const GalleryNavClassName = 'gallery_nav'
+const GalleryNavLeftClassName = 'gallery_nav_left'
+const GalleryNavRightClassName = 'gallery_nav_right'
 
 class Gallery {
     element: HTMLElement;
+    dots: HTMLElement;
     size: number; // количество слайдов галереи
     currentSlide: number; // первый слайд
     lineNode: any;
+    dotsNode: any;
     slideItems: any;
     widthContainer: any;
     widthSlide: any;
@@ -18,10 +26,13 @@ class Gallery {
     debouncedResizeGallery: any;
     currentSlideWasChanged: boolean;
     maximumX: number;
-    settings: any
+    settings: any;
+    dotsItem: any;
+    dotNodes: any;
 
-    constructor(element: HTMLElement, options = { margin: 10 }) {
+    constructor(element: HTMLElement, dots: HTMLElement, options = { margin: 10 }) {
         this.element = element;
+        this.dots = dots;
         this.size = element.childElementCount; // определяем кол-во слайдов галереи
         this.currentSlide = 0;
         this.currentSlideWasChanged = false;
@@ -40,6 +51,8 @@ class Gallery {
         this.stopDrag = this.stopDrag.bind(this)
         this.dragging = this.dragging.bind(this)
         this.setStylePosition = this.setStylePosition.bind(this)
+        this.clickDots = this.clickDots.bind(this)
+        this.changeCurrentSlide = this.changeCurrentSlide.bind(this)
         // this.setStyleTransition = this.setStyleTransition.bind(this)
 
         this.manageHTML();
@@ -55,13 +68,26 @@ class Gallery {
                 ${this.element.innerHTML}
             <div>
         `;
-        this.lineNode = this.element.querySelector(`.${GalleryLineClassName}`)
+
+
+        this.lineNode = this.element.querySelector(`.${GalleryLineClassName}`);
+        // this.dotsNode = this.element.querySelector(`.${GalleryDotsClassName}`)
+
         this.slideItems = Array.from(this.lineNode.children).map((childNode) => {
             wrapElementByDiv({
                 element: childNode,
                 className: GallerySlideClassName
             })
         })
+        this.dots.classList.add(GalleryDotsClassName);
+
+
+        this.dotsItem = Array.from(Array(this.size).keys()).map((key) => {
+            wrapElementBtn(this.dots, GalleryDotClassName, key, this.currentSlide)
+        })
+
+        this.dotNodes = this.dots.querySelectorAll(`.${GalleryDotClassName}`);
+
 
     }
 
@@ -86,6 +112,9 @@ class Gallery {
         this.lineNode.addEventListener('pointerdown', this.startDrag);
         window.addEventListener('pointerup', this.stopDrag);
         window.addEventListener('pointercancel', this.stopDrag)
+
+        this.dots.addEventListener('click', this.clickDots)
+
     }
 
     destroyEvents() {
@@ -100,6 +129,31 @@ class Gallery {
         this.setParameters();
     }
 
+    clickDots(e) {
+        const dotNode = e.target.closest('button');
+        if (!dotNode) return;
+
+        let dotNumber;
+        for (let i = 0; i < this.dotNodes.length; i++) {
+            if (this.dotNodes[i] === dotNode) {
+                dotNumber = i;
+                break;
+            }
+        }
+
+        if (dotNumber === this.currentSlide) return;
+
+        this.currentSlide = dotNumber;
+
+        this.changeCurrentSlide();
+    }
+
+    changeCurrentSlide() {
+        this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
+        this.setStylePosition();
+        this.setStyleTransition();
+    }
+
     startDrag(e) {
         this.currentSlideWasChanged = false;
         this.clickX = e.pageX;
@@ -108,12 +162,14 @@ class Gallery {
         this.element.classList.add(GalleryGraggableClassName);
         window.addEventListener('pointermove', this.dragging)
     }
+
     stopDrag() {
         window.removeEventListener('pointermove', this.dragging)
         this.element.classList.remove(GalleryGraggableClassName);
-        this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
-        this.setStylePosition();
-        this.setStyleTransition();
+        this.changeCurrentSlide();
+        // this.x = -this.currentSlide * (this.widthContainer + this.settings.margin);
+        // this.setStylePosition();
+        // this.setStyleTransition();
     }
 
     dragging(e) {
@@ -160,6 +216,19 @@ function wrapElementByDiv({ element, className }) {
     return wrapperNode;
 }
 
+function wrapElementBtn(element, className, key, currentSlide) {
+    const wrapBtn = document.createElement('button');
+    wrapBtn.classList.add(className);
+
+    if (key === currentSlide) {
+        wrapBtn.classList.add(GalleryDotActiveClassName)
+    }
+
+    element.appendChild(wrapBtn)
+
+    return wrapBtn;
+}
+
 function debounce(func, time = 100) {
     let timer;
     return function (e) {
@@ -169,9 +238,9 @@ function debounce(func, time = 100) {
 }
 
 const fn = {
-    "test": function (element: HTMLElement, options = {}) {
+    "test": function (element: HTMLElement, dots: HTMLElement, options = {}) {
         if (!this.Static.galleryRun) {
-            this.Static.galleryRun = new Gallery(element, options = {
+            this.Static.galleryRun = new Gallery(element, dots, options = {
                 margin: 10
             })
         }

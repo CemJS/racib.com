@@ -3,7 +3,7 @@ const listener = {
     },
     "finish": function () {
         if (!this.Static.callGallery) {
-            this.fn("test", this.Ref.gallery, {
+            this.fn("test", this.Ref.gallery, this.Ref.galleryDots, {
                 margin: 10
             })
         }

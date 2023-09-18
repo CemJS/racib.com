@@ -73,6 +73,12 @@ export default function () {
             </div>
             <div class="profile_content">
               <h3 class="profile_content_title mt_10">Информация</h3>
+
+              {
+                this.Static.record?.post ?
+                  <p class="profile_content_text">{this.Static.record.post}</p> : null
+              }
+
               {
                 this.Static.record?.info ?
                   this.Static.record.info.map(item => {
