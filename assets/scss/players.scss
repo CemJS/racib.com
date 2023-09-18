@@ -44,6 +44,7 @@
   &_list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content;
     gap: 20px;
     min-height: 450px;
     position: relative;
