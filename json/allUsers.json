@@ -48,6 +48,16 @@
     "placeWork": "РАКИБ"
   },
   {
+    "img": "/contents/img/directorate/yan.jpg",
+    "name": "Кривоносов Ян Анатольевич",
+    "flag": "/contents/svg/ru.svg",
+    "city": "Новороссийск",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Руководитель по развитию Web3 технологий и NFT в ассоциации РАКИБ",
+    "birthday": "16 ноября"
+  },
+  {
     "img": "/contents/img/administration/gorcharuk.jpg",
     "name": "Гончарук Виктор Александрович",
     "city": "Москва",
@@ -499,16 +509,6 @@
         }
       }
     ]
-  },
-  {
-    "img": "/contents/img/directorate/yan.jpg",
-    "name": "Кривоносов Ян Анатольевич",
-    "flag": "/contents/svg/ru.svg",
-    "city": "Новороссийск",
-    "country": "Россия",
-    "status": "Персона",
-    "post": "Руководитель по развитию Web3 технологий и NFT в ассоциации РАКИБ",
-    "birthday": "16 ноября"
   },
   {
     "img": "/contents/img/directorate/serebrovsky.jpg",
