@@ -301,9 +301,6 @@ export default function () {
                         onclick={() => {
                           this.Static.record = item;
                           this.Fn.linkChange(`/news/show/${item.id}`)
-
-                          // this.Static.record = item;
-                          // this.init();
                         }}
                       >
                         <div class="newCard_img" style={`background-image: url(${item.img})`}>
