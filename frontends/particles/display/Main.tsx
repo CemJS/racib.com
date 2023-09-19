@@ -7,6 +7,8 @@ import newsSlider from '@json/newsSliderTest'
 
 
 export default function () {
+
+    console.log('=2da98b=', newsSlider)
     return (
         <div class={["particles_wrap",]} ref="wrapCanvas">
             <div
@@ -102,7 +104,7 @@ export default function () {
                                             <div
                                                 class={["newCard_slider", `newCard_slider_${index + 1}`]}
                                                 onclick={() => {
-                                                    this.Fn.linkChange(`/news/show/${index}`)
+                                                    this.Fn.linkChange(`/news/show/${item.id}`)
                                                 }}
                                             >
                                                 <div class="newCard_slider_img" style={`background-image: url(${item.img})`}>
@@ -114,7 +116,7 @@ export default function () {
                                 }
                             </div>
 
-                            <div class="sliderTest_nav_lines">
+                            {/* <div class="sliderTest_nav_lines">
                                 {
                                     newsSlider.map((item, index) => {
                                         return (
@@ -127,7 +129,7 @@ export default function () {
                                         )
                                     })
                                 }
-                            </div>
+                            </div> */}
 
                         </section>
                     </section>
