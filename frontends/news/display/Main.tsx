@@ -293,14 +293,14 @@ export default function () {
               {
                 newsData.length ?
 
-                  newsData.map((item, index) => {
+                  newsData.reverse().map((item, index) => {
                     return (
                       <div
                         class="newCard"
                         ref="newsSlide"
                         onclick={() => {
                           this.Static.record = item;
-                          this.Fn.linkChange(`/news/show/${index}`)
+                          this.Fn.linkChange(`/news/show/${item.id}`)
 
                           // this.Static.record = item;
                           // this.init();
@@ -313,11 +313,14 @@ export default function () {
                           <h5 class="newCard_title">{item.title}</h5>
                           <p class="newCard_desc">{item.descShort}</p>
                           <div class="newCard_details">
-                            <span class="newCard_details_date">{item.date}</span>
-                            <span class="newCard_details_views">
-                              {item.views}
-                              <img src={views} />
-                            </span>
+                            {item?.date ? <span class="newCard_details_date">{item.date}</span> : null}
+                            {
+                              item?.views ?
+                                <span class="newCard_details_views">
+                                  {item.views}
+                                  <img src={views} />
+                                </span> : null
+                            }
                           </div>
                         </div>
                       </div>
