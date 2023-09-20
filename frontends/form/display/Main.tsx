@@ -19,6 +19,33 @@ export default function () {
                     пользователей технологии Блокчейн и продуктов, созданных на ее основе, в интересах
                     развития цифровой экономики» (РАКИБ). </p>
 
+                <div class="form_choose">
+                    <div
+                        class={["option",
+                            this.Static.face == 'Физическое лицо' ? "option_active" : null]}
+                        for="physical"
+                        onclick={() => {
+                            this.Static.face = 'Физическое лицо';
+                            this.init()
+                        }}
+                    >
+                        <div class="option_dot"></div>
+                        <span>Физическое лицо</span>
+                    </div>
+                    <div
+                        class={["option",
+                            this.Static.face == 'Юридическое лицо' ? "option_active" : null]}
+                        for="legal"
+                        onclick={() => {
+                            this.Static.face = 'Юридическое лицо';
+                            this.init()
+                        }}
+                    >
+                        <div class="option_dot"></div>
+                        <span>Юридическое лицо</span>
+                    </div>
+                </div>
+
                 <h3 class="join_title form_title">ФИО</h3>
                 <div class="form_block">
                     <div class="input">
