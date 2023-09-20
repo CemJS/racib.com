@@ -7,8 +7,6 @@ import newsSlider from '@json/newsSliderTest'
 
 
 export default function () {
-
-    console.log('=2da98b=', newsSlider)
     return (
         <div class={["particles_wrap",]} ref="wrapCanvas">
             <div
