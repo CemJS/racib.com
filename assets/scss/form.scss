@@ -26,4 +26,20 @@
   .input_label {
     font-weight: 600;
   }
+
+  .input_icon {
+    top: 65%;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+
+    &:hover {
+      transform: translate(0, -50%) scale(1.1);
+      -webkit-transform: translate(0, -50%) scale(1.1);
+      transition: all .3s ease-in-out;
+      -webkit-transition: all .3s ease-in-out;
+      transition-delay: 0.2ms;
+      -webkit-transition-delay: 0.2ms;
+    }
+  }
 }

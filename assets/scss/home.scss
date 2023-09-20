@@ -58,16 +58,19 @@
 
   &_banner {
     overflow: hidden;
-    background-image: url('images/banners/racib.jpg');
+    // background-image: url('images/banners/racib.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    height: 280px;
     width: 100%;
     position: relative;
     color: var(--white);
     cursor: pointer;
     display: block;
+
+    img {
+      width: 100%;
+    }
 
 
     .btn_link {
@@ -188,10 +191,8 @@
     }
 
     &_banner {
-      height: 250px;
 
       &_info {
-        transform: translateY(75px);
 
         &_date {
           font-size: 18px;
@@ -215,15 +216,19 @@
 
   .home {
     &_banner {
-      height: 220px;
+      .btn_link {
+        background: #43425d66;
+        color: var(--white);
+      }
 
       &_info {
-        transform: translateY(55px);
+        // transform: translateY(55px);
         gap: 13px;
       }
     }
   }
 }
+
 
 @media(max-width: 768px) {
   .home {
@@ -250,40 +255,17 @@
 @media(max-width: 600px) {
   .home {
     &_news {
-      // &_wrap {
-      //   width: calc(100% - 60px);
-      //   left: 60px;
-      // }
 
       &_nav {
         gap: 10px;
       }
     }
 
-    &_banner {
-      display: none;
-    }
   }
 }
 
 @media(max-width: 464px) {
   .home {
-    &_banner {
-      &_info {
-        padding: 15px;
-        gap: 10px;
-
-        &_date {
-          font-size: 16px;
-        }
-
-        &_title,
-        &_desc {
-          font-size: 16px;
-          line-height: 22px;
-        }
-      }
-    }
 
     &_link {
       a {
