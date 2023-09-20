@@ -1,5 +1,6 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
+import cancel from '@svg/icons/dark/cancel.svg'
 
 
 export default function () {
@@ -21,7 +22,19 @@ export default function () {
                 <h3 class="join_title form_title">ФИО</h3>
                 <div class="form_block">
                     <div class="input">
-                        <span></span>
+                        {
+                            this.Static.lastName ?
+                                <span
+                                    class="input_icon"
+                                    onclick={() => {
+                                        this.Ref.lastNameInput.value = ''
+                                        this.Ref.lastNameLabel.classList.remove('input_label_valid');
+                                        this.init()
+                                    }}
+                                >
+                                    <img src={cancel} alt="Очистить поле ввода" />
+                                </span> : null
+                        }
                         <input
                             class="input_field"
                             type="text"
@@ -31,10 +44,19 @@ export default function () {
                             onchange={() => {
                                 if (this.Ref.lastNameInput.value.length > 0) {
                                     this.Ref.lastNameLabel.classList.add('input_label_valid');
+                                    this.Static.lastName = this.Ref.lastNameInput.value;
+                                    console.log('=7cf451=', this.Ref.lastNameInput.value)
                                 }
                                 if (this.Ref.lastNameInput.value.length === 0) {
                                     this.Ref.lastNameLabel.classList.remove('input_label_valid');
                                 }
+
+                                this.init();
+                            }}
+                            oninput={() => {
+                                this.Static.lastName = this.Ref.lastNameInput.value;
+                                console.log('=7cf451=', this.Ref.lastNameInput.value)
+                                this.init();
                             }}
                         />
                         <label class="input_label" for="lastName" ref="lastNameLabel">Фамилия</label>

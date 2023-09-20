@@ -9,6 +9,7 @@ import arrowR from '@svg/icons/arrowR.svg'
 import calendar from '@svg/icons/date.svg'
 import players from '@json/allUsers'
 import events from '@json/events'
+import banner from '@images/banners/racib.jpg'
 
 let isDragging, isDragUsers = false;
 let startX, xStartUsers, startScrollLeft, startScrollLeftUsers;
@@ -32,6 +33,8 @@ export default function () {
               </a>
             </section> */}
                     <a class="home_banner" href="/appeal" onclick={this.Fn.link}>
+                        <img src={banner} alt="" />
+                        <span class="btn_link btn_link_dark">Ознакомиться</span>
                         <div class="home_banner_info">
                             {/* <span class="home_banner_info_date">
                                 <img src={calendar} alt="Дата мероприятия" />
@@ -40,7 +43,6 @@ export default function () {
                             {/*<h5 class="home_banner_info_title">РАКИБ выступил с обращением к Президенту РФ В. В. Путину...</h5>
                             <span class="btn_link">Ознакомиться</span>
                             <p class="home_banner_info_desc">Национальный форум</p> */}
-                            <span class="btn_link btn_link_dark">Ознакомиться</span>
                         </div>
                     </a>
 
