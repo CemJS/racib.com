@@ -58,7 +58,7 @@
 
   &_banner {
     overflow: hidden;
-    background-image: url('images/banners/forum.jpg');
+    background-image: url('images/banners/racib.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -66,93 +66,103 @@
     width: 100%;
     position: relative;
     color: var(--white);
+    cursor: pointer;
+    display: block;
 
-    &:before {
-      content: '';
+
+    .btn_link {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 60%;
-      width: 100%;
-      background: linear-gradient(180deg, rgba(125, 185, 232, 0) 0, #002e5f);
-      transition: .2s;
-      z-index: 1;
+      bottom: 10px;
+      left: 10px;
+
     }
 
-    &_info {
-      transform: translateY(100px);
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      transition: .3s;
-      padding: 25px;
+    // &:before {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   height: 60%;
+    //   width: 100%;
+    //   background: linear-gradient(180deg, rgba(125, 185, 232, 0) 0, #002e5f);
+    //   transition: .2s;
+    //   z-index: 1;
+    // }
 
-      &_title,
-      &_desc {
-        font-size: 24px;
-        line-height: 28px;
-        font-weight: 600;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        width: 100%;
-        word-break: break-all;
-      }
+    // &_info {
+    //   transform: translateY(100px);
+    //   position: relative;
+    //   display: flex;
+    //   flex-direction: column;
+    //   gap: 20px;
+    //   transition: .3s;
+    //   padding: 25px;
 
-      &_category {
-        font-size: 18px;
-        padding: 10px 15px;
-        border: 2px solid var(--white);
-        border-radius: 30px;
-        width: fit-content;
-      }
+    //   &_title,
+    //   &_desc {
+    //     font-size: 24px;
+    //     line-height: 28px;
+    //     font-weight: 600;
+    //     display: -webkit-box;
+    //     -webkit-line-clamp: 1;
+    //     -webkit-box-orient: vertical;
+    //     overflow: hidden;
+    //     width: 100%;
+    //     word-break: break-all;
+    //   }
 
-      &_desc {
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        width: 100%;
-        height: 100px;
-        font-weight: 400;
-        position: relative;
+    //   &_category {
+    //     font-size: 18px;
+    //     padding: 10px 15px;
+    //     border: 2px solid var(--white);
+    //     border-radius: 30px;
+    //     width: fit-content;
+    //   }
 
-        &::before {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 130px;
-          bottom: 0;
-          left: 0;
-          background: linear-gradient(180deg, rgba(125, 185, 232, 0) 0, #002e5f);
-        }
-      }
+    //   &_desc {
+    //     display: -webkit-box;
+    //     -webkit-line-clamp: 3;
+    //     -webkit-box-orient: vertical;
+    //     overflow: hidden;
+    //     width: 100%;
+    //     height: 100px;
+    //     font-weight: 400;
+    //     position: relative;
 
-      &_date {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 22px;
-        line-height: 26px;
-        font-weight: 500;
+    //     &::before {
+    //       content: "";
+    //       position: absolute;
+    //       width: 100%;
+    //       height: 130px;
+    //       bottom: 0;
+    //       left: 0;
+    //       background: linear-gradient(180deg, rgba(125, 185, 232, 0) 0, #002e5f);
+    //     }
+    //   }
 
-        img {
-          width: 35px;
-        }
-      }
-    }
+    //   &_date {
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 10px;
+    //     font-size: 22px;
+    //     line-height: 26px;
+    //     font-weight: 500;
 
-    &:hover:before {
-      background: #002e5fde;
-      height: 100%;
-    }
+    //     img {
+    //       width: 35px;
+    //     }
+    //   }
+    // }
 
-    &:hover &_info {
-      transform: translateY(0);
-      z-index: 2;
-    }
+    // &:hover:before {
+    //   background: #002e5fde;
+    //   height: 100%;
+    // }
+
+    // &:hover &_info {
+    //   transform: translateY(0);
+    //   z-index: 2;
+    // }
   }
 
   &_events {

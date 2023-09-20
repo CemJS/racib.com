@@ -97,7 +97,13 @@ export default function () {
                         this.Static.record.options.map(item => {
                           return (
                             <p class="event_content_text">{item?.text}
-                              <a href={item?.link} onclick={this.Fn.link} class="link ml_5">{item?.textLink}</a>
+                              <a
+                                href={item?.link}
+                                onclick={this.Fn.link}
+                                class="link ml_5"
+                              >
+                                {item?.textLink}
+                              </a>
                             </p>
                           )
                         })

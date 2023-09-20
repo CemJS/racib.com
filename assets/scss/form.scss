@@ -1,0 +1,29 @@
+.form {
+  &_titleMain {
+    text-align: center;
+  }
+
+  &_title {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &_subtitle {
+    text-indent: 30px;
+    text-align: justify;
+  }
+
+  &_block {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .input_field {
+    color: var(--title);
+  }
+
+  .input_label {
+    font-weight: 600;
+  }
+}

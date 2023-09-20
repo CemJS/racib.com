@@ -31,17 +31,18 @@ export default function () {
                 <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
               </a>
             </section> */}
-                    <section class="home_banner">
+                    <a class="home_banner" href="/appeal" onclick={this.Fn.link}>
                         <div class="home_banner_info">
-                            <span class="home_banner_info_date">
+                            {/* <span class="home_banner_info_date">
                                 <img src={calendar} alt="Дата мероприятия" />
-                                26 сентября 2023
-                            </span>
-                            <h5 class="home_banner_info_title">Развитие и регулирование экосистем в России: на пути к цифровому равенству</h5>
-                            <span class="btn_link">Форум</span>
-                            <p class="home_banner_info_desc">Национальный форум</p>
+                                20 сентября 2023
+                            </span> */}
+                            {/*<h5 class="home_banner_info_title">РАКИБ выступил с обращением к Президенту РФ В. В. Путину...</h5>
+                            <span class="btn_link">Ознакомиться</span>
+                            <p class="home_banner_info_desc">Национальный форум</p> */}
+                            <span class="btn_link btn_link_dark">Ознакомиться</span>
                         </div>
-                    </section>
+                    </a>
 
                     <section class="home_events slider">
                         <div class="slider_header">
