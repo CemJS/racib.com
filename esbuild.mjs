@@ -204,6 +204,8 @@ const start = async function () {
 
         }).listen(cemconfig.port)
         await ctx.watch()
+    } else {
+        process.exit(0)
     }
     return
 }
