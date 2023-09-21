@@ -163,9 +163,9 @@ const start = async function () {
     fs.writeFileSync('./config/pages.json', JSON.stringify(pages));
     fs.writeFileSync('./config/cemjs.json', JSON.stringify(cemconfig));
 
-    const ctx = await esbuild.context(options).catch(() => process.exit(1))
-    console.log("⚡ Build complete! ⚡")
     if (runServe) {
+        const ctx = await esbuild.context(options).catch(() => process.exit(1))
+        console.log("⚡ Build complete! ⚡")
         const serve = await ctx.serve({ servedir: "public" })
         console.log(`\nWeb: http://127.0.0.1:${cemconfig.port}`)
 
@@ -204,6 +204,11 @@ const start = async function () {
 
         }).listen(cemconfig.port)
         await ctx.watch()
+    } else {
+        console.log("🏃‍♂️ Start Build... 🏃‍♂️")
+        await esbuild.build(options).catch(() => process.exit(1))
+        console.log("⚡ Build complete! ⚡")
+        process.exit(0)
     }
     return
 }
