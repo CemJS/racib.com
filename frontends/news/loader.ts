@@ -4,7 +4,12 @@ import news from '@json/news'
 export const loader = function () {
 
   if (this.Variable.DataUrl[2]) {
-    this.Static.record = news[this.Variable.DataUrl[2]]
+    let tmpNews = news.filter(item => item.id == this.Variable.DataUrl[2])
+    if (tmpNews.length != 0) {
+      this.Static.record = tmpNews[0]
+    } else {
+      this.Static.record = news[0]
+    }
   }
 
   // status for dropdown

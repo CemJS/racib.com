@@ -185,6 +185,28 @@ export default function () {
                   : null
               }
 
+
+              {
+                this.Static.record.options ?
+                  <div>
+                    {
+                      this.Static.record.options.map(item => {
+                        return (
+                          <p class="event_content_text">{item?.text}
+                            <a
+                              href={item?.link}
+                              onclick={this.Fn.link}
+                              class="link ml_5"
+                            >
+                              {item?.textLink}
+                            </a>
+                          </p>
+                        )
+                      })
+                    }
+                  </div> : null
+              }
+
               {
                 this.Static.record?.video ?
                   <div>
