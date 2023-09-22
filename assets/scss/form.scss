@@ -1,4 +1,21 @@
 .form {
+  &_appeal {
+
+    &_wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    max-width: 800px;
+    text-align: justify;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    font-style: italic;
+  }
+
   &_titleMain {
     text-align: center;
   }
@@ -129,5 +146,12 @@
 
 
     }
+  }
+
+  &_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
   }
 }

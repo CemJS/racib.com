@@ -3,8 +3,10 @@ import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
 // for slider
 
-import newsSlider from '@json/newsSliderTest'
+// import newsSlider from '@json/newsSliderTest'
+import news from '@json/news'
 
+let newsSlider = news.reverse();
 
 export default function () {
     return (
@@ -97,7 +99,7 @@ export default function () {
                                 }}
                             >
                                 {
-                                    newsSlider.map((item, index) => {
+                                    newsSlider.slice(0, 5).map((item, index) => {
                                         return (
                                             <div
                                                 class={["newCard_slider", `newCard_slider_${index + 1}`]}

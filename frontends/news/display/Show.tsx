@@ -23,7 +23,7 @@ export default function () {
           <section class="new">
             <div class="new_profile">
               <div class="new_profile_image">
-                <img src={this.Static.record.img} alt="Иибражение новости" />
+                <img src={this.Static.record.img} alt="Избражение новости" />
               </div>
               <div class="new_profile_info">
                 {
@@ -113,9 +113,7 @@ export default function () {
 
                 {
                   this.Static.record.image ?
-                    <div class="event_content_cover"
-                      style={`background-image: url(${this.Static.record.image})`}
-                    >
+                    <div class="event_content_cover" style={`background-image: url(${this.Static.record.image})`}>
                     </div> : null
                 }
               </div>
