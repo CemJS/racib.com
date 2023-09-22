@@ -28,7 +28,7 @@ export default function () {
                         class={["option", this.Static.company ? null : "option_active"]}
                         for="physical"
                         onclick={() => {
-                            this.Static.company = !this.Static.company;
+                            this.Static.company = false;
                             this.init()
                         }}
                     >
@@ -39,7 +39,7 @@ export default function () {
                         class={["option", this.Static.company ? "option_active" : null]}
                         for="legal"
                         onclick={() => {
-                            this.Static.company = !this.Static.company;
+                            this.Static.company = true;
                             this.init()
                         }}
                     >
@@ -50,7 +50,7 @@ export default function () {
 
                 <h3 class="join_title form_title">ФИО</h3>
                 <div class="form_block">
-                    <div class="input">
+                    <div class="input input_required">
                         {/* {
                             this.Static.lastName ?
                                 <span
@@ -78,18 +78,21 @@ export default function () {
                                 if (this.Ref.lastNameInput.value.length === 0) {
                                     this.Ref.lastNameLabel.classList.remove('input_label_valid');
                                 }
-
-                                this.init();
                             }}
-                            oninput={() => {
-                                this.Static.lastName = this.Ref.lastNameInput.value;
-                                this.init();
+                            oninput={function () {
+                                console.log('=this.value=', this.value)
+                                this.value = this.value.replace(/[^a-zA-ZА-Яа-яЁё]/g, '');
+                                this.Static.lastName = this.value;
+                                console.log('=bf87d2=', this.Static.lastName)
+
                             }}
                         />
-                        <label class="input_label" for="lastName" ref="lastNameLabel">Фамилия</label>
+                        <label class="input_label" for="lastName" ref="lastNameLabel">
+                            Фамилия
+                            <span class="input_label_star">*</span>
+                        </label>
                     </div>
                     <div class="input">
-                        <span></span>
                         <input
                             class="input_field"
                             type="text"
@@ -104,17 +107,16 @@ export default function () {
                                 if (this.Ref.firstNameInput.value.length === 0) {
                                     this.Ref.firstNameLabel.classList.remove('input_label_valid');
                                 }
-                                this.init()
+                                // this.init()
                             }}
                             oninput={() => {
                                 this.Static.firstName = this.Ref.firstNameInput.value;
-                                this.init();
+                                // this.init();
                             }}
                         />
                         <label class="input_label" for="firstName" ref="firstNameLabel">Имя</label>
                     </div>
                     <div class="input">
-                        <span></span>
                         <input
                             class="input_field"
                             type="text"
@@ -129,58 +131,53 @@ export default function () {
                                 if (this.Ref.middleNameInput.value.length === 0) {
                                     this.Ref.middleNameLabel.classList.remove('input_label_valid');
                                 }
-                                this.init()
+                                // this.init()
                             }}
                             oninput={() => {
                                 this.Static.middleName = this.Ref.middleNameInput.value
-                                this.init();
+                                // this.init();
                             }}
                         />
                         <label class="input_label" for="middleName" ref="middleNameLabel">Отчество</label>
                     </div>
-                    {/* <div>
-                        <div class="input">
-                            <span></span>
-                            <input class="input_field" type="text" autocomplete="off" id="firstName" />
-                            <label class="input_label" for="firstName">Паспорт серия</label>
-                        </div>
-                        <div class="input">
-                            <span></span>
-                            <input class="input_field" type="text" autocomplete="off" id="firstName" />
-                            <label class="input_label" for="firstName">Номер</label>
-                        </div>
-                    </div> */}
                 </div>
 
                 <h3 class="join_title form_title">Контактные данные</h3>
                 <div class="form_block">
-                    <div class="input">
-                        <input
-                            class="input_field"
-                            type="tel"
-                            name="tel"
-                            autocomplete="off"
-                            id="phone"
-                            pattern="+7[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                            ref="phoneInput"
-                            onchange={() => {
-                                if (this.Ref.phoneInput.value.length > 0) {
-                                    this.Ref.phoneLabel.classList.add('input_label_valid');
+                    <div>
+                        <div class="input">
+                            <input
+                                class="input_field"
+                                type="tel"
+                                name="tel"
+                                autocomplete="off"
+                                id="phone"
+                                pattern="/^[\d\+][\d\(\)\ -]{4,14}\d$/}"
+                                ref="phoneInput"
+                                onchange={() => {
+                                    if (this.Ref.phoneInput.value.length > 0) {
+                                        this.Ref.phoneLabel.classList.add('input_label_valid');
+                                        this.Static.phone = this.Ref.phoneInput.value;
+                                    }
+                                    if (this.Ref.phoneInput.value.length === 0) {
+                                        this.Ref.phoneLabel.classList.remove('input_label_valid');
+                                    }
+                                    setTimeout(() => {
+                                        this.fn("validPhone", this.Ref.phoneInput.value)
+                                    }, 2000)
+                                    // this.init();
+                                }}
+                                oninput={function () {
                                     this.Static.phone = this.Ref.phoneInput.value;
-                                }
-                                if (this.Ref.phoneInput.value.length === 0) {
-                                    this.Ref.phoneLabel.classList.remove('input_label_valid');
-                                }
-
-                                this.init();
-                            }}
-                            oninput={() => {
-                                this.Static.phone = this.Ref.phoneInput.value;
-                                this.init();
-                            }}
-                        />
-                        <label class="input_label" for="phone" ref="phoneLabel">Номер телефона</label>
+                                    // this.init();
+                                }}
+                            />
+                            <label class="input_label" for="phone" ref="phoneLabel">Номер телефона</label>
+                        </div>
+                        {/* Вывод ошибки здесь! */}
+                        <span ref="statusPhone" class="form_message"></span>
                     </div>
+
                     <div class="input">
                         <input
                             class="input_field"
@@ -198,11 +195,11 @@ export default function () {
                                     this.Ref.emailLabel.classList.remove('input_label_valid');
                                 }
 
-                                this.init();
+                                // this.init();
                             }}
                             oninput={() => {
                                 this.Static.email = this.Ref.emailInput.value;
-                                this.init();
+                                // this.init();
                             }}
                         />
                         <label class="input_label" for="email" ref="emailLabel">Email</label>
@@ -215,7 +212,6 @@ export default function () {
                             <h3 class="join_title form_title">Представляемая компания</h3>
                             <div class="form_block">
                                 <div class="input">
-                                    <span></span>
                                     <input
                                         class="input_field"
                                         type="text"
@@ -235,7 +231,6 @@ export default function () {
                                     <label class="input_label" for="companyName" ref="companyNameLabel">Название</label>
                                 </div>
                                 <div class="input">
-                                    <span></span>
                                     <input
                                         class="input_field"
                                         type="text"
@@ -262,33 +257,68 @@ export default function () {
             </section>
 
             <div class="form_btn">
-                <button
-                    class="btn_link btn_link_dark"
-                    onclick={async () => {
-                        let formData = {
-                            company: this.Static.company,
-                            lastName: this.Static.lastName,
-                            firstName: this.Static.firstName,
-                            middleName: this.Static.middleName,
-                            phone: this.Static.phone,
-                            email: this.Static.email,
-                            nameCompany: this.Static.companyName,
-                            postCompany: this.Static.companyPost
-                        };
+                {
+                    this.Static.company ?
+                        <button
+                            class={["btn_link", "btn_link_dark",
+                                this.Static.lastName && this.Static.firstName && this.Static.middleName &&
+                                    this.Static.phone && this.Static.email && this.Static.companyName && this.Static.companyPost ? null : "btn_passive"]}
+                            type="submit"
+                            onclick={async () => {
+                                let formData = {
+                                    company: this.Static.company,
+                                    lastName: this.Static.lastName,
+                                    firstName: this.Static.firstName,
+                                    middleName: this.Static.middleName,
+                                    phone: this.Static.phone,
+                                    email: this.Static.email,
+                                    nameCompany: this.Static.companyName,
+                                    postCompany: this.Static.companyPost
+                                };
 
-                        const response = await fetch("http://127.0.0.1/api", {
-                            method: "POST",
-                            body: JSON.stringify(formData)
-                        });
-                        if (!response.ok) {
-                            throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
-                        }
-                        let result = await response.json()
-                        console.log('=4b9098=', result)
-                    }}
-                >
-                    Отправить заявку
-                </button>
+                                const response = await fetch("http://127.0.0.1/api", {
+                                    method: "POST",
+                                    body: JSON.stringify(formData)
+                                });
+                                if (!response.ok) {
+                                    throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
+                                }
+                                let result = await response.json()
+                                console.log('=4b9098=', result)
+                            }}
+                        >
+                            Отправить заявку
+                        </button> :
+                        <button
+                            class={["btn_link", "btn_link_dark",
+                                this.Static.lastName && this.Static.firstName && this.Static.middleName &&
+                                    this.Static.phone && this.Static.email ? null : "btn_passive"]}
+                            type="submit"
+                            onclick={async () => {
+                                let formData = {
+                                    company: this.Static.company,
+                                    lastName: this.Static.lastName,
+                                    firstName: this.Static.firstName,
+                                    middleName: this.Static.middleName,
+                                    phone: this.Static.phone,
+                                    email: this.Static.email
+                                };
+
+                                const response = await fetch("http://127.0.0.1/api", {
+                                    method: "POST",
+                                    body: JSON.stringify(formData)
+                                });
+                                if (!response.ok) {
+                                    throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
+                                }
+                                let result = await response.json()
+                                console.log('=4b9098=', result)
+                            }}
+                        >
+                            Отправить заявку
+                        </button>
+                }
+
             </div>
 
 

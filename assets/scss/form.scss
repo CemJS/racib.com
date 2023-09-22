@@ -154,4 +154,11 @@
     justify-content: center;
     margin-bottom: 25px;
   }
+
+  &_message {
+    margin-top: 5px;
+    font-weight: 500;
+    display: block;
+    transition: .3s ease-in-out;
+  }
 }
