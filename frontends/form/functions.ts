@@ -8,13 +8,25 @@ export const validPhone = function (phone: string) {
   }
 }
 
-// export const validText = function(text: string){
-//   if(!this.Static){
-//     console.log('=59688a=', 'Correct')
-//   }else{
-//     console.log('=1860d3=', 'Incorrect')
-//   }
-// }
+export const validEmail = function (email: string) {
+  if (!this.Static.regEmail.test(email)) {
+    this.Ref.statusEmail.style.color = "#CF0000";
+    this.Ref.statusEmail.innerText = "Неправильно введён email!"
+  } else {
+    this.Ref.statusEmail.style.color = "#5FAC09";
+    this.Ref.statusEmail.innerText = "Email введён корректно!"
+  }
+}
+
+export const validText = function (text: string, message: HTMLElement) {
+  if (!this.Static.regLetters.test(text)) {
+    message.style.color = "#CF0000"
+    message.innerText = "Некорректно введены данные!"
+  } else {
+    message.style.color = "#5FAC09"
+    message.innerText = "Данные введены корректно!"
+  }
+}
 
 
 
