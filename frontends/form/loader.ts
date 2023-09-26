@@ -1,3 +1,6 @@
+import done from '@svg/icons/color/done.svg'
+import cancel from '@svg/icons/color/cancel.svg'
+
 export const loader = function () {
   this.Static.company = false;
   this.Static.lastName;
@@ -12,6 +15,11 @@ export const loader = function () {
   this.Static.regEmail = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$/
   this.Static.regLetters = /^[a-zа-яё]+$/i
   this.Static.numbers = /[0-9]/;
+
+  this.Static.done = done;
+  this.Static.cancel = cancel;
+
+  // this.Static.formMessages = document.querySelectorAll('.form_message')
 
   // this.Static.letters = /[]/
 }
