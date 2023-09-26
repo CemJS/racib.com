@@ -119,13 +119,13 @@ export default function () {
                                 }}
                             >
                                 {
-                                    events.map((item, index) => {
+                                    events.reverse().map(item => {
                                         return (
                                             <div
                                                 class="card"
                                                 ref="eventsSlide"
                                                 onclick={() => {
-                                                    this.Fn.linkChange(`/events/show/${index}`)
+                                                    this.Fn.linkChange(`/events/show/${item.id}`)
                                                 }}
                                             >
                                                 <span class="card_category">{item.category}</span>
@@ -144,10 +144,6 @@ export default function () {
                                                         <img src={map} alt="Место проведения мероприятия" />
                                                         {item.location}
                                                     </span>
-                                                    {/* <span class="card_info_views">
-                              <img src={viewsDark} alt="Просмотры записи" />
-                              {item.views}
-                            </span> */}
                                                 </div>
                                             </div>
                                         )
@@ -155,24 +151,6 @@ export default function () {
                                 }
 
                             </div>
-                            {/* <div
-                  class="carousel_hover carousel_hover_r"
-                  onmouseenter={() => {
-                    this.Ref.eventsSlider.scrollLeft += 20;
-                  }}
-                  onmouseleave={() => {
-                    this.Ref.eventsSlider.scrollLeft -= 20;
-                  }}
-                >
-                  <button
-                    class="arrow arrow_fillDark arrow_next"
-                    onclick={() => {
-                      this.Ref.eventsSlider.scrollLeft += this.Ref.eventsSlide.offsetWidth + 15;
-                    }}
-                  >
-                    <img src={arrNextLight} alt="Next Slide" />
-                  </button>
-                </div> */}
                         </div>
                     </section>
 

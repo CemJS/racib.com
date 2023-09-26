@@ -106,6 +106,36 @@ export default function () {
               }
 
               {
+                this.Static.record?.listLinks ?
+                  <div class="new_content_desc">
+                    {
+                      this.Static.record.listLinks.map(item => {
+                        return (
+                          <div class="new_content_desc_item">
+                            <div class="event_content_list_wrap">
+                              <p class="event_content_list_title">{item?.title}</p>
+                              <ul class="event_content_list">
+                                {
+                                  item.links ?
+                                    item.links.map((li) => {
+                                      return (
+                                        <li class="event_content_list_item event_content_text">
+                                          {li?.text}
+                                          <a href={li?.link} class="link ml_5" onclick={this.Fn.link}>{li?.textLink}</a>
+                                        </li>
+                                      )
+                                    }) : null
+                                }
+                              </ul>
+                            </div>
+                          </div>
+                        )
+                      })
+                    }
+                  </div> : null
+              }
+
+              {
                 this.Static.record.options ?
                   <div>
                     {
