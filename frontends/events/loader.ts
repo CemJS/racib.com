@@ -3,7 +3,12 @@ import events from '@json/events'
 export const loader = function () {
 
   if (this.Variable.DataUrl[2]) {
-    this.Static.record = events[this.Variable.DataUrl[2]]
+    let tmpEvents = events.filter(item => item.id == this.Variable.DataUrl[2])
+    if (tmpEvents.length != 0) {
+      this.Static.record = tmpEvents[0]
+    } else {
+      this.Static.record = events[0]
+    }
   }
 
   this.Static.categoryStatus = 'close';

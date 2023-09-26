@@ -544,7 +544,6 @@ section {
   height: 50px;
   border-bottom: 1px solid #7e919f;
   position: relative;
-  // padding-bottom: 30px;
 
   &_icon {
     position: absolute;
@@ -583,12 +582,27 @@ section {
     &_valid {
       top: -5px;
     }
+
+    &_star {
+      color: #CF0000;
+      padding-left: 5px;
+    }
   }
 
   &_field:focus~label,
   &_filed:valid~label {
     top: -5px;
   }
+
+  &_required {
+    border-bottom: 1px solid #CF0000;
+
+    .input_label {
+      color: #CF0000;
+    }
+  }
+
+
 }
 
 
@@ -678,6 +692,7 @@ section {
   -webkit-transition: all .3s ease;
   transition-delay: 0.1s;
   -webkit-transition-delay: 0.1s;
+  user-select: none;
 
   &:hover {
     background: var(--white);
@@ -702,6 +717,14 @@ section {
   @media(max-width: 600px) {
     font-size: 14px;
   }
+}
+
+.btn_passive {
+  opacity: .5;
+  cursor: default;
+  pointer-events: none;
+  background: #7e7777;
+  color: var(--white);
 }
 
 .slider {

@@ -5,6 +5,12 @@
     gap: 15px;
     min-height: 450px;
     position: relative;
+
+    .card {
+      &_img {
+        background-position: center center;
+      }
+    }
   }
 }
 
@@ -34,9 +40,11 @@
     &_image {
       background-position: 100%;
       background-repeat: no-repeat;
+      background-position: inherit;
       background-size: cover;
       box-sizing: border-box;
-      height: 300px;
+      // height: 300px;
+      height: 190px;
       border-radius: var(--borderR);
       position: relative;
       grid-area: image;
@@ -165,12 +173,12 @@
     }
 
     &_cover {
-      padding-top: 56.25%;
+      // padding-top: 56.25%;
       width: 100%;
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center;
-      padding-top: 50%;
+      padding-top: 60%;
     }
   }
 }

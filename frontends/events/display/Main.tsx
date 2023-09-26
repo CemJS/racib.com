@@ -18,11 +18,14 @@ const category = [
   },
   {
     name: 'Конференция',
+  },
+  {
+    name: 'Meetup'
   }
 ]
 
 let eventsData, categoryData = [];
-eventsData = events;
+eventsData = events.reverse();
 categoryData = category;
 
 export default function () {
@@ -291,13 +294,13 @@ export default function () {
               {
                 eventsData.length ?
 
-                  eventsData.map((item, index) => {
+                  eventsData.map(item => {
                     return (
                       <div
                         class="card"
                         onclick={() => {
                           this.Static.record = item;
-                          this.Fn.linkChange(`/events/show/${index}`)
+                          this.Fn.linkChange(`/events/show/${item.id}`)
                         }}
                       >
                         <span class="card_category">{item.category}</span>
