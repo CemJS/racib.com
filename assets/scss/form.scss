@@ -28,6 +28,8 @@
   &_subtitle {
     text-indent: 30px;
     text-align: justify;
+    font-size: 16px;
+    line-height: 22px;
   }
 
   &_block {
@@ -160,5 +162,72 @@
     font-weight: 500;
     display: block;
     transition: .3s ease-in-out;
+  }
+}
+
+@media(max-width: 800px) {
+  .form {
+    &_appeal {
+      font-size: 16px;
+      line-height: 22px;
+    }
+
+    &_choose {
+      max-width: 550px;
+      height: 90px;
+      padding: 15px;
+
+      .option {
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 650px) {
+  .form {
+    &_block {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .form {
+    &_choose {
+      gap: 10px;
+
+      .option {
+        span {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 530px) {
+  .form {
+
+    &_appeal,
+    &_subtitle {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &_choose {
+      height: 145px;
+      flex-direction: column;
+
+      .option {
+        justify-content: start;
+
+        &_dot {
+          margin: 0 15px;
+        }
+      }
+    }
   }
 }

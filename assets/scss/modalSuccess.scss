@@ -1,0 +1,23 @@
+.modalSuccess {
+  &_content {
+    max-width: 600px;
+  }
+
+
+
+  &_body {
+    .modal_body_dev {
+      gap: 35px;
+    }
+  }
+}
+
+.modal_message {
+  &_cancel {
+    color: rgb(207, 0, 0);
+  }
+
+  &_done {
+    color: rgb(95, 172, 9);
+  }
+}

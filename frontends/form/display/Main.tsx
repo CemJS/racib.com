@@ -1,6 +1,5 @@
 import { Cemjsx } from "cemjs-all"
 import back from '@svg/icons/back.svg'
-import cancel from '@svg/icons/dark/cancel.svg'
 
 
 export default function () {
@@ -19,9 +18,7 @@ export default function () {
 
             <section class="form block_default">
                 <h1 class="join_title form_titleMain">Вступление в члены РАКИБ</h1>
-                <p class="form_subtitle">Прошу Вас принять меня в члены/участники «Ассоциации разработчиков и
-                    пользователей технологии Блокчейн и продуктов, созданных на ее основе, в интересах
-                    развития цифровой экономики» (РАКИБ). </p>
+                <p class="form_subtitle">Прошу Вас принять меня в члены/участники «Ассоциации разработчиков и пользователей технологии Блокчейн и продуктов,  созданных на ее основе, в интересах развития цифровой экономики» (РАКИБ). </p>
 
                 <div class="form_choose">
                     <div
@@ -163,7 +160,6 @@ export default function () {
                         </div>
                         <span ref="statusMiddleName" class="form_message"></span>
                     </div>
-
                 </div>
 
                 <h3 class="join_title form_title">Контактные данные</h3>
@@ -173,10 +169,9 @@ export default function () {
                             <input
                                 class="input_field"
                                 type="tel"
-                                name="tel"
+                                name="phone"
                                 autocomplete="off"
                                 id="phone"
-                                pattern="/^[\d\+][\d\(\)\ -]{4,14}\d$/}"
                                 ref="phoneInput"
                                 onchange={() => {
                                     if (this.Ref.phoneInput.value.length > 0) {
@@ -322,12 +317,66 @@ export default function () {
             </section>
 
             <div class="form_btn">
-                {
+
+                <button
+                    class="btn_link btn_link_dark"
+                    type="submit"
+                    onclick={async () => {
+                        let formData;
+
+                        if (this.Static.company) {
+                            formData = {
+                                company: this.Static.company,
+                                lastName: this.Static.lastName,
+                                firstName: this.Static.firstName,
+                                middleName: this.Static.middleName,
+                                phone: this.Static.phone,
+                                email: this.Static.email,
+                                nameCompany: this.Static.companyName,
+                                postCompany: this.Static.companyPost
+                            };
+                        } else {
+                            formData = {
+                                company: this.Static.company,
+                                lastName: this.Static.lastName,
+                                firstName: this.Static.firstName,
+                                middleName: this.Static.middleName,
+                                phone: this.Static.phone,
+                                email: this.Static.email
+                            };
+                        }
+
+                        const response = await fetch("http://127.0.0.1/api", {
+                            method: "POST",
+                            body: JSON.stringify(formData)
+                        });
+                        if (!response.ok) {
+                            throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
+                        }
+                        let result = await response.json()
+                        console.log('=4b9098=', result)
+
+                        this.fn("validForm", result)
+
+                    }}
+                >
+                    <div ref="buttonPreloader">
+                        <div class="f_circleG" id="frotateG_01"></div>
+                        <div class="f_circleG" id="frotateG_02"></div>
+                        <div class="f_circleG" id="frotateG_03"></div>
+                        <div class="f_circleG" id="frotateG_04"></div>
+                        <div class="f_circleG" id="frotateG_05"></div>
+                        <div class="f_circleG" id="frotateG_06"></div>
+                        <div class="f_circleG" id="frotateG_07"></div>
+                        <div class="f_circleG" id="frotateG_08"></div>
+                    </div>
+                    Отправить заявку
+                </button>
+
+                {/* {
                     this.Static.company ?
                         <button
-                            class={["btn_link", "btn_link_dark",
-                                this.Static.lastName && this.Static.firstName && this.Static.middleName &&
-                                    this.Static.phone && this.Static.email && this.Static.companyName && this.Static.companyPost ? null : ""]}
+                            class="btn_link btn_link_dark"
                             type="submit"
                             onclick={async () => {
                                 let formData = {
@@ -350,14 +399,24 @@ export default function () {
                                 }
                                 let result = await response.json()
                                 console.log('=4b9098=', result)
+
+                                this.fn("validForm", result)
                             }}
                         >
+                            <div ref="buttonPreloader">
+                                <div class="f_circleG" id="frotateG_01"></div>
+                                <div class="f_circleG" id="frotateG_02"></div>
+                                <div class="f_circleG" id="frotateG_03"></div>
+                                <div class="f_circleG" id="frotateG_04"></div>
+                                <div class="f_circleG" id="frotateG_05"></div>
+                                <div class="f_circleG" id="frotateG_06"></div>
+                                <div class="f_circleG" id="frotateG_07"></div>
+                                <div class="f_circleG" id="frotateG_08"></div>
+                            </div>
                             Отправить заявку
                         </button> :
                         <button
-                            class={["btn_link", "btn_link_dark",
-                                this.Static.lastName && this.Static.firstName && this.Static.middleName &&
-                                    this.Static.phone && this.Static.email ? null : ""]}
+                            class="btn_link btn_link_dark"
                             type="submit"
                             onclick={async () => {
                                 let formData = {
@@ -378,23 +437,24 @@ export default function () {
                                 }
                                 let result = await response.json()
                                 console.log('=4b9098=', result)
-                                this.Static.company = false
-                                this.Static.lastName = ''
-                                this.Ref.lastNameInput.value = ''
-                                this.Static.firstName = ''
-                                this.Ref.firstNameInput.value = ''
-                                this.Static.middleName = ''
-                                this.Ref.middleNameInput.value = ''
-                                this.Static.phone = ''
-                                this.Ref.phoneInput.value = ''
-                                this.Static.email = ''
-                                this.Ref.emailInput.value = ''
-                                this.init()
+
+                                this.fn("validForm", result)
+
                             }}
                         >
+                            <div ref="buttonPreloader">
+                                <div class="f_circleG" id="frotateG_01"></div>
+                                <div class="f_circleG" id="frotateG_02"></div>
+                                <div class="f_circleG" id="frotateG_03"></div>
+                                <div class="f_circleG" id="frotateG_04"></div>
+                                <div class="f_circleG" id="frotateG_05"></div>
+                                <div class="f_circleG" id="frotateG_06"></div>
+                                <div class="f_circleG" id="frotateG_07"></div>
+                                <div class="f_circleG" id="frotateG_08"></div>
+                            </div>
                             Отправить заявку
                         </button>
-                }
+                } */}
 
             </div>
 
