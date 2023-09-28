@@ -169,7 +169,8 @@ section {
 
   &_title {
     font-weight: 600;
-    font-size: 22px;
+    // font-size: 
+    font-size: clamp(14px, 5vw, 22px);
     line-height: 32px;
   }
 
@@ -188,10 +189,10 @@ section {
       }
     }
 
-    &_title {
-      font-size: 20px;
-      line-height: 26px;
-    }
+    // &_title {
+    //   font-size: 20px;
+    //   line-height: 26px;
+    // }
   }
 
   @media(max-width: 675px) {
@@ -205,18 +206,18 @@ section {
       }
     }
 
-    &_title {
-      font-size: 18px;
-    }
+    // &_title {
+    //   font-size: 18px;
+    // }
   }
 
   @media(max-width: 550px) {
     gap: 15px;
 
-    &_title {
-      font-size: 16px;
-      line-height: 24px;
-    }
+    // &_title {
+    //   font-size: 16px;
+    //   line-height: 24px;
+    // }
   }
 
   @media(max-width: 464px) {
@@ -226,11 +227,10 @@ section {
       width: 7px;
     }
 
-    &_title {
-      font-size: 12px;
-      line-height: 18px;
-    }
-
+    // &_title {
+    //   font-size: 12px;
+    //   line-height: 18px;
+    // }
   }
 }
 
@@ -1603,6 +1603,7 @@ section {
     display: grid;
     place-items: center;
     cursor: pointer;
+    user-select: none;
     transition: all .3s ease;
     -webkit-transition: all .3s ease;
     transition-delay: .01s;
@@ -2076,19 +2077,18 @@ section {
 
 // new slider end
 
+// preloader circle for button <start>
 .preloader-floating-circles {
   position: relative;
-  // width: 80px;
-  // height: 80px;
   margin: auto;
   width: 45px;
   height: 20px;
   transform: scale(0.3);
-  // transform: scale(0.6);
-  // -o-transform: scale(0.6);
-  // -ms-transform: scale(0.6);
-  // -webkit-transform: scale(0.6);
-  // -moz-transform: scale(0.6);
+  transform: scale(0.3);
+  -o-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  -webkit-transform: scale(0.3);
+  -moz-transform: scale(0.3);
 
   .f_circleG {
     position: absolute;
@@ -2123,8 +2123,6 @@ section {
   }
 
   #frotateG_01 {
-    // left: 0;
-    // top: 32px;
     left: -38px;
     top: -1px;
     animation-delay: 0.2495s;
@@ -2135,8 +2133,6 @@ section {
   }
 
   #frotateG_02 {
-    // left: 9px;
-    // top: 9px;
     left: -24px;
     top: -28px;
     animation-delay: 0.336s;
@@ -2147,8 +2143,6 @@ section {
   }
 
   #frotateG_03 {
-    // left: 32px;
-    // top: 0;
     left: 11px;
     top: -38px;
     animation-delay: 0.4225s;
@@ -2159,8 +2153,6 @@ section {
   }
 
   #frotateG_04 {
-    // right: 9px;
-    // top: 9px;
     right: -14px;
     top: -22px;
     animation-delay: 0.509s;
@@ -2171,8 +2163,6 @@ section {
   }
 
   #frotateG_05 {
-    // right: 0;
-    // top: 32px;
     right: -20px;
     top: 10px;
     animation-delay: 0.5955s;
@@ -2183,8 +2173,6 @@ section {
   }
 
   #frotateG_06 {
-    // right: 9px;
-    // bottom: 9px;
     right: -5px;
     bottom: -30px;
     animation-delay: 0.672s;
@@ -2195,8 +2183,6 @@ section {
   }
 
   #frotateG_07 {
-    // left: 32px;
-    // bottom: 0;
     left: 7px;
     bottom: -38px;
     animation-delay: 0.7585s;
@@ -2207,8 +2193,6 @@ section {
   }
 
   #frotateG_08 {
-    // left: 9px;
-    // bottom: 9px;
     left: -24px;
     bottom: -25px;
     animation-delay: 0.845s;
@@ -2229,7 +2213,6 @@ section {
   }
 }
 
-
 @-o-keyframes f_fadeG {
   0% {
     background-color: rgb(0, 0, 0);
@@ -2239,7 +2222,6 @@ section {
     background-color: rgb(255, 255, 255);
   }
 }
-
 
 @-ms-keyframes f_fadeG {
   0% {
@@ -2251,7 +2233,6 @@ section {
   }
 }
 
-
 @-webkit-keyframes f_fadeG {
   0% {
     background-color: rgb(0, 0, 0);
@@ -2262,7 +2243,6 @@ section {
   }
 }
 
-
 @-moz-keyframes f_fadeG {
   0% {
     background-color: rgb(0, 0, 0);
@@ -2272,3 +2252,5 @@ section {
     background-color: rgb(255, 255, 255);
   }
 }
+
+// preloader circle for button <end>
