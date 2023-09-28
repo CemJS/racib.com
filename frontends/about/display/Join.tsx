@@ -114,9 +114,9 @@ export default function () {
 
                     </div>
 
-                    {/* <div class="join_btn">
+                    <div class="join_btn">
                         <a href="/form" class="btn_link btn_link_dark" onclick={this.Fn.link}>Подать заявку</a>
-                    </div> */}
+                    </div>
 
                 </section>
             </div>

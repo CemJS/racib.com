@@ -3,7 +3,6 @@ import done from '@svg/icons/color/done.svg'
 
 
 export default function () {
-    console.log('=modal output=', this.Static.message)
     return (
         <div class="modal_content modalSuccess_content">
             <header class="modal_header">

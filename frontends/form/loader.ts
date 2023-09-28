@@ -13,13 +13,10 @@ export const loader = function () {
 
   this.Static.regPhone = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
   this.Static.regEmail = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$/
-  this.Static.regLetters = /^[a-zа-яё]+$/i
-  this.Static.numbers = /[0-9]/;
+  this.Static.regLetters = /^([ёЁ\sA-zА-я -]*)$/i
 
   this.Static.done = done;
   this.Static.cancel = cancel;
 
-  // this.Static.formMessages = document.querySelectorAll('.form_message')
-
-  // this.Static.letters = /[]/
+  this.Static.formStatus = false;
 }
