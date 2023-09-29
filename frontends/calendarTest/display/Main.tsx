@@ -5,16 +5,23 @@ import arrNextDark from '@svg/icons/dark/next.svg'
 export default function () {
     return (
         <div class="wrapper">
-            <div class="calendarTest" style="text-align: center; cursor: pointer;">
+            <div class="calendarTest">
                 <h1
                     class="mb_25"
+                    style="text-align: center; cursor: pointer;"
                     onclick={() => {
-                        this.fn("test")
+                        this.fn("getDateCalendar", new Date(2023, 10, 1))
+                        this.fn(
+                            "createCalendar",
+                            this.Ref.calendar,
+                            2015,
+                            4
+                        )
                     }}
                 >
                     Calendar Test
                 </h1>
-                <div class="filter_date filter_date_active" ref="calendar">
+                {/* <div class="filter_date filter_date_active" ref="calendar">
                     <div class="calendar">
 
                         <div class="calendar_header">
@@ -110,7 +117,12 @@ export default function () {
                         </div>
 
                     </div>
+                </div> */}
+
+                <div ref="calendar">
+
                 </div>
+
 
             </div>
         </div >

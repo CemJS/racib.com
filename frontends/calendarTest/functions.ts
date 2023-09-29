@@ -1,13 +1,23 @@
-export const test = function () {
-  let tmp1 = +new Date()
-  // tmp.setDate(tmp.getDate() + 2) //смешение
-  // +tmp преобразование даты к числу timestamp для этой даты | +new Date(2016, 1, 28)
+//функция для конвертации дня недели
+export const getDateCalendar = function (date: any) {
+  let day = date.getDay();
+  if (day == 0) day = 7
+  return day - 1
+}
 
-  for (let i = 0; i < 100; i++) {
-    console.log('=0ac921=', 0)
-  }
+export const createCalendar = function (elem: HTMLElement, year: any, month: any) {
+  console.log('=HTML el=', elem)
+  console.log('=year=', year)
+  console.log('=month=', month)
 
-  let tmp2 = +new Date()
+  let m = month - 1 //чтобы писать месяца привычным образом от 1 до 12
+  let d = new Date(year, month)
 
-  console.log('=dc4df5=', tmp2 - tmp1) // за какое время выполнился цикл
+  let calendar = `
+  <div>${month}.${year}</div>
+  <div>
+    <div
+  </div>
+
+  `
 }
