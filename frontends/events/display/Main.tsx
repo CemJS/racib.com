@@ -3,6 +3,8 @@ import back from '@svg/icons/back.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 import notFound from '@svg/list.svg'
+import arrPrevDark from '@svg/icons/dark/prev.svg'
+import arrNextDark from '@svg/icons/dark/next.svg'
 
 import events from '@json/events'
 
@@ -285,11 +287,10 @@ export default function () {
 
                   </div>
                 </div>
-
-
               </div> */}
 
             </div>
+
             <div class="events_list">
               {
                 eventsData.length ?
@@ -319,10 +320,6 @@ export default function () {
                             <img src={map} alt="Место проведения мероприятия" />
                             {item.location}
                           </span>
-                          {/* <span class="card_info_views">
-                          <img src={viewsDark} alt="Просмотры записи" />
-                          {item.views}
-                        </span> */}
                         </div>
                       </div>
                     )

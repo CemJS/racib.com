@@ -3,7 +3,6 @@ import back from '@svg/icons/back.svg'
 
 
 export default function () {
-    console.log('=133225=', this.Static.formStatus)
     return (
         <div class="wrapper">
             <a class="back" href="/" onclick={this.Fn.link}>

@@ -77,7 +77,13 @@ export default function () {
                             {
                                 sidebarList.map((item, index) => {
                                     return (
-                                        <li class="sidebar_list_item">
+                                        <li
+                                            class="sidebar_list_item"
+                                            onclick={() => {
+                                                this.Variable.openSidebar = !this.Variable.openSidebar;
+                                                this.Fn.initAll();
+                                            }}
+                                        >
                                             <a href={item.link} onclick={this.Fn.link}>
                                                 <div class="sidebar_list_icon">
                                                     <img src={item.img} alt={item.name} />

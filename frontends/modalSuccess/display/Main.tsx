@@ -1,6 +1,4 @@
 import { Cemjsx } from "cemjs-all"
-import done from '@svg/icons/color/done.svg'
-
 
 export default function () {
     return (
@@ -19,7 +17,7 @@ export default function () {
             </header>
             <main class="modal_body modalSuccess_body">
                 <div class="modal_body_dev">
-                    <span class={this.Static.className}>{this.Static.message}</span>
+                    <span class={["modal_message", this.Static.className]}>{this.Static.message}</span>
                     <img src={this.Static.img} alt="Статус отправки" />
                 </div>
             </main>
