@@ -1585,6 +1585,10 @@ section {
     transition-delay: .01s;
     -webkit-transition-delay: .01s;
 
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
     &:hover {
       background-color: var(--light_hover);
     }

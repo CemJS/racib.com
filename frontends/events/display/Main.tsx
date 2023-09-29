@@ -176,7 +176,7 @@ export default function () {
                 />
               </div>
 
-              {/* <div class="filter_item filter_item_date">
+              <div class="filter_item filter_item_date">
                 <span class="filter_item_title">Дата</span>
                 <input
                   type="date"
@@ -287,7 +287,7 @@ export default function () {
 
                   </div>
                 </div>
-              </div> */}
+              </div>
 
             </div>
 

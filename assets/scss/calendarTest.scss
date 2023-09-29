@@ -1,14 +1,30 @@
 .calendarTest {
   height: 50vh;
 
-  .filter_date {
+  &_main {
     position: relative;
-    top: auto;
   }
 
+  &_wrap {
+    width: 100%;
+    z-index: 5;
+    border-radius: var(--borderR);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    padding-bottom: 15px;
+  }
 
+  .calendar_weekDay {
+    height: auto;
 
-
+    &_item {
+      padding: 15px;
+    }
+  }
 
 
 }
