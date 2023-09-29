@@ -1502,6 +1502,7 @@ section {
     left: 0;
     width: 100%;
     z-index: 5;
+    background: var(--white);
     border-radius: var(--borderR);
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.2);
     transform: translateY(-4px);
@@ -1573,7 +1574,7 @@ section {
     font-size: 18px;
     line-height: 26px;
     font-weight: 500;
-    padding-bottom: 15px;
+    padding: 5px 0;
   }
 
   &_monthPicker {
@@ -1638,6 +1639,7 @@ section {
 
   &_weekDay {
     height: 30px;
+    background: rgba(67, 66, 93, 0.4);
 
     &_item {
       padding: 5px;
@@ -1670,73 +1672,14 @@ section {
         }
       }
 
-      &_effect {
-        position: absolute;
+      &:not(:last-child) {
+        border-right: 1px solid rgba(67, 66, 93, 0.4);
       }
 
-      &_effect:nth-child(1),
-      &_effect:nth-child(3) {
-        width: 1px;
-        height: 0;
-        background-color: var(--title);
-      }
+    }
 
-      &_effect:nth-child(2),
-      &_effect:nth-child(4) {
-        width: 0;
-        height: 1px;
-        background-color: var(--title);
-      }
-
-      &_effect:nth-child(1) {
-        bottom: 0;
-        left: 0;
-      }
-
-      &_effect:nth-child(2) {
-        left: 0;
-        top: 0;
-      }
-
-      &_effect:nth-child(3) {
-        top: 0;
-        right: 0;
-      }
-
-      &_effect:nth-child(4) {
-        bottom: 0;
-        right: 0;
-      }
-
-      &:hover .calendar_days_item_effect {
-        transition: width .2s ease-in-out, height .2s ease-in-out;
-        -webkit-transition: width .2s ease-in-out, height .2s ease-in-out;
-      }
-
-      &:hover .calendar_days_item_effect:nth-child(1),
-      &:hover .calendar_days_item_effect:nth-child(3) {
-        height: 100%;
-      }
-
-      &:hover .calendar_days_item_effect:nth-child(2),
-      &:hover .calendar_days_item_effect:nth-child(4) {
-        width: 100%;
-      }
-
-      &:hover .calendar_days_item_effect:nth-child(2) {
-        transition-delay: .2s;
-        -webkit-transition-delay: .2s
-      }
-
-      &:hover .calendar_days_item_effect:nth-child(3) {
-        transition-delay: .4s;
-        -webkit-transition-delay: .4s
-      }
-
-      &:hover .calendar_days_item_effect:nth-child(4) {
-        transition-delay: .6s;
-        -webkit-transition-delay: .6s;
-      }
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(67, 66, 93, 0.4);
     }
   }
 
@@ -1746,6 +1689,7 @@ section {
     height: 100%;
     top: 0;
     left: 0;
+    border-radius: var(--borderR);
     background-color: var(--white);
     padding: 10px;
     font-size: 16px;
@@ -1837,8 +1781,29 @@ section {
   display: flex;
   justify-content: flex-end;
 
-  &_icon {
+  &_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+
+    .modal_close {
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+  }
+
+  &_btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     cursor: pointer;
+
+    &_text {
+      font-weight: 500;
+      font-size: clamp(22px, 5vw, 14px);
+    }
   }
 
   &_content {
@@ -1846,7 +1811,7 @@ section {
     top: 0;
     left: 100%;
     bottom: 0;
-    z-index: 100;
+    z-index: 99;
     width: 490px;
     height: 100%;
     margin: 0;
@@ -1868,7 +1833,6 @@ section {
     text-align: center;
     font-size: 22px;
     line-height: 28px;
-    margin-bottom: 25px;
   }
 
   &_container {
@@ -1902,6 +1866,33 @@ section {
     border: none;
     outline: none;
   }
+
+  &_range {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    &_item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+
+  &_btns {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+    padding-top: 25px;
+  }
+
 }
 
 .notFound {

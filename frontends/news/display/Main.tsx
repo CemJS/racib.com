@@ -3,7 +3,7 @@ import back from '@svg/icons/back.svg'
 import notFound from '@svg/list.svg'
 import views from '@svg/icons/dark/views.svg'
 import news from '@json/news'
-// import filter from '@svg/icons/dark/filter.svg'
+
 
 const category = [
   {
@@ -171,121 +171,6 @@ export default function () {
                   }}
                 />
               </div>
-
-              {/* <div
-                ref="filterCalendar"
-                class="filter_item filter_item_date"
-                onclick={(e) => {
-                  if (this.Static.calendarStatus == 'close') {
-                    this.Static.calendarStatus = 'open';
-                    this.Ref.calendarNews.classList.add('filter_date_active');
-                  } else if (this.Static.calendarStatus == 'open') {
-                    this.Static.calendarStatus = 'close';
-                    this.Ref.calendarNews.classList.remove('filter_date_active');
-                  }
-                }}
-              >
-                <span class="filter_item_title">Дата</span>
-                <input
-                  type="text"
-                  class="filter_input"
-                  placeholder="Когда искать?"
-                />
-
-                <div class="filter_date" ref="calendarNews">
-                  <div class="calendar">
-
-                    <div class="calendar_header">
-                      <span
-                        class="calendar_monthPicker"
-                        onclick={() => {
-                          this.Ref.monthList.classList.add('calendar_monthList_show')
-                        }}
-                      >
-                        {this.Static.currentMonth}
-                      </span>
-                      <div class="calendar_yearPicker">
-                        <span
-                          class="calendar_arrow"
-                          onclick={() => {
-                            this.Static.currentYear--;
-                            this.fn("getFebDay", this.Static.currentYear);
-                            this.init();
-                          }}
-                        >
-                          <img src={arrPrevDark} alt="Previous year" />
-                        </span>
-                        <span class="calendar_currentYear">{this.Static.currentYear}</span>
-                        <span
-                          class="calendar_arrow"
-                          onclick={() => {
-                            this.Static.currentYear++;
-                            this.fn("getFebDay", this.Static.currentYear);
-                            this.init();
-                          }}
-                        >
-                          <img src={arrNextDark} alt="Next year" />
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="calendar_body">
-                      <div class="calendar_weekDay">
-                        {
-                          this.Static.weekDays.map(item => {
-                            return (
-                              <div
-                                class={["calendar_weekDay_item", item == this.Static.currentDay ? "calendar_weekDay_item_active" : null]}
-                              >
-                                {item}
-                              </div>
-                            )
-                          })
-                        }
-                      </div>
-                      <div class="calendar_days">
-                        {
-                          this.Static.days.map(((item, index) => {
-                            return (
-                              <div
-                                class={["calendar_days_item", index + 1 == this.Static.currentDate ? "calendar_days_item_active" : null]}
-                              >
-                                {item}
-                                <span class="calendar_days_item_effect"></span>
-                                <span class="calendar_days_item_effect"></span>
-                                <span class="calendar_days_item_effect"></span>
-                                <span class="calendar_days_item_effect"></span>
-                              </div>
-                            )
-                          }))
-                        }
-                      </div>
-                    </div>
-
-                    <div class="calendar_monthList" ref="monthList">
-                      {
-                        this.Static.monthList.map(item => {
-                          return (
-                            <div
-                              class="calendar_monthList_item"
-                              onclick={() => {
-                                this.Static.currentMonth = item;
-                                this.Ref.monthList.classList.remove('calendar_monthList_show');
-                                this.init();
-                              }}
-                            >
-                              {item}
-                            </div>
-                          )
-                        })
-                      }
-                    </div>
-
-                  </div>
-                </div>
-
-
-              </div> */}
 
             </div>
 

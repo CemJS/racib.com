@@ -6,8 +6,8 @@ export const getDayCalendar = function (date: any) {
 }
 
 export const createCalendar = function (elem: HTMLElement, year: any, month: any) {
-  let m = month; //чтобы писать месяца привычным образом от 1 до 12
-  let d = new Date(year, m);
+
+  let d = new Date(year, month);
 
   let calendar = `
   <div class=${this.Static.classCalendar}>
@@ -23,12 +23,13 @@ export const createCalendar = function (elem: HTMLElement, year: any, month: any
     <div class=${this.Static.classCalendarDays}>
   `;
 
+  // пустые ячейки начало
   for (let i = 0; i < getDayCalendar(d); i++) {
     calendar += `<div class=${this.Static.classCalendarDaysItem}></div>`;
   }
 
   // проверка на то, что мы в текущем месяце
-  while (d.getMonth() == m) {
+  while (d.getMonth() == month) {
     calendar += `<div class=${this.Static.classCalendarDaysItem}>${d.getDate()}</div>`;
 
     // проверка на то, что последний день воскресенье
@@ -38,12 +39,13 @@ export const createCalendar = function (elem: HTMLElement, year: any, month: any
     d.setDate(d.getDate() + 1)
   }
 
+
+  // пустые ячейки конец
   if (getDayCalendar(d) != 0) {
     for (let i = getDayCalendar(d); i < 7; i++) {
       calendar += `<div class=${this.Static.classCalendarDaysItem}></div>`;
     }
   }
-
 
   calendar += `</div></div>`
 
