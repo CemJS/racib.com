@@ -80,7 +80,7 @@ export default function () {
                                         <li
                                             class="sidebar_list_item"
                                             onclick={() => {
-                                                this.Variable.openSidebar = !this.Variable.openSidebar;
+                                                this.Variable.openSidebar = false;
                                                 this.Fn.initAll();
                                             }}
                                         >

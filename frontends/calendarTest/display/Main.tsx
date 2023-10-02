@@ -2,6 +2,8 @@ import { Cemjsx } from "cemjs-all"
 import arrPrevDark from '@svg/icons/dark/prev.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 
+let options: { month: string } = { month: 'long' }
+
 export default function () {
     return (
         <div class="wrapper">
@@ -10,120 +12,93 @@ export default function () {
                     class="mb_25"
                     style="text-align: center; cursor: pointer;"
                     onclick={() => {
-                        this.fn("getDateCalendar", new Date(2023, 10, 1))
                         this.fn(
                             "createCalendar",
                             this.Ref.calendar,
-                            2015,
-                            4
+                            this.Static.currentDate.getFullYear(),
+                            this.Static.currentDate.getMonth()
                         )
                     }}
                 >
                     Calendar Test
                 </h1>
-                {/* <div class="filter_date filter_date_active" ref="calendar">
-                    <div class="calendar">
 
-                        <div class="calendar_header">
+                <div class="calendarTest_main">
+                    <div class="calendar_header">
+                        <span
+                            class="calendar_monthPicker"
+                            onclick={() => {
+                                this.Ref.monthList.classList.add('calendar_monthList_show');
+                                this.init();
+                            }}
+                        >
+                            {this.Static.currentDate.toLocaleString("ru", options)}
+                        </span>
+                        <div class="calendar_yearPicker">
                             <span
-                                class="calendar_monthPicker"
+                                class="calendar_arrow"
                                 onclick={() => {
-                                    this.Ref.monthList.classList.add('calendar_monthList_show');
-                                    this.init();
+                                    this.Static.currentDate.setFullYear(this.Static.currentDate.getFullYear() - 1)
+                                    this.fn(
+                                        "createCalendar",
+                                        this.Ref.calendar,
+                                        this.Static.currentDate.getFullYear(),
+                                        this.Static.currentDate.getMonth()
+                                    )
+                                    this.init()
                                 }}
                             >
-                                {this.Static.currentMonth}
+                                <img src={arrPrevDark} alt="Previous year" />
                             </span>
-                            <div class="calendar_yearPicker">
-                                <span
-                                    class="calendar_arrow"
-                                    onclick={() => {
-                                        this.Static.currentYear--;
-                                        this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                        this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                        this.init();
-                                    }}
-                                >
-                                    <img src={arrPrevDark} alt="Previous year" />
-                                </span>
-                                <span class="calendar_currentYear">{this.Static.currentYear}</span>
-                                <span
-                                    class="calendar_arrow"
-                                    onclick={() => {
-                                        this.Static.currentYear++;
-                                        this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                        this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex);
-                                        this.init();
-                                    }}
-                                >
-                                    <img src={arrNextDark} alt="Next year" />
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="calendar_body">
-                            <div class="calendar_weekDay">
-                                {
-                                    this.Static.resultWeekDays.map((item, index) => {
-                                        return (
-                                            <div
-                                                class={["calendar_weekDay_item", index + 1 == this.Static.currentDay ? "calendar_weekDay_item_active" : null]}
-                                            >
-                                                {item}
-                                            </div>
-                                        )
-                                    })
-                                }
-                            </div>
-                            <div class="calendar_days">
-                                {
-                                    this.Static.days.map(((item, index) => {
-                                        return (
-                                            <div
-                                                class={["calendar_days_item", index + 1 == this.Static.current.getDate() ? "calendar_days_item_active" : null]}
-                                            >
-                                                {item}
-                                                <span class="calendar_days_item_effect"></span>
-                                                <span class="calendar_days_item_effect"></span>
-                                                <span class="calendar_days_item_effect"></span>
-                                                <span class="calendar_days_item_effect"></span>
-                                            </div>
-                                        )
-                                    }))
-                                }
-                            </div>
-                        </div>
-
-                        <div class="calendar_monthList" ref="monthList">
-                            {
-                                this.Static.monthList.map((item, index) => {
-                                    return (
-                                        <div
-                                            class="calendar_monthList_item"
-                                            onclick={() => {
-                                                this.Static.currentMonth = item;
-                                                this.Static.currentMonthIndex = index + 1;
-                                                this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                                this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                                this.Ref.monthList.classList.remove('calendar_monthList_show');
-                                                this.init();
-                                            }}
-                                        >
-                                            {item}
-                                        </div>
+                            <span class="calendar_currentYear">{this.Static.currentDate.getFullYear()}</span>
+                            <span
+                                class="calendar_arrow"
+                                onclick={() => {
+                                    this.Static.currentDate.setFullYear(this.Static.currentDate.getFullYear() + 1)
+                                    this.fn(
+                                        "createCalendar",
+                                        this.Ref.calendar,
+                                        this.Static.currentDate.getFullYear(),
+                                        this.Static.currentDate.getMonth()
                                     )
-                                })
-                            }
+                                    this.init()
+                                }}
+                            >
+                                <img src={arrNextDark} alt="Next year"></img>
+                            </span>
                         </div>
-
                     </div>
-                </div> */}
 
-                <div ref="calendar">
+                    <div ref="calendar"></div>
 
+                    <div class="calendar_monthList" ref="monthList">
+                        {
+                            this.Static.monthList.map((item, index) => {
+                                return (
+                                    <div
+                                        class="calendar_monthList_item"
+                                        onclick={() => {
+
+                                            this.Static.currentDate.setMonth(index);
+
+                                            this.fn(
+                                                "createCalendar",
+                                                this.Ref.calendar,
+                                                this.Static.currentDate.getFullYear(),
+                                                this.Static.currentDate.getMonth()
+                                            )
+
+                                            this.Ref.monthList.classList.remove('calendar_monthList_show');
+                                            this.init()
+                                        }}
+                                    >
+                                        {item}
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
-
-
             </div>
         </div >
     )

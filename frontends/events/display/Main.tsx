@@ -3,6 +3,8 @@ import back from '@svg/icons/back.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 import notFound from '@svg/list.svg'
+import filter from '@svg/icons/dark/filter.svg'
+import calendar from '@svg/icons/dark/calendarDark.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 
@@ -30,8 +32,9 @@ let eventsData, categoryData = [];
 eventsData = events.reverse();
 categoryData = category;
 
-export default function () {
+let options: { month: string } = { month: 'long' }
 
+export default function () {
   return (
     <div class="main_wrap">
       <main
@@ -46,7 +49,283 @@ export default function () {
           </a>
 
           <section class="events">
-            <div class="filter">
+
+            <div class="filterNew">
+              <div
+                ref="filterBtn"
+                class="filterNew_btn"
+                onclick={() => {
+                  // this.Static.filterShow = !this.Static.filterShow;
+                  // this.init()
+                  this.Fn.initOne({
+                    name: "modalSoon"
+                  })
+                }}
+              >
+                <span class="filterNew_btn_text">Фильтр поиска</span>
+                <span class="filterNew_icon">
+                  <img src={filter} alt="Фильтр поиска" />
+                </span>
+              </div>
+
+              <div
+                ref="filterContent"
+                class={["filterNew_content", this.Static.filterShow ? "filterNew_content_active" : null]}
+              >
+                <div class="filterNew_container">
+                  <div class="filterNew_header">
+                    <h3 class="filterNew_title">Фильтр поиска</h3>
+                    <button
+                      class="modal_close"
+                      onclick={() => {
+                        this.Static.filterShow = false;
+                        this.init();
+                      }}
+                    >
+                      x
+                    </button>
+                  </div>
+
+                  <div class="filterNew_fields">
+
+                    <div class="filterNew_field">
+                      <span class="filterNew_field_title">Событие</span>
+                      <input
+                        type="text"
+                        class="filter_input"
+                        placeholder="Искать в заголовке"
+                        oninput={(e) => {
+                          let value = e.target.value.toLocaleLowerCase();
+                          eventsData = events.filter((item) => {
+                            if (item.title.toLocaleLowerCase().includes(value)) {
+                              return true;
+                            }
+                          })
+                          this.init();
+                        }}
+                      />
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span
+                        class="filterNew_field_title"
+                        onclick={(e) => {
+                          if (this.Static.categoryStatus == 'close') {
+                            this.Static.categoryStatus = 'open';
+                            this.Ref.filterCategory.classList.add('filter_item_active');
+                          } else if (this.Static.categoryStatus == 'open') {
+                            this.Static.categoryStatus = 'close';
+                            this.Ref.filterCategory.classList.remove('filter_item_active');
+                          }
+                        }}
+                      >
+                        Раздел
+                      </span>
+                      {
+                        this.Static.chooseCategory ?
+                          <div class="chooseCategory">
+                            <span >{this.Static.chooseCategory}</span>
+                            <span
+                              class="chooseCategory_close"
+                              onclick={() => {
+                                this.Static.chooseCategory = '';
+                                eventsData = events;
+                                this.init();
+                              }}
+                            >
+                              x
+                            </span>
+                          </div> :
+                          <input
+                            type="text"
+                            class="filter_input"
+                            placeholder="Выбрать раздел"
+
+                            oninput={(e) => {
+                              let value = e.target.value.toLocaleLowerCase();
+                              categoryData = category.filter((item) => {
+                                if (item.name.toLocaleLowerCase().includes(value)) {
+                                  return true;
+                                }
+                              })
+                              eventsData = events.filter((item) => {
+                                if (item.category.toLocaleLowerCase().includes(value)) {
+                                  return true;
+                                }
+                              })
+                              this.init()
+                            }}
+                          />
+                      }
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span class="filterNew_field_title">Местоположение</span>
+                      <input
+                        type="text"
+                        class="filter_input"
+                        placeholder="Где искать?"
+                        oninput={(e) => {
+                          let value = e.target.value.toLocaleLowerCase();
+                          eventsData = events.filter((item) => {
+                            if (item.location.toLocaleLowerCase().includes(value)) {
+                              return true;
+                            }
+                          })
+                          this.init();
+                        }}
+                      />
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span class="filterNew_field_title">Дата</span>
+                      <div class="filterNew_range">
+                        <div
+                          class="filterNew_range_item"
+                          onclick={() => {
+                            this.Static.calendarStart = true;
+                            this.fn(
+                              "createCalendar",
+                              this.Ref.calendar,
+                              this.Static.currentDate.getFullYear(),
+                              this.Static.currentDate.getMonth()
+                            )
+                            this.init()
+                          }}
+                        >
+                          <span>дд.мм.гггг</span>
+                          <span>
+                            <img src={calendar} alt="Календарь" />
+                          </span>
+
+
+                          <div
+                            // class="calendarTest_main"
+                            class={["filter_date", this.Static.calendarStart ? "filter_date_active" : null]}
+                          >
+                            <div class="calendar_header">
+                              <span
+                                class="calendar_monthPicker"
+                                onclick={() => {
+                                  this.Ref.monthList.classList.add('calendar_monthList_show');
+                                  this.init();
+                                }}
+                              >
+                                {this.Static.currentDate.toLocaleString("ru", options)}
+                              </span>
+                              <div class="calendar_yearPicker">
+                                <span
+                                  class="calendar_arrow"
+                                  onclick={() => {
+                                    this.Static.currentDate.setFullYear(this.Static.currentDate.getFullYear() - 1)
+                                    this.fn(
+                                      "createCalendar",
+                                      this.Ref.calendar,
+                                      this.Static.currentDate.getFullYear(),
+                                      this.Static.currentDate.getMonth()
+                                    )
+                                    this.init()
+                                  }}
+                                >
+                                  <img src={arrPrevDark} alt="Previous year" />
+                                </span>
+                                <span class="calendar_currentYear">{this.Static.currentDate.getFullYear()}</span>
+                                <span
+                                  class="calendar_arrow"
+                                  onclick={() => {
+                                    this.Static.currentDate.setFullYear(this.Static.currentDate.getFullYear() + 1)
+                                    this.fn(
+                                      "createCalendar",
+                                      this.Ref.calendar,
+                                      this.Static.currentDate.getFullYear(),
+                                      this.Static.currentDate.getMonth()
+                                    )
+                                    this.init()
+                                  }}
+                                >
+                                  <img src={arrNextDark} alt="Next year"></img>
+                                </span>
+                              </div>
+                            </div>
+
+                            <div ref="calendar"></div>
+
+                            <div class="calendar_monthList" ref="monthList">
+                              {
+                                this.Static.monthList.map((item, index) => {
+                                  return (
+                                    <div
+                                      class="calendar_monthList_item"
+                                      onclick={() => {
+
+                                        this.Static.currentDate.setMonth(index);
+
+                                        this.fn(
+                                          "createCalendar",
+                                          this.Ref.calendar,
+                                          this.Static.currentDate.getFullYear(),
+                                          this.Static.currentDate.getMonth()
+                                        )
+
+                                        this.Ref.monthList.classList.remove('calendar_monthList_show');
+                                        this.init()
+                                      }}
+                                    >
+                                      {item}
+                                    </div>
+                                  )
+                                })
+                              }
+                            </div>
+                          </div>
+
+
+
+                        </div>
+                        <span>—</span>
+                        <div class="filterNew_range_item">
+                          <span>дд.мм.гггг</span>
+                          <span>
+                            <img src={calendar} alt="Календарь" />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="filterNew_field">
+                      <span class="filterNew_field_title">Ключевые слова</span>
+                    </div>
+
+                  </div>
+
+                  <div class="filterNew_btns">
+                    <button
+                      class="btn_link btn_link_dark"
+                    >
+                      Сбросить
+                    </button>
+                    <button
+                      class="btn_link btn_link_dark"
+                    >
+                      Применить
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div class="filter">
               <div class="filter_item filter_item_event">
                 <span class="filter_item_title">Событие</span>
                 <input
@@ -176,120 +455,11 @@ export default function () {
                 />
               </div>
 
-              {/* <div class="filter_item filter_item_date">
+              <div class="filter_item filter_item_date">
                 <span class="filter_item_title">Дата</span>
-                <input
-                  type="date"
-                  class="filter_input"
-                  placeholder="Когда искать?"
-                  onclick={() => {
-                    this.Ref.calendar.classList.toggle('filter_date_active');
-                    this.Static.currentMonth = this.Static.monthList[this.Static.current.getMonth()];
-                    // this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                    this.init();
-                  }}
-                />
+              </div>
 
-                <div class="filter_date" ref="calendar">
-                  <div class="calendar">
-
-                    <div class="calendar_header">
-                      <span
-                        class="calendar_monthPicker"
-                        onclick={() => {
-                          this.Ref.monthList.classList.add('calendar_monthList_show');
-                          this.init();
-                        }}
-                      >
-                        {this.Static.currentMonth}
-                      </span>
-                      <div class="calendar_yearPicker">
-                        <span
-                          class="calendar_arrow"
-                          onclick={() => {
-                            this.Static.currentYear--;
-                            this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                            this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex--);
-                            this.init();
-                          }}
-                        >
-                          <img src={arrPrevDark} alt="Previous year" />
-                        </span>
-                        <span class="calendar_currentYear">{this.Static.currentYear}</span>
-                        <span
-                          class="calendar_arrow"
-                          onclick={() => {
-                            this.Static.currentYear++;
-                            this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                            this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex);
-                            this.init();
-                          }}
-                        >
-                          <img src={arrNextDark} alt="Next year" />
-                        </span>
-                      </div>
-                    </div>
-
-                    <div class="calendar_body">
-                      <div class="calendar_weekDay">
-                        {
-                          this.Static.resultWeekDays.map((item, index) => {
-                            return (
-                              <div
-                                class={["calendar_weekDay_item", index + 1 == this.Static.currentDay ? "calendar_weekDay_item_active" : null]}
-                              >
-                                {item}
-                              </div>
-                            )
-                          })
-                        }
-                      </div>
-                      <div class="calendar_days">
-                        {
-                          this.Static.days.map(((item, index) => {
-                            return (
-                              <div
-                                class={["calendar_days_item", index + 1 == this.Static.current.getDate() ? "calendar_days_item_active" : null]}
-                              >
-                                {item}
-                                <span class="calendar_days_item_effect"></span>
-                                <span class="calendar_days_item_effect"></span>
-                                <span class="calendar_days_item_effect"></span>
-                                <span class="calendar_days_item_effect"></span>
-                              </div>
-                            )
-                          }))
-                        }
-                      </div>
-                    </div>
-
-                    <div class="calendar_monthList" ref="monthList">
-                      {
-                        this.Static.monthList.map((item, index) => {
-                          return (
-                            <div
-                              class="calendar_monthList_item"
-                              onclick={() => {
-                                this.Static.currentMonth = item;
-                                this.Static.currentMonthIndex = index + 1;
-                                this.fn("daysInMonth", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                this.fn("firstDayWeek", this.Static.currentYear, this.Static.currentMonthIndex--);
-                                this.Ref.monthList.classList.remove('calendar_monthList_show');
-                                this.init();
-                              }}
-                            >
-                              {item}
-                            </div>
-                          )
-                        })
-                      }
-                    </div>
-
-                  </div>
-                </div>
-              </div> */}
-
-            </div>
+            </div> */}
 
             <div class="events_list">
               {
