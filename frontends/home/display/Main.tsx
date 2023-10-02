@@ -56,7 +56,7 @@ export default function () {
                         </div>
 
                         <div class="carousel_wrap">
-                            <div
+                            {/* <div
                                 class="carousel_hover carousel_hover_l"
                                 onmouseenter={() => {
                                     this.Ref.eventsSlider.scrollLeft -= 20;
@@ -73,7 +73,7 @@ export default function () {
                                 >
                                     <img src={arrPrevLight} alt="Prev Slide" />
                                 </button>
-                            </div>
+                            </div> */}
                             <div
                                 class="carousel pY_20"
                                 ref="eventsSlider"

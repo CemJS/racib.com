@@ -55,8 +55,11 @@ export default function () {
                 ref="filterBtn"
                 class="filterNew_btn"
                 onclick={() => {
-                  this.Static.filterShow = !this.Static.filterShow;
-                  this.init()
+                  // this.Static.filterShow = !this.Static.filterShow;
+                  // this.init()
+                  this.Fn.initOne({
+                    name: "modalSoon"
+                  })
                 }}
               >
                 <span class="filterNew_btn_text">Фильтр поиска</span>
