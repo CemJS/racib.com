@@ -133,6 +133,12 @@ section {
   }
 }
 
+.racib_title {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: clamp(18px, 5vw, 32px);
+}
+
 .text {
   font-size: 16px;
   font-weight: 400;
@@ -414,6 +420,7 @@ section {
 
   &_title {
     font-size: 22px;
+    font-size: clamp(22px, 5vw, 14px);
     line-height: 34px;
     font-weight: 500;
     margin-bottom: 15px;
@@ -442,7 +449,7 @@ section {
 
     &_title,
     &_desc {
-      font-size: 14px;
+      // font-size: 14px;
       line-height: 18px;
     }
   }
@@ -1421,6 +1428,33 @@ section {
   }
 
 
+}
+
+.list_numeral {
+  padding-left: 20px;
+
+  &_item {
+    list-style-type: decimal;
+
+    span {
+      display: block;
+    }
+  }
+
+  &_item:not(:last-child) {
+    padding-bottom: 15px;
+  }
+
+  &_name {
+    font-weight: 600;
+    padding-bottom: 5px;
+    font-size: clamp(12px, 5vw, 16px);
+  }
+
+  &_desc {
+    font-weight: 500;
+    font-size: clamp(12px, 5vw, 14px);
+  }
 }
 
 .filter {

@@ -155,9 +155,9 @@ export default function () {
                 </div>
 
                 <div class="about">
-                    <RenderPerson items={observers} name="observers" title="Экспертный совет РАКИБ" />
+                    <RenderPerson items={experts} name="observers" title="Экспертный совет РАКИБ" />
                     <div class="link_block">
-                        <a href="/players" onclick={this.Fn.link}>
+                        <a href="/experts" onclick={this.Fn.link}>
                             <img src={next} />
                             <span>Перейти на страницу</span>
                         </a>
