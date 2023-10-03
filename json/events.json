@@ -5,35 +5,31 @@
     "cover": "/contents/img/news/1blockchainLife2023.jpg",
     "image": "/contents/img/news/2blockchainLife2023.jpg",
     "logo": "/contents/svg/racib.svg",
-    "title": "Blockchain Life 2023",
+    "title": "Звёздные спикеры на Blockchain Life 2023. Криптокиты встретятся в Дубае 24-25 октября.",
     "date": "24-25 октября 2023г.",
     "location": "Дубай, ОАЭ",
     "subtitle": [
-      "Звёздные спикеры на Blockchain Life 2023.",
-      "Криптокиты встретятся в Дубае 24-25 октября."
+      "Руководители фондов, представители государства, инвесторы, бизнесмены и стартапы встретятся в Дубае, чтобы определить будущее криптоиндустрии на международном Форуме Blockchain Life 24-25 октября 2023 на площадке Festival Arena. "
     ],
     "desc": [
       {
         "text": [
-          "Руководители фондов, представители государства, инвесторы, бизнесмены и стартапы встретятся в Дубае, чтобы определить будущее криптоиндустрии на международном Форуме Blockchain Life 24-25 октября 2023 на площадке Festival Arena. ",
-          "Форум стал главным местом встречи криптокитов со всего мира. Ожидается более 7000 участников из 120 стран. ",
-          "Купить билет со скидкой 10% - промокод racib"
+          "Форум стал главным местом встречи криптокитов со всего мира. Ожидается более 7000 участников из 120 стран. "
         ]
       },
       {
         "list": {
           "title": "О главных трендах буллрана 2024-2025 расскажут лидеры криптоиндустрии:",
           "items": [
-            "H.E. Justin Sun (Основатель TRON)",
-            "Yat Siu (Сооснователь и председатель Animoca Brands)",
-            "Eowyn Chen (CEO Trust Wallet)",
-            "Alexander Chehade (Генеральный менеджер Binance)",
-            "Miriam Kiwan (Вице-Президент Circle)",
-            "Reece Merrick (Старший директор Ripple)",
-            "Fred Thiel (Председатель и генеральный директор в Marathon Digital Holdings)",
-            "Сергей Хитров (Основатель Jets.Capital и Listing.Help)",
-            "Xinxi Wang (Сооснователь и директор Litecoin Foundation)",
-            "Tone Vays (Трейдер, эксперт и аналитик, ex-VP в JP Morgan Chase)"
+            "Justin Sun (Основатель TRON);",
+            "Yat Siu (Сооснователь и председатель Animoca Brands);",
+            "Dr. Marwan Alzarouni (CEO Dubai Blockchain Center);",
+            "Eowyn Chen (CEO Trust Wallet);",
+            "Сергей Хитров (Основатель Jets.Capital и Listing.Help);",
+            "Xinxi Wang (Сооснователь Litecoin Foundation);",
+            "Nischal Shetty (CEO Shardeum, CEO WazirX);",
+            "Alexander Chehade (Генеральный менеджер Binance FZE Dubai);",
+            "Fred Thiel (Председатель и CEO Marathon Digital Holdings)."
           ]
         }
       },
@@ -45,9 +41,9 @@
     ],
     "options": [
       {
-        "text": "Только в сентябре действует специальная цена. Покупайте ",
-        "textLink": "билет прямо сейчас со скидкой 10% по промокоду racib blockchain-life.com/asia/en/",
-        "link": "https://blockchain-life.com/asia/en/?utm_campaign=racib/"
+        "text": "Только в сентябре действует специальная цена. Покупайте билет прямо сейчас со скидкой 10% по промокоду  racib ",
+        "textLink": "blockchain-life.com/asia/en/",
+        "link": "https://blockchain-life.com/asia/en/?utm_campaign=racib/#tickets-row"
       }
     ],
     "views": 18

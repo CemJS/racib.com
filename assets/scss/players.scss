@@ -153,7 +153,7 @@
     height: fit-content;
     position: sticky;
     top: 90px;
-    width: 325px;
+    width: 335px;
 
     >div {
       box-shadow: 0 3px 6px 0 rgba(0, 0, 0, .16);
@@ -268,7 +268,7 @@
   }
 
   &_content {
-    width: calc(100% - 325px);
+    width: calc(100% - 335px);
 
     &_title {
       font-size: 20px;

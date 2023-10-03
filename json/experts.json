@@ -3,6 +3,7 @@
     "img": "/contents/img/experts/sokolov.jpg",
     "name": "ИГОРЬ АНАТОЛЬЕВИЧ СОКОЛОВ",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона",
     "post": "Председатель Экспертного совета РАКИБ"
@@ -11,6 +12,7 @@
     "img": "/contents/img/experts/valuk.jpg",
     "name": "АЛЕКСАНДР НИКОЛАЕВИЧ ВАЛЮК",
     "city": "Новороссийск",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -18,6 +20,7 @@
     "img": "/contents/img/experts/gultyaeva.jpg",
     "name": "ЕЛЕНА ВИКТОРОВНА ГУЛЬТЯЕВА",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -25,6 +28,7 @@
     "img": "/contents/img/experts/petrov.jpg",
     "name": "ВАЛЕРИЙ СТАНИСЛАВОВИЧ ПЕТРОВ",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -32,6 +36,7 @@
     "img": "/contents/img/experts/richka.jpg",
     "name": "ДЕНИС АНАТОЛЬЕВИЧ РЫЧКА",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -39,6 +44,7 @@
     "img": "/contents/img/experts/romanyuk.jpg",
     "name": "ВАЛЕРИЙ ИВАНОВИЧ РОМАНЮК",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -46,6 +52,7 @@
     "img": "/contents/img/experts/selionov.jpg",
     "name": "ИГОРЬ АНАТОЛЬЕВИЧ СЕЛИОНОВ",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -53,6 +60,7 @@
     "img": "/contents/img/experts/chulkov.jpg",
     "name": "ИГОРЬ ВЛАДИМИРОВИЧ ЧУЛКОВ",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   },
@@ -60,6 +68,7 @@
     "img": "/contents/img/experts/edemsky.jpg",
     "name": "АЛЕКСАНДР ВЛАДИМИРОВИЧ ЕДЕМСКИЙ",
     "city": "Москва",
+    "flag": "/contents/svg/ru.svg",
     "country": "Россия",
     "status": "Персона"
   }

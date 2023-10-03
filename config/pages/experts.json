@@ -1,0 +1,8 @@
+{
+    "regex": "/experts",
+    "front": [
+        "header",
+        "experts",
+        "footer"
+    ]
+}
