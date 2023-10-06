@@ -486,10 +486,13 @@ export default function () {
                             <img src={date} alt="Дата проведения мероприятия" />
                             {item.date}
                           </span>
-                          <span class="card_info_location">
-                            <img src={map} alt="Место проведения мероприятия" />
-                            {item.location}
-                          </span>
+                          {
+                            item.location ?
+                              <span class="card_info_location">
+                                <img src={map} alt="Место проведения мероприятия" />
+                                {item.location}
+                              </span> : null
+                          }
                         </div>
                       </div>
                     )
