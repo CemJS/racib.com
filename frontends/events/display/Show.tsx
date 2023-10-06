@@ -33,10 +33,14 @@ export default function () {
               </div>
               <div class="event_profile_info">
                 <span class="event_profile_info_category">{this.Static.record.category}</span>
-                <div class="event_profile_info_location">
-                  <img src={map} alt="Локация" />
-                  <span>{this.Static.record.location}</span>
-                </div>
+                {
+                  this.Static.record?.location ?
+                    <div class="event_profile_info_location">
+                      <img src={map} alt="Локация" />
+                      <span>{this.Static.record.location}</span>
+                    </div> : null
+                }
+
                 <div class="event_profile_info_owner">
                   <span>Автор</span>
                   <span class="event_profile_info_owner_img">
@@ -143,6 +147,9 @@ export default function () {
                         return (
                           <p class="event_content_text">{item?.text}
                             <a href={item?.link} onclick={this.Fn.link} class="link ml_5">{item?.textLink}</a>
+                            {
+                              item?.docLink ? <a href={item.docLink} class="link">{item?.docText}</a> : null
+                            }
                           </p>
                         )
                       })
