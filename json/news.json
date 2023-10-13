@@ -533,5 +533,51 @@
       }
     ],
     "date": "12 октября 2023"
+  },
+  {
+    "id": "16",
+    "category": "Exchange",
+    "img": "/contents/img/news/keineExchange.jpg",
+    "image": "/contents/img/news/keineExchange.jpg",
+    "title": "Как обезопасить себя и свои активы?",
+    "descShort": "Базовые и более продвинутые принципы цифровой гигиены. Инструменты для повышения уровня безопасности. Наиболее безопасные методы хранения криптовалют.",
+    "desc": [
+      {
+        "text": [
+          "На этот вопрос мы ответили в нашей новой статье"
+        ],
+        "list": {
+          "title": "В ней мы:",
+          "items": [
+            "Разобрали как базовые, так и более продвинутые принципы цифровой гигиены;",
+            "Поделились инструментами для повышения уровня безопасности;",
+            "Рассмотрели наиболее безопасные методы хранения криптовалют."
+          ]
+        }
+      }
+    ],
+    "options": [
+      {
+        "text": "Читать ",
+        "textLink": "статью",
+        "link": "https://telegra.ph/Bezopasnost-v-Web-3-10-11"
+      },
+      {
+        "text": "Перейти на ",
+        "textLink": "наш сайт",
+        "link": "https://keine-exchange.com/"
+      },
+      {
+        "text": "Наш аккаунт в ",
+        "textLink": "Instagram",
+        "link": "https://www.instagram.com/keineexchange/"
+      },
+      {
+        "text": "Наш канал на",
+        "textLink": "youtube",
+        "link": "https://www.youtube.com/@KeineExchange/videos"
+      }
+    ],
+    "date": "13 октября 2023"
   }
 ]
