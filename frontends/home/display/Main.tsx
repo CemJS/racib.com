@@ -9,7 +9,7 @@ import arrowR from '@svg/icons/arrowR.svg'
 import calendar from '@svg/icons/date.svg'
 import players from '@json/allUsers'
 import events from '@json/events'
-import banner from '@images/banners/racib.jpg'
+import banner from '@images/banners/racibLetter.jpg'
 
 let isDragging, isDragUsers = false;
 let startX, xStartUsers, startScrollLeft, startScrollLeftUsers;
