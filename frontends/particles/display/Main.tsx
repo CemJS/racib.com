@@ -1,9 +1,7 @@
 import { Cemjsx } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
-// for slider
 
-// import newsSlider from '@json/newsSliderTest'
 import news from '@json/news'
 
 let newsSlider = news.reverse();
