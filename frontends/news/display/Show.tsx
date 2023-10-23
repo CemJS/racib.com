@@ -147,6 +147,39 @@ export default function () {
                     <div class="event_content_cover" style={`background-image: url(${this.Static.record.image})`}>
                     </div> : null
                 }
+
+                {
+                  this.Static.record?.video ?
+                    <div>
+                      {
+                        this.Static.record?.video.map((item, index) => {
+                          return (
+                            <div class="mt_15">
+                              {
+                                item?.title ?
+                                  <h3 class="profile_content_title mt_10">{item.title}</h3> : null
+                              }
+                              {
+                                item?.src ?
+                                  <div
+                                    ref="videoWrap"
+                                    class="profile_content_videoWrap"
+                                    onclick={() => {
+                                      if (this.Ref.videoWrap.classList.contains('videoReady')) return;
+                                      this.Ref.videoWrap.classList.add('videoReady');
+                                      this.Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+                                    }}
+                                  ></div> : null
+                              }
+                            </div>
+                          )
+                        })
+                      }
+                    </div> : null
+                }
+
+
+
               </div>
             </div>
           </section>
