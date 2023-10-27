@@ -25,8 +25,7 @@ export default function () {
                         class={["header_burger", this.Variable.openSidebar ? null : "header_burger_active"]}
                         ref="burger"
                         onclick={(e) => {
-                            this.Variable.openSidebar = !this.Variable.openSidebar;
-                            this.Fn.initAll();
+
                         }}
                     >
                         <img src={sidebarArrow} alt="Toggle sidebar" />
