@@ -908,5 +908,14 @@
       }
     ],
     "date": "25 октября 2023г."
+  },
+  {
+    "id": "24",
+    "category": "Форум",
+    "img": "/contents/img/news/holiday.jpg",
+    "image": "/contents/img/news/holiday.jpg",
+    "title": "С Днём народного единства!",
+    "descShort": "С праздником, дорогие друзья! Ваш РАКИБ!",
+    "date": "4 ноября 2023г."
   }
 ]
