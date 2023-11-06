@@ -14,3 +14,10 @@ export const getFebDay = function (year) {
 
     return this.fn("isLeapYear", year) ? 29 : 28;
 }
+
+
+export const getRecords = async function () {
+    console.log('=d2f90b=', 5555)
+    let answer = await this.Services.functions.sendApi("/api/News", {})
+    console.log('=74d989=', answer)
+}
