@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Fn, Static, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 
@@ -7,13 +7,13 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
           <a
             class="back"
             href="/events"
-            onclick={this.Fn.link}
+            onclick={Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
@@ -25,39 +25,39 @@ export default function () {
             <div class="event_profile">
               <div
                 class="event_profile_image"
-                style={`background-image: url(${this.Static.record.cover})`}
+                style={`background-image: url(${Static.record.cover})`}
               >
                 <div class="event_profile_image_logo">
-                  <img src={this.Static.record.logo} alt="Логотип мероприятия" />
+                  <img src={Static.record.logo} alt="Логотип мероприятия" />
                 </div>
               </div>
               <div class="event_profile_info">
-                <span class="event_profile_info_category">{this.Static.record.category}</span>
+                <span class="event_profile_info_category">{Static.record.category}</span>
                 {
-                  this.Static.record?.location ?
+                  Static.record?.location ?
                     <div class="event_profile_info_location">
                       <img src={map} alt="Локация" />
-                      <span>{this.Static.record.location}</span>
+                      <span>{Static.record.location}</span>
                     </div> : null
                 }
 
                 <div class="event_profile_info_owner">
                   <span>Автор</span>
                   <span class="event_profile_info_owner_img">
-                    <img src={this.Static.record.logo} />
+                    <img src={Static.record.logo} />
                     РАКИБ
                   </span>
                 </div>
               </div>
             </div>
             <div class="event_content">
-              <h1 class="event_content_title">{this.Static.record.title}</h1>
+              <h1 class="event_content_title">{Static.record.title}</h1>
 
               {
-                this.Static.record?.subtitle ?
+                Static.record?.subtitle ?
                   <div class="block_default mY_10">
                     {
-                      this.Static.record.subtitle.map((item) => {
+                      Static.record.subtitle.map((item) => {
                         return (
                           <p class="event_content_subtitle">{item}</p>
                         )
@@ -67,10 +67,10 @@ export default function () {
               }
 
               {
-                this.Static.record.desc ?
+                Static.record.desc ?
                   <div class="event_content_desc">
                     {
-                      this.Static.record.desc.map(item => {
+                      Static.record.desc.map(item => {
                         return (
                           <div class="event_content_desc_item">
                             <div>
@@ -110,10 +110,10 @@ export default function () {
               }
 
               {
-                this.Static.record?.listLinks ?
+                Static.record?.listLinks ?
                   <div class="new_content_desc">
                     {
-                      this.Static.record.listLinks.map(item => {
+                      Static.record.listLinks.map(item => {
                         return (
                           <div class="new_content_desc_item">
                             <div class="event_content_list_wrap">
@@ -125,7 +125,7 @@ export default function () {
                                       return (
                                         <li class="event_content_list_item event_content_text">
                                           {li?.text}
-                                          <a href={li?.link} class="link ml_5" onclick={this.Fn.link}>{li?.textLink}</a>
+                                          <a href={li?.link} class="link ml_5" onclick={Fn.link}>{li?.textLink}</a>
                                         </li>
                                       )
                                     }) : null
@@ -140,13 +140,13 @@ export default function () {
               }
 
               {
-                this.Static.record.options ?
+                Static.record.options ?
                   <div>
                     {
-                      this.Static.record.options.map(item => {
+                      Static.record.options.map(item => {
                         return (
                           <p class="event_content_text">{item?.text}
-                            <a href={item?.link} onclick={this.Fn.link} class="link ml_5">{item?.textLink}</a>
+                            <a href={item?.link} onclick={Fn.link} class="link ml_5">{item?.textLink}</a>
                             {
                               item?.docLink ? <a href={item.docLink} class="link">{item?.docText}</a> : null
                             }
@@ -158,9 +158,9 @@ export default function () {
               }
 
               {
-                this.Static.record.image ?
+                Static.record.image ?
                   <div class="event_content_cover"
-                    style={`background-image: url(${this.Static.record.image})`}
+                    style={`background-image: url(${Static.record.image})`}
                   >
                   </div> : null
               }

@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Ref, Static, Fn } from "cemjs-all"
 import footerLogo from '@images/footerLogo.png'
 import telegram from '@svg/socials/telegram.svg'
 import vk from '@svg/socials/vk.svg'
@@ -75,7 +75,7 @@ const socials = [
 export default function () {
     return (
         <footer class={["footer",
-            this.Variable.openSidebar ? null : "footer_close"]}>
+            front.Variable.openSidebar ? null : "footer_close"]}>
 
             <div class="wrapper">
                 <div class="footer_inner">
@@ -92,11 +92,11 @@ export default function () {
                                 <input
                                     class="input_field"
                                     onchange={() => {
-                                        if (this.Ref.footerInput.value.length > 0) {
-                                            this.Ref.footerLabel.classList.add('input_label_valid');
+                                        if (Ref.footerInput.value.length > 0) {
+                                            Ref.footerLabel.classList.add('input_label_valid');
                                         }
-                                        if (this.Ref.footerInput.value.length === 0) {
-                                            this.Ref.footerLabel.classList.remove('input_label_valid');
+                                        if (Ref.footerInput.value.length === 0) {
+                                            Ref.footerLabel.classList.remove('input_label_valid');
                                         }
                                     }}
                                     type="tel"
@@ -116,7 +116,7 @@ export default function () {
                                 links.map(item => {
                                     return (
                                         <li class="footer_useful_links_item">
-                                            <a href={item.link} onclick={this.Fn.link}>{item.name}</a>
+                                            <a href={item.link} onclick={Fn.link}>{item.name}</a>
                                         </li>
                                     )
                                 })
@@ -131,7 +131,7 @@ export default function () {
                                     socials.map(item => {
                                         return (
                                             <li class="footer_socials_item">
-                                                <a href={item.link} class="footer_socials_link" onclick={this.Fn.link}>
+                                                <a href={item.link} class="footer_socials_link" onclick={Fn.link}>
                                                     <img src={item.icon} alt={item.name} />
                                                 </a>
                                             </li>
@@ -142,14 +142,14 @@ export default function () {
                         </div>
                         <div>
                             <h6 class="footer_title">Контактный телефон</h6>
-                            <a href="tel:+74993902009" onclick={this.Fn.link} class="footer_phone">
+                            <a href="tel:+74993902009" onclick={Fn.link} class="footer_phone">
                                 <img src={phoneGrey} alt="Контактный телефон" />
                                 <span>8 (499) 390-20-09</span>
                             </a>
                         </div>
                         <div>
                             <h6 class="footer_title">Электронная почта</h6>
-                            <a href="mailto:info@racib.com" onclick={this.Fn.link} class="footer_phone">
+                            <a href="mailto:info@racib.com" onclick={Fn.link} class="footer_phone">
                                 <img src={letterGrey} alt="Электронная почта" />
                                 <span>info@racib.com</span>
                             </a>

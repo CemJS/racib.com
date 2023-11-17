@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Static, Fn, Func, Ref } from "cemjs-all"
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
 import arrNextLight from '@svg/icons/light/nextWhite.svg'
@@ -19,7 +19,7 @@ let y1, yUsers1 = null;
 export default function () {
     return (
         <main
-            class={["main", "pt_15", "home", this.Variable.openSidebar ? null : "main_close"]}
+            class={["main", "pt_15", "home", front.Variable.openSidebar ? null : "main_close"]}
         >
             <div class="wrapper">
 
@@ -32,7 +32,7 @@ export default function () {
                 <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
               </a>
             </section> */}
-                    <a class="home_banner" href="/appeal" onclick={this.Fn.link}>
+                    <a class="home_banner" href="/appeal" onclick={Fn.link}>
                         <img src={banner} alt="" />
                         <span class="btn_link btn_link_dark">Ознакомиться</span>
                         <div class="home_banner_info">
@@ -52,7 +52,7 @@ export default function () {
                                 <h2>События</h2>
                                 <p>Анонсы мероприятий</p>
                             </div>
-                            <a href="/events" onclick={this.Fn.link} class="btn_link home_events_link">Все мероприятия</a>
+                            <a href="/events" onclick={Fn.link} class="btn_link home_events_link">Все мероприятия</a>
                         </div>
 
                         <div class="carousel_wrap">
@@ -80,13 +80,13 @@ export default function () {
                                 onmousedown={(e) => {
                                     isDragging = true;
                                     startX = e.pageX;
-                                    startScrollLeft = this.Ref.eventsSlider.scrollLeft;
+                                    startScrollLeft = Ref.eventsSlider.scrollLeft;
                                 }}
 
                                 onmousemove={(e) => {
                                     if (!isDragging) return;
                                     e.preventDefault();
-                                    this.Ref.eventsSlider.scrollLeft = startScrollLeft - (e.pageX - startX);
+                                    Ref.eventsSlider.scrollLeft = startScrollLeft - (e.pageX - startX);
                                 }}
 
                                 onmouseup={() => {
@@ -108,10 +108,10 @@ export default function () {
 
                                     if (Math.abs(xDiff) > Math.abs(yDiff)) {
                                         if (xDiff > 0) {
-                                            this.Ref.eventsSlider.scrollLeft -= this.Ref.eventsSlide.offsetWidth + 15;
+                                            Ref.eventsSlider.scrollLeft -= Ref.eventsSlide.offsetWidth + 15;
                                         }
                                         else {
-                                            this.Ref.eventsSlider.scrollLeft += this.Ref.eventsSlide.offsetWidth + 15;
+                                            Ref.eventsSlider.scrollLeft += Ref.eventsSlide.offsetWidth + 15;
                                         }
                                     }
                                     x1 = null;
@@ -125,7 +125,7 @@ export default function () {
                                                 class="card"
                                                 ref="eventsSlide"
                                                 onclick={() => {
-                                                    this.Fn.linkChange(`/events/show/${item.id}`)
+                                                    Fn.linkChange(`/events/show/${item.id}`)
                                                 }}
                                             >
                                                 <span class="card_category">{item.category}</span>
@@ -182,7 +182,7 @@ export default function () {
                                 <button
                                     class="arrow arrow_dark"
                                     onclick={() => {
-                                        this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 20;
+                                        Ref.playerCarousel.scrollLeft -= Ref.playerSlide.offsetWidth + 20;
                                     }}
                                 >
                                     <img src={arrPrevDark} />
@@ -190,12 +190,12 @@ export default function () {
                                 <button
                                     class="arrow arrow_dark"
                                     onclick={() => {
-                                        this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 20;
+                                        Ref.playerCarousel.scrollLeft += Ref.playerSlide.offsetWidth + 20;
                                     }}
                                 >
                                     <img src={arrNextDark} />
                                 </button>
-                                <a href="/players" onclick={this.Fn.link} class="btn_link home_events_link">Все участники</a>
+                                <a href="/players" onclick={Fn.link} class="btn_link home_events_link">Все участники</a>
                             </div>
                         </div>
 
@@ -205,12 +205,12 @@ export default function () {
                             onmousedown={(e) => {
                                 isDragUsers = true;
                                 xStartUsers = e.pageX;
-                                startScrollLeftUsers = this.Ref.playerCarousel.scrollLeft;
+                                startScrollLeftUsers = Ref.playerCarousel.scrollLeft;
                             }}
                             onmousemove={(e) => {
                                 if (!isDragUsers) return;
                                 e.preventDefault();
-                                this.Ref.playerCarousel.scrollLeft = startScrollLeftUsers - (e.pageX - xStartUsers);
+                                Ref.playerCarousel.scrollLeft = startScrollLeftUsers - (e.pageX - xStartUsers);
                             }}
                             onmouseup={() => {
                                 isDragUsers = false;
@@ -228,9 +228,9 @@ export default function () {
                                 let yDiffUsers = yUsers2 - yUsers1;
                                 if (Math.abs(xDiffUsers) > Math.abs(yDiffUsers)) {
                                     if (xDiffUsers > 0) {
-                                        this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 15;
+                                        Ref.playerCarousel.scrollLeft -= Ref.playerSlide.offsetWidth + 15;
                                     } else {
-                                        this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 15;
+                                        Ref.playerCarousel.scrollLeft += Ref.playerSlide.offsetWidth + 15;
                                     }
                                 }
                                 xUsers1 = null;
@@ -244,7 +244,7 @@ export default function () {
                                             class="carousel_person"
                                             ref="playerSlide"
                                             onclick={() => {
-                                                this.Fn.linkChange(`/players/show/${item.name}`);
+                                                Fn.linkChange(`/players/show/${item.name}`);
                                             }}
                                         >
                                             <div class="carousel_person_circle">

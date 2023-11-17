@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 
@@ -6,13 +6,13 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
           <a
             class="back"
             href="/news"
-            onclick={this.Fn.link}
+            onclick={Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
@@ -23,36 +23,36 @@ export default function () {
           <section class="new">
             <div class="new_profile">
               <div class="new_profile_image">
-                <img src={this.Static.record.img} alt="Избражение новости" />
+                <img src={Static.record.img} alt="Избражение новости" />
               </div>
               <div class="new_profile_info">
                 {
-                  this.Static.record?.date ?
-                    <span>{this.Static.record.date}</span> : null
+                  Static.record?.date ?
+                    <span>{Static.record.date}</span> : null
                 }
                 {
-                  this.Static.record?.category ?
-                    <span class="new_profile_info_category">{this.Static.record.category}</span> : null
+                  Static.record?.category ?
+                    <span class="new_profile_info_category">{Static.record.category}</span> : null
                 }
 
                 {
-                  this.Static.record?.city ?
+                  Static.record?.city ?
                     <span class="new_profile_info_location">
                       <img src={map} alt="Локация" />
-                      {this.Static.record.city}
+                      {Static.record.city}
                     </span> : null
                 }
 
               </div>
             </div>
             <div class="new_content">
-              <h2 class="new_content_title">{this.Static.record.title}</h2>
+              <h2 class="new_content_title">{Static.record.title}</h2>
               <div>
                 {
-                  this.Static.record.desc ?
+                  Static.record.desc ?
                     <div class="new_content_desc">
                       {
-                        this.Static.record.desc.map(item => {
+                        Static.record.desc.map(item => {
                           return (
                             <div class="new_content_desc_item">
                               <div>
@@ -92,15 +92,15 @@ export default function () {
                 }
 
                 {
-                  this.Static.record.options ?
+                  Static.record.options ?
                     <div>
                       {
-                        this.Static.record.options.map(item => {
+                        Static.record.options.map(item => {
                           return (
                             <p class="event_content_text">{item?.text}
                               <a
                                 href={item?.link}
-                                onclick={this.Fn.link}
+                                onclick={Fn.link}
                                 class="link ml_5"
                               >
                                 {item?.textLink}
@@ -113,10 +113,10 @@ export default function () {
                 }
 
                 {
-                  this.Static.record?.listLinks ?
+                  Static.record?.listLinks ?
                     <div class="new_content_desc">
                       {
-                        this.Static.record.listLinks.map(item => {
+                        Static.record.listLinks.map(item => {
                           return (
                             <div class="new_content_desc_item">
                               <div class="event_content_list_wrap">
@@ -128,7 +128,7 @@ export default function () {
                                         return (
                                           <li class="event_content_list_item event_content_text">
                                             {li?.text}
-                                            <a href={li?.link} class="link ml_5" onclick={this.Fn.link}>{li?.textLink}</a>
+                                            <a href={li?.link} class="link ml_5" onclick={Fn.link}>{li?.textLink}</a>
                                           </li>
                                         )
                                       }) : null
@@ -143,16 +143,16 @@ export default function () {
                 }
 
                 {
-                  this.Static.record.image ?
-                    <div class="event_content_cover" style={`background-image: url(${this.Static.record.image})`}>
+                  Static.record.image ?
+                    <div class="event_content_cover" style={`background-image: url(${Static.record.image})`}>
                     </div> : null
                 }
 
                 {
-                  this.Static.record?.video ?
+                  Static.record?.video ?
                     <div>
                       {
-                        this.Static.record?.video.map((item, index) => {
+                        Static.record?.video.map((item, index) => {
                           return (
                             <div class="mt_15">
                               {
@@ -165,9 +165,9 @@ export default function () {
                                     ref="videoWrap"
                                     class="profile_content_videoWrap"
                                     onclick={() => {
-                                      if (this.Ref.videoWrap.classList.contains('videoReady')) return;
-                                      this.Ref.videoWrap.classList.add('videoReady');
-                                      this.Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+                                      if (Ref.videoWrap.classList.contains('videoReady')) return;
+                                      Ref.videoWrap.classList.add('videoReady');
+                                      Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
                                     }}
                                   ></div> : null
                               }

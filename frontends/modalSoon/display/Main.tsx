@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Fn } from "cemjs-all"
 import dev from '@svg/icons/color/development.svg'
 
 export default function () {
@@ -9,7 +9,7 @@ export default function () {
                     class="modal_close"
                     onclick={() => {
                         setTimeout(() => {
-                            this.clearData()
+                            Fn.clearData()
                         }, 5);
                     }}>
                     x

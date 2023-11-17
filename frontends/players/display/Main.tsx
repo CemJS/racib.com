@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import mapPin from '@svg/icons/dark/mapPin.svg'
 import filter from '@svg/icons/dark/filter.svg'
@@ -12,13 +12,13 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
           <a
             class="back"
             href="/"
-            onclick={this.Fn.link}
+            onclick={Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
@@ -42,7 +42,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init()
+                    Fn.init()
                   }}
                 />
               </div>
@@ -60,7 +60,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init();
+                    Fn.init();
                   }}
                 />
               </div>
@@ -78,7 +78,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init();
+                    Fn.init();
                   }}
                 />
               </div>
@@ -97,7 +97,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init();
+                    Fn.init();
                   }}
                 />
               </div>
@@ -108,11 +108,11 @@ export default function () {
               <span
                 class={[
                   "players_tabs_item",
-                  this.Static.activeTab == '' ? 'players_tabs_item_active' : null]}
+                  Static.activeTab == '' ? 'players_tabs_item_active' : null]}
                 onclick={() => {
-                  this.Static.activeTab = '';
+                  Static.activeTab = '';
                   allUsers = users;
-                  this.init();
+                  Fn.init();
                 }}
               >
                 Все
@@ -121,15 +121,15 @@ export default function () {
                 class={[
                   "players_tabs_item",
                   "players_tabs_item_person",
-                  this.Static.activeTab == 'Персоны' ? 'players_tabs_item_active' : null]}
+                  Static.activeTab == 'Персоны' ? 'players_tabs_item_active' : null]}
                 onclick={() => {
-                  this.Static.activeTab = 'Персоны';
+                  Static.activeTab = 'Персоны';
                   allUsers = users.filter((item) => {
                     if (item.status == 'Персона') {
                       return true;
                     }
                   })
-                  this.init();
+                  Fn.init();
                 }}
               >
                 Персоны
@@ -138,15 +138,15 @@ export default function () {
                 class={[
                   "players_tabs_item",
                   "players_tabs_item_community",
-                  this.Static.activeTab == 'Компания' ? 'players_tabs_item_active' : null]}
+                  Static.activeTab == 'Компания' ? 'players_tabs_item_active' : null]}
                 onclick={() => {
-                  this.Static.activeTab = 'Компания';
+                  Static.activeTab = 'Компания';
                   allUsers = users.filter((item) => {
-                    if (item.status == this.Static.activeTab) {
+                    if (item.status == Static.activeTab) {
                       return true
                     }
                   })
-                  this.init();
+                  Fn.init();
                 }}
               >
                 Сообщества
@@ -230,8 +230,8 @@ export default function () {
                       <div
                         class="players_list_item"
                         onclick={() => {
-                          this.Static.record = item;
-                          this.Fn.linkChange(`/players/show/${item.name}`)
+                          Static.record = item;
+                          Fn.linkChange(`/players/show/${item.name}`)
                         }}
                       >
                         <span

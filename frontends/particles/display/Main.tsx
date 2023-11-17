@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Fn, Func, Static, Ref } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
 
@@ -28,7 +28,7 @@ export default function () {
             <canvas id="canvas" ref="canvas"></canvas>
 
             <div
-                class={["home_news_wrap", this.Variable.openSidebar ? null : "home_news_wrap_close"]}
+                class={["home_news_wrap", front.Variable.openSidebar ? null : "home_news_wrap_close"]}
             >
                 <div class="wrapper">
                     <section class="home_news slider">
@@ -41,10 +41,10 @@ export default function () {
                                     <button
                                         class="arrow arrow_L"
                                         onclick={() => {
-                                            this.Static.slides = document.querySelectorAll('.newCard_slider');
-                                            this.Static.result = Array.from(this.Static.slides)
-                                            this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
-                                            this.init();
+                                            Static.slides = document.querySelectorAll('.newCard_slider');
+                                            Static.result = Array.from(Static.slides)
+                                            Func.slider(Ref.sliderTestContainer, Static.result, 'prev')
+                                            Fn.init();
                                         }}
                                     >
                                         <img src={arrPrev} />
@@ -52,17 +52,17 @@ export default function () {
                                     <button
                                         class="arrow arrow_R"
                                         onclick={() => {
-                                            this.Static.slides = document.querySelectorAll('.newCard_slider');
-                                            this.Static.result = Array.from(this.Static.slides)
-                                            this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
-                                            this.init();
+                                            Static.slides = document.querySelectorAll('.newCard_slider');
+                                            Static.result = Array.from(Static.slides)
+                                            Func.slider(Ref.sliderTestContainer, Static.result, 'next')
+                                            Fn.init();
                                         }}
                                     >
                                         <img src={arrNext} />
                                     </button>
                                 </div>
 
-                                <a href="/news" onclick={this.Fn.link} class="btn_link">Все новости</a>
+                                <a href="/news" onclick={Fn.link} class="btn_link">Все новости</a>
                             </div>
                         </div>
 
@@ -71,29 +71,31 @@ export default function () {
                                 class="sliderTest_container"
                                 ref="sliderTestContainer"
                                 ontouchstart={(e: any) => {
-                                    this.Static.startPoint = e.changedTouches[0].pageX;
+                                    Static.startPoint = e.changedTouches[0].pageX;
                                 }}
 
                                 ontouchmove={(e: any) => {
-                                    if (this.Static.moved) return
+                                    if (Static.moved) return
                                     e.preventDefault();
-                                    if (e.touches[0].pageX > this.Static.startPoint + this.Ref.sliderTestContainer.offsetWidth / 10) {
-                                        this.Static.moved = true;
+                                    if (e.touches[0].pageX > Static.startPoint + Ref.sliderTestContainer.offsetWidth / 10) {
+                                        Static.moved = true;
                                         let slides = document.querySelectorAll('.newCard_slider');
-                                        this.Static.result = Array.from(slides)
-                                        this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'prev')
-                                        this.init();
+                                        Static.result = Array.from(slides)
+                                        Func.slider(Ref.sliderTestContainer, Static.result, 'prev')
+
+                                        Fn.init();
                                     }
-                                    if (e.touches[0].pageX < this.Static.startPoint - this.Ref.sliderTestContainer.offsetWidth / 10) {
+                                    if (e.touches[0].pageX < Static.startPoint - Ref.sliderTestContainer.offsetWidth / 10) {
                                         let slides = document.querySelectorAll('.newCard_slider');
-                                        this.Static.result = Array.from(slides)
-                                        this.fn("slider", this.Ref.sliderTestContainer, this.Static.result, 'next')
-                                        this.Static.moved = true;
+                                        Static.result = Array.from(slides)
+                                        Func.slider(Ref.sliderTestContainer, Static.result, 'next')
+
+                                        Static.moved = true;
                                     }
                                 }}
 
                                 ontouchend={() => {
-                                    this.Static.moved = !this.Static.moved;
+                                    Static.moved = !Static.moved;
                                 }}
                             >
                                 {
@@ -102,7 +104,7 @@ export default function () {
                                             <div
                                                 class={["newCard_slider", `newCard_slider_${index + 1}`]}
                                                 onclick={() => {
-                                                    this.Fn.linkChange(`/news/show/${item.id}`)
+                                                    Fn.linkChange(`/news/show/${item.id}`)
                                                 }}
                                             >
                                                 <div class="newCard_slider_img" style={`background-image: url(${item.img})`}>

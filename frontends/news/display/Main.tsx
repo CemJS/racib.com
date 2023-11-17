@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import notFound from '@svg/list.svg'
 import views from '@svg/icons/dark/views.svg'
@@ -28,10 +28,10 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
-          <a class="back" href="/" onclick={this.Fn.link}>
+          <a class="back" href="/" onclick={Fn.link}>
             <span class="back-icon">
               <img src={back} />
             </span>
@@ -53,7 +53,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init()
+                    Fn.init()
                   }}
                 />
               </div>
@@ -63,12 +63,12 @@ export default function () {
                 <span
                   class="filter_item_title"
                   onclick={(e) => {
-                    if (this.Static.categoryStatus == 'close') {
-                      this.Static.categoryStatus = 'open';
-                      this.Ref.filterCategory.classList.add('filter_item_active');
-                    } else if (this.Static.categoryStatus == 'open') {
-                      this.Static.categoryStatus = 'close';
-                      this.Ref.filterCategory.classList.remove('filter_item_active');
+                    if (Static.categoryStatus == 'close') {
+                      Static.categoryStatus = 'open';
+                      Ref.filterCategory.classList.add('filter_item_active');
+                    } else if (Static.categoryStatus == 'open') {
+                      Static.categoryStatus = 'close';
+                      Ref.filterCategory.classList.remove('filter_item_active');
                     }
                   }}
                 >
@@ -76,15 +76,15 @@ export default function () {
                 </span>
 
                 {
-                  this.Static.chooseCategory ?
+                  Static.chooseCategory ?
                     <div class="chooseCategory">
-                      <span >{this.Static.chooseCategory}</span>
+                      <span >{Static.chooseCategory}</span>
                       <span
                         class="chooseCategory_close"
                         onclick={() => {
-                          this.Static.chooseCategory = '';
+                          Static.chooseCategory = '';
                           newsData = news;
-                          this.init();
+                          Fn.init();
                         }}
                       >
                         x
@@ -107,7 +107,7 @@ export default function () {
                             return true;
                           }
                         })
-                        this.init()
+                        Fn.init()
                       }}
                     />
                 }
@@ -124,20 +124,20 @@ export default function () {
                               ref="categoryItem"
                               class="filter_category_list_item"
                               onclick={() => {
-                                this.Static.chooseCategory = item.name;
-                                if (this.Static.categoryStatus == 'close') {
-                                  this.Static.categoryStatus = 'open';
-                                  this.Ref.filterCategory.classList.add('filter_item_active');
-                                } else if (this.Static.categoryStatus == 'open') {
-                                  this.Static.categoryStatus = 'close';
-                                  this.Ref.filterCategory.classList.remove('filter_item_active');
+                                Static.chooseCategory = item.name;
+                                if (Static.categoryStatus == 'close') {
+                                  Static.categoryStatus = 'open';
+                                  Ref.filterCategory.classList.add('filter_item_active');
+                                } else if (Static.categoryStatus == 'open') {
+                                  Static.categoryStatus = 'close';
+                                  Ref.filterCategory.classList.remove('filter_item_active');
                                 }
                                 newsData = news.filter((item) => {
-                                  if (item.category.includes(this.Static.chooseCategory)) {
+                                  if (item.category.includes(Static.chooseCategory)) {
                                     return true
                                   }
                                 })
-                                this.init();
+                                Fn.init();
                               }}
                             >
                               {item.name}
@@ -167,7 +167,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init();
+                    Fn.init();
                   }}
                 />
               </div>
@@ -184,8 +184,8 @@ export default function () {
                         class="newCard"
                         ref="newsSlide"
                         onclick={() => {
-                          this.Static.record = item;
-                          this.Fn.linkChange(`/news/show/${item.id}`)
+                          Static.record = item;
+                          Fn.linkChange(`/news/show/${item.id}`)
                         }}
                       >
                         <div class="newCard_img" style={`background-image: url(${item.img})`}>

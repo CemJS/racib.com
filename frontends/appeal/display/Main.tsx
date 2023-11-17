@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Fn, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import appeal1 from '@images/appeal/appealPresedent1.jpg'
 import appeal2 from '@images/appeal/appealPresedent2.jpg'
@@ -6,7 +6,7 @@ import appeal2 from '@images/appeal/appealPresedent2.jpg'
 export default function () {
     return (
         <div class="wrapper">
-            <a class="back" href="/" onclick={this.Fn.link}>
+            <a class="back" href="/" onclick={Fn.link}>
                 <span class="back-icon">
                     <img src={back} />
                 </span>
