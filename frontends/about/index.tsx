@@ -1,3 +1,6 @@
+import { Cemjsx, front, Func, Static, Fn } from "cemjs-all"
+import Navigation from "./navigation"
+
 class Carousel {
     element: HTMLElement;
     slide: any;
@@ -68,7 +71,25 @@ class Carousel {
     }
 }
 
-export const loader = function () {
-    this.Static.carousel = { admin: new Carousel(), directorate: new Carousel(), observers: new Carousel(), experts: new Carousel() }
+front.listener.finish = () => {
     return
 }
+
+front.func.test = () => {
+    return
+}
+
+front.loader = () => {
+    Static.carousel = { admin: new Carousel(), directorate: new Carousel(), observers: new Carousel(), experts: new Carousel() }
+    return
+}
+
+front.display = () => {
+    return (
+        <div class="main_wrap">
+            <Navigation />
+        </div>
+    )
+}
+
+export { front }
