@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, front, Fn, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import mapPin from '@svg/icons/dark/mapPin.svg'
 import notFound from '@svg/list.svg'
@@ -9,13 +9,13 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
           <a
             class="back"
             href="/"
-            onclick={this.Fn.link}
+            onclick={Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
@@ -36,8 +36,8 @@ export default function () {
                       <div
                         class="players_list_item"
                         onclick={() => {
-                          this.Static.record = item;
-                          this.Fn.linkChange(`/players/show/${item.name}`)
+                          Static.record = item;
+                          Fn.linkChange(`/players/show/${item.name}`)
                         }}
                       >
                         <span

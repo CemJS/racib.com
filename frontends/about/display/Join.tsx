@@ -1,13 +1,13 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Fn } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 
 export default function () {
     return (
         <main
-            class={["main", this.Variable.openSidebar ? null : "main_close"]}
+            class={["main", front.Variable.openSidebar ? null : "main_close"]}
         >
             <div class="wrapper">
-                <a class="back" href="/" onclick={this.Fn.link}>
+                <a class="back" href="/" onclick={Fn.link}>
                     <span class="back-icon">
                         <img src={back} />
                     </span>
@@ -115,7 +115,7 @@ export default function () {
                     </div>
 
                     <div class="join_btn">
-                        <a href="/form" class="btn_link btn_link_dark" onclick={this.Fn.link}>Подать заявку</a>
+                        <a href="/form" class="btn_link btn_link_dark" onclick={Fn.link}>Подать заявку</a>
                     </div>
 
                 </section>

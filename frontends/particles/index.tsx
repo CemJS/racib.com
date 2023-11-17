@@ -1,3 +1,6 @@
+import { Cemjsx, front, Func, Static, Fn, Ref } from "cemjs-all"
+import Navigation from "./navigation"
+
 class Slider {
 
     container: HTMLElement;
@@ -35,12 +38,21 @@ class Slider {
     }
 }
 
-export const canvas = function () {
-    let canvas = this.Ref.canvas;
+front.listener.finish = () => {
+    Static.slides = document.querySelectorAll('.newCard_slider');
+
+    if (!Static.canvasRun) {
+        Func.canvas()
+    }
+    return
+}
+
+front.func.canvas = function () {
+    let canvas = Ref.canvas;
     let ctx = canvas.getContext('2d');
 
-    canvas.width = this.Ref.wrapCanvas.offsetWidth;
-    canvas.height = this.Ref.wrapCanvas.offsetHeight;
+    canvas.width = Ref.wrapCanvas.offsetWidth;
+    canvas.height = Ref.wrapCanvas.offsetHeight;
 
     let particlesArray;
 
@@ -51,7 +63,7 @@ export const canvas = function () {
         radius: (canvas.height / 80) * (canvas.width / 80),
     }
 
-    this.Ref.wrapCanvas.addEventListener('mousemove',
+    Ref.wrapCanvas.addEventListener('mousemove',
         function (event) {
             mouse.x = event.x;
             mouse.y = event.y;
@@ -184,19 +196,39 @@ export const canvas = function () {
     initParticle();
     animate();
 
-    this.Static.canvasRun = true;
+    Static.canvasRun = true;
 
-    this.init();
+    Fn.init();
     return
 }
 
-export const slider = function (container: HTMLElement, items: Array<HTMLElement>, controls: string) {
-    if (!this.Static.firstGallery) {
-        this.Static.firstGallery = new Slider(container, items, controls);
+front.func.slider = function (container: HTMLElement, items: Array<HTMLElement>, controls: string) {
+    if (!Static.firstGallery) {
+        Static.firstGallery = new Slider(container, items, controls);
     }
-    this.Static.firstGallery.setCurrentState(controls);
-    this.Static.infinitySlider = true;
+    Static.firstGallery.setCurrentState(controls);
+    Static.infinitySlider = true;
 
-    this.init()
+    Fn.init()
     return
 }
+
+front.loader = () => {
+    Static.canvas = Ref.canvas;
+    Static.startPoint;
+    Static.moved = false;
+    Static.dragMouse = false;
+    // --------------------------
+    Static.slides = document.querySelectorAll('.newCard_slider');
+    return
+}
+
+front.display = () => {
+    return (
+        <div>
+            <Navigation />
+        </div>
+    )
+}
+
+export { front }

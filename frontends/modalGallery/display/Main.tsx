@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, Fn } from "cemjs-all"
 import appeal1 from '@images/appeal/appealPresedent1.jpg'
 import appeal2 from '@images/appeal/appealPresedent2.jpg'
 
@@ -12,7 +12,7 @@ export default function () {
                     class="modal_close"
                     onclick={() => {
                         setTimeout(() => {
-                            this.clearData()
+                            Fn.clearData()
                         }, 5);
                     }}
                 >
@@ -21,7 +21,7 @@ export default function () {
             </header>
             <main class="modalGallery_body">
                 <div class="modalGallery_image">
-                    <img src={this.Static.img} />
+                    <img src={Static.img} />
                 </div>
             </main>
         </div>

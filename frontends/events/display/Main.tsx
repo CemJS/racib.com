@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front, Fn, Static, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import date from '@svg/icons/dark/date.svg'
 import map from '@svg/icons/dark/mapPin.svg'
@@ -38,10 +38,10 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
-          <a class="back" href="/" onclick={this.Fn.link}>
+          <a class="back" href="/" onclick={Fn.link}>
             <span class="back-icon">
               <img src={back} />
             </span>
@@ -55,11 +55,9 @@ export default function () {
                 ref="filterBtn"
                 class="filterNew_btn"
                 onclick={() => {
-                  // this.Static.filterShow = !this.Static.filterShow;
-                  // this.init()
-                  this.Fn.initOne({
-                    name: "modalSoon"
-                  })
+                  // Static.filterShow = !Static.filterShow;
+                  // Fn.init()
+                  Fn.initOne("modalSoon", {})
                 }}
               >
                 <span class="filterNew_btn_text">Фильтр поиска</span>
@@ -70,7 +68,7 @@ export default function () {
 
               <div
                 ref="filterContent"
-                class={["filterNew_content", this.Static.filterShow ? "filterNew_content_active" : null]}
+                class={["filterNew_content", Static.filterShow ? "filterNew_content_active" : null]}
               >
                 <div class="filterNew_container">
                   <div class="filterNew_header">
@@ -78,8 +76,8 @@ export default function () {
                     <button
                       class="modal_close"
                       onclick={() => {
-                        this.Static.filterShow = false;
-                        this.init();
+                        Static.filterShow = false;
+                        Fn.init();
                       }}
                     >
                       x
@@ -101,7 +99,7 @@ export default function () {
                               return true;
                             }
                           })
-                          this.init();
+                          Fn.init();
                         }}
                       />
                     </div>
@@ -110,27 +108,27 @@ export default function () {
                       <span
                         class="filterNew_field_title"
                         onclick={(e) => {
-                          if (this.Static.categoryStatus == 'close') {
-                            this.Static.categoryStatus = 'open';
-                            this.Ref.filterCategory.classList.add('filter_item_active');
-                          } else if (this.Static.categoryStatus == 'open') {
-                            this.Static.categoryStatus = 'close';
-                            this.Ref.filterCategory.classList.remove('filter_item_active');
+                          if (Static.categoryStatus == 'close') {
+                            Static.categoryStatus = 'open';
+                            Ref.filterCategory.classList.add('filter_item_active');
+                          } else if (Static.categoryStatus == 'open') {
+                            Static.categoryStatus = 'close';
+                            Ref.filterCategory.classList.remove('filter_item_active');
                           }
                         }}
                       >
                         Раздел
                       </span>
                       {
-                        this.Static.chooseCategory ?
+                        Static.chooseCategory ?
                           <div class="chooseCategory">
-                            <span >{this.Static.chooseCategory}</span>
+                            <span >{Static.chooseCategory}</span>
                             <span
                               class="chooseCategory_close"
                               onclick={() => {
-                                this.Static.chooseCategory = '';
+                                Static.chooseCategory = '';
                                 eventsData = events;
-                                this.init();
+                                Fn.init();
                               }}
                             >
                               x
@@ -153,7 +151,7 @@ export default function () {
                                   return true;
                                 }
                               })
-                              this.init()
+                              Fn.init()
                             }}
                           />
                       }
@@ -172,7 +170,7 @@ export default function () {
                               return true;
                             }
                           })
-                          this.init();
+                          Fn.init();
                         }}
                       />
                     </div>
@@ -183,14 +181,12 @@ export default function () {
                         <div
                           class="filterNew_range_item"
                           onclick={() => {
-                            this.Static.calendarStart = true;
-                            this.fn(
-                              "createCalendar",
-                              this.Ref.calendar,
-                              this.Static.currentDate.getFullYear(),
-                              this.Static.currentDate.getMonth()
-                            )
-                            this.init()
+                            Static.calendarStart = true;
+                            Func.createCalendar(Ref.calendar,
+                              Static.currentDate.getFullYear(),
+                              Static.currentDate.getMonth())
+
+                            Fn.init()
                           }}
                         >
                           <span>дд.мм.гггг</span>
@@ -201,46 +197,40 @@ export default function () {
 
                           <div
                             // class="calendarTest_main"
-                            class={["filter_date", this.Static.calendarStart ? "filter_date_active" : null]}
+                            class={["filter_date", Static.calendarStart ? "filter_date_active" : null]}
                           >
                             <div class="calendar_header">
                               <span
                                 class="calendar_monthPicker"
                                 onclick={() => {
-                                  this.Ref.monthList.classList.add('calendar_monthList_show');
-                                  this.init();
+                                  Ref.monthList.classList.add('calendar_monthList_show');
+                                  Fn.init();
                                 }}
                               >
-                                {this.Static.currentDate.toLocaleString("ru", options)}
+                                {Static.currentDate.toLocaleString("ru", options)}
                               </span>
                               <div class="calendar_yearPicker">
                                 <span
                                   class="calendar_arrow"
                                   onclick={() => {
-                                    this.Static.currentDate.setFullYear(this.Static.currentDate.getFullYear() - 1)
-                                    this.fn(
-                                      "createCalendar",
-                                      this.Ref.calendar,
-                                      this.Static.currentDate.getFullYear(),
-                                      this.Static.currentDate.getMonth()
-                                    )
-                                    this.init()
+                                    Static.currentDate.setFullYear(Static.currentDate.getFullYear() - 1)
+                                    Func.createCalendar(Ref.calendar, Static.currentDate.getFullYear(), Static.currentDate.getMonth())
+
+                                    Fn.init()
                                   }}
                                 >
                                   <img src={arrPrevDark} alt="Previous year" />
                                 </span>
-                                <span class="calendar_currentYear">{this.Static.currentDate.getFullYear()}</span>
+                                <span class="calendar_currentYear">{Static.currentDate.getFullYear()}</span>
                                 <span
                                   class="calendar_arrow"
                                   onclick={() => {
-                                    this.Static.currentDate.setFullYear(this.Static.currentDate.getFullYear() + 1)
-                                    this.fn(
-                                      "createCalendar",
-                                      this.Ref.calendar,
-                                      this.Static.currentDate.getFullYear(),
-                                      this.Static.currentDate.getMonth()
-                                    )
-                                    this.init()
+                                    Static.currentDate.setFullYear(Static.currentDate.getFullYear() + 1)
+                                    Func.createCalendar(Ref.calendar,
+                                      Static.currentDate.getFullYear(),
+                                      Static.currentDate.getMonth())
+
+                                    Fn.init()
                                   }}
                                 >
                                   <img src={arrNextDark} alt="Next year"></img>
@@ -252,23 +242,20 @@ export default function () {
 
                             <div class="calendar_monthList" ref="monthList">
                               {
-                                this.Static.monthList.map((item, index) => {
+                                Static.monthList.map((item, index) => {
                                   return (
                                     <div
                                       class="calendar_monthList_item"
                                       onclick={() => {
 
-                                        this.Static.currentDate.setMonth(index);
+                                        Static.currentDate.setMonth(index);
+                                        Func.createCalendar(Ref.calendar,
+                                          Static.currentDate.getFullYear(),
+                                          Static.currentDate.getMonth())
 
-                                        this.fn(
-                                          "createCalendar",
-                                          this.Ref.calendar,
-                                          this.Static.currentDate.getFullYear(),
-                                          this.Static.currentDate.getMonth()
-                                        )
 
-                                        this.Ref.monthList.classList.remove('calendar_monthList_show');
-                                        this.init()
+                                        Ref.monthList.classList.remove('calendar_monthList_show');
+                                        Fn.init()
                                       }}
                                     >
                                       {item}
@@ -339,7 +326,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init();
+                    Fn.init();
                   }}
                 />
               </div>
@@ -348,27 +335,27 @@ export default function () {
                 <span
                   class="filter_item_title"
                   onclick={(e) => {
-                    if (this.Static.categoryStatus == 'close') {
-                      this.Static.categoryStatus = 'open';
-                      this.Ref.filterCategory.classList.add('filter_item_active');
-                    } else if (this.Static.categoryStatus == 'open') {
-                      this.Static.categoryStatus = 'close';
-                      this.Ref.filterCategory.classList.remove('filter_item_active');
+                    if (Static.categoryStatus == 'close') {
+                      Static.categoryStatus = 'open';
+                      Ref.filterCategory.classList.add('filter_item_active');
+                    } else if (Static.categoryStatus == 'open') {
+                      Static.categoryStatus = 'close';
+                      Ref.filterCategory.classList.remove('filter_item_active');
                     }
                   }}
                 >
                   Раздел
                 </span>
                 {
-                  this.Static.chooseCategory ?
+                  Static.chooseCategory ?
                     <div class="chooseCategory">
-                      <span >{this.Static.chooseCategory}</span>
+                      <span >{Static.chooseCategory}</span>
                       <span
                         class="chooseCategory_close"
                         onclick={() => {
-                          this.Static.chooseCategory = '';
+                          Static.chooseCategory = '';
                           eventsData = events;
-                          this.init();
+                          Fn.init();
                         }}
                       >
                         x
@@ -391,7 +378,7 @@ export default function () {
                             return true;
                           }
                         })
-                        this.init()
+                        Fn.init()
                       }}
                     />
                 }
@@ -407,21 +394,21 @@ export default function () {
                               class="filter_category_list_item"
                               ref='filterCategoryItem'
                               onclick={() => {
-                                this.Static.chooseCategory = item.name;
+                                Static.chooseCategory = item.name;
 
-                                if (this.Static.categoryStatus == 'close') {
-                                  this.Static.categoryStatus = 'open';
-                                  this.Ref.filterCategory.classList.add('filter_item_active');
-                                } else if (this.Static.categoryStatus == 'open') {
-                                  this.Static.categoryStatus = 'close';
-                                  this.Ref.filterCategory.classList.remove('filter_item_active');
+                                if (Static.categoryStatus == 'close') {
+                                  Static.categoryStatus = 'open';
+                                  Ref.filterCategory.classList.add('filter_item_active');
+                                } else if (Static.categoryStatus == 'open') {
+                                  Static.categoryStatus = 'close';
+                                  Ref.filterCategory.classList.remove('filter_item_active');
                                 }
                                 eventsData = events.filter((item) => {
-                                  if (item.category.includes(this.Static.chooseCategory)) {
+                                  if (item.category.includes(Static.chooseCategory)) {
                                     return true
                                   }
                                 })
-                                this.init();
+                                Fn.init();
                               }}
                             >
                               {item.name}
@@ -450,7 +437,7 @@ export default function () {
                         return true;
                       }
                     })
-                    this.init();
+                    Fn.init();
                   }}
                 />
               </div>
@@ -470,8 +457,8 @@ export default function () {
                       <div
                         class="card"
                         onclick={() => {
-                          this.Static.record = item;
-                          this.Fn.linkChange(`/events/show/${item.id}`)
+                          Static.record = item;
+                          Fn.linkChange(`/events/show/${item.id}`)
                         }}
                       >
                         <span class="card_category">{item.category}</span>

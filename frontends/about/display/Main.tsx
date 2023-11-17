@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, Fn, front } from "cemjs-all"
 import pencil from '@svg/icons/pencil.svg'
 import smi from '@images/banners/public.jpg'
 import education from '@images/banners/education.png'
@@ -24,7 +24,7 @@ const RenderPerson = function ({ items, name, title }) {
                     <button
                         class="arrow arrow_dark"
                         onclick={() => {
-                            this.Static.carousel[name].prev()
+                            Static.carousel[name].prev()
                         }}
                     >
                         <img src={arrPrevDark} />
@@ -32,7 +32,7 @@ const RenderPerson = function ({ items, name, title }) {
                     <button
                         class="arrow arrow_dark"
                         onclick={() => {
-                            this.Static.carousel[name].next()
+                            Static.carousel[name].next()
                         }}
                     >
                         <img src={arrNextDark} />
@@ -43,29 +43,29 @@ const RenderPerson = function ({ items, name, title }) {
                 <div
                     class="carousel"
                     init={($el) => {
-                        this.Static.carousel[name].init($el)
+                        Static.carousel[name].init($el)
                     }}
                     onmousedown={(e) => {
-                        this.Static.carousel[name].onmousedown(e)
+                        Static.carousel[name].onmousedown(e)
                     }}
                     onmousemove={(e) => {
-                        this.Static.carousel[name].onmousemove(e)
+                        Static.carousel[name].onmousemove(e)
                     }}
                     onmouseup={() => {
-                        this.Static.carousel[name].onmouseup()
+                        Static.carousel[name].onmouseup()
                     }}
                     ontouchstart={(e) => {
-                        this.Static.carousel[name].ontouchstart(e)
+                        Static.carousel[name].ontouchstart(e)
                     }}
                     ontouchmove={(e) => {
-                        this.Static.carousel[name].ontouchmove(e)
+                        Static.carousel[name].ontouchmove(e)
 
                     }}>
                     {
                         items.map((item, index) => {
                             return (
                                 <div class="carousel_person">
-                                    <a href={`/players/show/${item.name}`} onclick={this.Fn.link} class="carousel_person_circle">
+                                    <a href={`/players/show/${item.name}`} onclick={Fn.link} class="carousel_person_circle">
                                         <div
                                             class="carousel_person_img"
                                             style={`background-image: url(${item.img})`}
@@ -99,10 +99,10 @@ const RenderFacts = function ({ items }) {
 
 export default function () {
     return (
-        <main class={["main", "pt_10", this.Variable.openSidebar ? null : "main_close"]}>
+        <main class={["main", "pt_10", front.Variable.openSidebar ? null : "main_close"]}>
 
             <div class="wrapper">
-                <a class="back" href="/" onclick={this.Fn.link}>
+                <a class="back" href="/" onclick={Fn.link}>
                     <span class="back-icon">
                         <img src={back} />
                     </span>
@@ -114,7 +114,7 @@ export default function () {
                         <span>ИСКУССТВЕННОГО ИНТЕЛЛЕКТА И БЛОКЧЕЙНА</span>
                     </h2>
                     <div class="link_block">
-                        <a href="/mission" onclick={this.Services.functions.clickSoon}>
+                        <a href="/mission" onclick={front.Services.functions.clickSoon}>
                             <img src={goal} class="link_block_icon" />
                             <span>Миссия РАКИБ. Главные цели деятельности РАКИБ.</span>
                         </a>
@@ -128,7 +128,7 @@ export default function () {
                 <RenderPerson items={admins} name="admin" title="Руководство РАКИБ" />
 
                 <div class="link_block">
-                    <a href="/players" onclick={this.Fn.link}>
+                    <a href="/players" onclick={Fn.link}>
                         <img src={next} />
                         <span>Перейти на страницу</span>
                     </a>
@@ -137,7 +137,7 @@ export default function () {
                 <div class="about">
                     <RenderPerson items={directorate} name="directorate" title="Дирекция РАКИБ" />
                     <div class="link_block">
-                        <a href="/players" onclick={this.Fn.link}>
+                        <a href="/players" onclick={Fn.link}>
                             <img src={next} />
                             <span>Перейти на страницу</span>
                         </a>
@@ -147,7 +147,7 @@ export default function () {
                 <div class="about">
                     <RenderPerson items={observers} name="observers" title="Наблюдательный совет РАКИБ" />
                     <div class="link_block">
-                        <a href="/players" onclick={this.Fn.link}>
+                        <a href="/players" onclick={Fn.link}>
                             <img src={next} />
                             <span>Перейти на страницу</span>
                         </a>
@@ -157,7 +157,7 @@ export default function () {
                 <div class="about">
                     <RenderPerson items={experts} name="observers" title="Экспертный совет РАКИБ" />
                     <div class="link_block">
-                        <a href="/experts" onclick={this.Fn.link}>
+                        <a href="/experts" onclick={Fn.link}>
                             <img src={next} />
                             <span>Перейти на страницу</span>
                         </a>
@@ -176,7 +176,7 @@ export default function () {
                         </div>
                         <div class="link_block">
                             <a href="/"
-                                onclick={this.Services.functions.clickSoon}>
+                                onclick={front.Services.functions.clickSoon}>
                                 <img class="link_block_icon" src={pencil} alt="О нас пишут РАКИБ" />
                                 <span>О нас пишут</span>
                             </a>
@@ -195,15 +195,15 @@ export default function () {
                                 <li class="about_fact_list_item">Программа повышения квалификации РЭУ имени Г.В. Плеханова «Цифровая экономика и цифровые технологии для государственных и муниципальных служащих».
                                     <a
                                         href="/"
-                                        onclick={this.Services.functions.clickSoon}
+                                        onclick={front.Services.functions.clickSoon}
                                         class="link pl_5
                      ">Ссылка на сайт программы.</a>
                                 </li>
                                 <li class="about_fact_list_item">Программа дополнительного образования BCL «Правовые основы и юридические практики работы с криптовалютой и блокчейн-проектами».
-                                    <a href="/" onclick={this.Services.functions.clickSoon} class="link pl_5">Ссылка на сайт программы.</a>
+                                    <a href="/" onclick={front.Services.functions.clickSoon} class="link pl_5">Ссылка на сайт программы.</a>
                                 </li>
                                 <li class="about_fact_list_item">РАКИБ предоставляет возможность участия в данных образовательных программах с индивидуальной скидкой при условии обращения по адресу: petrov@racib.com либо в личных сообщения на странице в
-                                    <a href="/" onclick={this.Services.functions.clickSoon} class="link pl_5">Facebook</a>
+                                    <a href="/" onclick={front.Services.functions.clickSoon} class="link pl_5">Facebook</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,11 +1,11 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 
 
 export default function () {
     return (
         <div class="wrapper">
-            <a class="back" href="/" onclick={this.Fn.link}>
+            <a class="back" href="/" onclick={Fn.link}>
                 <span class="back-icon">
                     <img src={back} />
                 </span>
@@ -17,7 +17,7 @@ export default function () {
             </div>
 
             {
-                !this.Static.formStatus ?
+                !Static.formStatus ?
                     <div>
                         <section class="form block_default">
                             <h1 class="join_title form_titleMain">Вступление в члены РАКИБ</h1>
@@ -25,22 +25,22 @@ export default function () {
 
                             <div class="form_choose">
                                 <div
-                                    class={["option", this.Static.company ? null : "option_active"]}
+                                    class={["option", Static.company ? null : "option_active"]}
                                     for="physical"
                                     onclick={() => {
-                                        this.Static.company = false;
-                                        this.init()
+                                        Static.company = false;
+                                        Fn.init()
                                     }}
                                 >
                                     <div class="option_dot"></div>
                                     <span>Физическое лицо</span>
                                 </div>
                                 <div
-                                    class={["option", this.Static.company ? "option_active" : null]}
+                                    class={["option", Static.company ? "option_active" : null]}
                                     for="legal"
                                     onclick={() => {
-                                        this.Static.company = true;
-                                        this.init()
+                                        Static.company = true;
+                                        Fn.init()
                                     }}
                                 >
                                     <div class="option_dot"></div>
@@ -53,13 +53,13 @@ export default function () {
                                 <div>
                                     <div class="input">
                                         {/* {
-                                        this.Static.lastName ?
+                                        Static.lastName ?
                                             <span
                                                 class="input_icon"
                                                 onclick={() => {
-                                                    this.Ref.lastNameInput.value = ''
-                                                    this.Ref.lastNameLabel.classList.remove('input_label_valid');
-                                                    this.init()
+                                                    Ref.lastNameInput.value = ''
+                                                    Ref.lastNameLabel.classList.remove('input_label_valid');
+                                                    Fn.init()
                                                 }}
                                             >
                                                 <img src={cancel} alt="Очистить поле ввода" />
@@ -72,20 +72,19 @@ export default function () {
                                             id="lastName"
                                             ref="lastNameInput"
                                             onchange={() => {
-                                                if (this.Ref.lastNameInput.value.length > 0) {
-                                                    this.Ref.lastNameLabel.classList.add('input_label_valid');
-                                                    this.Static.lastName = this.Ref.lastNameInput.value;
+                                                if (Ref.lastNameInput.value.length > 0) {
+                                                    Ref.lastNameLabel.classList.add('input_label_valid');
+                                                    Static.lastName = Ref.lastNameInput.value;
                                                 }
-                                                if (this.Ref.lastNameInput.value.length === 0) {
-                                                    this.Ref.lastNameLabel.classList.remove('input_label_valid');
+                                                if (Ref.lastNameInput.value.length === 0) {
+                                                    Ref.lastNameLabel.classList.remove('input_label_valid');
                                                 }
                                             }}
                                             oninput={function () {
-                                                this.Static.lastName = this.value;
+                                                Static.lastName = this.value;
                                                 setTimeout(() => {
-                                                    this.fn(
-                                                        "validText",
-                                                        this.Ref.lastNameInput.value, this.Ref.statusLastName)
+                                                    Func.validText(Ref.lastNameInput.value, Ref.statusLastName)
+
                                                 }, 3000)
                                             }}
                                         />
@@ -106,20 +105,19 @@ export default function () {
                                             id="firstName"
                                             ref="firstNameInput"
                                             onchange={() => {
-                                                if (this.Ref.firstNameInput.value.length > 0) {
-                                                    this.Ref.firstNameLabel.classList.add('input_label_valid');
-                                                    this.Static.firstName = this.Ref.firstNameInput.value
+                                                if (Ref.firstNameInput.value.length > 0) {
+                                                    Ref.firstNameLabel.classList.add('input_label_valid');
+                                                    Static.firstName = Ref.firstNameInput.value
                                                 }
-                                                if (this.Ref.firstNameInput.value.length === 0) {
-                                                    this.Ref.firstNameLabel.classList.remove('input_label_valid');
+                                                if (Ref.firstNameInput.value.length === 0) {
+                                                    Ref.firstNameLabel.classList.remove('input_label_valid');
                                                 }
                                             }}
                                             oninput={() => {
-                                                this.Static.firstName = this.Ref.firstNameInput.value;
+                                                Static.firstName = Ref.firstNameInput.value;
                                                 setTimeout(() => {
-                                                    this.fn(
-                                                        "validText",
-                                                        this.Ref.firstNameInput.value, this.Ref.statusFirstName)
+                                                    Func.validText(Ref.firstNameInput.value, Ref.statusFirstName)
+
                                                 }, 3000)
                                             }}
                                         />
@@ -139,20 +137,19 @@ export default function () {
                                             id="middleName"
                                             ref="middleNameInput"
                                             onchange={() => {
-                                                if (this.Ref.middleNameInput.value.length > 0) {
-                                                    this.Ref.middleNameLabel.classList.add('input_label_valid');
-                                                    this.Static.middleName = this.Ref.middleNameInput.value
+                                                if (Ref.middleNameInput.value.length > 0) {
+                                                    Ref.middleNameLabel.classList.add('input_label_valid');
+                                                    Static.middleName = Ref.middleNameInput.value
                                                 }
-                                                if (this.Ref.middleNameInput.value.length === 0) {
-                                                    this.Ref.middleNameLabel.classList.remove('input_label_valid');
+                                                if (Ref.middleNameInput.value.length === 0) {
+                                                    Ref.middleNameLabel.classList.remove('input_label_valid');
                                                 }
                                             }}
                                             oninput={() => {
-                                                this.Static.middleName = this.Ref.middleNameInput.value
+                                                Static.middleName = Ref.middleNameInput.value
                                                 setTimeout(() => {
-                                                    this.fn(
-                                                        "validText",
-                                                        this.Ref.middleNameInput.value, this.Ref.statusMiddleName)
+                                                    Func.validText(Ref.middleNameInput.value, Ref.statusMiddleName)
+
                                                 }, 3000)
                                             }}
                                         />
@@ -177,18 +174,18 @@ export default function () {
                                             id="phone"
                                             ref="phoneInput"
                                             onchange={() => {
-                                                if (this.Ref.phoneInput.value.length > 0) {
-                                                    this.Ref.phoneLabel.classList.add('input_label_valid');
-                                                    this.Static.phone = this.Ref.phoneInput.value;
+                                                if (Ref.phoneInput.value.length > 0) {
+                                                    Ref.phoneLabel.classList.add('input_label_valid');
+                                                    Static.phone = Ref.phoneInput.value;
                                                 }
-                                                if (this.Ref.phoneInput.value.length === 0) {
-                                                    this.Ref.phoneLabel.classList.remove('input_label_valid');
+                                                if (Ref.phoneInput.value.length === 0) {
+                                                    Ref.phoneLabel.classList.remove('input_label_valid');
                                                 }
                                             }}
                                             oninput={function () {
-                                                this.Static.phone = this.Ref.phoneInput.value;
+                                                Static.phone = Ref.phoneInput.value;
                                                 setTimeout(() => {
-                                                    this.fn("validPhone", this.Ref.phoneInput.value)
+                                                    Func.validPhone(Ref.phoneInput.value)
                                                 }, 3000)
                                             }}
                                         />
@@ -211,18 +208,18 @@ export default function () {
                                             id="email"
                                             ref="emailInput"
                                             onchange={() => {
-                                                if (this.Ref.emailInput.value.length > 0) {
-                                                    this.Ref.emailLabel.classList.add('input_label_valid');
-                                                    this.Static.email = this.Ref.emailInput.value;
+                                                if (Ref.emailInput.value.length > 0) {
+                                                    Ref.emailLabel.classList.add('input_label_valid');
+                                                    Static.email = Ref.emailInput.value;
                                                 }
-                                                if (this.Ref.emailInput.value.length === 0) {
-                                                    this.Ref.emailLabel.classList.remove('input_label_valid');
+                                                if (Ref.emailInput.value.length === 0) {
+                                                    Ref.emailLabel.classList.remove('input_label_valid');
                                                 }
                                             }}
                                             oninput={() => {
-                                                this.Static.email = this.Ref.emailInput.value;
+                                                Static.email = Ref.emailInput.value;
                                                 setTimeout(() => {
-                                                    this.fn("validEmail", this.Ref.emailInput.value)
+                                                    Func.validEmail(Ref.emailInput.value)
                                                 }, 3000)
                                             }}
                                         />
@@ -237,7 +234,7 @@ export default function () {
                             </div>
 
                             {
-                                this.Static.company ?
+                                Static.company ?
                                     <div>
                                         <h3 class="join_title form_title">Представляемая компания</h3>
                                         <div class="form_block">
@@ -250,21 +247,19 @@ export default function () {
                                                         id="companyName"
                                                         ref="companyNameInput"
                                                         onchange={() => {
-                                                            if (this.Ref.companyNameInput.value.length > 0) {
-                                                                this.Ref.companyNameLabel.classList.add('input_label_valid');
-                                                                this.Static.companyName = this.Ref.companyNameInput.value
+                                                            if (Ref.companyNameInput.value.length > 0) {
+                                                                Ref.companyNameLabel.classList.add('input_label_valid');
+                                                                Static.companyName = Ref.companyNameInput.value
                                                             }
-                                                            if (this.Ref.companyNameInput.value.length === 0) {
-                                                                this.Ref.companyNameLabel.classList.remove('input_label_valid');
+                                                            if (Ref.companyNameInput.value.length === 0) {
+                                                                Ref.companyNameLabel.classList.remove('input_label_valid');
                                                             }
                                                         }}
                                                         oninput={() => {
-                                                            this.Static.companyName = this.Ref.companyNameInput.value;
+                                                            Static.companyName = Ref.companyNameInput.value;
                                                             setTimeout(() => {
-                                                                this.fn(
-                                                                    "validText",
-                                                                    this.Ref.companyNameInput.value,
-                                                                    this.Ref.statusCompanyName)
+                                                                Func.validText(Ref.companyNameInput.value, Ref.statusCompanyName)
+
                                                             }, 3000)
                                                         }}
                                                     />
@@ -285,21 +280,18 @@ export default function () {
                                                         id="companyPost"
                                                         ref="companyPostInput"
                                                         onchange={() => {
-                                                            if (this.Ref.companyPostInput.value.length > 0) {
-                                                                this.Ref.companyPostLabel.classList.add('input_label_valid');
-                                                                this.Static.companyPost = this.Ref.companyPostInput.value
+                                                            if (Ref.companyPostInput.value.length > 0) {
+                                                                Ref.companyPostLabel.classList.add('input_label_valid');
+                                                                Static.companyPost = Ref.companyPostInput.value
                                                             }
-                                                            if (this.Ref.companyPostInput.value.length === 0) {
-                                                                this.Ref.companyPostLabel.classList.remove('input_label_valid');
+                                                            if (Ref.companyPostInput.value.length === 0) {
+                                                                Ref.companyPostLabel.classList.remove('input_label_valid');
                                                             }
                                                         }}
                                                         oninput={() => {
-                                                            this.Static.companyPost = this.Ref.companyPostInput.value;
+                                                            Static.companyPost = Ref.companyPostInput.value;
                                                             setTimeout(() => {
-                                                                this.fn(
-                                                                    "validText",
-                                                                    this.Ref.companyPostInput.value,
-                                                                    this.Ref.statusCompanyPost)
+                                                                Func.validText(Ref.companyPostInput.value, Ref.statusCompanyPost)
                                                             }, 3000)
                                                         }}
                                                     />
@@ -325,25 +317,25 @@ export default function () {
                                 onclick={async () => {
                                     let formData: object;
 
-                                    if (this.Static.company) {
+                                    if (Static.company) {
                                         formData = {
-                                            company: this.Static.company,
-                                            lastName: this.Static.lastName,
-                                            firstName: this.Static.firstName,
-                                            middleName: this.Static.middleName,
-                                            phone: this.Static.phone,
-                                            email: this.Static.email,
-                                            nameCompany: this.Static.companyName,
-                                            postCompany: this.Static.companyPost
+                                            company: Static.company,
+                                            lastName: Static.lastName,
+                                            firstName: Static.firstName,
+                                            middleName: Static.middleName,
+                                            phone: Static.phone,
+                                            email: Static.email,
+                                            nameCompany: Static.companyName,
+                                            postCompany: Static.companyPost
                                         };
                                     } else {
                                         formData = {
-                                            company: this.Static.company,
-                                            lastName: this.Static.lastName,
-                                            firstName: this.Static.firstName,
-                                            middleName: this.Static.middleName,
-                                            phone: this.Static.phone,
-                                            email: this.Static.email
+                                            company: Static.company,
+                                            lastName: Static.lastName,
+                                            firstName: Static.firstName,
+                                            middleName: Static.middleName,
+                                            phone: Static.phone,
+                                            email: Static.email
                                         };
                                     }
 
@@ -355,7 +347,7 @@ export default function () {
                                         throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
                                     }
                                     let result = await response.json()
-                                    this.fn("validForm", result)
+                                    Func.validForm(result)
                                 }}
                             >
                                 <div ref="buttonPreloader">

@@ -1,10 +1,10 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, front } from "cemjs-all"
 import Main from "./display/Main"
 import Show from "./display/Show"
 
 
 export default function () {
-  let param = this.Variable.DataUrl[1] || ""
+  let param = front.Variable.DataUrl[1] || ""
   switch (param) {
     case 'show':
       return <Show />

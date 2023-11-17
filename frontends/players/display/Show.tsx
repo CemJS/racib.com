@@ -1,4 +1,4 @@
-import { Cemjsx } from "cemjs-all"
+import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import arrNextDark from '@svg/icons/dark/next.svg'
 import arrPrevDark from '@svg/icons/dark/prev.svg'
@@ -16,13 +16,13 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", this.Variable.openSidebar ? null : "main_close"]}
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}
       >
         <div class="wrapper">
           <a
             class="back"
             href="/players"
-            onclick={this.Fn.link}
+            onclick={Fn.link}
           >
             <span class="back-icon">
               <img src={back} />
@@ -33,39 +33,39 @@ export default function () {
           <section class="profile">
             <div class="profile_user">
               <div class="profile_user_image">
-                <span class="players_list_item_info_status">{this.Static.record.status}</span>
+                <span class="players_list_item_info_status">{Static.record.status}</span>
                 <div class="profile_user_image_circle">
-                  <img src={this.Static.record.img} alt="Фото пользователя" />
+                  <img src={Static.record.img} alt="Фото пользователя" />
                 </div>
               </div>
               <div class="profile_user_info">
-                <span class="profile_user_info_name">{this.Static.record.name}</span>
+                <span class="profile_user_info_name">{Static.record.name}</span>
                 {
-                  this.Static.record?.birthday ?
+                  Static.record?.birthday ?
                     <div class="profile_user_info_birth">
                       <span>Дата рождения</span>
-                      <span>{this.Static.record.birthday}</span>
+                      <span>{Static.record.birthday}</span>
                     </div> : null
                 }
                 <div class="profile_user_info_location">
                   <span>Местоположение</span>
-                  <span>{this.Static.record.city}</span>
+                  <span>{Static.record.city}</span>
                 </div>
                 {
-                  this.Static.record?.registration ?
+                  Static.record?.registration ?
                     <div class="profile_user_info_reg">
                       <span>Регистрация</span>
-                      <span>{this.Static.record.registration}</span>
+                      <span>{Static.record.registration}</span>
                     </div> : null
                 }
               </div>
               {
-                this.Static.record?.placeWork ?
+                Static.record?.placeWork ?
                   <div class="profile_user_placeWork">
                     <span>Место работы</span>
                     <span class="profile_user_placeWork_place">
                       <img class="mr_5" src={placeWork} alt="Место работы" />
-                      {this.Static.record.placeWork}
+                      {Static.record.placeWork}
                     </span>
                   </div> : null
               }
@@ -75,13 +75,13 @@ export default function () {
               <h3 class="profile_content_title mt_10">Информация</h3>
 
               {
-                this.Static.record?.post ?
-                  <p class="profile_content_text">{this.Static.record.post}</p> : null
+                Static.record?.post ?
+                  <p class="profile_content_text">{Static.record.post}</p> : null
               }
 
               {
-                this.Static.record?.info ?
-                  this.Static.record.info.map(item => {
+                Static.record?.info ?
+                  Static.record.info.map(item => {
                     return (
                       <p class="profile_content_text">{item}</p>
                     )
@@ -90,11 +90,11 @@ export default function () {
               }
 
               {
-                this.Static.record?.biography ? <h3 class="profile_content_title">Биография</h3> : null
+                Static.record?.biography ? <h3 class="profile_content_title">Биография</h3> : null
               }
               {
-                this.Static.record?.biography ?
-                  this.Static.record?.biography.map(item => {
+                Static.record?.biography ?
+                  Static.record?.biography.map(item => {
                     return (
                       <p class="profile_content_text">{item}</p>
                     )
@@ -103,12 +103,12 @@ export default function () {
               }
 
               {
-                this.Static.record?.activity ?
+                Static.record?.activity ?
                   <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Сфера деятельности</h3>
                     <div class="profile_content_activity">
                       {
-                        this.Static.record.activity.map(item => {
+                        Static.record.activity.map(item => {
                           return (
                             <span class="profile_content_activity_item">{item}</span>
                           )
@@ -119,12 +119,12 @@ export default function () {
               }
 
               {
-                this.Static.record?.keyWords ?
+                Static.record?.keyWords ?
                   <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Ключевые слова</h3>
                     <div class="profile_content_activity">
                       {
-                        this.Static.record.keyWords.map(item => {
+                        Static.record.keyWords.map(item => {
                           return (
                             <span class="profile_content_activity_item">{item}</span>
                           )
@@ -135,17 +135,17 @@ export default function () {
               }
 
               {
-                this.Static.record?.cover ?
+                Static.record?.cover ?
                   <div class="profile_content_cover">
-                    <img src={this.Static.record.cover} alt="Обложка компании" />
+                    <img src={Static.record.cover} alt="Обложка компании" />
                   </div> : null
               }
 
               {
-                this.Static.record?.desc ?
+                Static.record?.desc ?
                   <div class="mt_15">
                     {
-                      this.Static.record.desc.map(item => {
+                      Static.record.desc.map(item => {
                         return (
                           <div>
                             {
@@ -187,15 +187,15 @@ export default function () {
 
 
               {
-                this.Static.record.options ?
+                Static.record.options ?
                   <div>
                     {
-                      this.Static.record.options.map(item => {
+                      Static.record.options.map(item => {
                         return (
                           <p class="event_content_text">{item?.text}
                             <a
                               href={item?.link}
-                              onclick={this.Fn.link}
+                              onclick={Fn.link}
                               class="link ml_5"
                             >
                               {item?.textLink}
@@ -208,10 +208,10 @@ export default function () {
               }
 
               {
-                this.Static.record?.video ?
+                Static.record?.video ?
                   <div>
                     {
-                      this.Static.record?.video.map((item, index) => {
+                      Static.record?.video.map((item, index) => {
                         return (
                           <div class="mt_15">
                             {
@@ -224,9 +224,9 @@ export default function () {
                                   ref="videoWrap"
                                   class="profile_content_videoWrap"
                                   onclick={() => {
-                                    if (this.Ref.videoWrap.classList.contains('videoReady')) return;
-                                    this.Ref.videoWrap.classList.add('videoReady');
-                                    this.Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+                                    if (Ref.videoWrap.classList.contains('videoReady')) return;
+                                    Ref.videoWrap.classList.add('videoReady');
+                                    Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
                                   }}
                                 ></div> : null
                             }
@@ -238,12 +238,12 @@ export default function () {
               }
 
               {
-                this.Static.record?.media ?
+                Static.record?.media ?
                   <div>
                     <h3 class="profile_content_title mt_10">Медиараздел</h3>
                     <div class="profile_content_media">
                       {
-                        this.Static.record?.media.map(item => {
+                        Static.record?.media.map(item => {
                           return (
                             <div class="profile_content_media_item">
                               <img src={item} alt="Медиа" />
@@ -257,10 +257,10 @@ export default function () {
 
 
               {
-                this.Static.record.status == 'Персона' ?
+                Static.record.status == 'Персона' ?
                   <div>
                     {
-                      this.Static.record.info || this.Static.record.biography || this.Static.record.desc ? null :
+                      Static.record.info || Static.record.biography || Static.record.desc ? null :
                         <div class="notFound_wrap">
                           <div class="notFound">
                             <span class="notFound_title">Информация не указана</span>
@@ -270,7 +270,7 @@ export default function () {
 
                     }
                   </div> :
-                  this.Static.record.status == 'Компания' ?
+                  Static.record.status == 'Компания' ?
                     <div></div> : null
 
               }
@@ -285,7 +285,7 @@ export default function () {
                     <button
                       class="arrow arrow_dark"
                       onclick={() => {
-                        this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 20;
+                        Ref.playerCarousel.scrollLeft -= Ref.playerSlide.offsetWidth + 20;
                       }}
                     >
                       <img src={arrPrevDark} />
@@ -293,7 +293,7 @@ export default function () {
                     <button
                       class="arrow arrow_dark"
                       onclick={() => {
-                        this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 20;
+                        Ref.playerCarousel.scrollLeft += Ref.playerSlide.offsetWidth + 20;
                       }}
                     >
                       <img src={arrNextDark} />
@@ -308,12 +308,12 @@ export default function () {
                   onmousedown={(e) => {
                     isDragging = true;
                     startX = e.pageX;
-                    startScrollLeft = this.Ref.playerCarousel.scrollLeft;
+                    startScrollLeft = Ref.playerCarousel.scrollLeft;
                   }}
                   onmousemove={(e) => {
                     if (!isDragging) return;
                     e.preventDefault();
-                    this.Ref.playerCarousel.scrollLeft = startScrollLeft - (e.pageX - startX);
+                    Ref.playerCarousel.scrollLeft = startScrollLeft - (e.pageX - startX);
                   }}
                   onmouseup={() => {
                     isDragging = false;
@@ -331,9 +331,9 @@ export default function () {
                     let yDiff = y2 - y1;
                     if (Math.abs(xDiff) > Math.abs(yDiff)) {
                       if (xDiff > 0) {
-                        this.Ref.playerCarousel.scrollLeft -= this.Ref.playerSlide.offsetWidth + 15;
+                        Ref.playerCarousel.scrollLeft -= Ref.playerSlide.offsetWidth + 15;
                       } else {
-                        this.Ref.playerCarousel.scrollLeft += this.Ref.playerSlide.offsetWidth + 15;
+                        Ref.playerCarousel.scrollLeft += Ref.playerSlide.offsetWidth + 15;
                       }
                     }
                     x1 = null;
@@ -347,8 +347,8 @@ export default function () {
                           class="carousel_person"
                           ref="playerSlide"
                           onclick={() => {
-                            this.Static.record = item;
-                            this.Fn.linkChange(`/players/show/${item.name}`)
+                            Static.record = item;
+                            Fn.linkChange(`/players/show/${item.name}`)
                           }}
                         >
                           <div class="carousel_person_circle">
