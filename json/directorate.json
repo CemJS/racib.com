@@ -8,14 +8,6 @@
     "post": "Глава департамента по развитию цифровых финансовых институтов РАКИБ"
   },
   {
-    "img": "/contents/img/directorate/pivovar.jpg",
-    "name": "Пивовар Вячеслав Борисович",
-    "city": "Москва",
-    "country": "Россия",
-    "status": "Персона",
-    "post": "Директор по работе с экспертами РАКИБ"
-  },
-  {
     "img": "/contents/img/directorate/kharlamov.jpg",
     "name": "Харламов Валерий Николаевич",
     "city": "Новороссийск",
@@ -30,6 +22,14 @@
     "country": "Россия",
     "status": "Персона",
     "post": "Руководитель департамента развития WEB3 и NFT"
+  },
+  {
+    "img": "/contents/img/directorate/sapozhnikov.jpg",
+    "name": "Сапожников Евгений",
+    "city": "Новороссийск",
+    "country": "Россия",
+    "status": "Персона",
+    "post": "Руководитель Департамента по развитию финансовых институтов"
   },
   {
     "img": "/contents/img/directorate/serebrovsky.jpg",
