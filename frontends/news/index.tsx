@@ -56,6 +56,7 @@ front.func.getRecords = async function () {
 }
 
 front.loader = () => {
+
     if (front.Variable.DataUrl[2]) {
         let tmpNews = news.filter(item => item.id == front.Variable.DataUrl[2])
         if (tmpNews.length != 0) {
