@@ -40,7 +40,7 @@
     &_image {
       background-position: 100%;
       background-repeat: no-repeat;
-      background-position: inherit;
+      background-position: top top;
       background-size: cover;
       box-sizing: border-box;
       // height: 300px;
@@ -245,6 +245,10 @@
       gap: 20px;
       position: relative;
       top: auto;
+
+      &_image {
+        height: 245px;
+      }
 
       &_info {
         border-radius: var(--borderR);
