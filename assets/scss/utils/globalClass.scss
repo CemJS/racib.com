@@ -1459,7 +1459,8 @@ section {
 
 .filter {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   margin-bottom: 25px;
   border-radius: var(--borderR);
@@ -1558,6 +1559,7 @@ section {
     position: relative;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
     // width: calc(100% / 4);
     width: calc(100% / 3);
     padding: 15px;
@@ -1584,6 +1586,7 @@ section {
   &_input {
     border: none;
     outline: none;
+    text-align: center;
     color: var(--title);
     font-size: 18px;
     line-height: 22px;

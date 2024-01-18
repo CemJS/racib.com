@@ -1,21 +1,19 @@
 
-
-
-
 export const sendApi = async function (url: string, data: any) {
     try {
-        let answer = await fetch(url, {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(data),
-        })
-
-        let json = await answer.json()
-        return json
-
+        let answer: any = await Promise.race([
+            fetch(url, {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(data),
+            }),
+            new Promise((_, reject) =>
+                setTimeout(() => reject(new Error("Timeout")), 1500)
+            ),
+        ]);
+        let json = await answer.json();
+        return json;
     } catch (error) {
-        return { error }
+        return { error };
     }
-
-
-}
+};
