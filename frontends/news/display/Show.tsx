@@ -3,6 +3,13 @@ import back from '@svg/icons/back.svg'
 import map from '@svg/icons/dark/mapPin.svg'
 
 export default function () {
+
+//   if (!Static.contentNew){
+// return (
+//   <div></div>
+// )
+//   }
+
   return (
     <div class="main_wrap">
       <main
@@ -23,58 +30,58 @@ export default function () {
           <section class="new">
             <div class="new_profile">
               <div class="new_profile_image">
-                <img src={Static.record.img} alt="Избражение новости" />
+                <img src={`https://crypto-emergency.com/assets/upload/racib/${Static.contentNew?.img}`} alt="Избражение новости" />
               </div>
               <div class="new_profile_info">
                 {
-                  Static.record?.date ?
-                    <span>{Static.record.date}</span> : null
+                  Static.contentNew?.date_event ?
+                    <span>{Static.contentNew?.date_event}</span> : null
                 }
                 {
-                  Static.record?.category ?
-                    <span class="new_profile_info_category">{Static.record.category}</span> : null
+                  Static.contentNew?.category ?
+                    <span class="new_profile_info_category">{Static.contentNew?.category}</span> : null
                 }
 
                 {
-                  Static.record?.city ?
+                  Static.contentNew?.city ?
                     <span class="new_profile_info_location">
                       <img src={map} alt="Локация" />
-                      {Static.record.city}
+                      {Static.contentNew?.city}
                     </span> : null
                 }
 
               </div>
             </div>
             <div class="new_content">
-              <h2 class="new_content_title">{Static.record.title}</h2>
+              <h2 class="new_content_title">{Static.contentNew?.title}</h2>
               <div>
                 {
-                  Static.record.desc ?
+                  Static.contentNew?.desc ?
                     <div class="new_content_desc">
                       {
-                        Static.record.desc.map(item => {
+                        Static.contentNew?.desc.map(item => {
                           return (
                             <div class="new_content_desc_item">
                               <div>
                                 {
-                                  item.text ?
+                                  item?.text ?
                                     <div>
                                       {
-                                        item.text.map(el => {
+                                        item?.text?.map(el => {
                                           return (
-                                            <p class="new_content_text">{el}</p>
+                                            <p contenteditable="plaintext-only" class="new_content_text">{el}</p>
                                           )
                                         })
                                       }
                                     </div> : null
                                 }
                                 {
-                                  item.list ?
+                                  item?.list ?
                                     <div class="event_content_list_wrap">
-                                      <p class="event_content_list_title">{item.list.title}</p>
+                                      <p class="event_content_list_title">{item?.list?.title}</p>
                                       <ul class="event_content_list">
                                         {
-                                          item.list.items.map((li) => {
+                                          item?.list?.items?.map((li: any) => {
                                             return (
                                               <li class="event_content_list_item event_content_text">{li}</li>
                                             )
@@ -92,10 +99,10 @@ export default function () {
                 }
 
                 {
-                  Static.record.options ?
+                  Static.contentNew?.options ?
                     <div>
                       {
-                        Static.record.options.map(item => {
+                        Static.contentNew?.options?.map(item => {
                           return (
                             <p class="event_content_text">{item?.text}
                               <a
@@ -113,18 +120,18 @@ export default function () {
                 }
 
                 {
-                  Static.record?.listLinks ?
+                  Static.contentNew?.listLinks ?
                     <div class="new_content_desc">
                       {
-                        Static.record.listLinks.map(item => {
+                        Static.contentNew?.listLinks?.map(item => {
                           return (
                             <div class="new_content_desc_item">
                               <div class="event_content_list_wrap">
                                 <p class="event_content_list_title">{item?.title}</p>
                                 <ul class="event_content_list">
                                   {
-                                    item.links ?
-                                      item.links.map((li) => {
+                                    item?.links ?
+                                      item.links?.map((li) => {
                                         return (
                                           <li class="event_content_list_item event_content_text">
                                             {li?.text}
@@ -143,16 +150,17 @@ export default function () {
                 }
 
                 {
-                  Static.record.image ?
-                    <div class="event_content_cover" style={`background-image: url(${Static.record.image})`}>
+                  Static.contentNew?.image ?
+                    <div class="event_content_cover"
+                      style={`background-image: url(https://crypto-emergency.com/assets/upload/racib/${Static.contentNew?.image})`}>
                     </div> : null
                 }
 
                 {
-                  Static.record?.video ?
+                  Static.contentNew?.video ?
                     <div>
                       {
-                        Static.record?.video.map((item, index) => {
+                        Static.contentNew.video?.map((item, index) => {
                           return (
                             <div class="mt_15">
                               {
@@ -177,9 +185,6 @@ export default function () {
                       }
                     </div> : null
                 }
-
-
-
               </div>
             </div>
           </section>
