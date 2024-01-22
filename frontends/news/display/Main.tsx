@@ -26,7 +26,7 @@ export default function () {
   //     <div>123</div>
   //   )
   // }
-  
+
   return (
     <div class="main_wrap">
       <main
@@ -56,7 +56,6 @@ export default function () {
                         "action": "GetAll",
                         // "skip": Static.news.length,
                         "active": status,
-                        "uuid": `${localStorage.uuid}`,
                         "seach": value
                       });
                       Static.news = answer?.result
@@ -77,15 +76,14 @@ export default function () {
                         class="newCard"
                         ref="newsSlide"
                         onclick={async () => {
-                          Static.record = item;
+                          // Static.record = item;
                           const getNew = {
                             "action": "Get",
-                            "id": item?.id,
-                            "uuid": `${localStorage.uuid}`
+                            "id": item?.id
                           }
                           let newContent = await front.Services.functions.sendApi("/api/News", getNew)
                           //проверка на error
-                          Static.contentNew = newContent.result
+                          Static.contentNew = newContent?.result
                           Fn.linkChange(`/news/show/${item?.id}`)
                         }}
                         init={($el: any) => {
@@ -96,12 +94,11 @@ export default function () {
                                   observer.unobserve($el)
                                   answer = await front.Services.functions.sendApi("/api/News", {
                                     "action": "GetAll",
-                                    "skip": Static.news.length,
+                                    "skip": Static.news?.length,
                                     "active": status,
-                                    "uuid": `${localStorage.uuid}`,
                                     "seach": ""
                                   })
-                                  Static.news = Static.news.concat(answer?.result)
+                                  Static.news = Static.news?.concat(answer?.result)
                                 }
                               })
                             })
@@ -109,17 +106,17 @@ export default function () {
                           }
                         }}>
                         <div class="newCard_img" style={`background-image: url(https://crypto-emergency.com/assets/upload/racib/${item?.img})`}>
-                          <span class="newCard_category">{item.category}</span>
+                          <span class="newCard_category">{item?.category}</span>
                         </div>
                         <div class="newCard_info">
-                          <h5 class="newCard_title">{item.title}</h5>
-                          <p class="newCard_desc">{item.descShort}</p>
+                          <h5 class="newCard_title">{item?.title}</h5>
+                          <p class="newCard_desc">{item?.descShort}</p>
                           <div class="newCard_details">
-                            {item?.date_event ? <span class="newCard_details_date">{item.date_event}</span> : null}
+                            {item?.date_event ? <span class="newCard_details_date">{item?.date_event}</span> : null}
                             {
                               item?.views ?
                                 <span class="newCard_details_views">
-                                  {item.views}
+                                  {item?.views}
                                   <img src={views} />
                                 </span> : null
                             }
@@ -138,6 +135,5 @@ export default function () {
         </div>
       </main>
     </div>
-
   )
 }
