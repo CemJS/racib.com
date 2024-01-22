@@ -59,7 +59,7 @@ export default function () {
                   Static.contentNew?.desc ?
                     <div class="new_content_desc">
                       {
-                        Static.contentNew?.desc.map(item => {
+                        Static.contentNew?.desc.map((item: any) => {
                           return (
                             <div class="new_content_desc_item">
                               <div>
@@ -67,7 +67,7 @@ export default function () {
                                   item?.text ?
                                     <div>
                                       {
-                                        item?.text?.map(el => {
+                                        item?.text?.map((el: any) => {
                                           return (
                                             <p contenteditable="plaintext-only" class="new_content_text">{el}</p>
                                           )
@@ -102,7 +102,7 @@ export default function () {
                   Static.contentNew?.options ?
                     <div>
                       {
-                        Static.contentNew?.options?.map(item => {
+                        Static.contentNew?.options?.map((item: any) => {
                           return (
                             <p class="event_content_text">{item?.text}
                               <a
@@ -123,7 +123,7 @@ export default function () {
                   Static.contentNew?.listLinks ?
                     <div class="new_content_desc">
                       {
-                        Static.contentNew?.listLinks?.map(item => {
+                        Static.contentNew?.listLinks?.map((item: any) => {
                           return (
                             <div class="new_content_desc_item">
                               <div class="event_content_list_wrap">
@@ -131,7 +131,7 @@ export default function () {
                                 <ul class="event_content_list">
                                   {
                                     item?.links ?
-                                      item.links?.map((li) => {
+                                      item.links?.map((li: any) => {
                                         return (
                                           <li class="event_content_list_item event_content_text">
                                             {li?.text}
@@ -160,12 +160,12 @@ export default function () {
                   Static.contentNew?.video ?
                     <div>
                       {
-                        Static.contentNew.video?.map((item, index) => {
+                        Static.contentNew.video?.map((item: any, index: number) => {
                           return (
                             <div class="mt_15">
                               {
                                 item?.title ?
-                                  <h3 class="profile_content_title mt_10">{item.title}</h3> : null
+                                  <h3 class="profile_content_title mt_10">{item?.title}</h3> : null
                               }
                               {
                                 item?.src ?
@@ -175,7 +175,7 @@ export default function () {
                                     onclick={() => {
                                       if (Ref.videoWrap.classList.contains('videoReady')) return;
                                       Ref.videoWrap.classList.add('videoReady');
-                                      Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+                                      Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item?.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
                                     }}
                                   ></div> : null
                               }

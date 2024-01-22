@@ -69,34 +69,19 @@ front.loader = async () => {
   const newsGet = {
     "action": "GetAll",
     "active": true,
-    "uuid": `${localStorage.uuid}`,
     "seach": ""
   }
   let news = await front.Services.functions.sendApi("/api/News", newsGet)
 
-  Static.news = news.result;
-  // console.log('=b81e3e=', Static.news)
+  Static.news = news?.result;
 
   if (front.Variable.DataUrl[2]) {
     const getNew = {
       "action": "Get",
-      "id": front.Variable.DataUrl[2],
-      "uuid": `${localStorage.uuid}`
+      "id": front.Variable.DataUrl[2]
     }
     let newContent = await front.Services.functions.sendApi("/api/News", getNew)
-    // console.log('=9aec73=',Переменная)
-    Static.contentNew = newContent.result;
-// console.log("Static.Static.contentNew", Static.contentNew);
-
-    // let tmpNews = Static.news.filter(item => item.id == front.Variable.DataUrl[2])
-    // console.log("Static.news123", tmpNews);
-
-    // if (tmpNews.length != 0) {
-    //   Static.record = tmpNews[0]
-    // } else {
-    //   console.log("tmpNews", tmpNews);
-    //   Static.record = Static.news[0]
-    // }
+    Static.contentNew = newContent?.result;
   }
 
   // status for dropdown
@@ -143,7 +128,6 @@ front.loader = async () => {
       value: Static.contentNew?.title,
       valid: false,
       error: false,
-      uuid: `${localStorage.uuid}`,
       placeholder: "",
       view: false,
       disable: false
@@ -152,7 +136,6 @@ front.loader = async () => {
       value: Static.contentNew?.date_event,
       valid: false,
       error: false,
-      uuid: `${localStorage.uuid}`,
       placeholder: "",
       view: false,
       disable: false
@@ -161,7 +144,6 @@ front.loader = async () => {
       value: Static.contentNew?.category,
       valid: false,
       error: false,
-      uuid: `${localStorage.uuid}`,
       placeholder: "",
       view: false,
       disable: false
@@ -170,7 +152,6 @@ front.loader = async () => {
       value: Static.contentNew?.city,
       valid: false,
       error: false,
-      uuid: `${localStorage.uuid}`,
       placeholder: "",
       view: false,
       disable: false
