@@ -69,7 +69,7 @@ front.loader = async () => {
   const newsGet = {
     "action": "GetAll",
     "active": true,
-    "seach": ""
+    "search": ""
   }
   let news = await front.Services.functions.sendApi("/api/News", newsGet)
 
