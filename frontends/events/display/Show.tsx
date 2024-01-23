@@ -1,20 +1,18 @@
 import { Cemjsx, front, Fn, Static, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import map from '@svg/icons/dark/mapPin.svg'
+import racib from '@svg/racib.svg'
 
 
 export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", front.Variable.openSidebar ? null : "main_close"]}
-      >
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
-          <a
-            class="back"
+          <a class="back"
             href="/events"
-            onclick={Fn.link}
-          >
+            onclick={Fn.link}>
             <span class="back-icon">
               <img src={back} />
             </span>
@@ -25,39 +23,37 @@ export default function () {
             <div class="event_profile">
               <div
                 class="event_profile_image"
-                style={`background-image: url(${Static.record.cover})`}
-              >
+                style={`background-image: url(/assets/upload/racib/${Static.contentEvent?.cover})`}>
                 <div class="event_profile_image_logo">
-                  <img src={Static.record.logo} alt="Логотип мероприятия" />
+                  <img src={racib} alt="Логотип мероприятия" />
                 </div>
               </div>
               <div class="event_profile_info">
-                <span class="event_profile_info_category">{Static.record.category}</span>
+                <span class="event_profile_info_category">{Static.contentEvent?.category}</span>
                 {
-                  Static.record?.location ?
+                  Static.contentEvent?.location ?
                     <div class="event_profile_info_location">
                       <img src={map} alt="Локация" />
-                      <span>{Static.record.location}</span>
+                      <span>{Static.contentEvent?.location}</span>
                     </div> : null
                 }
 
                 <div class="event_profile_info_owner">
                   <span>Автор</span>
                   <span class="event_profile_info_owner_img">
-                    <img src={Static.record.logo} />
+                    <img src={racib} />
                     РАКИБ
                   </span>
                 </div>
               </div>
             </div>
             <div class="event_content">
-              <h1 class="event_content_title">{Static.record.title}</h1>
-
+              <h1 class="event_content_title">{Static.contentEvent?.title}</h1>
               {
-                Static.record?.subtitle ?
+                Static.contentEvent?.subtitle ?
                   <div class="block_default mY_10">
                     {
-                      Static.record.subtitle.map((item) => {
+                      Static.contentEvent?.subtitle?.map((item: any) => {
                         return (
                           <p class="event_content_subtitle">{item}</p>
                         )
@@ -67,18 +63,18 @@ export default function () {
               }
 
               {
-                Static.record.desc ?
+                Static.contentEvent?.desc ?
                   <div class="event_content_desc">
                     {
-                      Static.record.desc.map(item => {
+                      Static.contentEvent?.desc.map((item: any) => {
                         return (
                           <div class="event_content_desc_item">
                             <div>
                               {
-                                item.text ?
+                                item?.text ?
                                   <div>
                                     {
-                                      item.text.map(el => {
+                                      item?.text?.map((el: any) => {
                                         return (
                                           <p class="event_content_text">{el}</p>
                                         )
@@ -87,14 +83,18 @@ export default function () {
                                   </div> : null
                               }
                               {
-                                item.list ?
+                                item?.list ?
                                   <div class="event_content_list_wrap">
-                                    <p class="event_content_list_title">{item.list.title}</p>
+                                    <p class="event_content_list_title">{item?.list?.title}</p>
                                     <ul class="event_content_list">
                                       {
-                                        item.list.items.map((li) => {
+                                        item?.list?.items?.map((li: any) => {
+                                          const makeLinksClickable = (text: string, attribute: string) => {
+                                            const urlRegex = /(https?:\/\/[^\s]+)/g;
+                                            return text.replace(urlRegex, (url) => `<a href="${url}" rel="noreferrer" target="_blank" rel="nofollow noopener" ${attribute}>${url}</a>`);
+                                          }
                                           return (
-                                            <li class="event_content_list_item event_content_text">{li}</li>
+                                            <li class="event_content_list_item event_content_text" html={makeLinksClickable(li, 'class="my-link"')}></li>
                                           )
                                         })
                                       }
@@ -110,18 +110,18 @@ export default function () {
               }
 
               {
-                Static.record?.listLinks ?
+                Static.contentEvent?.listLinks ?
                   <div class="new_content_desc">
                     {
-                      Static.record.listLinks.map(item => {
+                      Static.contentEvent?.listLinks?.map((item: any) => {
                         return (
                           <div class="new_content_desc_item">
                             <div class="event_content_list_wrap">
                               <p class="event_content_list_title">{item?.title}</p>
                               <ul class="event_content_list">
                                 {
-                                  item.links ?
-                                    item.links.map((li) => {
+                                  item?.links ?
+                                    item.links.map((li: any) => {
                                       return (
                                         <li class="event_content_list_item event_content_text">
                                           {li?.text}
@@ -140,15 +140,15 @@ export default function () {
               }
 
               {
-                Static.record.options ?
+                Static.contentEvent?.options ?
                   <div>
                     {
-                      Static.record.options.map(item => {
+                      Static.contentEvent.options.map((item: any) => {
                         return (
                           <p class="event_content_text">{item?.text}
                             <a href={item?.link} onclick={Fn.link} class="link ml_5">{item?.textLink}</a>
                             {
-                              item?.docLink ? <a href={item.docLink} class="link">{item?.docText}</a> : null
+                              item?.docLink ? <a href={item?.docLink} class="link">{item?.docText}</a> : null
                             }
                           </p>
                         )
@@ -158,17 +158,15 @@ export default function () {
               }
 
               {
-                Static.record.image ?
+                Static.contentEvent?.image ?
                   <div class="event_content_cover"
-                    style={`background-image: url(${Static.record.image})`}
-                  >
+                    style={`background-image: url(/assets/upload/racib/${Static.contentEvent?.image})`}>
                   </div> : null
               }
-
             </div>
           </section>
         </div>
-      </main >
-    </div >
+      </main>
+    </div>
   )
 }

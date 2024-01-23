@@ -82,8 +82,12 @@ export default function () {
                                       <ul class="event_content_list">
                                         {
                                           item?.list?.items?.map((li: any) => {
+                                            const makeLinksClickable = (text: string, attribute: string) => {
+                                              const urlRegex = /(https?:\/\/[^\s]+)/g;
+                                              return text.replace(urlRegex, (url) => `<a href="${url}" rel="noreferrer" target="_blank" rel="nofollow noopener" ${attribute}>${url}</a>`);
+                                            }
                                             return (
-                                              <li class="event_content_list_item event_content_text">{li}</li>
+                                              <li class="event_content_list_item event_content_text" html={makeLinksClickable(li, 'class="my-link"')}></li>
                                             )
                                           })
                                         }

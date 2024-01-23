@@ -2,7 +2,6 @@ import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import notFound from '@svg/list.svg'
 import views from '@svg/icons/dark/views.svg'
-import news from '@json/news'
 
 let answer: any = []
 let status: boolean = true
