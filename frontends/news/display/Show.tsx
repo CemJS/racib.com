@@ -4,11 +4,11 @@ import map from '@svg/icons/dark/mapPin.svg'
 
 export default function () {
 
-//   if (!Static.contentNew){
-// return (
-//   <div></div>
-// )
-//   }
+  //   if (!Static.contentNew){
+  // return (
+  //   <div></div>
+  // )
+  //   }
 
   return (
     <div class="main_wrap">
@@ -30,7 +30,7 @@ export default function () {
           <section class="new">
             <div class="new_profile">
               <div class="new_profile_image">
-                <img src={`https://crypto-emergency.com/assets/upload/racib/${Static.contentNew?.img}`} alt="Избражение новости" />
+                <img src={`/assets/upload/racib/${Static.contentNew?.img}`} alt="Избражение новости" />
               </div>
               <div class="new_profile_info">
                 {

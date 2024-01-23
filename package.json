@@ -5,9 +5,9 @@
   "types": "./index.d.ts",
   "private": true,
   "scripts": {
-    "build": "node esbuild.mjs --runProd",
-    "start": "node esbuild.mjs --runServe",
-    "prod": "node esbuild.mjs --runServe --runProd"
+    "build": "node node_modules/cemjs-all/esbuild.mjs --runProd",
+    "start": "node node_modules/cemjs-all/esbuild.mjs --runServe",
+    "prod": "node node_modules/cemjs-all/esbuild.mjs --runServe --runProd"
   },
   "dependencies": {
     "cemjs-all": "^1.1.1",
