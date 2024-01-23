@@ -105,7 +105,7 @@ export default function () {
                             observer.observe($el)
                           }
                         }}>
-                        <div class="newCard_img" style={`background-image: url(https://crypto-emergency.com/assets/upload/racib/${item?.img})`}>
+                        <div class="newCard_img" style={`background-image: url(/assets/upload/racib/${item?.img})`}>
                           <span class="newCard_category">{item?.category}</span>
                         </div>
                         <div class="newCard_info">
