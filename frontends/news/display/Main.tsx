@@ -56,7 +56,7 @@ export default function () {
                         "action": "GetAll",
                         // "skip": Static.news.length,
                         "active": status,
-                        "seach": value
+                        "search": value
                       });
                       Static.news = answer?.result
                     }
@@ -96,7 +96,7 @@ export default function () {
                                     "action": "GetAll",
                                     "skip": Static.news?.length,
                                     "active": status,
-                                    "seach": ""
+                                    "search": ""
                                   })
                                   Static.news = Static.news?.concat(answer?.result)
                                 }
