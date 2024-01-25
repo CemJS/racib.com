@@ -213,7 +213,15 @@ front.func.slider = function (container: HTMLElement, items: Array<HTMLElement>,
     return
 }
 
-front.loader = () => {
+front.loader = async () => {
+    const newsGet = {
+        "action": "GetAll",
+        "active": true,
+        "search": ""
+    }
+    let news = await front.Services.functions.sendApi("/api/News", newsGet)
+    Static.news = news?.result;
+
     Static.canvas = Ref.canvas;
     Static.startPoint;
     Static.moved = false;

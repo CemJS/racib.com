@@ -10,7 +10,17 @@ front.func.test = () => {
     return
 }
 
-front.loader = () => {
+front.loader = async () => {
+
+    const eventsGet = {
+        "action": "GetAll",
+        "active": true,
+        "search": ""
+      }
+      let events = await front.Services.functions.sendApi("/api/events", eventsGet)
+    
+      Static.events = events?.result;
+
     return
 }
 

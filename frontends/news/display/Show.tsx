@@ -156,7 +156,7 @@ export default function () {
                 {
                   Static.contentNew?.image ?
                     <div class="event_content_cover"
-                      style={`background-image: url(https://crypto-emergency.com/assets/upload/racib/${Static.contentNew?.image})`}>
+                      style={`background-image: url(/assets/upload/racib/${Static.contentNew?.image})`}>
                     </div> : null
                 }
 

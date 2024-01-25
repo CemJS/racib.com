@@ -10,6 +10,7 @@ import calendar from '@svg/icons/date.svg'
 import players from '@json/allUsers'
 import events from '@json/events'
 import banner from '@images/banners/racibLetter.jpg'
+import racib from '@svg/racib.svg'
 
 let isDragging, isDragUsers = false;
 let startX, xStartUsers, startScrollLeft, startScrollLeftUsers;
@@ -119,7 +120,7 @@ export default function () {
                                 }}
                             >
                                 {
-                                    events.reverse().map(item => {
+                                    Static.events?.map((item: any) => {
                                         return (
                                             <div
                                                 class="card"
@@ -129,9 +130,9 @@ export default function () {
                                                 }}
                                             >
                                                 <span class="card_category">{item.category}</span>
-                                                <div class="card_img" style={`background-image: url(${item.cover})`}>
+                                                <div class="card_img" style={`background-image: url(/assets/upload/racib/${item?.cover})`}>
                                                     <div class="card_logo">
-                                                        <img src={item.logo} alt="Логотип" />
+                                                        <img src={racib} alt="Логотип" />
                                                     </div>
                                                 </div>
                                                 <div class="card_info">

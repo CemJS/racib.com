@@ -2,11 +2,10 @@ import { Cemjsx, front, Fn, Func, Static, Ref } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
 
-import news from '@json/news'
-
-let newsSlider = news.reverse();
-
 export default function () {
+
+    let newsSlider = Static.news;
+
     return (
         <div class={["particles_wrap",]} ref="wrapCanvas">
             <div
@@ -99,7 +98,7 @@ export default function () {
                                 }}
                             >
                                 {
-                                    newsSlider.slice(0, 5).map((item, index) => {
+                                    newsSlider.slice(0, 5).map((item: any, index: number) => {
                                         return (
                                             <div
                                                 class={["newCard_slider", `newCard_slider_${index + 1}`]}
@@ -107,7 +106,7 @@ export default function () {
                                                     Fn.linkChange(`/news/show/${item.id}`)
                                                 }}
                                             >
-                                                <div class="newCard_slider_img" style={`background-image: url(${item.img})`}>
+                                                <div class="newCard_slider_img" style={`background-image: url(/assets/upload/racib/${item?.img})`}>
                                                     <span class="newCard_slider_category">{item.category}</span>
                                                 </div>
                                             </div>
