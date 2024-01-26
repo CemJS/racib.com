@@ -8,7 +8,7 @@ export const sendApi = async function (url: string, data: any) {
                 body: JSON.stringify(data),
             }),
             new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Timeout")), 2000)
+                setTimeout(() => reject(new Error("Timeout")), 3000)
             ),
         ]);
         let json = await answer.json();

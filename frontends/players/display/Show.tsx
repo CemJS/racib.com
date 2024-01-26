@@ -5,25 +5,21 @@ import arrPrevDark from '@svg/icons/dark/prev.svg'
 import placeWork from '@svg/icons/color/placeWork.svg'
 import notFound from '@svg/list.svg'
 
-import allUsers from '@json/allUsers'
-
 let isDragging = false;
 let startX, startScrollLeft;
 let x1 = null;
 let y1 = null;
 
 export default function () {
+
   return (
     <div class="main_wrap">
       <main
-        class={["main", front.Variable.openSidebar ? null : "main_close"]}
-      >
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
-          <a
-            class="back"
+          <a class="back"
             href="/players"
-            onclick={Fn.link}
-          >
+            onclick={Fn.link}>
             <span class="back-icon">
               <img src={back} />
             </span>
@@ -33,39 +29,39 @@ export default function () {
           <section class="profile">
             <div class="profile_user">
               <div class="profile_user_image">
-                <span class="players_list_item_info_status">{Static.record.status}</span>
+                <span class="players_list_item_info_status">{Static.contentPlayer?.status}</span>
                 <div class="profile_user_image_circle">
-                  <img src={Static.record.img} alt="Фото пользователя" />
+                  <img src={`/assets/upload/racib/${Static.contentPlayer?.img}`} alt="Фото пользователя" />
                 </div>
               </div>
               <div class="profile_user_info">
-                <span class="profile_user_info_name">{Static.record.name}</span>
+                <span class="profile_user_info_name">{Static.contentPlayer?.name}</span>
                 {
-                  Static.record?.birthday ?
+                  Static.contentPlayer?.birthday ?
                     <div class="profile_user_info_birth">
                       <span>Дата рождения</span>
-                      <span>{Static.record.birthday}</span>
+                      <span>{Static.contentPlayer?.birthday}</span>
                     </div> : null
                 }
                 <div class="profile_user_info_location">
                   <span>Местоположение</span>
-                  <span>{Static.record.city}</span>
+                  <span>{Static.contentPlayer?.city}</span>
                 </div>
                 {
-                  Static.record?.registration ?
+                  Static.contentPlayer?.registration ?
                     <div class="profile_user_info_reg">
                       <span>Регистрация</span>
-                      <span>{Static.record.registration}</span>
+                      <span>{Static.contentPlayer?.registration}</span>
                     </div> : null
                 }
               </div>
               {
-                Static.record?.placeWork ?
+                Static.contentPlayer?.placeWork ?
                   <div class="profile_user_placeWork">
                     <span>Место работы</span>
                     <span class="profile_user_placeWork_place">
                       <img class="mr_5" src={placeWork} alt="Место работы" />
-                      {Static.record.placeWork}
+                      {Static.contentPlayer?.placeWork}
                     </span>
                   </div> : null
               }
@@ -75,13 +71,13 @@ export default function () {
               <h3 class="profile_content_title mt_10">Информация</h3>
 
               {
-                Static.record?.post ?
-                  <p class="profile_content_text">{Static.record.post}</p> : null
+                Static.contentPlayer?.post ?
+                  <p class="profile_content_text">{Static.contentPlayer?.post}</p> : null
               }
 
               {
-                Static.record?.info ?
-                  Static.record.info.map(item => {
+                Static.contentPlayer?.info ?
+                  Static.contentPlayer.info.map((item: any) => {
                     return (
                       <p class="profile_content_text">{item}</p>
                     )
@@ -90,11 +86,11 @@ export default function () {
               }
 
               {
-                Static.record?.biography ? <h3 class="profile_content_title">Биография</h3> : null
+                Static.contentPlayer?.biography ? <h3 class="profile_content_title">Биография</h3> : null
               }
               {
-                Static.record?.biography ?
-                  Static.record?.biography.map(item => {
+                Static.contentPlayer?.biography ?
+                  Static.contentPlayer?.biography.map((item: any) => {
                     return (
                       <p class="profile_content_text">{item}</p>
                     )
@@ -103,12 +99,12 @@ export default function () {
               }
 
               {
-                Static.record?.activity ?
+                Static.contentPlayer?.activity ?
                   <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Сфера деятельности</h3>
                     <div class="profile_content_activity">
                       {
-                        Static.record.activity.map(item => {
+                        Static.contentPlayer?.activity.map((item: any) => {
                           return (
                             <span class="profile_content_activity_item">{item}</span>
                           )
@@ -119,12 +115,12 @@ export default function () {
               }
 
               {
-                Static.record?.keyWords ?
+                Static.contentPlayer?.keyWords ?
                   <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Ключевые слова</h3>
                     <div class="profile_content_activity">
                       {
-                        Static.record.keyWords.map(item => {
+                        Static.contentPlayer?.keyWords?.map((item: any) => {
                           return (
                             <span class="profile_content_activity_item">{item}</span>
                           )
@@ -135,26 +131,26 @@ export default function () {
               }
 
               {
-                Static.record?.cover ?
+                Static.contentPlayer?.cover ?
                   <div class="profile_content_cover">
-                    <img src={Static.record.cover} alt="Обложка компании" />
+                    <img src={`/assets/upload/racib/${Static.contentPlayer?.cover}`} alt="Обложка компании" />
                   </div> : null
               }
 
               {
-                Static.record?.desc ?
+                Static.contentPlayer?.desc ?
                   <div class="mt_15">
                     {
-                      Static.record.desc.map(item => {
+                      Static.contentPlayer?.desc?.map((item: any) => {
                         return (
                           <div>
                             {
-                              item?.title ? <h3 class="profile_content_title mt_10">{item.title}</h3> : null
+                              item?.title ? <h3 class="profile_content_title mt_10">{item?.title}</h3> : null
                             }
 
                             {
                               item?.text ?
-                                item.text.map(el => {
+                                item?.text?.map((el: any) => {
                                   return (
                                     <p class="profile_content_text">{el}</p>
                                   )
@@ -164,10 +160,10 @@ export default function () {
                             {
                               item?.list ?
                                 <div>
-                                  <span class="profile_content_list_title">{item.list.title}</span>
+                                  <span class="profile_content_list_title">{item?.list?.title}</span>
                                   <ul class="profile_content_list">
                                     {
-                                      item.list.listItems.map(item => {
+                                      item?.list?.items.map((item: any) => {
                                         return (
                                           <li class="profile_content_list_item">{item}</li>
                                         )
@@ -187,10 +183,10 @@ export default function () {
 
 
               {
-                Static.record.options ?
+                Static.contentPlayer?.options ?
                   <div>
                     {
-                      Static.record.options.map(item => {
+                      Static.contentPlayer?.options?.map((item: any) => {
                         return (
                           <p class="event_content_text">{item?.text}
                             <a
@@ -208,15 +204,15 @@ export default function () {
               }
 
               {
-                Static.record?.video ?
+                Static.contentPlayer?.video ?
                   <div>
                     {
-                      Static.record?.video.map((item, index) => {
+                      Static.contentPlayer?.video?.map((item: any, index: number) => {
                         return (
                           <div class="mt_15">
                             {
                               item?.title ?
-                                <h3 class="profile_content_title mt_10">{item.title}</h3> : null
+                                <h3 class="profile_content_title mt_10">{item?.title}</h3> : null
                             }
                             {
                               item?.src ?
@@ -226,7 +222,7 @@ export default function () {
                                   onclick={() => {
                                     if (Ref.videoWrap.classList.contains('videoReady')) return;
                                     Ref.videoWrap.classList.add('videoReady');
-                                    Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
+                                    Ref.videoWrap.insertAdjacentHTML('afterbegin', `<iframe class="profile_content_video" src=${item?.src} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`);
                                   }}
                                 ></div> : null
                             }
@@ -238,15 +234,15 @@ export default function () {
               }
 
               {
-                Static.record?.media ?
+                Static.contentPlayer?.media ?
                   <div>
                     <h3 class="profile_content_title mt_10">Медиараздел</h3>
                     <div class="profile_content_media">
                       {
-                        Static.record?.media.map(item => {
+                        Static.contentPlayer?.media.map((item: any) => {
                           return (
                             <div class="profile_content_media_item">
-                              <img src={item} alt="Медиа" />
+                              <img src={`/assets/upload/racib/${item}`} alt="Медиа" />
                             </div>
                           )
                         })
@@ -257,10 +253,10 @@ export default function () {
 
 
               {
-                Static.record.status == 'Персона' ?
+                Static.contentPlayer?.status == 'Персона' ?
                   <div>
                     {
-                      Static.record.info || Static.record.biography || Static.record.desc ? null :
+                      Static.contentPlayer?.info || Static.contentPlayer?.biography || Static.contentPlayer?.desc ? null :
                         <div class="notFound_wrap">
                           <div class="notFound">
                             <span class="notFound_title">Информация не указана</span>
@@ -270,7 +266,7 @@ export default function () {
 
                     }
                   </div> :
-                  Static.record.status == 'Компания' ?
+                  Static.contentPlayer?.status == 'Компания' ?
                     <div></div> : null
 
               }
@@ -341,24 +337,23 @@ export default function () {
                   }}
                 >
                   {
-                    allUsers.map((item, index) => {
+                    Static.players?.map((item: any, index: number) => {
                       return (
                         <div
                           class="carousel_person"
                           ref="playerSlide"
                           onclick={() => {
-                            Static.record = item;
-                            Fn.linkChange(`/players/show/${item.name}`)
+                            Static.contentPlayer = item;
+                            Fn.linkChange(`/players/show/${item?.name}`)
                           }}
                         >
                           <div class="carousel_person_circle">
                             <div
                               class="carousel_person_img"
-                              style={`background-image: url(${item.img})`}
-                            ></div>
+                              style={`background-image: url(/assets/upload/racib/${item?.img})`}></div>
                           </div>
-                          <span class="carousel_person_status">{item.status}</span>
-                          <h5 class="carousel_person_name">{item.name}</h5>
+                          <span class="carousel_person_status">{item?.status}</span>
+                          <h5 class="carousel_person_name">{item?.name}</h5>
                         </div>
                       )
                     })

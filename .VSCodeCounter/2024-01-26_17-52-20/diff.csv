@@ -1,0 +1,86 @@
+"filename", "language", "TypeScript", "TypeScript JSX", "JSON", "comment", "blank", "total"
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\about\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\about\display\Join.tsx", "TypeScript JSX", 0, 107, 0, 2, 16, 125
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\about\display\Main.tsx", "TypeScript JSX", 0, 201, 0, 0, 14, 215
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\about\index.tsx", "TypeScript JSX", 0, 80, 0, 0, 15, 95
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\about\navigation.tsx", "TypeScript JSX", 0, 13, 0, 0, 3, 16
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\appeal\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\appeal\display\Main.tsx", "TypeScript JSX", 0, 26, 0, 27, 8, 61
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\appeal\index.tsx", "TypeScript JSX", 0, 19, 0, 0, 6, 25
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\appeal\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\display.tsx", "TypeScript JSX", 0, 9, 0, 0, 1, 10
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\display\Main.tsx", "TypeScript JSX", 0, 97, 0, 0, 8, 105
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\functions.ts", "TypeScript", 38, 0, 0, 5, 11, 54
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\index.ts", "TypeScript", 11, 0, 0, 0, 1, 12
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\listener.ts", "TypeScript", 3, 0, 0, 0, 0, 3
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\loader.ts", "TypeScript", 9, 0, 0, 1, 4, 14
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\calendarTest\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\empty\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\empty\display\Main.tsx", "TypeScript JSX", 0, 6, 0, 0, 1, 7
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\empty\index.tsx", "TypeScript JSX", 0, 19, 0, 0, 6, 25
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\empty\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 1, 6
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\error\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\error\display\Main.tsx", "TypeScript JSX", 0, 17, 0, 0, 2, 19
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\error\index.tsx", "TypeScript JSX", 0, 19, 0, 0, 6, 25
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\error\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\events\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\events\display\Main.tsx", "TypeScript JSX", 0, 108, 0, 0, 8, 116
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\events\display\Show.tsx", "TypeScript JSX", 0, 164, 0, 0, 8, 172
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\events\index.tsx", "TypeScript JSX", 0, 28, 0, 0, 7, 35
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\events\navigation.tsx", "TypeScript JSX", 0, 13, 0, 0, 4, 17
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\experts\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\experts\display\Main.tsx", "TypeScript JSX", 0, 100, 0, 12, 12, 124
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\experts\index.tsx", "TypeScript JSX", 0, 28, 0, 0, 6, 34
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\experts\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\footer\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\footer\display\Main.tsx", "TypeScript JSX", 0, 142, 0, 20, 7, 169
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\footer\index.tsx", "TypeScript JSX", 0, 19, 0, 0, 6, 25
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\footer\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\form\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\form\display\Main.tsx", "TypeScript JSX", 0, 342, 0, 18, 21, 381
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\form\index.tsx", "TypeScript JSX", 0, 281, 0, 3, 58, 342
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\form\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\header\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\header\display\Main.tsx", "TypeScript JSX", 0, 147, 0, 2, 16, 165
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\header\index.tsx", "TypeScript JSX", 0, 27, 0, 0, 6, 33
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\header\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\home\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\home\display\Main.tsx", "TypeScript JSX", 0, 205, 0, 47, 17, 269
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\home\index.tsx", "TypeScript JSX", 0, 26, 0, 0, 9, 35
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\home\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalGallery\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalGallery\display\Main.tsx", "TypeScript JSX", 0, 27, 0, 0, 2, 29
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalGallery\index.tsx", "TypeScript JSX", 0, 30, 0, 0, 6, 36
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalGallery\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSoon\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSoon\display\Main.tsx", "TypeScript JSX", 0, 25, 0, 0, 1, 26
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSoon\index.tsx", "TypeScript JSX", 0, 29, 0, 0, 6, 35
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSoon\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSuccess\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSuccess\display\Main.tsx", "TypeScript JSX", 0, 25, 0, 0, 1, 26
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSuccess\index.tsx", "TypeScript JSX", 0, 30, 0, 0, 6, 36
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\modalSuccess\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\news\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\news\display\Main.tsx", "TypeScript JSX", 0, 122, 0, 9, 7, 138
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\news\display\Show.tsx", "TypeScript JSX", 0, 184, 0, 5, 11, 200
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\news\index copy.tsx", "TypeScript JSX", 0, 0, 0, 94, 24, 118
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\news\index.tsx", "TypeScript JSX", 0, 28, 0, 0, 7, 35
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\news\navigation.tsx", "TypeScript JSX", 0, 13, 0, 0, 3, 16
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\particles\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\particles\display\Main.tsx", "TypeScript JSX", 0, 111, 0, 14, 15, 140
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\particles\index.tsx", "TypeScript JSX", 0, 195, 0, 12, 35, 242
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\particles\navigation.tsx", "TypeScript JSX", 0, 5, 0, 0, 3, 8
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\policy\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\policy\display\Agreement.tsx", "TypeScript JSX", 0, 174, 0, 0, 10, 184
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\policy\display\Main.tsx", "TypeScript JSX", 0, 196, 0, 0, 5, 201
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\policy\index.tsx", "TypeScript JSX", 0, 19, 0, 0, 6, 25
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\policy\navigation.tsx", "TypeScript JSX", 0, 13, 0, 0, 3, 16
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\cemconfig.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\cemjs.json", "JSON", 0, 0, 4, 0, 0, 4
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\display.tsx", "TypeScript JSX", 0, 22, 0, 0, 5, 27
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\functions.ts", "TypeScript", 196, 0, 0, 10, 47, 253
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\index.ts", "TypeScript", 12, 0, 0, 0, 1, 13
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\listener.ts", "TypeScript", 12, 0, 0, 0, 1, 13
+"c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\sliderTest\loader.ts", "TypeScript", 2, 0, 0, 0, 1, 3
+"Total", "-", 283, 3551, 76, 281, 527, 4718

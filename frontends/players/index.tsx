@@ -11,7 +11,31 @@ front.func.test = () => {
     return
 }
 
-front.loader = () => {
+front.loader = async () => {
+    const playersGet = {
+        "action": "GetAll",
+        "active": true,
+        "uuid": `${localStorage?.uuid}`,
+        "search": ""
+    }
+
+    let players = await front.Services.functions.sendApi("/api/players", playersGet)
+        Static.players = players?.result
+  
+
+    if (front.Variable.DataUrl[2]) {
+        const getPlayer = {
+            "action": "Get",
+            "id": front.Variable.DataUrl[2],
+            "uuid": `${localStorage?.uuid}`
+        }
+        let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
+        Static.contentPlayer = playerContent?.result;
+    }
+
+    Static.activeTab = '';
+    Static.videoReady = false;
+
     if (front.Variable.DataUrl[2]) {
         let tmpPlayers = allUsers.filter(item => item.name == decodeURI(front.Variable.DataUrl[2]))
         if (tmpPlayers.length != 0) {

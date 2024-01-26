@@ -1,25 +1,33 @@
 import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
 import mapPin from '@svg/icons/dark/mapPin.svg'
-import filter from '@svg/icons/dark/filter.svg'
 import notFound from '@svg/list.svg'
-import users from '@json/allUsers'
 
-let allUsers = users;
-const posts: string[] = ['Финансы', 'Телевидение', 'Маркетинг', 'Телекоммуникации', 'Полиграфия', 'Издательство', 'Фото, видео', 'IT, интернет-технологии', 'Сетевое оборудование', 'Юридическое право', 'IT компания', 'Бизнес']
+let answer: any = []
+let status: boolean = true
+
+const lastRequestTimestamp = Date.now()
+function debounce(func: any, delay: number) {
+  let timeoutId: any
+  return function (...args: any) {
+    if (timeoutId) {
+      clearTimeout(timeoutId)
+    }
+    timeoutId = setTimeout(() => {
+      func.apply(null, args)
+    }, delay)
+  }
+}
 
 export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", front.Variable.openSidebar ? null : "main_close"]}
-      >
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
-          <a
-            class="back"
+          <a class="back"
             href="/"
-            onclick={Fn.link}
-          >
+            onclick={Fn.link}>
             <span class="back-icon">
               <img src={back} />
             </span>
@@ -29,224 +37,80 @@ export default function () {
           <section class="players">
             <div class="filter">
               <div class="filter_item filter_item_event">
-                <span class="filter_item_title">Имя</span>
+                <span class="filter_item_title">
+                  Поиск
+                </span>
                 <input
                   type="text"
                   class="filter_input"
-                  placeholder="Кого ищете?"
-                  oninput={(e) => {
-                    let value = e.target.value.toLocaleLowerCase().trim();
-                    // allUsers = this.fn("makeFilters", value, '', '', users)
-                    allUsers = users.filter((item) => {
-                      if (item.name.toLocaleLowerCase().trim().includes(value)) {
-                        return true;
-                      }
-                    })
-                    Fn.init()
-                  }}
-                />
-              </div>
-
-              <div class="filter_item filter_item_location">
-                <span class="filter_item_title">Страна</span>
-                <input
-                  type="text"
-                  class="filter_input"
-                  placeholder="Где искать?"
-                  oninput={(e) => {
-                    let value = e.target.value.toLocaleLowerCase().trim();
-                    allUsers = users.filter((item) => {
-                      if (item.country.toLocaleLowerCase().trim().includes(value)) {
-                        return true;
-                      }
-                    })
-                    Fn.init();
-                  }}
-                />
-              </div>
-
-              <div class="filter_item filter_item_location">
-                <span class="filter_item_title">Город</span>
-                <input
-                  type="text"
-                  class="filter_input"
-                  placeholder="Где искать?"
-                  oninput={(e) => {
-                    let value = e.target.value.toLocaleLowerCase().trim();
-                    allUsers = users.filter((item) => {
-                      if (item.city.toLocaleLowerCase().trim().includes(value)) {
-                        return true;
-                      }
-                    })
-                    Fn.init();
-                  }}
-                />
-              </div>
-
-              <div class="filter_item filter_item_location">
-                <span class="filter_item_title">Специализация</span>
-                <input
-                  type="text"
-                  class="filter_input"
-                  placeholder="Чем занимается?"
-                  oninput={(e) => {
-                    let value = e.target.value.toLocaleLowerCase().trim();
-
-                    allUsers = users.filter((item) => {
-                      if (item.post.toLocaleLowerCase().trim().includes(value)) {
-                        return true;
-                      }
-                    })
-                    Fn.init();
-                  }}
-                />
-              </div>
-
-            </div>
-
-            <div class="players_tabs">
-              <span
-                class={[
-                  "players_tabs_item",
-                  Static.activeTab == '' ? 'players_tabs_item_active' : null]}
-                onclick={() => {
-                  Static.activeTab = '';
-                  allUsers = users;
-                  Fn.init();
-                }}
-              >
-                Все
-              </span>
-              <span
-                class={[
-                  "players_tabs_item",
-                  "players_tabs_item_person",
-                  Static.activeTab == 'Персоны' ? 'players_tabs_item_active' : null]}
-                onclick={() => {
-                  Static.activeTab = 'Персоны';
-                  allUsers = users.filter((item) => {
-                    if (item.status == 'Персона') {
-                      return true;
+                  placeholder="Поиск"
+                  oninput={debounce(async (e: any) => {
+                    let value = e.target.value.toLocaleLowerCase()
+                    if (value.length == 0 || value.length >= 2) {
+                      answer = await front.Services.functions.sendApi("/api/players", {
+                        "action": "GetAll",
+                        "active": status,
+                        "uuid": `${localStorage?.uuid}`,
+                        "search": value
+                      });
+                      Static.players = answer?.result
                     }
-                  })
-                  Fn.init();
-                }}
-              >
-                Персоны
-              </span>
-              <span
-                class={[
-                  "players_tabs_item",
-                  "players_tabs_item_community",
-                  Static.activeTab == 'Компания' ? 'players_tabs_item_active' : null]}
-                onclick={() => {
-                  Static.activeTab = 'Компания';
-                  allUsers = users.filter((item) => {
-                    if (item.status == Static.activeTab) {
-                      return true
-                    }
-                  })
-                  Fn.init();
-                }}
-              >
-                Сообщества
-              </span>
-            </div>
-
-            {/* <div class="filterNew">
-              <span
-                class="filterNew_icon"
-                onclick={() => {
-                  this.Ref.filterContent.classList.toggle('filterNew_content_active')
-                }}
-              >
-                <img src={filter} alt="Фильтр поиска" />
-              </span>
-
-              <div class="filterNew_content" ref="filterContent">
-                <div class="filterNew_container">
-                  <h3 class="filterNew_title">Фильтр поиска</h3>
-
-                  <div class="filterNew_fields">
-
-                    <div class="filterNew_field">
-                      <span class="filterNew_field_title">Имя</span>
-                      <input
-                        type="text"
-                        class="filterNew_input"
-                        placeholder="Кого ищете?"
-                        oninput={() => {
-
-                        }}
-                      />
-                    </div>
-
-                    <div class="filterNew_field">
-                      <span class="filterNew_field_title">Страна</span>
-                      <input
-                        type="text"
-                        class="filterNew_input"
-                        placeholder="В какой стране?"
-                        oninput={() => {
-
-                        }}
-                      />
-                    </div>
-
-                    <div class="filterNew_field">
-                      <span>Город</span>
-                      <input
-                        type="text"
-                        class="filterNew_input"
-                        placeholder="В каком городе?"
-                        oninput={() => {
-
-                        }}
-                      />
-                    </div>
-
-                    <div class="filterNew_field">
-                      <span>Ключевые слова</span>
-                    </div>
-
-                  </div>
-
-                  <div class="filter_btns">
-                    <button>Сбросить</button>
-                    <button>Применить</button>
-                  </div>
-
-                </div>
+                  }, 400)} />
               </div>
-            </div> */}
-
+            </div>
 
             <div class="players_list">
               {
-                allUsers.length ?
+                Static.players?.length ?
 
-                  allUsers.map((item, index) => {
+                  Static.players?.map((item: any, key: any) => {
                     return (
                       <div
                         class="players_list_item"
-                        onclick={() => {
-                          Static.record = item;
-                          Fn.linkChange(`/players/show/${item.name}`)
+                        onclick={async () => {
+                          const getPlayer = {
+                            "action": "Get",
+                            "id": item?.id,
+                            "uuid": `${localStorage?.uuid}`
+                          }
+                          let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
+                          //проверка на error
+                          Static.contentPlayer = playerContent.result
+                          Fn.linkChange(`/players/show/${item?.name}`)
                         }}
-                      >
+                        init={($el: any) => {
+                          if (key == Static.players?.length - 1) {
+                            const observer = new IntersectionObserver((entries) => {
+                              entries.forEach(async entry => {
+                                if (entry.isIntersecting) {
+                                  observer.unobserve($el)
+                                  answer = await front.Services.functions.sendApi("/api/players", {
+                                    "action": "GetAll",
+                                    "skip": Static.players?.length,
+                                    "active": status,
+                                    "uuid": `${localStorage.uuid}`,
+                                    "search": ""
+                                  })
+                                  // console.log('=4aaa56=',page)
+                                  Static.players = Static.players.concat(answer?.result)
+                                }
+                              })
+                            })
+                            observer.observe($el)
+                          }
+                        }}>
                         <span
                           class={[
                             "players_list_item_info_status",
                             item.status == 'Компания' ? "players_list_item_info_status_company" : null
-                          ]}
-                        >
+                          ]}>
                           {item.status}
                         </span>
                         <div class="players_list_item_circle">
                           <div
                             class="players_list_item_image"
-                            style={`background-image: url(${item.img})`}
-                          ></div>
+                            style={item?.img ? `background-image: url(/assets/upload/racib/${item?.img})` : `background-image: url(/public/contents/img/user.png)`}>
+                          </div>
                         </div>
                         <div class="players_list_item_info">
                           <h3 class="players_list_item_title">{item.name}</h3>
