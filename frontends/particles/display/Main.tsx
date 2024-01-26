@@ -1,7 +1,6 @@
 import { Cemjsx, front, Fn, Func, Static, Ref } from "cemjs-all"
 import arrNext from '@svg/icons/light/nextWhite.svg'
 import arrPrev from '@svg/icons/light/prevWhite.svg'
-import news from '@json/news'
 
 export default function () {
 
