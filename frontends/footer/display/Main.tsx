@@ -116,7 +116,7 @@ export default function () {
                                 links.map(item => {
                                     return (
                                         <li class="footer_useful_links_item">
-                                            <a href={item.link} onclick={Fn.link}>{item.name}</a>
+                                            <a style="color: white" href={item.link} onclick={Fn.link}>{item.name}</a>
                                         </li>
                                     )
                                 })
@@ -144,14 +144,14 @@ export default function () {
                             <h6 class="footer_title">Контактный телефон</h6>
                             <a href="tel:+74993902009" onclick={Fn.link} class="footer_phone">
                                 <img src={phoneGrey} alt="Контактный телефон" />
-                                <span>8 (499) 390-20-09</span>
+                                <span style="color: white">8 (499) 390-20-09</span>
                             </a>
                         </div>
                         <div>
                             <h6 class="footer_title">Электронная почта</h6>
                             <a href="mailto:info@racib.com" onclick={Fn.link} class="footer_phone">
                                 <img src={letterGrey} alt="Электронная почта" />
-                                <span>info@racib.com</span>
+                                <span style="color: white">info@racib.com</span>
                             </a>
                         </div>
 
