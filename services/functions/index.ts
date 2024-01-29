@@ -1,5 +1,7 @@
 export * from './sendApi'
 export * from './sendApiDefault'
+export * from './validate'
+export * from './validForms'
 
 export const loader = async function (Variable) {
   return
