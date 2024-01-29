@@ -86,7 +86,7 @@ export default function () {
               }
 
               {
-                Static.contentPlayer?.biography ? <h3 class="profile_content_title">Биография</h3> : null
+                Static.contentPlayer?.biography?.length ? <h3 class="profile_content_title">Биография</h3> : null
               }
               {
                 Static.contentPlayer?.biography ?
@@ -99,7 +99,7 @@ export default function () {
               }
 
               {
-                Static.contentPlayer?.activity ?
+                Static.contentPlayer?.activity?.length ?
                   <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Сфера деятельности</h3>
                     <div class="profile_content_activity">
@@ -115,7 +115,7 @@ export default function () {
               }
 
               {
-                Static.contentPlayer?.keyWords ?
+                Static.contentPlayer?.keyWords?.length ?
                   <div class="mb_10">
                     <h3 class="profile_content_title mt_10">Ключевые слова</h3>
                     <div class="profile_content_activity">
@@ -138,7 +138,7 @@ export default function () {
               }
 
               {
-                Static.contentPlayer?.desc ?
+                Static.contentPlayer?.desc?.length ?
                   <div class="mt_15">
                     {
                       Static.contentPlayer?.desc?.map((item: any) => {
@@ -183,7 +183,7 @@ export default function () {
 
 
               {
-                Static.contentPlayer?.options ?
+                Static.contentPlayer?.options?.length ?
                   <div>
                     {
                       Static.contentPlayer?.options?.map((item: any) => {
@@ -204,7 +204,7 @@ export default function () {
               }
 
               {
-                Static.contentPlayer?.video ?
+                Static.contentPlayer?.video?.length ?
                   <div>
                     {
                       Static.contentPlayer?.video?.map((item: any, index: number) => {
@@ -234,7 +234,7 @@ export default function () {
               }
 
               {
-                Static.contentPlayer?.media ?
+                Static.contentPlayer?.media?.length ?
                   <div>
                     <h3 class="profile_content_title mt_10">Медиараздел</h3>
                     <div class="profile_content_media">
