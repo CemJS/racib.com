@@ -5,6 +5,7 @@ import notFound from '@svg/list.svg'
 
 let answer: any = []
 let status: boolean = true
+let value: any = ""
 
 const lastRequestTimestamp = Date.now()
 function debounce(func: any, delay: number) {
@@ -45,7 +46,7 @@ export default function () {
                   class="filter_input"
                   placeholder="Поиск"
                   oninput={debounce(async (e: any) => {
-                    let value = e.target.value.toLocaleLowerCase()
+                     value = e.target.value.toLocaleLowerCase()
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi("/api/players", {
                         "action": "GetAll",
@@ -89,7 +90,7 @@ export default function () {
                                     "skip": Static.players?.length,
                                     "active": status,
                                     "uuid": `${localStorage.uuid}`,
-                                    "search": ""
+                                    "search": value
                                   })
                                   // console.log('=4aaa56=',page)
                                   Static.players = Static.players.concat(answer?.result)

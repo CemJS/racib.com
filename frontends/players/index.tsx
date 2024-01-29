@@ -15,7 +15,6 @@ front.loader = async () => {
     const playersGet = {
         "action": "GetAll",
         "active": true,
-        "uuid": `${localStorage?.uuid}`,
         "search": ""
     }
 
@@ -27,7 +26,6 @@ front.loader = async () => {
         const getPlayer = {
             "action": "Get",
             "id": front.Variable.DataUrl[2],
-            "uuid": `${localStorage?.uuid}`
         }
         let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
         Static.contentPlayer = playerContent?.result;

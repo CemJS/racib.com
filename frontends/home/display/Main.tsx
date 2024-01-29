@@ -20,13 +20,9 @@ let y1, yUsers1 = null;
 export default function () {
     return (
         <main
-            class={["main", "pt_15", "home", front.Variable.openSidebar ? null : "main_close"]}
-        >
+            class={["main", "pt_15", "home", front.Variable.openSidebar ? null : "main_close"]}>
             <div class="wrapper">
-
-
                 <div class="home">
-
                     {/* <section class="home_link link_block">
               <a href="/">
                 <img src={arrowR} class="link_block_icon" />
@@ -236,26 +232,24 @@ export default function () {
                                 }
                                 xUsers1 = null;
                                 yUsers1 = null;
-                            }}
-                        >
+                            }}>
                             {
-                                players.map((item, index) => {
+                                Static.players?.map((item: any, index: any) => {
                                     return (
                                         <div
                                             class="carousel_person"
                                             ref="playerSlide"
                                             onclick={() => {
-                                                Fn.linkChange(`/players/show/${item.name}`);
-                                            }}
-                                        >
+                                                Fn.linkChange(`/players/show/${item?.name}`)
+                                            }}>
                                             <div class="carousel_person_circle">
                                                 <div
                                                     class="carousel_person_img"
-                                                    style={`background-image: url(${item.img})`}
+                                                    style={`background-image: url(/assets/upload/racib/${item?.img})`}
                                                 ></div>
                                             </div>
-                                            <span class="carousel_person_status">{item.status}</span>
-                                            <h5 class="carousel_person_name">{item.name}</h5>
+                                            <span class="carousel_person_status">{item?.status}</span>
+                                            <h5 class="carousel_person_name">{item?.name}</h5>
                                         </div>
                                     )
                                 })

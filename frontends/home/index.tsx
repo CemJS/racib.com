@@ -16,11 +16,18 @@ front.loader = async () => {
         "action": "GetAll",
         "active": true,
         "search": ""
-      }
-      let events = await front.Services.functions.sendApi("/api/events", eventsGet)
-    
-      Static.events = events?.result;
+    }
+    let events = await front.Services.functions.sendApi("/api/events", eventsGet)
+    Static.events = events?.result;
 
+    const playersGet = {
+        "action": "GetAll",
+        "active": true,
+        "search": ""
+    }
+
+    let players = await front.Services.functions.sendApi("/api/players", playersGet)
+    Static.players = players?.result
     return
 }
 
