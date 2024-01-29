@@ -1,4 +1,5 @@
 export * from './sendApi'
+export * from './sendApiDefault'
 
 export const loader = async function (Variable) {
   return
