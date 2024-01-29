@@ -61,7 +61,7 @@ export default function () {
                                     </button>
                                 </div>
 
-                                <a href="/news" onclick={Fn.link} class="btn_link">Все новости</a>
+                                <a href="/news" style="color: white" onclick={Fn.link} class="btn_link">Все новости</a>
                             </div>
                         </div>
 

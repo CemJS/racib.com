@@ -1,0 +1,32 @@
+Date : 2024-01-26 17:48:51
+Directory : c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\players
+Total : 5 files,  559 codes, 2 comments, 52 blanks, all 613 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |          4 |        555 |          2 |         52 |        609 |
+| JSON           |          1 |          4 |          0 |          0 |          4 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                              | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                 |          5 |        559 |          2 |         52 |        613 |
+| . (Files)                                                                         |          3 |         66 |          0 |         16 |         82 |
+| display                                                                           |          2 |        493 |          2 |         36 |        531 |
++-----------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                          | language       | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\players\cemjs.json       | JSON           |          4 |          0 |          0 |          4 |
+| c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\players\display\Main.tsx | TypeScript JSX |        149 |          2 |         10 |        161 |
+| c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\players\display\Show.tsx | TypeScript JSX |        344 |          0 |         26 |        370 |
+| c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\players\index.tsx        | TypeScript JSX |         49 |          0 |         12 |         61 |
+| c:\Users\Konstantin\Documents\GitHub\racib.com\frontends\players\navigation.tsx   | TypeScript JSX |         13 |          0 |          4 |         17 |
+| Total                                                                             |                |        559 |          2 |         52 |        613 |
++-----------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
