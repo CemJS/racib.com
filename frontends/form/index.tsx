@@ -144,10 +144,12 @@ front.func.validForm = function (result: any) {
             return
         }
 
-        if (result.Status == 'ok') {
+        console.log('=07aec4=', result.result)
+
+        if (result.result == 'ok') {
             setTimeout(() => {
                 Fn.initOne("modalSuccess", {
-                    message: result.Message,
+                    message: "Успешно отправленно!",
                     img: Static.done,
                     className: 'modal_message_done'
                 })

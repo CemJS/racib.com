@@ -315,39 +315,83 @@ export default function () {
                                 class="btn_link btn_link_dark"
                                 type="submit"
                                 onclick={async () => {
-                                    let formData: object;
+                                    // let formData: object;
 
-                                    if (Static.company) {
-                                        formData = {
-                                            company: Static.company,
+                                    // if (Static.company) {
+                                    //     formData = {
+                                    //         action: "contactForm",
+                                    //         contactForm: {
+                                    //             type: Static.company,
+                                    //             lastName: Static.lastName,
+                                    //             firstName: Static.firstName,
+                                    //             middleName: Static.middleName,
+                                    //             phone: Static.phone,
+                                    //             email: Static.email,
+                                    //             companyName: Static.companyName,
+                                    //             position: Static.companyPost
+                                    //         }
+                                    //     };
+                                    // } else {
+                                    //     formData = {
+                                    //         action: "contactForm",
+                                    //         contactForm: {
+                                    //             type: Static.company,
+                                    //             lastName: Static.lastName,
+                                    //             firstName: Static.firstName,
+                                    //             middleName: Static.middleName,
+                                    //             phone: Static.phone,
+                                    //             email: Static.email,
+                                    //             companyName: "",
+                                    //             position: ""
+                                    //         }
+                                    //     };
+                                    // }
+
+                                    // const response = await fetch("/api/tg/racib", {
+                                    //     method: "POST",
+                                    //     body: JSON.stringify(formData)
+                                    // });
+                                    // if (!response.ok) {
+                                    //     throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
+                                    // }
+                                    // let result = await response.json()
+                                    // Func.validForm(result)
+
+                                    let data = {
+                                        action: "contactForm",
+                                        contactForm: {
+                                            type: Static.company ? "Юридическое лицо" : "Физическое лицо",
                                             lastName: Static.lastName,
                                             firstName: Static.firstName,
                                             middleName: Static.middleName,
                                             phone: Static.phone,
                                             email: Static.email,
-                                            nameCompany: Static.companyName,
-                                            postCompany: Static.companyPost
-                                        };
-                                    } else {
-                                        formData = {
-                                            company: Static.company,
-                                            lastName: Static.lastName,
-                                            firstName: Static.firstName,
-                                            middleName: Static.middleName,
-                                            phone: Static.phone,
-                                            email: Static.email
-                                        };
+                                            companyName: Static?.companyName,
+                                            position: Static?.companyPost
+                                        }
                                     }
 
-                                    const response = await fetch("/api", {
-                                        method: "POST",
-                                        body: JSON.stringify(formData)
-                                    });
-                                    if (!response.ok) {
-                                        throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
-                                    }
-                                    let result = await response.json()
-                                    Func.validForm(result)
+                                    let answer = await front.Services.functions.sendApiDefault("/api/tg/racib", data)
+
+                                    console.log('=19190d=', answer)
+
+                                    // if (!answer.ok) {
+                                    //     setTimeout(() => {
+                                    //         Fn.initOne("modalSuccess", {
+                                    //             message: "Ошибка!",
+                                    //             img: Static.cancel,
+                                    //             className: 'modal_message_cancel'
+                                    //         })
+
+                                    //         Ref.buttonPreloader.classList.remove('preloader-floating-circles')
+
+                                    //     }, 2000)
+
+
+                                    // }
+
+                                    Func.validForm(answer)
+
                                 }}
                             >
                                 <div ref="buttonPreloader">
