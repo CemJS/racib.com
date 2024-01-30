@@ -5,6 +5,11 @@
         "link": "/about"
     },
     {
+        "img": "/contents/svg/sidebar/people.svg",
+        "name": "Представители",
+        "link": "/representatives"
+    },
+    {
         "img": "/contents/svg/sidebar/communityDark.svg",
         "name": "Участники",
         "link": "/players"
