@@ -1,5 +1,7 @@
 import { Cemjsx, Static, front, Fn, Func, Ref } from "cemjs-all"
 import back from '@svg/icons/back.svg'
+import done from '@svg/icons/color/done.svg'
+import cancel from '@svg/icons/color/cancel.svg'
 
 
 export default function () {
@@ -29,7 +31,6 @@ export default function () {
                                     for="physical"
                                     onclick={() => {
                                         Static.company = false;
-                                        Fn.init()
                                     }}
                                 >
                                     <div class="option_dot"></div>
@@ -40,7 +41,6 @@ export default function () {
                                     for="legal"
                                     onclick={() => {
                                         Static.company = true;
-                                        Fn.init()
                                     }}
                                 >
                                     <div class="option_dot"></div>
@@ -52,49 +52,30 @@ export default function () {
                             <div class="form_block">
                                 <div>
                                     <div class="input">
-                                        {/* {
-                                        Static.lastName ?
-                                            <span
-                                                class="input_icon"
-                                                onclick={() => {
-                                                    Ref.lastNameInput.value = ''
-                                                    Ref.lastNameLabel.classList.remove('input_label_valid');
-                                                    Fn.init()
-                                                }}
-                                            >
-                                                <img src={cancel} alt="Очистить поле ввода" />
-                                            </span> : null
-                                    } */}
                                         <input
                                             class="input_field"
                                             type="text"
                                             autocomplete="off"
-                                            id="lastName"
                                             ref="lastNameInput"
-                                            onchange={() => {
-                                                if (Ref.lastNameInput.value.length > 0) {
-                                                    Ref.lastNameLabel.classList.add('input_label_valid');
-                                                    Static.lastName = Ref.lastNameInput.value;
-                                                }
-                                                if (Ref.lastNameInput.value.length === 0) {
-                                                    Ref.lastNameLabel.classList.remove('input_label_valid');
-                                                }
-                                            }}
-                                            oninput={function () {
-                                                Static.lastName = this.value;
-                                                setTimeout(() => {
-                                                    Func.validText(Ref.lastNameInput.value, Ref.statusLastName)
-
-                                                }, 3000)
+                                            oninput={(e) => {
+                                                Static.form.lastName.value = e.currentTarget.value
+                                                front.Services.functions.formName(Static.form.lastName)
+                                                Func.checkForm()
                                             }}
                                         />
-                                        <label class="input_label" for="lastName" ref="lastNameLabel">
-                                            Фамилия
+                                        <label
+                                            class={[
+                                                "input_label",
+                                                Static.form.lastName.value.length ? "input_label_valid" : null
+                                            ]}
+                                            for="lastName"
+                                            ref="lastNameLabel">
+                                            {Static.form.lastName.placeholder}
                                             <span class="input_label_star">*</span>
                                         </label>
                                     </div>
                                     {/* Выводит ошибку здесь! */}
-                                    <span ref="statusLastName" class="form_message"></span>
+                                    <span class="form_message form_message-error">{Static.form.lastName?.error}</span>
                                 </div>
                                 <div>
                                     <div class="input">
@@ -104,61 +85,49 @@ export default function () {
                                             autocomplete="off"
                                             id="firstName"
                                             ref="firstNameInput"
-                                            onchange={() => {
-                                                if (Ref.firstNameInput.value.length > 0) {
-                                                    Ref.firstNameLabel.classList.add('input_label_valid');
-                                                    Static.firstName = Ref.firstNameInput.value
-                                                }
-                                                if (Ref.firstNameInput.value.length === 0) {
-                                                    Ref.firstNameLabel.classList.remove('input_label_valid');
-                                                }
-                                            }}
-                                            oninput={() => {
-                                                Static.firstName = Ref.firstNameInput.value;
-                                                setTimeout(() => {
-                                                    Func.validText(Ref.firstNameInput.value, Ref.statusFirstName)
-
-                                                }, 3000)
+                                            oninput={(e) => {
+                                                Static.form.firstName.value = e.currentTarget.value
+                                                front.Services.functions.formName(Static.form.firstName)
                                             }}
                                         />
-                                        <label class="input_label" for="firstName" ref="firstNameLabel">
-                                            Имя
+                                        <label
+                                            class={[
+                                                "input_label",
+                                                Static.form.firstName.value.length ? "input_label_valid" : null
+                                            ]}
+                                            for="firstName"
+                                            ref="firstNameLabel">
+                                            {Static.form.firstName.placeholder}
                                             <span class="input_label_star">*</span>
                                         </label>
                                     </div>
-                                    <span ref="statusFirstName" class="form_message"></span>
+                                    <span class="form_message form_message-error">{Static.form.firstName?.error}</span>
                                 </div>
                                 <div>
                                     <div class="input">
                                         <input
                                             class="input_field"
+                                            ref="middleNameInput"
                                             type="text"
                                             autocomplete="off"
-                                            id="middleName"
-                                            ref="middleNameInput"
-                                            onchange={() => {
-                                                if (Ref.middleNameInput.value.length > 0) {
-                                                    Ref.middleNameLabel.classList.add('input_label_valid');
-                                                    Static.middleName = Ref.middleNameInput.value
-                                                }
-                                                if (Ref.middleNameInput.value.length === 0) {
-                                                    Ref.middleNameLabel.classList.remove('input_label_valid');
-                                                }
-                                            }}
-                                            oninput={() => {
-                                                Static.middleName = Ref.middleNameInput.value
-                                                setTimeout(() => {
-                                                    Func.validText(Ref.middleNameInput.value, Ref.statusMiddleName)
-
-                                                }, 3000)
+                                            oninput={(e) => {
+                                                Static.form.middleName.value = e.currentTarget.value
+                                                front.Services.functions.formName(Static.form.middleName)
+                                                Func.checkForm()
                                             }}
                                         />
-                                        <label class="input_label" for="middleName" ref="middleNameLabel">
-                                            Отчество
+                                        <label
+                                            class={[
+                                                "input_label",
+                                                Static.form.middleName.value.length ? "input_label_valid" : null
+                                            ]}
+                                            for="middleName"
+                                            ref="middleNameLabel">
+                                            {Static.form.middleName.placeholder}
                                             <span class="input_label_star">*</span>
                                         </label>
                                     </div>
-                                    <span ref="statusMiddleName" class="form_message"></span>
+                                    <span class="form_message form_message-error">{Static.form.middleName?.error}</span>
                                 </div>
                             </div>
 
@@ -170,32 +139,27 @@ export default function () {
                                             class="input_field"
                                             type="tel"
                                             name="phone"
-                                            autocomplete="off"
-                                            id="phone"
                                             ref="phoneInput"
-                                            onchange={() => {
-                                                if (Ref.phoneInput.value.length > 0) {
-                                                    Ref.phoneLabel.classList.add('input_label_valid');
-                                                    Static.phone = Ref.phoneInput.value;
-                                                }
-                                                if (Ref.phoneInput.value.length === 0) {
-                                                    Ref.phoneLabel.classList.remove('input_label_valid');
-                                                }
-                                            }}
-                                            oninput={function () {
-                                                Static.phone = Ref.phoneInput.value;
-                                                setTimeout(() => {
-                                                    Func.validPhone(Ref.phoneInput.value)
-                                                }, 3000)
+                                            autocomplete="off"
+                                            oninput={(e) => {
+                                                Static.form.phone.value = e.currentTarget.value
+                                                front.Services.functions.formPhone(Static.form.phone)
+                                                Func.checkForm()
                                             }}
                                         />
-                                        <label class="input_label" for="phone" ref="phoneLabel">
-                                            Номер телефона
+                                        <label
+                                            class={[
+                                                "input_label",
+                                                Static.form.phone.value.length ? "input_label_valid" : null
+                                            ]}
+                                            for="phone"
+                                            ref="phoneLabel">
+                                            {Static.form.phone.placeholder}
                                             <span class="input_label_star">*</span>
                                         </label>
                                     </div>
                                     {/* Вывод ошибки здесь! */}
-                                    <span ref="statusPhone" class="form_message"></span>
+                                    <span class="form_message form_message-error">{Static.form.phone?.error}</span>
                                 </div>
 
                                 <div>
@@ -204,32 +168,28 @@ export default function () {
                                             class="input_field"
                                             type="email"
                                             name="email"
-                                            autocomplete="off"
-                                            id="email"
                                             ref="emailInput"
-                                            onchange={() => {
-                                                if (Ref.emailInput.value.length > 0) {
-                                                    Ref.emailLabel.classList.add('input_label_valid');
-                                                    Static.email = Ref.emailInput.value;
-                                                }
-                                                if (Ref.emailInput.value.length === 0) {
-                                                    Ref.emailLabel.classList.remove('input_label_valid');
-                                                }
-                                            }}
-                                            oninput={() => {
-                                                Static.email = Ref.emailInput.value;
-                                                setTimeout(() => {
-                                                    Func.validEmail(Ref.emailInput.value)
-                                                }, 3000)
+                                            autocomplete="off"
+                                            oninput={(e) => {
+                                                Static.form.email.value = e.currentTarget.value
+                                                front.Services.functions.formEmail(Static.form.email)
+                                                Func.checkForm()
                                             }}
                                         />
-                                        <label class="input_label" for="email" ref="emailLabel">
-                                            Email
+                                        <label
+                                            class={[
+                                                "input_label",
+                                                Static.form.email.value.length ? "input_label_valid" : null
+                                            ]}
+                                            for="email"
+                                            ref="emailLabel"
+                                        >
+                                            {Static.form.email.placeholder}
                                             <span class="input_label_star">*</span>
                                         </label>
                                     </div>
                                     {/* вывод ошибки здесь! */}
-                                    <span ref="statusEmail" class="form_message"></span>
+                                    <span class="form_message form_message-error">{Static.form.email?.error}</span>
                                 </div>
                             </div>
 
@@ -243,65 +203,56 @@ export default function () {
                                                     <input
                                                         class="input_field"
                                                         type="text"
-                                                        autocomplete="off"
-                                                        id="companyName"
                                                         ref="companyNameInput"
-                                                        onchange={() => {
-                                                            if (Ref.companyNameInput.value.length > 0) {
-                                                                Ref.companyNameLabel.classList.add('input_label_valid');
-                                                                Static.companyName = Ref.companyNameInput.value
-                                                            }
-                                                            if (Ref.companyNameInput.value.length === 0) {
-                                                                Ref.companyNameLabel.classList.remove('input_label_valid');
-                                                            }
-                                                        }}
-                                                        oninput={() => {
-                                                            Static.companyName = Ref.companyNameInput.value;
-                                                            setTimeout(() => {
-                                                                Func.validText(Ref.companyNameInput.value, Ref.statusCompanyName)
-
-                                                            }, 3000)
+                                                        autocomplete="off"
+                                                        oninput={(e) => {
+                                                            Static.form.companyName.value = e.currentTarget.value
+                                                            front.Services.functions.formName(Static.form.companyName)
+                                                            Func.checkForm()
                                                         }}
                                                     />
-                                                    <label class="input_label" for="companyName" ref="companyNameLabel">
-                                                        Название
+                                                    <label
+                                                        class={[
+                                                            "input_label",
+                                                            Static.form.companyName.value.length ? "input_label_valid" : null
+                                                        ]}
+                                                        for="companyName"
+                                                        ref="companyNameLabel"
+                                                    >
+                                                        {Static.form.companyName.placeholder}
                                                         <span class="input_label_star">*</span>
                                                     </label>
                                                 </div>
                                                 {/* вывод ошибки здесь! */}
-                                                <span ref="statusCompanyName" class="form_message"></span>
+                                                <span class="form_message form_message-error">{Static.form.companyName?.error}</span>
                                             </div>
                                             <div>
                                                 <div class="input">
                                                     <input
                                                         class="input_field"
                                                         type="text"
+                                                        ref="companyPositionInput"
                                                         autocomplete="off"
-                                                        id="companyPost"
-                                                        ref="companyPostInput"
-                                                        onchange={() => {
-                                                            if (Ref.companyPostInput.value.length > 0) {
-                                                                Ref.companyPostLabel.classList.add('input_label_valid');
-                                                                Static.companyPost = Ref.companyPostInput.value
-                                                            }
-                                                            if (Ref.companyPostInput.value.length === 0) {
-                                                                Ref.companyPostLabel.classList.remove('input_label_valid');
-                                                            }
-                                                        }}
-                                                        oninput={() => {
-                                                            Static.companyPost = Ref.companyPostInput.value;
-                                                            setTimeout(() => {
-                                                                Func.validText(Ref.companyPostInput.value, Ref.statusCompanyPost)
-                                                            }, 3000)
+                                                        oninput={(e) => {
+                                                            Static.form.position.value = e.currentTarget.value
+                                                            front.Services.functions.formName(Static.form.position)
+                                                            Func.checkForm()
                                                         }}
                                                     />
-                                                    <label class="input_label" for="companyPost" ref="companyPostLabel">
-                                                        Должность
+                                                    <label
+                                                        class={[
+                                                            "input_label",
+                                                            Static.form.position.value.length ? "input_label_valid" : null
+                                                        ]}
+                                                        for="companyPost"
+                                                        ref="companyPostLabel"
+                                                    >
+                                                        {Static.form.position.placeholder}
                                                         <span class="input_label_star">*</span>
                                                     </label>
                                                 </div>
                                                 {/* вывод ошибки здесь! */}
-                                                <span ref="statusCompanyPost" class="form_message"></span>
+                                                <span class="form_message form_message-error">{Static.form.position?.error}</span>
                                             </div>
 
                                         </div>
@@ -310,88 +261,75 @@ export default function () {
 
                         </section>
 
-                        <div class="form_btn">
+                        <div class={["form_btn", !Static.form.isValid ? "form_btn-passive" : null]}>
                             <button
                                 class="btn_link btn_link_dark"
                                 type="submit"
                                 onclick={async () => {
-                                    // let formData: object;
+                                    if (!Static.form.isValid) return
+                                    Ref.buttonPreloader.classList.add('preloader-floating-circles')
 
-                                    // if (Static.company) {
-                                    //     formData = {
-                                    //         action: "contactForm",
-                                    //         contactForm: {
-                                    //             type: Static.company,
-                                    //             lastName: Static.lastName,
-                                    //             firstName: Static.firstName,
-                                    //             middleName: Static.middleName,
-                                    //             phone: Static.phone,
-                                    //             email: Static.email,
-                                    //             companyName: Static.companyName,
-                                    //             position: Static.companyPost
-                                    //         }
-                                    //     };
-                                    // } else {
-                                    //     formData = {
-                                    //         action: "contactForm",
-                                    //         contactForm: {
-                                    //             type: Static.company,
-                                    //             lastName: Static.lastName,
-                                    //             firstName: Static.firstName,
-                                    //             middleName: Static.middleName,
-                                    //             phone: Static.phone,
-                                    //             email: Static.email,
-                                    //             companyName: "",
-                                    //             position: ""
-                                    //         }
-                                    //     };
-                                    // }
-
-                                    // const response = await fetch("/api/tg/racib", {
-                                    //     method: "POST",
-                                    //     body: JSON.stringify(formData)
-                                    // });
-                                    // if (!response.ok) {
-                                    //     throw new Error(`Ошибка по адресу , статус ошибки ${response.status}`);
-                                    // }
-                                    // let result = await response.json()
-                                    // Func.validForm(result)
-
-                                    let data = {
+                                    let data: object = {
                                         action: "contactForm",
                                         contactForm: {
                                             type: Static.company ? "Юридическое лицо" : "Физическое лицо",
-                                            lastName: Static.lastName,
-                                            firstName: Static.firstName,
-                                            middleName: Static.middleName,
-                                            phone: Static.phone,
-                                            email: Static.email,
-                                            companyName: Static?.companyName,
-                                            position: Static?.companyPost
+                                            lastName: Static.form.lastName.value,
+                                            firstName: Static.form.firstName.value,
+                                            middleName: Static.form.middleName.value,
+                                            phone: Static.form.phone.value,
+                                            email: Static.form.email.value,
+                                            companyName: Static.form.companyName.value,
+                                            position: Static.form.position.value
                                         }
                                     }
 
                                     let answer = await front.Services.functions.sendApiDefault("/api/tg/racib", data)
 
-                                    console.log('=19190d=', answer)
+                                    if (answer.error) {
+                                        setTimeout(() => {
+                                            Fn.initOne("modalSuccess", {
+                                                message: "Ошибка!",
+                                                img: cancel,
+                                                className: 'modal_message_cancel'
+                                            })
 
-                                    // if (!answer.ok) {
-                                    //     setTimeout(() => {
-                                    //         Fn.initOne("modalSuccess", {
-                                    //             message: "Ошибка!",
-                                    //             img: Static.cancel,
-                                    //             className: 'modal_message_cancel'
-                                    //         })
+                                            Ref.buttonPreloader.classList.remove('preloader-floating-circles')
 
-                                    //         Ref.buttonPreloader.classList.remove('preloader-floating-circles')
+                                        }, 2000)
+                                    }
 
-                                    //     }, 2000)
+                                    setTimeout(() => {
+                                        Fn.initOne("modalSuccess", {
+                                            message: "Успешно отправленно!",
+                                            img: done,
+                                            className: 'modal_message_done'
+                                        })
 
+                                        Ref.buttonPreloader.classList.remove('preloader-floating-circles')
 
-                                    // }
+                                        Static.company = false
+                                        Static.formStatus = true
+                                        Static.form.lastName.value = ''
+                                        Ref.lastNameInput.value = ''
+                                        Static.form.firstName.value = ''
+                                        Ref.firstNameInput.value = ''
+                                        Static.form.middleName.value = ''
+                                        Ref.middleNameInput.value = ''
+                                        Static.form.phone.value = ''
+                                        Ref.phoneInput.value = ''
+                                        Static.email = ''
+                                        Static.form.email.value = ''
+                                        Ref.emailInput.value = ''
+                                        Static.form.companyName.value = ''
+                                        Ref.companyNameInput.value = ''
+                                        Static.form.position.value = ''
+                                        Ref.companyPositionInput.value = ''
 
-                                    Func.validForm(answer)
+                                        Array.from(Static.formMessages).map((item: any) => {
+                                            item.innerText = ''
+                                        })
 
+                                    }, 2000)
                                 }}
                             >
                                 <div ref="buttonPreloader">
