@@ -5,7 +5,6 @@ import notFound from '@svg/list.svg'
 
 let answer: any = []
 let status: boolean = true
-let value: any = ""
 
 const lastRequestTimestamp = Date.now()
 function debounce(func: any, delay: number) {
@@ -21,6 +20,8 @@ function debounce(func: any, delay: number) {
 }
 
 export default function () {
+  let value: any = ""
+
   return (
     <div class="main_wrap">
       <main

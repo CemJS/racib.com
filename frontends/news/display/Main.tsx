@@ -25,7 +25,7 @@ export default function () {
   //     <div>123</div>
   //   )
   // }
-
+  let value: any = ""
   return (
     <div class="main_wrap">
       <main
@@ -49,11 +49,10 @@ export default function () {
                   class="filter_input"
                   placeholder="Поиск"
                   oninput={debounce(async (e: any) => {
-                    let value = e.target.value.toLocaleLowerCase()
+                    value = e.target.value.toLocaleLowerCase()
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi("/api/News", {
                         "action": "GetAll",
-                        // "skip": Static.news.length,
                         "active": status,
                         "search": value
                       });
@@ -61,7 +60,6 @@ export default function () {
                     }
                   }, 400)}
                 />
-                {/* <CreateNew /> */}
               </div>
             </div>
 
@@ -75,7 +73,6 @@ export default function () {
                         class="newCard"
                         ref="newsSlide"
                         onclick={async () => {
-                          // Static.record = item;
                           const getNew = {
                             "action": "Get",
                             "id": item?.id
@@ -95,7 +92,7 @@ export default function () {
                                     "action": "GetAll",
                                     "skip": Static.news?.length,
                                     "active": status,
-                                    "search": ""
+                                    "search": value
                                   })
                                   Static.news = Static.news?.concat(answer?.result)
                                 }

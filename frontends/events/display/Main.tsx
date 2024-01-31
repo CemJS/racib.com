@@ -22,12 +22,11 @@ export default function () {
       }, delay)
     }
   }
-
+  let value: any = ""
   return (
     <div class="main_wrap">
       <main
-        class={["main", front.Variable.openSidebar ? null : "main_close"]}
-      >
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
           <a class="back" href="/" onclick={Fn.link}>
             <span class="back-icon">
@@ -38,7 +37,7 @@ export default function () {
 
           <section class="events">
 
-          <div class="filter">
+            <div class="filter">
               <div class="filter_item filter_item_event">
                 <span class="filter_item_title">
                   Поиск
@@ -48,7 +47,7 @@ export default function () {
                   class="filter_input"
                   placeholder="Поиск"
                   oninput={debounce(async (e: any) => {
-                    let value = e.target.value.toLocaleLowerCase()
+                    value = e.target.value.toLocaleLowerCase()
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi("/api/events", {
                         "action": "GetAll",
@@ -66,7 +65,7 @@ export default function () {
               {
                 Static.events?.length ?
 
-                Static.events?.map((item: any) => {
+                  Static.events?.map((item: any, key: number) => {
                     return (
                       <div
                         class="card"
@@ -78,6 +77,25 @@ export default function () {
                           let eventContent = await front.Services.functions.sendApi("/api/events", getEvent)
                           Static.contentEvent = eventContent?.result
                           Fn.linkChange(`/events/show/${item?.id}`)
+                        }}
+                        init={($el: any) => {
+                          if (key == Static.news?.length - 1) {
+                            const observer = new IntersectionObserver((entries) => {
+                              entries.forEach(async entry => {
+                                if (entry.isIntersecting) {
+                                  observer.unobserve($el)
+                                  answer = await front.Services.functions.sendApi("/api/events", {
+                                    "action": "GetAll",
+                                    "skip": Static.events?.length,
+                                    "active": status,
+                                    "search": value
+                                  })
+                                  Static.news = Static.news?.concat(answer?.result)
+                                }
+                              })
+                            })
+                            observer.observe($el)
+                          }
                         }}>
                         <span class="card_category">{item?.category}</span>
                         <div class="card_img" style={`background-image: url(/assets/upload/racib/${item?.cover})`}>
