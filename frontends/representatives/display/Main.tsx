@@ -4,7 +4,6 @@ import notFound from '@svg/list.svg'
 
 let answer: any = []
 let status: boolean = true
-let value: any = ""
 let editKey = -1
 
 function debounce(func: any, delay: number) {
@@ -31,13 +30,13 @@ const changeStatusrepresentatives = async (event: any) => {
 
 }
 export default function () {
-  console.log("Static.stateField", Static.stateField);
+  let value: any = ""
 
   return (
     <div class="main_wrap">
       <main class="main main_close">
         <div class="wrapper">
-          <a class="back" href="/">
+          <a class="back" href="/" onclick={Fn.init}>
             <img src={back} />
             <span class="back_title">Главная</span>
           </a>
@@ -57,7 +56,6 @@ export default function () {
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi("/api/representatives", {
                         "action": "GetAll",
-                        "skip": Static.representatives.length,
                         "active": status,
                         "uuid": `${localStorage.uuid}`,
                         "search": value

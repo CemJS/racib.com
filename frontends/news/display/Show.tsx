@@ -13,14 +13,12 @@ export default function () {
   return (
     <div class="main_wrap">
       <main
-        class={["main", front.Variable.openSidebar ? null : "main_close"]}
-      >
+        class={["main", front.Variable.openSidebar ? null : "main_close"]}>
         <div class="wrapper">
           <a
             class="back"
             href="/news"
-            onclick={Fn.link}
-          >
+            onclick={Fn.link}>
             <span class="back-icon">
               <img src={back} />
             </span>
