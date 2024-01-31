@@ -157,7 +157,7 @@ export default function () {
 
 
                     </div>
-                    <span class="footer_racib">РАКИБ © 2021 - 2023, Все права защищены.</span>
+                    <span class="footer_racib">РАКИБ © 2021 - 2024, Все права защищены.</span>
                     <span class="footer_powered">
                         <img class="footer_icon" src={logoCem} alt="Powered by Crypto Emergency" />
                         Powered by Crypto Emergency
