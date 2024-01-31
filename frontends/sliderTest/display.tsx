@@ -5,7 +5,7 @@ import events from '@json/eventsSlider'
 
 
 export const display = function () {
-  console.log('=55e12d=', '1234')
+  // console.log('=55e12d=', '1234')
   return (
     <div class="main_wrap">
       <main class={["main", this.Variable.openSidebar ? null : "main_close"]}>
