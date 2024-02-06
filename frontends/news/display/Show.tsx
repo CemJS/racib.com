@@ -67,7 +67,7 @@ export default function () {
                                       {
                                         item?.text?.map((el: any) => {
                                           return (
-                                            <p contenteditable="plaintext-only" class="new_content_text">{el}</p>
+                                            <p class="new_content_text">{el}</p>
                                           )
                                         })
                                       }
