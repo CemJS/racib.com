@@ -109,7 +109,7 @@ export default function () {
                             <p class="event_content_text">{item?.text}
                               <a
                                 href={item?.link}
-                                onclick={Fn.link}
+                                target="_blank"
                                 class="link ml_5"
                               >
                                 {item?.textLink}
