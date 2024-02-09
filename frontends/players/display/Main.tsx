@@ -78,7 +78,7 @@ export default function () {
                           let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
                           //проверка на error
                           Static.contentPlayer = playerContent.result
-                          Fn.linkChange(`/players/show/${item?.name}`)
+                          Fn.linkChange(`/players/show/${Static.contentPlayer?.alias === "" ? item?.id : item?.name}`)
                         }}
                         init={($el: any) => {
                           if (key == Static.players?.length - 1) {
