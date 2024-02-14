@@ -235,7 +235,6 @@ export default function () {
                             }}>
                             {
                                 Static.players?.map((item: any, index: any) => {
-                                    console.log('=a37582=', item)
                                     return (
                                         <div
                                             class="carousel_person"
