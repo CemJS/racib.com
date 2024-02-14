@@ -235,20 +235,14 @@ export default function () {
                             }}>
                             {
                                 Static.players?.map((item: any, index: any) => {
+                                    console.log("item", item)
                                     return (
-                                        <div
+                                        <a
                                             class="carousel_person"
                                             ref="playerSlide"
-                                            onclick={async () => {
-                                                const getPlayer = {
-                                                    "action": "Get",
-                                                    "id": item?.id,
-                                                    "uuid": `${localStorage?.uuid}`
-                                                }
-                                                let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
-                                                //проверка на error
-                                                Static.contentPlayer = playerContent.result
-                                                Fn.linkChange(`/players/show/${Static.contentPlayer?.alias === "" ? item?.id : item?.name}`)
+                                            href={`/players/show/${item?.alias ? item?.name : item?.id}`}
+                                            onclick={() => {
+                                                Fn.link
                                             }}>
                                             <div class="carousel_person_circle">
                                                 <div
@@ -258,7 +252,7 @@ export default function () {
                                             </div>
                                             <span class="carousel_person_status">{item?.status}</span>
                                             <h5 class="carousel_person_name">{item?.name}</h5>
-                                        </div>
+                                        </a>
                                     )
                                 })
                             }
