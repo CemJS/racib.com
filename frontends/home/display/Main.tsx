@@ -239,8 +239,16 @@ export default function () {
                                         <div
                                             class="carousel_person"
                                             ref="playerSlide"
-                                            onclick={() => {
-                                                Fn.linkChange(`/players/show/${item?.name}`)
+                                            onclick={async () => {
+                                                const getPlayer = {
+                                                    "action": "Get",
+                                                    "id": item?.id,
+                                                    "uuid": `${localStorage?.uuid}`
+                                                }
+                                                let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
+                                                //проверка на error
+                                                Static.contentPlayer = playerContent.result
+                                                Fn.linkChange(`/players/show/${Static.contentPlayer?.alias === "" ? item?.id : item?.name}`)
                                             }}>
                                             <div class="carousel_person_circle">
                                                 <div
