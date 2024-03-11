@@ -9,7 +9,7 @@ import arrowR from '@svg/icons/arrowR.svg'
 import calendar from '@svg/icons/date.svg'
 import players from '@json/allUsers'
 import events from '@json/events'
-import banner from '@images/banners/racibLetter.jpg'
+import banner from '@images/banners/bannerEconom.jpg'
 import racib from '@svg/racib.svg'
 
 let isDragging, isDragUsers = false;
@@ -24,13 +24,13 @@ export default function () {
             <div class="wrapper">
                 <div class="home">
                     {/* <section class="home_link link_block">
-              <a href="/">
-                <img src={arrowR} class="link_block_icon" />
-                <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
-              </a>
-            </section> */}
-                    <a class="home_banner" href="/appeal" onclick={Fn.link}>
-                        <img src={banner} alt="" />
+                        <a href="/">
+                            <img src={arrowR} class="link_block_icon" />
+                            <span>III ЕЖЕГОДНЫЙ САММИТ ПО КРИПТОВАЛЮТАМ И БЛОКЧЕЙН - ТЕХНОЛОГИЯМ</span>
+                        </a>
+                    </section> */}
+                    <a class="home_banner" href="/news/show/65eecc85a0b5adf20d1110b3" onclick={Fn.link}>
+                        <img src={banner} alt="Баннер РАКИБ" />
                         <span class="btn_link btn_link_dark">Ознакомиться</span>
                         <div class="home_banner_info">
                             {/* <span class="home_banner_info_date">
