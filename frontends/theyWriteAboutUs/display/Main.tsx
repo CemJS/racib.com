@@ -48,7 +48,7 @@ export default function () {
                     value = e.target.value.toLocaleLowerCase();
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi(
-                        "/api/News",
+                        "/api/NewsAboutUs",
                         {
                           action: "GetAll",
                           active: status,
@@ -75,12 +75,12 @@ export default function () {
                           id: item?.id,
                         };
                         let newContent = await front.Services.functions.sendApi(
-                          "/api/News",
+                          "/api/NewsAboutUs",
                           getNew
                         );
                         //проверка на error
                         Static.contentNew = newContent?.result;
-                        Fn.linkChange(`/news/show/${item?.id}`);
+                        Fn.linkChange(`/theywriteaboutus/show/${item?.id}`);
                       }}
                       init={($el: any) => {
                         if (key == Static.news?.length - 1) {
@@ -91,7 +91,7 @@ export default function () {
                                   observer.unobserve($el);
                                   answer =
                                     await front.Services.functions.sendApi(
-                                      "/api/News",
+                                      "/api/NewsAboutUs",
                                       {
                                         action: "GetAll",
                                         skip: Static.news?.length,

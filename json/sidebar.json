@@ -25,8 +25,19 @@
         "link": "/news"
     },
     {
+        "img": "/contents/svg/sidebar/media_9vsadvmozk9q.svg",
+        "name": "Они пишут о нас",
+        "link": "/theywriteaboutus"
+    },
+    {
+        "img": "/contents/svg/sidebar/mission_f8kjvvs4pu02.svg",
+        "name": "Миссия",
+        "link": "/mission"
+    },
+    {
         "img": "/contents/svg/sidebar/userAddDark.svg",
         "name": "Как вступить ?",
         "link": "/about/join"
     }
+   
 ]
