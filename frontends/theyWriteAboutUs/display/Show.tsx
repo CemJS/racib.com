@@ -24,7 +24,7 @@ export default function () {
             <div class="new_profile">
               <div class="new_profile_image">
                 <img
-                  src={`/assets/upload/racib/${Static.contentNew?.img}`}
+                  src={Static.contentNew?.img ? `/assets/upload/racib/${Static.contentNew?.img}`: `/assets/upload/racib/0004d9d6c7f30a3eb2f0196c3e99b7cd.jpeg`}
                   alt="Избражение новости"
                 />
               </div>
