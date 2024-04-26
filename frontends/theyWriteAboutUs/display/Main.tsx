@@ -68,6 +68,7 @@ export default function () {
                   return (
                     <div
                       class="newCard"
+                      style={item?.descShort ? "" : "height: 75%"}
                       ref="newsSlide"
                       onclick={async () => {
                         const getNew = {
