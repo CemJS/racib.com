@@ -112,7 +112,9 @@ export default function () {
                     >
                       <div
                         class="newCard_img"
-                        style={`background-image: url(/assets/upload/racib/${item?.img})`}
+                        style={ item?.img ?
+                          `background-image: url(https://crypto-emergency.com/assets/upload/racib/${item?.img})` :
+                          `background-image: url(https://crypto-emergency.com/assets/upload/racib/0004d9d6c7f30a3eb2f0196c3e99b7cd.jpeg)`}
                       >
                         {item?.category && (
                           <span class="newCard_category">{item?.category}</span>
