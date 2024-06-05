@@ -17,7 +17,7 @@ front.loader = async () => {
         "active": true,
         "search": ""
     }
-    let events = await front.Services.functions.sendApi("/api/events", eventsGet)
+    let events = await front.Services.functions.sendApi("/racib/events", eventsGet)
     Static.events = events?.result;
 
     const playersGet = {
@@ -26,7 +26,7 @@ front.loader = async () => {
         "search": ""
     }
 
-    let players = await front.Services.functions.sendApi("/api/players", playersGet)
+    let players = await front.Services.functions.sendApi("/racib/players", playersGet)
     Static.players = players?.result
     return
 }

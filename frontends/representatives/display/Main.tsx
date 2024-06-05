@@ -20,7 +20,7 @@ function debounce(func: any, delay: number) {
 
 const changeStatusrepresentatives = async (event: any) => {
   status = !status
-  answer = await front.Services.functions.sendApi("/api/representatives", {
+  answer = await front.Services.functions.sendApi("/racib/representatives", {
     "action": "GetAll",
     "active": status,
     "uuid": `${localStorage.uuid}`,
@@ -54,7 +54,7 @@ export default function () {
                   oninput={debounce(async (e: any) => {
                     value = e.target.value.toLocaleLowerCase();
                     if (value.length == 0 || value.length >= 2) {
-                      answer = await front.Services.functions.sendApi("/api/representatives", {
+                      answer = await front.Services.functions.sendApi("/racib/representatives", {
                         "action": "GetAll",
                         "active": status,
                         "uuid": `${localStorage.uuid}`,
@@ -99,7 +99,7 @@ export default function () {
                             entries.forEach(async entry => {
                               if (entry.isIntersecting) {
                                 observer.unobserve($el)
-                                answer = await front.Services.functions.sendApi("/api/representatives", {
+                                answer = await front.Services.functions.sendApi("/racib/representatives", {
                                   "action": "GetAll",
                                   "skip": Static.representatives?.length,
                                   "active": status,

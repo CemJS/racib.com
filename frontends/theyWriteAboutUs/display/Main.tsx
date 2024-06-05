@@ -48,7 +48,7 @@ export default function () {
                     value = e.target.value.toLocaleLowerCase();
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi(
-                        "/api/NewsAboutUs",
+                        "/racib/NewsAboutUs",
                         {
                           action: "GetAll",
                           active: status,
@@ -76,7 +76,7 @@ export default function () {
                           id: item?.id,
                         };
                         let newContent = await front.Services.functions.sendApi(
-                          "/api/NewsAboutUs",
+                          "/racib/NewsAboutUs",
                           getNew
                         );
                         //проверка на error
@@ -92,7 +92,7 @@ export default function () {
                                   observer.unobserve($el);
                                   answer =
                                     await front.Services.functions.sendApi(
-                                      "/api/NewsAboutUs",
+                                      "/racib/NewsAboutUs",
                                       {
                                         action: "GetAll",
                                         skip: Static.news?.length,
@@ -113,9 +113,9 @@ export default function () {
                     >
                       <div
                         class="newCard_img"
-                        style={ item?.img ?
-                          `background-image: url(https://crypto-emergency.com/assets/upload/racib/${item?.img})` :
-                          `background-image: url(https://crypto-emergency.com/assets/upload/racib/0004d9d6c7f30a3eb2f0196c3e99b7cd.jpeg)`}
+                        style={item?.img ?
+                          `background-image: url(https://storage.cem.su/racib/${item?.img})` :
+                          `background-image: url(https://storage.cem.su/racib/0004d9d6c7f30a3eb2f0196c3e99b7cd.jpeg)`}
                       >
                         {item?.category && (
                           <span class="newCard_category">{item?.category}</span>

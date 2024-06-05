@@ -126,7 +126,7 @@ export default function () {
                                                 }}
                                             >
                                                 <span class="card_category">{item.category}</span>
-                                                <div class="card_img" style={`background-image: url(/assets/upload/racib/${item?.cover})`}>
+                                                <div class="card_img" style={`background-image: url(https://storage.cem.su/racib/${item?.cover})`}>
                                                     <div class="card_logo">
                                                         <img src={racib} alt="Логотип" />
                                                     </div>
@@ -247,7 +247,7 @@ export default function () {
                                             <div class="carousel_person_circle">
                                                 <div
                                                     class="carousel_person_img"
-                                                    style={`background-image: url(/assets/upload/racib/${item?.img})`}
+                                                    style={`background-image: url(https://storage.cem.su/racib/${item?.img})`}
                                                 ></div>
                                             </div>
                                             <span class="carousel_person_status">{item?.status}</span>

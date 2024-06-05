@@ -8,7 +8,7 @@ front.loader = async () => {
     search: "",
   };
   let news = await front.Services.functions.sendApi(
-    "/api/NewsAboutUs",
+    "/racib/NewsAboutUs",
     getNewsAboutUs
   );
 
@@ -20,7 +20,7 @@ front.loader = async () => {
       id: front.Variable.DataUrl[2],
     };
     let newContent = await front.Services.functions.sendApi(
-      "/api/NewsAboutUs",
+      "/racib/NewsAboutUs",
       getNewAboutUs
     );
     Static.contentNew = newContent?.result;

@@ -18,16 +18,16 @@ front.loader = async () => {
         "search": ""
     }
 
-    let players = await front.Services.functions.sendApi("/api/players", playersGet)
-        Static.players = players?.result
-  
+    let players = await front.Services.functions.sendApi("/racib/players", playersGet)
+    Static.players = players?.result
+
 
     if (front.Variable.DataUrl[2]) {
         const getPlayer = {
             "action": "Get",
             "id": front.Variable.DataUrl[2],
         }
-        let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
+        let playerContent = await front.Services.functions.sendApi("/racib/players", getPlayer)
         Static.contentPlayer = playerContent?.result;
     }
 

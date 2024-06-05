@@ -49,7 +49,7 @@ export default function () {
                   oninput={debounce(async (e: any) => {
                     value = e.target.value.toLocaleLowerCase()
                     if (value.length == 0 || value.length >= 2) {
-                      answer = await front.Services.functions.sendApi("/api/events", {
+                      answer = await front.Services.functions.sendApi("/racib/events", {
                         "action": "GetAll",
                         "active": status,
                         "search": value
@@ -74,7 +74,7 @@ export default function () {
                             "action": "Get",
                             "id": item?.id
                           }
-                          let eventContent = await front.Services.functions.sendApi("/api/events", getEvent)
+                          let eventContent = await front.Services.functions.sendApi("/racib/events", getEvent)
                           Static.contentEvent = eventContent?.result
                           Fn.linkChange(`/events/show/${item?.id}`)
                         }}
@@ -84,7 +84,7 @@ export default function () {
                               entries.forEach(async entry => {
                                 if (entry.isIntersecting) {
                                   observer.unobserve($el)
-                                  answer = await front.Services.functions.sendApi("/api/events", {
+                                  answer = await front.Services.functions.sendApi("/racib/events", {
                                     "action": "GetAll",
                                     "skip": Static.events?.length,
                                     "active": status,
@@ -98,7 +98,7 @@ export default function () {
                           }
                         }}>
                         <span class="card_category">{item?.category}</span>
-                        <div class="card_img" style={`background-image: url(/assets/upload/racib/${item?.cover})`}>
+                        <div class="card_img" style={`background-image: url(https://storage.cem.su/racib/${item?.cover})`}>
                           <div class="card_logo">
                             <img src={racib} alt="" />
                           </div>

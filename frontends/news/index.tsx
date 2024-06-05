@@ -8,7 +8,7 @@ front.loader = async () => {
     "active": true,
     "search": ""
   }
-  let news = await front.Services.functions.sendApi("/api/News", newsGet)
+  let news = await front.Services.functions.sendApi("/racib/News", newsGet)
 
   Static.news = news?.result;
 
@@ -17,7 +17,7 @@ front.loader = async () => {
       "action": "Get",
       "id": front.Variable.DataUrl[2]
     }
-    let newContent = await front.Services.functions.sendApi("/api/News", getNew)
+    let newContent = await front.Services.functions.sendApi("/racib/News", getNew)
     Static.contentNew = newContent?.result;
   }
 

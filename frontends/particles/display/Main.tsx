@@ -106,7 +106,7 @@ export default function () {
                                                     Fn.linkChange(`/news/show/${item.id}`)
                                                 }}
                                             >
-                                                <div class="newCard_slider_img" style={`background-image: url(/assets/upload/racib/${item?.img})`}>
+                                                <div class="newCard_slider_img" style={`background-image: url(https://storage.cem.su/racib/${item?.img})`}>
                                                     <span class="newCard_slider_category">{item.category}</span>
                                                 </div>
                                             </div>

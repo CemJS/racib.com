@@ -219,7 +219,7 @@ front.loader = async () => {
         "active": true,
         "search": ""
     }
-    let news = await front.Services.functions.sendApi("/api/News", newsGet)
+    let news = await front.Services.functions.sendApi("/racib/News", newsGet)
     Static.news = news?.result;
 
     Static.canvas = Ref.canvas;

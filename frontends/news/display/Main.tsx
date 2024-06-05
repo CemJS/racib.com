@@ -48,7 +48,7 @@ export default function () {
                     value = e.target.value.toLocaleLowerCase();
                     if (value.length == 0 || value.length >= 2) {
                       answer = await front.Services.functions.sendApi(
-                        "/api/News",
+                        "/racib/News",
                         {
                           action: "GetAll",
                           active: status,
@@ -75,7 +75,7 @@ export default function () {
                           id: item?.id,
                         };
                         let newContent = await front.Services.functions.sendApi(
-                          "/api/News",
+                          "/racib/News",
                           getNew
                         );
                         //проверка на error
@@ -91,7 +91,7 @@ export default function () {
                                   observer.unobserve($el);
                                   answer =
                                     await front.Services.functions.sendApi(
-                                      "/api/News",
+                                      "/racib/News",
                                       {
                                         action: "GetAll",
                                         skip: Static.news?.length,
@@ -112,7 +112,7 @@ export default function () {
                     >
                       <div
                         class="newCard_img"
-                        style={`background-image: url(/assets/upload/racib/${item?.img})`}
+                        style={`background-image: url(https://storage.cem.su/racib/${item?.img})`}
                       >
                         {item?.category && (
                           <span class="newCard_category">{item?.category}</span>

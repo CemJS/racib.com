@@ -30,7 +30,7 @@ export default function () {
                 </span>
                 <div class="profile_user_image_circle">
                   <img
-                    src={`/assets/upload/racib/${Static.contentPlayer?.img}`}
+                    src={`https://storage.cem.su/racib/${Static.contentPlayer?.img}`}
                     alt="Фото пользователя"
                   />
                 </div>
@@ -75,8 +75,8 @@ export default function () {
 
               {Static.contentPlayer?.info
                 ? Static.contentPlayer.info.map((item: any) => {
-                    return <p class="profile_content_text">{item}</p>;
-                  })
+                  return <p class="profile_content_text">{item}</p>;
+                })
                 : null}
 
               {Static.contentPlayer?.biography?.length ? (
@@ -84,8 +84,8 @@ export default function () {
               ) : null}
               {Static.contentPlayer?.biography
                 ? Static.contentPlayer?.biography.map((item: any) => {
-                    return <p class="profile_content_text">{item}</p>;
-                  })
+                  return <p class="profile_content_text">{item}</p>;
+                })
                 : null}
 
               {Static.contentPlayer?.activity?.length ? (
@@ -123,7 +123,7 @@ export default function () {
               {Static.contentPlayer?.cover ? (
                 <div class="profile_content_cover">
                   <img
-                    src={`/assets/upload/racib/${Static.contentPlayer?.cover}`}
+                    src={`https://storage.cem.su/racib/${Static.contentPlayer?.cover}`}
                     alt="Обложка компании"
                   />
                 </div>
@@ -142,8 +142,8 @@ export default function () {
 
                         {item?.text
                           ? item?.text?.map((el: any) => {
-                              return <p class="profile_content_text">{el}</p>;
-                            })
+                            return <p class="profile_content_text">{el}</p>;
+                          })
                           : null}
 
                         {item?.list ? (
@@ -237,7 +237,7 @@ export default function () {
                       return (
                         <div class="profile_content_media_item">
                           <img
-                            src={`/assets/upload/racib/${item}`}
+                            src={`https://storage.cem.su/racib/${item}`}
                             alt="Медиа"
                           />
                         </div>
@@ -250,8 +250,8 @@ export default function () {
               {Static.contentPlayer?.status == "Персона" ? (
                 <div>
                   {Static.contentPlayer?.info ||
-                  Static.contentPlayer?.biography ||
-                  Static.contentPlayer?.desc ? null : (
+                    Static.contentPlayer?.biography ||
+                    Static.contentPlayer?.desc ? null : (
                     <div class="notFound_wrap">
                       <div class="notFound">
                         <span class="notFound_title">
@@ -355,16 +355,15 @@ export default function () {
                           };
                           let playerContent =
                             await front.Services.functions.sendApi(
-                              "/api/players",
+                              "/racib/players",
                               getPlayer
                             );
                           //проверка на error
                           Static.contentPlayer = playerContent.result;
                           Fn.linkChange(
-                            `/players/show/${
-                              Static.contentPlayer?.alias === ""
-                                ? item?.id
-                                : item?.name
+                            `/players/show/${Static.contentPlayer?.alias === ""
+                              ? item?.id
+                              : item?.name
                             }`
                           );
                         }}
@@ -372,7 +371,7 @@ export default function () {
                         <div class="carousel_person_circle">
                           <div
                             class="carousel_person_img"
-                            style={`background-image: url(/assets/upload/racib/${item?.img})`}
+                            style={`background-image: url(https://storage.cem.su/racib/${item?.img})`}
                           ></div>
                         </div>
                         <span class="carousel_person_status">

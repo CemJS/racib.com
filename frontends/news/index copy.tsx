@@ -51,7 +51,7 @@
 
 // front.func.getRecords = async function () {
 //     // console.log('=d2f90b=', 5555)
-//     // let answer = await this.Services.functions.sendApi("/api/News", {})
+//     // let answer = await this.Services.functions.sendApi("/racib/News", {})
 //     // console.log('=74d989=', answer)
 // }
 

@@ -283,7 +283,7 @@ export default function () {
                                         }
                                     }
 
-                                    let answer = await front.Services.functions.sendApiDefault("/api/tg/racib", data)
+                                    let answer = await front.Services.functions.sendApiDefault("/racib/tg/racib", data)
 
                                     if (answer.error) {
                                         setTimeout(() => {

@@ -17,7 +17,7 @@ front.loader = async () => {
         "active": true,
         "search": ""
     }
-    let representatives = await front.Services.functions.sendApi("/api/representatives", representativesGet)
+    let representatives = await front.Services.functions.sendApi("/racib/representatives", representativesGet)
     Static.representatives = representatives?.result
 
     Static.representatives = representatives?.result

@@ -47,9 +47,9 @@ export default function () {
                   class="filter_input"
                   placeholder="Поиск"
                   oninput={debounce(async (e: any) => {
-                     value = e.target.value.toLocaleLowerCase()
+                    value = e.target.value.toLocaleLowerCase()
                     if (value.length == 0 || value.length >= 2) {
-                      answer = await front.Services.functions.sendApi("/api/players", {
+                      answer = await front.Services.functions.sendApi("/racib/players", {
                         "action": "GetAll",
                         "active": status,
                         "uuid": `${localStorage?.uuid}`,
@@ -75,7 +75,7 @@ export default function () {
                             "id": item?.id,
                             "uuid": `${localStorage?.uuid}`
                           }
-                          let playerContent = await front.Services.functions.sendApi("/api/players", getPlayer)
+                          let playerContent = await front.Services.functions.sendApi("/racib/players", getPlayer)
                           //проверка на error
                           Static.contentPlayer = playerContent.result
                           Fn.linkChange(`/players/show/${Static.contentPlayer?.alias === "" ? item?.id : item?.name}`)
@@ -86,7 +86,7 @@ export default function () {
                               entries.forEach(async entry => {
                                 if (entry.isIntersecting) {
                                   observer.unobserve($el)
-                                  answer = await front.Services.functions.sendApi("/api/players", {
+                                  answer = await front.Services.functions.sendApi("/racib/players", {
                                     "action": "GetAll",
                                     "skip": Static.players?.length,
                                     "active": status,
@@ -111,7 +111,7 @@ export default function () {
                         <div class="players_list_item_circle">
                           <div
                             class="players_list_item_image"
-                            style={item?.img ? `background-image: url(/assets/upload/racib/${item?.img})` : `background-image: url(/public/contents/img/user.png)`}>
+                            style={item?.img ? `background-image: url(https://storage.cem.su/racib/${item?.img})` : `background-image: url(/public/contents/img/user.png)`}>
                           </div>
                         </div>
                         <div class="players_list_item_info">

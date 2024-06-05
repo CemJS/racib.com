@@ -19,7 +19,7 @@ export default function () {
             <div class="event_profile">
               <div
                 class="event_profile_image"
-                style={`background-image: url(/assets/upload/racib/${Static.contentEvent?.cover})`}
+                style={`background-image: url(https://storage.cem.su/racib/${Static.contentEvent?.cover})`}
               >
                 <div class="event_profile_image_logo">
                   <img src={racib} alt="Логотип мероприятия" />
@@ -116,28 +116,28 @@ export default function () {
                           <ul class="event_content_list">
                             {item?.links
                               ? item.links.map((li: any) => {
-                                  return (
-                                    <li class="event_content_list_item event_content_text">
-                                      {li?.text}
-                                      <a
-                                        href={li?.link}
-                                        class="link ml_5"
-                                        onclick={Fn.link}
-                                      >
-                                        {li?.textLink && (
-                                          <span>
-                                            {li.textLink
-                                              .replace("https://", "")
-                                              .substring(0, 30) +
-                                              (li.textLink.length > 30
-                                                ? "..."
-                                                : "")}
-                                          </span>
-                                        )}
-                                      </a>
-                                    </li>
-                                  );
-                                })
+                                return (
+                                  <li class="event_content_list_item event_content_text">
+                                    {li?.text}
+                                    <a
+                                      href={li?.link}
+                                      class="link ml_5"
+                                      onclick={Fn.link}
+                                    >
+                                      {li?.textLink && (
+                                        <span>
+                                          {li.textLink
+                                            .replace("https://", "")
+                                            .substring(0, 30) +
+                                            (li.textLink.length > 30
+                                              ? "..."
+                                              : "")}
+                                        </span>
+                                      )}
+                                    </a>
+                                  </li>
+                                );
+                              })
                               : null}
                           </ul>
                         </div>
@@ -181,7 +181,7 @@ export default function () {
               {Static.contentEvent?.image ? (
                 <div
                   class="event_content_cover"
-                  style={`background-image: url(/assets/upload/racib/${Static.contentEvent?.image})`}
+                  style={`background-image: url(https://storage.cem.su/racib/${Static.contentEvent?.image})`}
                 ></div>
               ) : null}
             </div>

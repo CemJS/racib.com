@@ -1,5 +1,10 @@
 
 export const sendApi = async function (url: string, data: any) {
+
+    if (window.location.hostname != "127.0.0.1") {
+        url = "https://api.cem.su" + url
+    }
+
     try {
         let answer: any = await Promise.race([
             fetch(url, {
